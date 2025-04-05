@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 "profile.text2": "Exploratrice des algorithmes de pointe, je repousse les limites du possible en alliant expertise technique et créativité. Chaque projet est une aventure vers l'innovation.",
 "profile.more": "En savoir plus sur mon parcours",
 "projects.hover": "Survolez pour voir les détails",
-"projects.link": "Voir le code sur GitHub",
+"projects.link": "Voir la page sur Instagram",
 
 "projects.p1.title": "Personnalisation de produits par l’IA",
 "projects.p1.short": "Transformez vos idées en produits uniques.",
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "publication.tableTitle": "Sample Database",
         "projects.heading": "Projects & Experience",
         "projects.hover": "Hover to view details",
-        "projects.link": "View Code on GitHub",
+        "projects.link": "View page on Instagram",
         "projects.p1.title": "AI Product Personalization",
         "projects.p1.short": "Turn your ideas into personalized products.",
         "projects.p1.desc": "A system enabling users to convert their ideas into custom products using AI models, with a smooth transition to production.",
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "experience.card4.detail": "المشاركة في هاكاثونات ومشاريع تعاونية متنوعة للابتكار والتميز",
         "projects.heading": "المشاريع والخبرة",
         "projects.hover": "مرر فوق البطاقة لرؤية التفاصيل",
-        "projects.link": "عرض على GitHub",
+        "projects.link": "عرض على Instagram",
 
         "projects.p1.title": "تخصيص المنتجات بالذكاء الاصطناعي",
         "projects.p1.short": "حوّل أفكارك إلى منتجات فريدة.",
