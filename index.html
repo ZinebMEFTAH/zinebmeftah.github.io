@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Portfolio de Meftah Zineb, Ingénieur en Intelligence Artificielle & Développeur Full Stack." />
+    <meta name="keywords" content="Portfolio, Intelligence Artificielle, Développement, Projets, Publications, Formation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="page.title">Portfolio - Meftah Zineb</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation with Language Switcher -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#header" data-translate="nav.title">Meftah Zineb</a>
+        </div>
+        <ul>
+          <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+          <li><a href="#profil" data-translate="nav.profil">Profil</a></li>
+          <li><a href="#formation" data-translate="nav.formation">Formation</a></li>
+          <li><a href="#publications" data-translate="nav.publications">Publications</a></li>
+          <li><a href="#projects" data-translate="nav.projects">Projets</a></li>
+          <li><a href="#experience" data-translate="nav.experience">Expérience</a></li>
+          <li><a href="#competences" data-translate="nav.competences">Compétences</a></li>
+          <li><a href="#langues" data-translate="nav.langues">Langues</a></li>
+        </ul>
+        <button id="themeToggle" aria-label="Toggle light/dark theme">🌙</button>
+        <!-- Language Switcher Buttons -->
+        <div class="lang-switcher">
+          <button data-lang="en">English</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="ar">عربي</button>
+        </div>
+      </div>
+    </nav>
+
+        <!-- Mobile Menu (visible only on small screens when toggled) -->
+        <div class="mobile-menu">
+            <ul>
+              <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+              <li><a href="#profil" data-translate="nav.profil">À Propos de Moi</a></li>
+              <li><a href="#formation" data-translate="nav.formation">Formation</a></li>
+              <li><a href="#publications" data-translate="nav.publications">Publications</a></li>
+              <li><a href="#projects" data-translate="nav.projects">Projets et Expériences</a></li>
+              <li><a href="#competences" data-translate="nav.competences">Compétences</a></li>
+              <li><a href="#langues" data-translate="nav.langues">Langues</a></li>
+              <li><a href="#experience" data-translate="nav.experience">Expérience & Leadership</a></li>
+            </ul>
+          </div>
+    <!-- Header -->
+    <header id="header" role="banner">
+      <div class="header-overlay"></div>
+      <div class="header-content">
+        <h1 data-translate="header.title">Meftah Zineb</h1>
+        <p data-translate="header.subtitle">Ingénieur en Intelligence Artificielle & Développeur Full Stack</p>
+      </div>
+      <div class="scroll-indicator" id="scrollIndicator">
+        <span></span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Contact Section -->
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" data-translate="contact.heading">Contact</h2>
+          <div class="info-cards">
+            <div class="info-card">
+              <h3 data-translate="info.telephone">☎ Téléphone</h3>
+              <p>+33 (0) 6 10 79 07 36</p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.email">✉ Email</h3>
+              <p><a href="mailto:meftahworld@gmail.com">meftahworld@gmail.com</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.linkedin">🔗 LinkedIn</h3>
+              <p>
+                <a href="https://www.linkedin.com/in/meftah-zineb-5768ba25b" target="_blank">Meftah Zineb</a>
+              </p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.portfolio">🌐 Portfolio</h3>
+              <p>
+                <a href="https://votreportfolio.com" target="_blank">VotrePortfolio.com</a>
+              </p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.github">🐙 GitHub</h3>
+              <p>
+                <a href="https://github.com/ZinebMEFTAH" target="_blank">zineb-hub</a>
+              </p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.huggingface">🤖 Hugging Face</h3>
+              <p>
+                <a href="https://huggingface.co/zino36" target="_blank">zino36</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Profil Section -->
+      <section id="profil" class="section" aria-labelledby="profil-heading">
+        <div class="container profile-section">
+          <h2 id="profil-heading" data-translate="profile.heading">À Propos de Moi</h2>
+          <div class="profile-content">
+            <div class="profile-text">
+              <h3 data-translate="profile.greeting">Bonjour, je suis Meftah Zineb.</h3>
+              <p data-translate="profile.text1">
+                Architecte digital et innovateur passionné, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.
+              </p>
+              <p data-translate="profile.text2">
+                Explorateur des algorithmes de pointe, je repousse les limites du possible en alliant expertise technique et créativité. Chaque projet est une aventure vers l'innovation.
+              </p>
+              <p>
+                <a href="https://example.com/my-innovative-bio" target="_blank" class="cert-link" data-translate="profile.more">
+                  En savoir plus sur mon parcours
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Formation Section -->
+      <section id="formation" class="section" aria-labelledby="formation-heading">
+        <div class="container">
+          <h2 id="formation-heading" data-translate="formation.heading">Formation</h2>
+          <ul class="formation-timeline">
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎓</span>
+              <div class="formation-content">
+                <h3 data-translate="formation.ensia">ENSIA, Algérie</h3>
+                <p data-translate="formation.ensiaDiplome"><strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)</p>
+                <p>2022 - Juin 2024</p>
+                <p>
+                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=1dab1d9e9abad6136ff63a9346eb9f1d736e151f&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f316461623164396539616261643631333666663633613933343665623966316437333665313531662f436572746966696361742033656d6520616e6e65cc816520454e5349412e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=Certificat+3eme+année+ENSIA.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#be53a163-343f-451e-b658-1e6651d53629" target="_blank" class="cert-link" data-translate="formation.ensiaCert">
+                    Voir diplôme
+                  </a>
+                </p>
+              </div>
+            </li>
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎓</span>
+              <div class="formation-content">
+                <h3 data-translate="formation.avignon">Université d'Avignon (CERI), France</h3>
+                <p data-translate="formation.avignonDiplome"><strong>Diplôme :</strong> Data Science (2ᵉ année en cours, excellents résultats)</p>
+                <p>Septembre 2024 - Aujourd'hui</p>
+                <p>
+                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=3ef1273a78c3e6de2a6532cd3b2f0b8773c7e7bc&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f336566313237336137386333653664653261363533326364336232663062383737336337653762632f436572697466696361742032c3a96d6520616e6ec3a96520434552492e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=Ceritficat+2éme+année+CERI.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#20223658-91ce-45ee-a6b1-631b07f814ed" target="_blank" class="cert-link" data-translate="formation.avignonCert">
+                    Voir diplôme
+                  </a>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Publications Section -->
+      <section id="publications" class="section" aria-labelledby="publications-heading">
+        <div class="container">
+          <h2 id="publications-heading" data-translate="publications.heading">Publications</h2>
+          <div class="publication-card">
+            <div class="pub-header">
+              <div class="pub-date" data-translate="publication.date">📅 20 décembre 2024</div>
+              <div class="pub-location" data-translate="publication.location">📍 Hugging Face</div>
+            </div>
+            <div class="pub-body">
+              <p class="pub-description" data-translate="publication.description">
+                Découvrez notre approche révolutionnaire qui utilise un fine-tuning inversé pour générer des données synthétiques. Conçues pour extraire des mots-clés précis, ces données servent à entraîner des modèles de génération de tags ultra-performants.
+              </p>
+            </div>
+            <div class="pub-footer">
+              <a href="https://huggingface.co/zino36" target="_blank" class="publication-link" data-translate="publication.cta">
+                Lire l'article complet
+              </a>
+            </div>
+            <h4 data-translate="publication.tableTitle">Exemple de base de données</h4>
+            <div class="table-wrapper">
+              <table class="sample-table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Tag</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Deep Learning</td>
+                    <td>0.95</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Data Science</td>
+                    <td>0.89</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>AI Research</td>
+                    <td>0.92</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Neural Networks</td>
+                    <td>0.93</td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Machine Learning</td>
+                    <td>0.94</td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Big Data</td>
+                    <td>0.87</td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Python</td>
+                    <td>0.96</td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Algorithms</td>
+                    <td>0.90</td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Statistics</td>
+                    <td>0.88</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>Automation</td>
+                    <td>0.91</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- Projects Section (Horizontal Scroll) -->
+<section id="projects" class="section" aria-labelledby="projects-heading">
+  <div class="container">
+    <h2 id="projects-heading" data-translate="projects.heading">Projets et Expériences</h2>
+    <div class="projects-scroll">
+
+      <!-- Project 1 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p1.title">Personnalisation de produits par l’IA</h3>
+            <p data-translate="projects.p1.short">Transformez vos idées en produits uniques.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p1.title">Personnalisation de produits par l’IA</h3>
+            <p data-translate="projects.p1.desc">
+              Système permettant aux utilisateurs de transformer leurs idées en produits personnalisés via des modèles d’IA, avec une transition vers la production.
+            </p>
+            <a href="https://www.instagram.com/anything.personalized" target="_blank" class="github-link" data-translate="projects.link">Voir la page sur Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p2.title">News Wave</h3>
+            <p data-translate="projects.p2.short">Votre actualité personnalisée avec l’IA.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p2.title">News Wave</h3>
+            <p data-translate="projects.p2.desc">
+              Agrégateur de nouvelles personnalisées par l'IA qui offre des mises à jour en temps réel à partir des principales sources mondiales, filtrées selon les intérêts de l'utilisateur.
+            </p>
+            <a href="https://github.com/zineb-hub/NewsWave" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p3.title">Agricultural Plan Optimization</h3>
+            <p data-translate="projects.p3.short">Agriculture durable basée sur l’IA.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p3.title">Agricultural Plan Optimization</h3>
+            <p data-translate="projects.p3.desc">
+              Projet IA d’optimisation de la production agricole en Algérie en utilisant des algorithmes de recherche sur graphes et de satisfaction de contraintes.
+            </p>
+            <a href="https://github.com/zineb-hub/Agricultural-Plan-Optimization" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p4.title">G-Jobs</h3>
+            <p data-translate="projects.p4.short">Plateforme d’emploi intelligente en Algérie.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p4.title">G-Jobs</h3>
+            <p data-translate="projects.p4.desc">
+              Une plateforme intelligente connectant les chercheurs d’emploi algériens avec les recruteurs à travers des filtres avancés, messagerie, et suivi des candidatures.
+            </p>
+            <a href="https://github.com/zineb-hub/G-JOB" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p5.title">Advanced Search Engine</h3>
+            <p data-translate="projects.p5.short">Recherche documentaire avec TF-IDF & BM25.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p5.title">Advanced Search Engine</h3>
+            <p data-translate="projects.p5.desc">
+              Moteur de recherche Java basé sur TF-IDF et BM25 pour indexer, analyser et trier efficacement des documents textuels avec précision.
+            </p>
+            <a href="https://github.com/zineb-hub/Search-Engine" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p6.title">Restaurant Chain</h3>
+            <p data-translate="projects.p6.short">Gestion multisites de restaurants.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p6.title">Restaurant Chain</h3>
+            <p data-translate="projects.p6.desc">
+              Système de gestion d’une chaîne de restaurants multi-pays, permettant une organisation optimale des réservations, des stocks et du personnel.
+            </p>
+            <a href="https://github.com/zineb-hub/Restaurant-Chain" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p7.title">My Online Supermarket</h3>
+            <p data-translate="projects.p7.short">Supermarché intelligent en ligne (CLI).</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p7.title">My Online Supermarket</h3>
+            <p data-translate="projects.p7.desc">
+              Application CLI pour digitaliser la gestion d’un supermarché : fournisseurs, stock, ventes, rapports et statistiques.
+            </p>
+            <a href="https://github.com/zineb-hub/SuperMarket" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p8.title">Road Network Analysis (MAP)</h3>
+            <p data-translate="projects.p8.short">Algorithmes avancés sur les graphes.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p8.title">Road Network Analysis (MAP)</h3>
+            <p data-translate="projects.p8.desc">
+              Analyse de réseau routier à Avignon basée sur la théorie des graphes : chemins optimaux, connexité, performance réseau.
+            </p>
+            <a href="https://github.com/zineb-hub/Map" target="_blank" class="github-link" data-translate="projects.link">Voir le code sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+      <!-- Expérience & Leadership Section (Clickable Cards) -->
+      <section id="experience" class="section" aria-labelledby="experience-heading">
+        <div class="container">
+          <h2 id="experience-heading" data-translate="experience.heading">Expérience & Leadership</h2>
+          <div class="experience-grid">
+            <!-- Experience Card 1 -->
+            <div class="experience-card">
+              <div class="experience-media">
+                <img src="https://media.licdn.com/dms/image/v2/D4D12AQF4QrcQVYydmg/article-cover_image-shrink_423_752/article-cover_image-shrink_423_752/0/1721174030049?e=1749081600&v=beta&t=VkV9sJ2-e3fLiCj_3U1vnWGDDnLLmCsiG5NVEzPZBhg" alt="Responsable informatique" class="experience-img" loading="lazy" />
+                  <div class="experience-details">
+                  <p data-translate="experience.card1.detail">Google Developer Student Club ENSIA (2023-2024)</p>
+                </div>
+              </div>
+              <h3 data-translate="experience.card1.title">Responsable informatique</h3>
+            </div>
+            <!-- Experience Card 2 -->
+            <div class="experience-card">
+              <div class="experience-media">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFIRqUAh8HkjF-tRYnRxGldaMJSuhL54ypA&s" alt="Participant AYLP" class="experience-img" loading="lazy" />
+                <div class="experience-details">
+                  <p data-translate="experience.card2.detail">Ambassade des États-Unis à Alger (2021) Algerian Youth Leadership Program</p>
+                  <p><a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=3ef1273a78c3e6de2a6532cd3b2f0b8773c7e7bc&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f336566313237336137386333653664653261363533326364336232663062383737336337653762632f41594c5025323043657274696669636174652e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=AYLP+Certificate.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#db3f0e31-2424-472d-ab60-fcdf0a5758a3" target="_blank" class="cert-link" data-translate="experience.card2.cert">Voir certificat</a></p>
+                </div>
+              </div>
+              <h3 data-translate="experience.card2.title">Participant AYLP</h3>
+            </div>
+            <!-- Experience Card 3 -->
+            <div class="experience-card">
+              <div class="experience-media">
+                <img src="https://www.defense.gouv.fr/sites/default/files/styles/16_9_md/public/sga/DTPM_2024_02_hackathonIA_visuel.jpg?itok=vb4Tjojo" alt="Organisation d'événements" class="experience-img" loading="lazy" />
+                <div class="experience-details">
+                  <p data-translate="experience.card3.detail">Hackathons, IA, Développement Web</p>
+                </div>
+              </div>
+              <h3 data-translate="experience.card3.title">Organisation d'événements</h3>
+            </div>
+            <!-- Experience Card 4 -->
+            <div class="experience-card">
+              <div class="experience-media">
+                <img src="https://ggba.swiss/app/uploads/2024/04/Idiap-AI-Challenge-2360x1622-1.jpeg" alt="Autres réalisations" class="experience-img" loading="lazy" />
+                <div class="experience-details">
+                  <p data-translate="experience.card4.detail">
+                    Participation à divers hackathons et projets collaboratifs pour innover et exceller.
+                  </p>
+                </div>
+              </div>
+              <h3 data-translate="experience.card4.title">Autres Réalisations</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        <!-- Compétences Section -->
+        <section id="competences" class="section" aria-labelledby="competences-heading">
+            <div class="container">
+            <h2 id="competences-heading" data-translate="competences.heading">Compétences</h2>
+            <div class="skills-grid">
+                <!-- Certifications Card (unchanged) -->
+                <div class="skill-card">
+                <h3 data-translate="competences.certifications">Certifications</h3>
+                <ul class="skill-list">
+                    <li>
+                    Introduction to Deep Learning with PyTorch – DataCamp
+                    <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
+                    </li>
+                    <li>
+                      Algerian Youth Leadership Program – US Embassy in Algeria
+                      <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
+                    </li>
+                    <li>
+                      English Level – E-Plus Center
+                      <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
+                    </li>
+                </ul>
+                </div>
+                <!-- Programmation Card -->
+                <div class="skill-card">
+                <h3 data-translate="competences.programming">Programmation</h3>
+                <ul class="skill-list">
+                    <li style="--progress:80%;">
+                    <span class="skill-name">Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:90%;">
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:70%;">
+                    <span class="skill-name">C++</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:75%;">
+                    <span class="skill-name">PHP</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:85%;">
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:90%;">
+                    <span class="skill-name">HTML/CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+                <!-- Développement Web Card -->
+                <div class="skill-card">
+                <h3 data-translate="competences.web">Développement Web</h3>
+                <ul class="skill-list">
+                    <li style="--progress:80%;">
+                    <span class="skill-name">Node.js</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:75%;">
+                    <span class="skill-name">PHP</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:85%;">
+                    <span class="skill-name">MySQL</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+                <!-- Data Science & IA Card -->
+                <div class="skill-card">
+                <h3 data-translate="competences.dataScience">Data Science & IA</h3>
+                <ul class="skill-list">
+                    <li style="--progress:90%;">
+                    <span class="skill-name">Machine Learning</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:85%;">
+                    <span class="skill-name">Model Training</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:80%;">
+                    <span class="skill-name">Fine-tuning</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:75%;">
+                    <span class="skill-name">Data Generation</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+                <!-- Outils Card -->
+                <div class="skill-card">
+                <h3 data-translate="competences.tools">Outils</h3>
+                <ul class="skill-list">
+                    <li style="--progress:95%;">
+                    <span class="skill-name">Git</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:85%;">
+                    <span class="skill-name">Pandas</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:85%;">
+                    <span class="skill-name">NumPy</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                    <li style="--progress:80%;">
+                    <span class="skill-name">Scikit-learn</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress"></div>
+                    </div>
+                    </li>
+                </ul>
+                </div>
+                <!-- Soft Skills Card -->
+                <div class="skill-card">
+                <h3 data-translate="competences.softSkills">Soft Skills</h3>
+                <ul class="skill-list">
+                    <li><span class="skill-name" data-translate="competences.leadership">Leadership</span></li>
+                    <li><span class="skill-name" data-translate="competences.teamwork">Travail en équipe</span></li>
+                    <li><span class="skill-name" data-translate="competences.communication">Communication</span></li>
+                    <li><span class="skill-name" data-translate="competences.projectManagement">Gestion de projet</span></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
+      <!-- Langues Section -->
+      <section id="langues" class="section" aria-labelledby="langues-heading">
+        <div class="container">
+          <h2 id="langues-heading" data-translate="langues.heading">Langues</h2>
+          <div class="languages-grid">
+            <div class="language-card">
+                <h3 data-translate="langues.french">Français</h3>
+                <div class="language-scale">
+                  <div class="language-progress" style="--progress: 70%;"></div>
+                </div>
+                <p data-translate="langues.frenchlevel">
+                  Intermédiaire (B2)
+                  <br />
+                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=5c3cc5467b29e9df7034207ae7c2e117d90f4bad&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f356333636335343637623239653964663730333432303761653763326531313764393066346261642f5443462e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=TCF.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#a3be68b6-b883-4ce5-a799-651eed0917d7" target="_blank" class="cert-link" data-translate="langues.frenchCert">
+                    Voir certificat
+                  </a>
+                </p>
+              </div>
+            <div class="language-card">
+              <h3 data-translate="langues.english">Anglais</h3>
+              <div class="language-scale">
+                <div class="language-progress" style="--progress: 90%;"></div>
+              </div>
+              <p data-translate="langues.englishlevel">
+                Courant
+                <br />
+                <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=5c3cc5467b29e9df7034207ae7c2e117d90f4bad&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f356333636335343637623239653964663730333432303761653763326531313764393066346261642f452d506c75732532304365727469666963617465253230456e676c6973682e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=E-Plus+Certificate+English.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#0a813f2c-bb69-4ea3-afc2-10ebd833bfa3" target="_blank" class="cert-link" data-translate="langues.englishCert">
+                  Voir certificat
+                </a>
+              </p>
+            </div>
+            <div class="language-card">
+              <h3 data-translate="langues.arabic">Arabe</h3>
+              <div class="language-scale">
+                <div class="language-progress" style="--progress: 90%;"></div>
+              </div>
+              <p data-translate="langues.arabicLevel">Courant</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="container">
+        <p>&copy; 2025 Meftah Zineb. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
