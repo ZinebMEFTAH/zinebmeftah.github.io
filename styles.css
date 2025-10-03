@@ -1,4 +1,3 @@
-/* ---------- Modern Professional Color Palette ---------- */
 :root {
     --bg-color: #0d1117;
     --section-bg: #161b22;
@@ -17,8 +16,6 @@
     --primary-rgb: 88, 166, 255;   /* #58a6ff */
     --accent-rgb: 247, 120, 186;   /* #f778ba */
 }
-
-
 
 /* ---------- Light Theme (Modern & Clean) ---------- */
 body.light-theme {
@@ -59,6 +56,108 @@ body.light-theme {
 .skip-link:focus {
   left: 16px;
   top: 16px;
+}
+
+/* ===== Responsive type scaling & spacing ===== */
+/* Fluid headings so text never explodes on small screens */
+h1, .header-content h1 { font-size: clamp(2rem, 6vw, 4rem); }
+.section h2 { font-size: clamp(1.4rem, 4.2vw, 2.2rem); }
+
+/* Sub-headings/titles across cards and sections */
+.profile-text h3,
+.experience-card h3,
+.skill-card h3,
+.skill-card-header h4 { font-size: clamp(1rem, 3.2vw, 1.4rem); }
+
+/* Body copy everywhere */
+p, li, .info-card p, .flip-card-back p, .flip-card-front p {
+  font-size: clamp(0.95rem, 2.6vw, 1rem);
+}
+
+/* Section spacing scales with screen */
+.section {
+  margin: clamp(36px, 8vw, 80px) auto;
+  padding: clamp(24px, 5vw, 60px) clamp(16px, 4vw, 40px);
+}
+
+/* Underline under section titles shouldn’t be too long on phones */
+.section h2::after { width: clamp(36%, 18vw, 60%); }
+
+/* Publication table is scrollable on narrow screens */
+.table-wrapper { overflow-x: auto; }
+.sample-table { min-width: 520px; }
+
+/* Header polish on tablets */
+@media (max-width: 1024px) {
+  .section { margin: 60px auto; padding: 44px 28px; }
+  .profile-content { gap: 20px; }
+  .experience-media { height: 160px; }
+}
+
+/* Mobile: avoid background-attachment issues + tighten spacing */
+@media (max-width: 900px) {
+  header { min-height: 85vh; background-attachment: scroll; }
+  .header-content { padding: 0 12px; }
+  .projects-scroll { gap: 16px; padding: 12px 0; }
+}
+
+/* Phone (≈768px and down) */
+@media (max-width: 768px) {
+  .section { margin: 40px auto; padding: 28px 18px; }
+
+  /* Make each project card fill most of the width but stay short */
+  .projects-scroll .flip-card { width: 86vw; height: 260px; }
+  .flip-card-front h3, .flip-card-back h3 { font-size: 1.05rem; }
+  .flip-card-front p, .flip-card-back p { font-size: 0.9rem; }
+
+  .experience-media { height: 150px; }
+  .experience-card h3 { font-size: 1rem; }
+
+  .skills-category-title { font-size: 1.4rem; }
+  .skill-card { padding: 20px; }
+  .skill-card-header h4 { font-size: 1.1rem; }
+
+  /* Timeline: tighter, move rail/dot left, RTL mirrors */
+  .formation-item {
+    padding: 16px 16px 16px 42px; /* tighter left space, keep icon size */
+    display: block;
+  }
+  .formation-timeline::before { left: 14px; }   /* move rail left */
+  .formation-item::before { top: 18px; left: 10px; } /* move dot left */
+
+  /* Icon on its own line (keep original size) */
+  .formation-icon{
+    display: block;
+    margin: 2px 0 10px 0;
+  }
+  /* RTL mirror */
+  [dir="rtl"] .formation-item {
+    padding-right: 42px;
+    padding-left: 16px;
+  }
+  [dir="rtl"] .formation-timeline::before { right: 14px; }
+  [dir="rtl"] .formation-item::before { right: 10px; }
+  [dir="rtl"] .formation-icon { margin-left: 0; }
+
+  /* Language cards stack full width */
+  .language-card { width: 100%; }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  .profile-image img { width: 110px; height: 110px; }
+  .header-content p { font-size: clamp(1rem, 3.5vw, 1.2rem); }
+  .info-card { padding: 20px; }
+  .publication-card { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .projects-scroll .flip-card { width: 90vw; height: 240px; }
+  .section { padding: 22px 14px; }
+}
+
+@media (max-width: 360px) {
+  .projects-scroll .flip-card { width: 92vw; height: 220px; }
 }
 
 /* ---------- Reset & Base ---------- */
@@ -211,9 +310,6 @@ nav ul li a:hover {
     background: var(--primary-color);
     color: white;
 }
-
-
-
 
 /* ---------- Language Switcher Styling ---------- */
 .lang-switcher {
@@ -452,16 +548,28 @@ body.light-theme .header-overlay {
 
 .profile-text h3 {
     color: var(--primary-color);
-    margin-bottom: 16px;
-    font-size: 1.8em;
+    margin-bottom: 12px;
+    font-size: clamp(1.15rem, 4.6vw, 1.6rem);
+    line-height: 1.25;
     font-weight: 700;
 }
 
 .profile-text p {
-    font-size: 1.05em;
-    line-height: 1.7;
-    margin-bottom: 16px;
+    font-size: clamp(0.95rem, 3.6vw, 1rem);
+    line-height: 1.6;
+    margin-bottom: 12px;
     color: var(--text-secondary);
+    text-wrap: pretty;
+}
+/* --- Phone polish: tighter paddings & smaller titles --- */
+@media (max-width: 600px) {
+  .profile-section { padding: 12px; }            /* was 40px */
+  .profile-content { gap: 12px; align-items: flex-start; }
+  .section { padding: 22px 12px; width: 96%; }   /* less side space */
+  .section h2 {                                   /* avoid giant titles on mobile */
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
+    margin-bottom: 16px;
+  }
 }
 
 /* ---------- Formation Timeline ---------- */
@@ -514,7 +622,7 @@ body.light-theme .header-overlay {
 }
 
 .formation-icon {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-right: 16px;
 }
 
@@ -674,8 +782,9 @@ body.light-theme .header-overlay {
 .projects-scroll .flip-card {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 300px;
-    height: 320px;
+    /* scales with viewport but keeps sensible min/max */
+    width: clamp(260px, 42vw, 300px);
+    height: clamp(240px, 34vw, 320px);
 }
 
 /* ---------- Flip Card (Projects) ---------- */
@@ -878,7 +987,7 @@ body.light-theme .header-overlay {
 /* ---------- Skills Grid ---------- */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
     margin-top: 24px;
 }
@@ -899,6 +1008,13 @@ body.light-theme .header-overlay {
 .skill-card.in-view {
     transform: scale(1);
     opacity: 1;
+}
+
+/* Fallback reveal for mobile: if the per-card observer misses, show cards when the section is visible */
+.section.in-view .skill-card,
+.section.in-view .language-card {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .skill-card h3 {
@@ -1029,7 +1145,7 @@ body.light-theme .header-overlay {
 }
 
 .language-card {
-    width: 280px;
+    width: min(280px, 100%);
     flex-shrink: 0;
     background: var(--card-bg);
     padding: 32px 24px;
@@ -1281,6 +1397,7 @@ footer {
 
 /* ---------- Responsive Design ---------- */
 @media (max-width: 768px) {
+
     .nav-links {
         display: none;
     }
@@ -1307,17 +1424,37 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .info-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
+  /* Timeline: even tighter, move rail/dot left, RTL mirrors */
+  .formation-item {
+    padding: 14px 12px 14px 38px; /* even tighter on very small phones */
+    display: block;
+  }
+  .formation-timeline::before { left: 12px; }
+  .formation-item::before { top: 18px; left: 8px; }
+
+  /* Keep icon size unchanged; just stack it */
+  .formation-icon{
+    display: block;
+    margin: 2px 0 10px 0;
+  }
+
+  /* RTL mirrors */
+  [dir="rtl"] .formation-item { padding-right: 38px; padding-left: 12px; }
+  [dir="rtl"] .formation-timeline::before { right: 12px; }
+  [dir="rtl"] .formation-item::before { right: 8px; }
+  [dir="rtl"] .formation-icon { margin-left: 0; }
+
+  .info-cards {
+      grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .experience-grid {
+      grid-template-columns: 1fr;
+  }
 }
 
 /* Compact row styling for card links */
@@ -1685,6 +1822,7 @@ nav:hover {
 
 /* Fix for Arabic text in cards */
 [dir="rtl"] .flip-card-front h3,
+[dir="rtl"] .flip-card-front h3,
 [dir="rtl"] .flip-card-back h3,
 [dir="rtl"] .flip-card-front p,
 [dir="rtl"] .flip-card-back p {
@@ -1698,7 +1836,7 @@ nav:hover {
   text-align: center;
 }
 
-
+[dir="rtl"] .profile-text h3 { letter-spacing: 0; }
 
 /* Show hamburger on mobile */
 @media (max-width: 768px) {
@@ -1720,8 +1858,6 @@ nav:hover {
   }
 }
 
-
-
 .lang-switcher .lang-options {
   display: none;
 }
@@ -1735,8 +1871,6 @@ nav:hover {
   position: relative;
   display: inline-block;
 }
-
-
 
 /* Hidden options by default */
 .lang-options {
@@ -1845,7 +1979,6 @@ nav:hover {
     transition: all 0.3s ease;
 }
 
-
 #themeToggle:hover,
 .lang-toggle:hover {
   background-color: rgba(255, 255, 255, 0.05);
@@ -1853,4 +1986,14 @@ nav:hover {
     background: rgba(99, 102, 241, 0.1);
     transform: scale(1.05);
 
+}
+
+/* Phone/tablet safety: no IO? just show everything */
+@media (max-width: 820px), (pointer: coarse) {
+  .section,
+  .skill-card,
+  .language-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
