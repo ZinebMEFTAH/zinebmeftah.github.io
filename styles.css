@@ -957,6 +957,24 @@ body.light-theme .header-overlay {
     transition: opacity 0.5s ease;
 }
 
+/* Stack content vertically and push the cert link under the text */
+.experience-details {
+  display: flex;
+  flex-direction: column;   /* vertical stack */
+  align-items: center;      /* keep centered */
+  text-align: center;
+}
+
+.experience-details p {
+  margin: 0 0 8px 0;        /* space under the text */
+}
+
+/* Make the link its own line */
+.experience-details a {
+  display: block;           /* forces a new line even if inside a <p> */
+  margin-top: 8px;
+}
+
 .experience-card:hover .experience-img {
     opacity: 0;
 }
@@ -1502,18 +1520,6 @@ footer {
   padding-bottom: 4px;
 }
 
-.feature-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin: 8px 0;
-  color: var(--text-secondary);
-}
-
-.feature-list li {
-  margin-bottom: 6px;
-  font-size: 0.92em;
-  line-height: 1.4;
-}
 
 /* ---------- Enhanced Skills Section ---------- */
 .skills-category-container {
@@ -1634,6 +1640,7 @@ footer {
   font-weight: 600;
 }
 
+
 .feature-list {
   padding-left: 20px;
   margin: 0;
@@ -1643,6 +1650,60 @@ footer {
 .feature-list li {
   margin-bottom: 8px;
   line-height: 1.5;
+}
+
+/* --- Pretty bullets for 'Projets notables' list --- */
+.skill-group .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: grid;
+  gap: 10px;                          /* even spacing between items */
+}
+
+.skill-group .feature-list li {
+  position: relative;
+  padding: 10px 12px 10px 36px;       /* space for the check on the left */
+  background: rgba(var(--primary-rgb), 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 0.92em;
+  line-height: 1.45;
+  color: var(--text-color);
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.skill-group .feature-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75em;
+  box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.2);
+}
+
+.skill-group .feature-list li:hover {
+  border-color: var(--primary-color);
+  background: rgba(var(--primary-rgb), 0.09);
+  transform: translateY(-1px);
+}
+
+/* RTL support for the check position and padding */
+[dir="rtl"] .skill-group .feature-list li {
+  padding: 10px 36px 10px 12px;       /* space for check on the right */
+}
+[dir="rtl"] .skill-group .feature-list li::before {
+  left: auto;
+  right: 12px;
 }
 
 /* Soft skills grid */
@@ -1862,11 +1923,32 @@ nav:hover {
     z-index: 1000;
   }
 
+  .hover-text {
+    font: 10px
+  }
   .nav-links.active {
     display: flex;
   }
 }
 
+/* Default font size (desktop) */
+.hover-text {
+  font-size: 1rem;   /* ~16px */
+}
+
+/* On tablets and smaller (≤768px) */
+@media (max-width: 768px) {
+  .hover-text {
+    font-size: 0.9rem;  /* ~14px */
+  }
+}
+
+/* On phones (≤480px) */
+@media (max-width: 480px) {
+  .hover-text {
+    font-size: 0.8rem;  /* ~13px */
+  }
+}
 .lang-switcher .lang-options {
   display: none;
 }
@@ -1879,6 +1961,35 @@ nav:hover {
 .lang-switcher {
   position: relative;
   display: inline-block;
+}
+
+.formation-content p {
+  margin: 0.3rem 0; /* space between text and cert link */
+}
+
+.formation-content .cert-link {
+  display: block;   /* force link on its own line */
+  margin-top: 0.4rem;
+  font-size: 0.9rem; /* optional smaller font */
+}
+
+/* Make every line inside formation-content stack vertically */
+.formation-content {
+  display: grid;
+  gap: 6px;                /* space between title, desc, and cert link */
+}
+
+/* Ensure paragraphs behave as blocks */
+.formation-content p {
+  display: block !important;
+  margin: 0;               /* reset, we’ll add spacing with gap */
+}
+
+/* Put the cert link on its own line */
+.formation-content .cert-link {
+  display: inline-block;   /* its own box/line */
+  margin-top: 4px;         /* tiny extra spacing below the description */
+  font-size: 0.9rem;       /* optional */
 }
 
 /* Hidden options by default */
@@ -2005,4 +2116,80 @@ nav:hover {
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+
+/* Reset the list in RTL */
+[dir="rtl"] .experience-details .xp-highlights {
+  list-style: none;       /* kill default LTR bullets */
+  margin: 0;
+  padding: 0;             /* remove left padding */
+  direction: rtl;         /* force RTL flow */
+  text-align: right;      /* align text to the right */
+}
+
+/* Each item: space for bullet on the right */
+[dir="rtl"] .experience-details .xp-highlights li {
+  position: relative;
+  padding-right: 1.2rem;  /* room for the dot */
+  margin: 6px 0;
+}
+
+/* Custom bullet on the right */
+[dir="rtl"] .experience-details .xp-highlights li::before {
+  content: "•";
+  position: absolute;
+  right: 0;              /* stick it to the right */
+  top: 0.3em;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+/* Prevent selection of skill tags, but allow hover */
+.skill-card .tag,
+.skill-card .feature-list li {
+  user-select: none;     /* text can’t be selected */
+  cursor: default;       /* no text-selection cursor */
+}
+
+.tag:hover {
+  border-color: var(--primary-color);
+  background: rgba(var(--primary-rgb), 0.12);
+  transform: translateY(-1px);
+}
+
+.tag-featured {
+  background: rgba(var(--primary-rgb), 0.08); /* same as normal tag */
+  border-color: var(--border-color); 
+  font-weight: 500;
+}
+
+.hover-text {
+  font-size: 0.9rem;     /* smaller for mobile */
+  text-align: center;    /* default for FR/EN */
+  margin: 0.5rem 0;
+}
+
+/* RTL override (Arabic) */
+html[dir="rtl"] .hover-text {
+  text-align: right;     /* force it to the right */
+  direction: rtl;        /* ensure punctuation and text flow correctly */
+}
+
+
+.projects-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* For Arabic only */
+html[lang="ar"] .projects-scroll {
+  direction: rtl;       /* Align content to the right */
+  text-align: right;
+}
+
+html[lang="ar"] .projects-scroll > * {
+  direction: ltr;       /* Keep inner content normal (titles, text) */
 }

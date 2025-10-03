@@ -741,12 +741,35 @@ if (burger && navLinks) {
 
     // --- Translation Function ---
     function translatePage(lang) {
-        const html = document.documentElement;
-        html.setAttribute('lang', lang);
-        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      const html = document.documentElement;
+      html.setAttribute('lang', lang);
+      html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-        const translatableElements = document.querySelectorAll('[data-translate]');
-        const dict = translations[lang] || {};
+      // --- Reset projects scroller to the visual start ---
+      const scrollers = document.querySelectorAll('.projects-scroll');
+      scrollers.forEach((el) => {
+        const prevBehavior = el.style.scrollBehavior;
+        el.style.scrollBehavior = 'auto'; // no animation on jump
+
+        const applyPosition = () => {
+          const max = el.scrollWidth - el.clientWidth;
+          // LTR => show first card at left edge; RTL => show first card at right edge
+          el.scrollLeft = (lang === 'ar') ? max : 0;
+          el.style.scrollBehavior = prevBehavior || '';
+        };
+
+        // Clear any stale position first
+        el.scrollLeft = 0;
+
+        // Double RAF: wait for layout to update after dir change, then measure & set
+        requestAnimationFrame(() => {
+          requestAnimationFrame(applyPosition);
+        });
+      });
+
+
+      const translatableElements = document.querySelectorAll('[data-translate]');
+      const dict = translations[lang] || {};
         
         translatableElements.forEach(el => {
             const key = el.getAttribute('data-translate');
