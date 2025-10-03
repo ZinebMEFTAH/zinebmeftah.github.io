@@ -123,7 +123,7 @@ if (burger && navLinks) {
         "formation.ensiaDiplome": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
         "formation.ensiaCert": "Voir diplôme",
         "formation.avignon": "Université d'Avignon (CERI), France",
-        "formation.avignonDiplome": "<strong>Diplôme :</strong> Data Science (2ᵉ année en cours, excellents résultats)",
+        "formation.avignonDiplome": "<strong>Diplôme :</strong> Data Science (3ᵉ année en cours, excellents résultats)",
         "formation.avignonCert": "Voir diplôme",
         "publications.heading": "Publications",
         "publication.date": "📅 20 décembre 2024",
@@ -253,7 +253,11 @@ if (burger && navLinks) {
 "projects.p10.short": "Simulateur interactif de vision robotique.",
 "projects.p10.desc": "Simulateur navigateur : robot sur grille, pick/place et commandes en langue naturelle. COCO-SSD pour la vision, A* pour le pathfinding. Stack : JS/Canvas, TF.js.",
 
-"footer.copy": "© 2025 Meftah Zineb. Tous droits réservés."
+"footer.copy": "© 2025 Meftah Zineb. Tous droits réservés.",
+"formation.bac": "Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algérie)",
+"formation.bacDiplome": "<strong>Mention :</strong> Excellent — Moyenne 17,82 (Filière scientifique)",
+"formation.bacCert": "Voir attestation BAC",
+"formation.bacTranscript": "Voir relevés de notes"
       },
       en: {
         "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
@@ -299,7 +303,7 @@ if (burger && navLinks) {
         "formation.ensiaDiplome": "<strong>Degree:</strong> Artificial Intelligence Engineering (1st & 2nd Year Completed)",
         "formation.ensiaCert": "View Certificate",
         "formation.avignon": "Université d'Avignon (CERI), France",
-        "formation.avignonDiplome": "<strong>Degree:</strong> Data Science (2nd year ongoing, excellent results)",
+        "formation.avignonDiplome": "<strong>Degree:</strong> Data Science (3rd year ongoing, excellent results)",
         "formation.avignonCert": "View Certificate",
         "publications.heading": "Publications",
         "publication.date": "📅 December 20, 2024",
@@ -444,7 +448,11 @@ if (burger && navLinks) {
   "langues.englishCert": "View certificate",
   "langues.arabic": "Arabic",
   "langues.arabicLevel": "Native",
-  "footer.copy": "© 2025 Zineb Meftah. All rights reserved."
+  "footer.copy": "© 2025 Zineb Meftah. All rights reserved.",
+  "formation.bac": "Scientific Baccalaureate — Abd-El-Kader El-Yajouri High School, Guemar (Algeria)",
+"formation.bacDiplome": "<strong>Honors:</strong> Excellent — Average 17.82 (Scientific stream)",
+"formation.bacCert": "View BAC certificate",
+"formation.bacTranscript": "View grade transcripts"
       },
       ar: {
         "profile.heading": "نبذة عني",
@@ -480,7 +488,7 @@ if (burger && navLinks) {
         "formation.ensiaDiplome": "<strong>الشهادة:</strong> هندسة الذكاء الاصطناعي (السنة الأولى والثانية)",
         "formation.ensiaCert": "عرض الشهادة",
         "formation.avignon": "جامعة أفينيون (CERI)، فرنسا",
-        "formation.avignonDiplome": "<strong>الشهادة:</strong> علوم البيانات (السنة الثانية جارية، نتائج ممتازة)",
+        "formation.avignonDiplome": "<strong>الشهادة:</strong> علوم البيانات (السنة الثالثة جارية، نتائج ممتازة)",
         "formation.avignonCert": "عرض الشهادة",
         "publications.heading": "المنشورات",
         "publication.date": "📅 20 ديسمبر 2024",
@@ -658,7 +666,11 @@ if (burger && navLinks) {
   "competences.programming.paradigms": "الأنماط: كائنية، وظيفية، منطق الأعمال",
   "competences.programming.experience": "الخبرات: ترجمة، خوارزميات الرسوم البيانية (ديكسترا، A*، BM25)، سكربتات CLI",
   "competences.programming.projects": "المشاريع: مترجم شبيه بـ Pascal، تحسين الشبكات، محرك بحث، سوبرماركت CLI، توليد الويب عبر LLM",
-  "footer.copy": "© 2025 مفتاح زينب. جميع الحقوق محفوظة."
+  "footer.copy": "© 2025 مفتاح زينب. جميع الحقوق محفوظة.",
+  "formation.bac": "بكالوريا علوم تجريبية — ثانوية عبد القادر الياجوري، قمار (الجزائر)",
+"formation.bacDiplome": "<strong>التقدير:</strong> ممتاز — معدل 17.82 (شعبة علوم تجريبية)",
+"formation.bacCert": "عرض شهادة البكالوريا",
+"formation.bacTranscript": "عرض كشف النقاط"
       },
     };
     

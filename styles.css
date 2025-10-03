@@ -15,6 +15,9 @@
     --gradient-end: #f778ba;
     --primary-rgb: 88, 166, 255;   /* #58a6ff */
     --accent-rgb: 247, 120, 186;   /* #f778ba */
+
+    /* Offset used when scrolling to in‑page anchors so content isn't hidden behind the fixed nav */
+    --anchor-offset: 88px; /* desktop default */
 }
 
 /* ---------- Light Theme (Modern & Clean) ---------- */
@@ -40,6 +43,30 @@ body.light-theme {
 body.light-theme {
     --gradient-start: #90c3f9; /* Lighter soft blue */
     --gradient-end: #f4a9cb;   /* Softer pink */
+}
+
+/* --- Anchor offset so fixed nav doesn't cover target sections --- */
+/* Modern browsers: honor scroll-margin */
+section, .section {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* Fallback for some browsers: only when the element is the hash target */
+.section[id]:target::before,
+section[id]:target::before {
+  content: "";
+  display: block;
+  height: var(--anchor-offset);
+  margin-top: calc(var(--anchor-offset) * -1);
+  visibility: hidden;
+}
+
+/* Tweak offset for smaller screens where the nav is a bit shorter */
+@media (max-width: 768px) {
+  :root { --anchor-offset: 72px; }
+}
+@media (max-width: 480px) {
+  :root { --anchor-offset: 64px; }
 }
 
 /* Skip to content link */
@@ -1903,7 +1930,8 @@ nav:hover {
 /* Fix project card hover text in Arabic */
 [dir="rtl"] .hover-text {
   width: 100%;
-  text-align: center;
+  text-align: right;
+  direction: rtl;
 }
 
 [dir="rtl"] .profile-text h3 { letter-spacing: 0; }
@@ -1935,11 +1963,14 @@ nav:hover {
 .hover-text {
   font-size: 1rem;   /* ~16px */
 }
-
+html[dir="ltr"] .hover-text {
+  text-align: left;
+  direction: ltr;
+}
 /* On tablets and smaller (≤768px) */
 @media (max-width: 768px) {
   .hover-text {
-    font-size: 0.9rem;  /* ~14px */
+    font-size: 0.9rem;
   }
 }
 
