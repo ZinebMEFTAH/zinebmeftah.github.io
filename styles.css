@@ -812,10 +812,16 @@ body.light-theme .header-overlay {
     transform-style: preserve-3d;
 }
 
-/* Support both hover AND click (via .flipped class) */
-.flip-card:hover .flip-card-inner,
+/* Click/keyboard support (works everywhere) */
 .flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Hover flip only on devices that truly support hover (desktops) */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
+  }
 }
 
 .flip-card-front,
@@ -1747,12 +1753,15 @@ nav:hover {
   direction: rtl; /* Restore RTL for text inside cards */
 }
 
-/* Fix RTL transforms - support both hover and click */
-[dir="rtl"] .flip-card:hover .flip-card-inner,
 [dir="rtl"] .flip-card.flipped .flip-card-inner {
-  transform: rotateY(-180deg); /* Reverse rotation direction */
+  transform: rotateY(-180deg);
 }
 
+@media (hover: hover) and (pointer: fine) {
+  [dir="rtl"] .flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+  }
+}
 [dir="rtl"] .flip-card-back {
   transform: rotateY(-180deg); /* Reverse back face rotation */
 }
