@@ -1,7 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const langToggle = document.querySelector(".lang-toggle");
+const langSwitcher = document.querySelector(".lang-switcher");
+
+if (langToggle && langSwitcher) {
+  langToggle.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent immediate close
+    langSwitcher.classList.toggle("open");
+  });
+
+  // Close dropdown if you click outside it
+  document.addEventListener("click", (e) => {
+    if (!langSwitcher.contains(e.target)) {
+      langSwitcher.classList.remove("open");
+    }
+  });
+}
+
+const burger = document.getElementById("burger");
+const navLinks = document.querySelector(".nav-links");
+
+if (burger && navLinks) {
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("nav-active");
+    burger.classList.toggle("toggle"); // Optional: animate lines
+  });
+}
+
+
+
     // --- Translation Dictionary ---
     const translations = {
       fr: {
+        "page.title": "Portfolio - Meftah Zineb",
+        "nav.title": "Meftah Zineb",
         "header.title": "Meftah Zineb",
         "contact.heading": "Contact",
 "info.telephone": "☎ Téléphone",
@@ -12,12 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
 "info.huggingface": "🤖 Hugging Face",
 "profile.heading": "À propos de moi",
 "profile.greeting": "Bonjour, je suis Meftah Zineb.",
-"profile.text1": "Architecte digital et innovatrice passionnée, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.",
-"profile.text2": "Exploratrice des algorithmes de pointe, je repousse les limites du possible en alliant expertise technique et créativité. Chaque projet est une aventure vers l'innovation.",
+"profile.text1": "Étudiante en Informatique passionnée par l’IA appliquée à la robotique et le développement backend, je conçois des systèmes intelligents combinant LLM, deep learning et automatisation web. ",
+"profile.text2": "Mes projets mettent en œuvre des modèles OpenAI, des simulateurs interactifs, et des solutions complètes de bout-en-bout.",
 "profile.more": "En savoir plus sur mon parcours",
-"projects.hover": "Survolez pour voir les détails",
+"projects.hover": "Survolez ou cliquez pour voir les détails",
 "projects.link": "Voir le code sur GitHub",
 "projects.link.instagram" : "Voir la page sur Instagram",
+"projects.link.demo": "Voir la démo",
+"projects.link.modelRepo": "Dépôt du modèle",
+"projects.link.demoSpace": "Espace de démo",
+"projects.link.githubRepo": "Dépôt GitHub",
+"projects.link.liveDemo": "Démo en ligne",
 
 "projects.p1.title": "Personnalisation de produits par l’IA",
 "projects.p1.short": "Transformez vos idées en produits uniques.",
@@ -50,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 "projects.p8.title": "Analyse du Réseau Routier (MAP)",
 "projects.p8.short": "Algorithmes avancés sur les graphes.",
 "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes : chemins optimaux, connexité, performance réseau.",
-        "header.subtitle": "Ingénieur en Intelligence Artificielle & Développeur Full Stack",
+        "header.subtitle": "Ingénieure en IA du futur | Apprentissage profond | Apprentissage automatique | Développeuse full-stack",
         "nav.contact": "Contact",
         "nav.profil": "Profil",
         "nav.formation": "Formation",
@@ -64,12 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "profil.greeting": "Bonjour, je suis Meftah Zineb.",
         "profil.bio1": "Architecte digital et innovateur passionné, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.",
         "profil.bio2": "Explorateur des algorithmes de pointe et toujours en quête de nouvelles idées, chaque projet est une aventure vers l'innovation.",
-        "formation.heading": "Formation",
+        "formation.heading": "Formation & Certifications",
         "formation.ensia": "ENSIA, Algérie",
-        "formation.ensiaDiplome": "Diplôme : Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
+        "formation.ensiaDiplome": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
         "formation.ensiaCert": "Voir diplôme",
         "formation.avignon": "Université d'Avignon (CERI), France",
-        "formation.avignonDiplome": "Diplôme : Data Science (2ᵉ année en cours, excellents résultats)",
+        "formation.avignonDiplome": "<strong>Diplôme :</strong> Data Science (2ᵉ année en cours, excellents résultats)",
         "formation.avignonCert": "Voir diplôme",
         "publications.heading": "Publications",
         "publication.date": "📅 20 décembre 2024",
@@ -79,47 +115,96 @@ document.addEventListener("DOMContentLoaded", () => {
         "publication.tableTitle": "Exemple de base de données",
         "projects.heading": "Projets et Expériences",
         "competences.heading": "Compétences",
-        "competences.certifications": "Certifications",
-        "competences.datacamp": "Voir certificat",
+
+        // Développement Web
+        "competences.web": "🧑‍💻 Développement Web",
+        "competences.web.frontend": "Frontend : HTML, CSS, JavaScript, Bootstrap, AJAX, TensorFlow.js, HTML5 Canvas",
+        "competences.web.backend": "Backend : Node.js, PHP, Python (Flask, Django), REST API, SQL",
+        "competences.web.fullstack": "Full-Stack : Laravel, React, Django, Flask",
+        "competences.web.database": "Base de données : MySQL, PostgreSQL",
+        "competences.web.security": "Sécurité Web : Sessions, Cookies, CSRF, URL Rewriting",
+        "competences.web.tools": "Outils associés : Git, GitHub, GitHub Actions, Makefile",
+
+        // Data Science & IA
+        "competences.data": "🤖 Data Science & Intelligence Artificielle",
+        "competences.data.tools": "Langages & Outils : Python, PyTorch, OpenAI API, Hugging Face, Scikit-learn, Pandas",
+        "competences.data.models": "Modèles & Techniques : LLM, Fine-tuning, Diffusion Models, Reinforcement Learning, Classification, Génération de données synthétiques",
+        "competences.data.apps": "Applications IA : Vision par ordinateur, NLP, Génération de tags, Sites web IA, Recommandation intelligente",
+        "competences.data.projects": "Projets notables : LeRobot, Générateur de sites web IA, News Wave, Génération automatique de tags",
+        "competences.data.extra": "Outils : Jupyter, Colab, Transformers, OpenAI Playground, TensorBoard, NumPy, Matplotlib",
+
+        // Programmation
+        "competences.programming": "💻 Programmation",
+        "competences.programming.languages": "Langages : Python, C++, Java, PHP, JavaScript, Bash, SQL",
+        "competences.programming.paradigms": "Paradigmes : POO, fonctionnelle, logique métier",
+        "competences.programming.experience": "Expériences : Compilation, Algorithmes de graphes (Dijkstra, A*, BM25), Scripting CLI",
+        "competences.programming.projects": "Projets : Compilateur Pascal-like, Optimisation réseaux, Moteur de recherche, CLI Supermarché, Génération web via LLM",
+
+        // Soft Skills
+        "competences.soft": "🤝 Compétences interpersonnelles",
+        "competences.soft.list": "Autonomie, travail en équipe, communication claire, leadership (GDSC, AYLP), résolution de problèmes, apprentissage rapide, rigueur technique, gestion de projet",
+
+        // Compétences complémentaires
+        "competences.extra": "🧩 Compétences complémentaires",
+        "competences.extra.cognitive": "Cognitives : pensée algorithmique, esprit critique, modélisation",
+        "competences.extra.techniques": "Techniques : API REST, WebSockets, CI/CD, Git workflows",
+        "competences.extra.learning": "Apprentissage : veille technologique, frameworks IA",
+        "competences.extra.presentation": "Communication : vulgarisation, rédaction technique, présentations",
+        "competences.extra.methods": "Méthodologies : agile, GitHub Flow, conception modulaire, réutilisabilité",
+        "competences.techSkills": "Compétences Techniques",
+        "competences.aiDataSkills": "IA & Data Science",
+        "competences.softSkillsTitle": "Compétences Personnelles",
+        "competences.artificialIntelligence": "Intelligence Artificielle",
+        "competences.dataScience": "Data Science",
         "competences.programming": "Programmation",
         "competences.web": "Développement Web",
-        "competences.dataScience": "Data Science & IA",
+        "competences.languages": "Langages",
+        "competences.paradigms": "Paradigmes",
+        "competences.frontend": "Frontend",
+        "competences.backend": "Backend",
+        "competences.databases": "Bases de données",
         "competences.tools": "Outils",
-        "competences.softSkills": "Soft Skills",
-        "competences.leadership": "Leadership",
+        "competences.aiModels": "Modèles & Techniques",
+        "competences.aiTools": "Outils IA",
+        "competences.dataAnalysis": "Analyse & Manipulation",
+        "competences.dataProjects": "Projets notables",
+        "competences.project1": "Génération de données synthétiques pour fine-tuning",
+        "competences.project2": "Moteur de recherche avec TF-IDF & BM25",
         "competences.teamwork": "Travail en équipe",
-        "competences.communication": "Communication",
-        "competences.projectManagement": "Gestion de projet",
-        "langues.heading": "Langues",
-        "langues.french": "Français",
-        "langues.frenchCert": "Voir certificat",
-        "langues.english": "Anglais",
-        "langues.englishCert": "Voir certificat",
-        "langues.arabic": "Arabe",
-        "experience.heading": "Expérience & Leadership",
-        "experience.card1.title": "Responsable informatique",
-        "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
-        "experience.card2.title": "Participant AYLP",
-        "experience.card2.detail": "Ambassade des États-Unis à Alger (2021)",
-        "experience.card2.cert": "Voir certificat",
-        "experience.card3.title": "Organisation d'événements",
-        "experience.card3.detail": "Hackathons, IA, Développement Web",
-        "experience.card4.title": "Autres Réalisations",
-        "experience.card4.detail": "Participation à divers hackathons et projets collaboratifs pour innover et exceller.",
-        "langues.frenchlevel": "Intermédiaire (B2)",
-        "langues.englishlevel": "Avancé (B2)",
-        "langues.arabiclevel": "Courant (C1)"
+        "competences.leadership": "Leadership",
+        "competences.problemSolving": "Résolution de problèmes",
+        "competences.continuousLearning": "Apprentissage continu",
+        "competences.teamworkDesc": "Collaboration efficace, communication claire, esprit d'équipe",
+        "competences.leadershipDesc": "Expérience GDSC, mentorat, gestion de projets collaboratifs",
+        "competences.problemSolvingDesc": "Pensée analytique, approche systématique, solutions créatives",
+        "competences.continuousLearningDesc": "Veille technologique, adaptation rapide, autoformation",
       },
       en: {
+        "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
+        "experience.card4.item2": "Junior Mentor – GDSC (2023)",
+        "experience.card4.item3": "Supervised Project G‑JOBS (2024): tasks, Git, review",
+        // --- Experience & Leadership ---
+        "experience.heading": "Experience & Leadership",
+        "experience.card1.title": "IT Manager",
+        "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
+        "experience.card2.title": "AYLP Participant",
+        "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
+        "experience.card2.cert": "View Certificate",
+        "experience.card3.title": "Event Organizer",
+        "experience.card3.detail": "Hackathons, AI, Web Development",
+        "experience.card4.title": "Other Achievements",
+        "experience.card4.detail": "Participated in various hackathons and collaborative projects to innovate and excel.",
+        "page.title": "Portfolio - Zineb Meftah",
+        "nav.title": "Zineb Meftah",
         "header.title": "Zineb Meftah",
-"contact.heading": "Contact",
-"info.telephone": "☎ Phone",
-"info.email": "✉ Email",
-"info.linkedin": "🔗 LinkedIn",
-"info.portfolio": "🌐 Portfolio",
-"info.github": "🐙 GitHub",
-"info.huggingface": "🤖 Hugging Face",
-        "header.subtitle": "AI Engineer & Full Stack Developer",
+        "contact.heading": "Contact",
+        "info.telephone": "☎ Phone",
+        "info.email": "✉ Email",
+        "info.linkedin": "🔗 LinkedIn",
+        "info.portfolio": "🌐 Portfolio",
+        "info.github": "🐙 GitHub",
+        "info.huggingface": "🤖 Hugging Face",
+        "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
         "nav.contact": "Contact",
         "nav.profil": "About",
         "nav.formation": "Education",
@@ -133,12 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "profil.greeting": "Hi, I’m Zineb Meftah.",
         "profil.bio1": "A digital architect and passionate innovator, I blend AI with the art of development to create disruptive solutions that redefine the future.",
         "profil.bio2": "Explorer of cutting-edge algorithms and always pushing creative boundaries — each project is a journey toward innovation.",
-        "formation.heading": "Education",
+        "formation.heading": "Education & Certificates",
         "formation.ensia": "ENSIA, Algeria",
-        "formation.ensiaDiplome": "Degree: Artificial Intelligence Engineering (1st & 2nd Year Completed)",
+        "formation.ensiaDiplome": "<strong>Degree:</strong> Artificial Intelligence Engineering (1st & 2nd Year Completed)",
         "formation.ensiaCert": "View Certificate",
         "formation.avignon": "Université d'Avignon (CERI), France",
-        "formation.avignonDiplome": "Degree: Data Science (2nd year ongoing, excellent results)",
+        "formation.avignonDiplome": "<strong>Degree:</strong> Data Science (2nd year ongoing, excellent results)",
         "formation.avignonCert": "View Certificate",
         "publications.heading": "Publications",
         "publication.date": "📅 December 20, 2024",
@@ -147,9 +232,15 @@ document.addEventListener("DOMContentLoaded", () => {
         "publication.cta": "Read Full Article",
         "publication.tableTitle": "Sample Database",
         "projects.heading": "Projects & Experience",
-        "projects.hover": "Hover to view details",
+        "projects.hover": "Hover or click to view details",
         "projects.link": "View Code on GitHub",
         "projects.link.instagram" : "View page on Instagram",
+        "projects.link.demo": "View demo",
+        "projects.link.modelRepo": "Model repo",
+        "projects.link.demoSpace": "Demo space",
+        "projects.link.githubRepo": "GitHub repo",
+        "projects.link.liveDemo": "Live demo",
+
         "projects.p1.title": "AI Product Personalization",
         "projects.p1.short": "Turn your ideas into personalized products.",
         "projects.p1.desc": "A system enabling users to convert their ideas into custom products using AI models, with a smooth transition to production.",
@@ -174,17 +265,95 @@ document.addEventListener("DOMContentLoaded", () => {
         "projects.p8.title": "Road Network Analysis (MAP)",
         "projects.p8.short": "Advanced graph algorithms.",
         "projects.p8.desc": "Graph-based road network analysis in Avignon using algorithms for shortest paths, connectivity, and performance.",
+        "projects.p0.title": "AI Website Generator",
+        "projects.p0.short": "Generate websites from a prompt.",
+        "projects.p0.desc": "Builds functional websites from natural language instructions using LLMs. Stack: Python, OpenAI API, Web automation.",
+
+        "projects.p9.title": "LeRobot PushT Trainer",
+        "projects.p9.short": "Train/evaluate PushT policies.",
+        "projects.p9.desc": "Web app to train/evaluate PushT policies. Supports checkpoints and push to Hugging Face. Stack: Python, LeRobot, Gradio, CUDA.",
+
+        "projects.p10.title": "Robot Vision Simulator",
+        "projects.p10.short": "Interactive robot vision simulator.",
+        "projects.p10.desc": "Browser simulator: grid nav, pick/place, natural‑language commands. COCO‑SSD vision, A* pathfinding. Stack: JS/Canvas, TF.js.",
         "profile.heading": "About Me",
         "profile.greeting": "Hello, I'm Meftah Zineb.",
-        "profile.text1": "Digital architect and passionate innovator, I merge artificial intelligence with the art of development to create disruptive solutions that redefine the future.",
-        "profile.text2": "Explorer of cutting-edge algorithms, I constantly push the boundaries of what's possible by blending technical expertise with creativity. Each project is an adventure toward innovation.",
+        "profile.text1": "A computer science student passionate about AI applied to robotics and backend development, I design intelligent systems combining LLM, deep learning and web automation.",
+        "profile.text2": "My projects implement OpenAI models, interactive simulators, and complete end-to-end solutions.",
         "profile.more": "Learn more about my journey",
-        "langues.englishlevel" : "Fluent (B2)",
-        "langues.frenchlevel" : "Advanced (B2)",
-        "langues.arabiclevel" : "Native (C1)"
 
+        // --- Skills (Compétences) ---
+        "competences.heading": "Skills",
+
+        // Web Development
+        "competences.web": "🧑‍💻 Web Development",
+        "competences.web.frontend": "Frontend: HTML, CSS, JavaScript, Bootstrap, AJAX, TensorFlow.js, HTML5 Canvas",
+        "competences.web.backend": "Backend: Node.js, PHP, Python (Flask, Django), REST API, SQL",
+        "competences.web.fullstack": "Full-Stack: Laravel, React, Django, Flask",
+        "competences.web.database": "Databases: MySQL, PostgreSQL",
+        "competences.web.security": "Web Security: Sessions, Cookies, CSRF, URL Rewriting",
+        "competences.web.tools": "Related Tools: Git, GitHub, GitHub Actions, Makefile",
+
+        // Data Science & AI
+        "competences.data": "🤖 Data Science & Artificial Intelligence",
+        "competences.data.tools": "Languages & Tools: Python, PyTorch, OpenAI API, Hugging Face, Scikit-learn, Pandas",
+        "competences.data.models": "Models & Techniques: LLM, Fine-tuning, Diffusion Models, Reinforcement Learning, Classification, Synthetic Data Generation",
+        "competences.data.apps": "AI Applications: Computer Vision, NLP, Tag Generation, AI-powered websites, Smart Recommendation",
+        "competences.data.projects": "Notable Projects: LeRobot, AI Website Generator, News Wave, Automatic Tag Generation",
+        "competences.data.extra": "Tools: Jupyter, Colab, Transformers, OpenAI Playground, TensorBoard, NumPy, Matplotlib",
+
+        // Programming
+        "competences.programming": "💻 Programming",
+        "competences.programming.languages": "Languages: Python, C++, Java, PHP, JavaScript, Bash, SQL",
+        "competences.programming.paradigms": "Paradigms: OOP, Functional, Business Logic",
+        "competences.programming.experience": "Experience: Compilation, Graph Algorithms (Dijkstra, A*, BM25), CLI Scripting",
+        "competences.programming.projects": "Projects: Pascal-like Compiler, Network Optimization, Search Engine, Supermarket CLI, Web Generation via LLM",
+
+        // Soft Skills
+        "competences.soft": "🤝 Interpersonal Skills",
+        "competences.soft.list": "Autonomy, teamwork, clear communication, leadership (GDSC, AYLP), problem-solving, fast learning, technical rigor, project management",
+
+        // Extra Skills
+        "competences.extra": "🧩 Extra Skills",
+        "competences.extra.cognitive": "Cognitive: algorithmic thinking, critical mind, modeling",
+        "competences.extra.techniques": "Technical: REST API, WebSockets, CI/CD, Git workflows",
+        "competences.extra.learning": "Learning: tech watch, AI frameworks",
+        "competences.extra.presentation": "Communication: popularization, technical writing, presentations",
+        "competences.extra.methods": "Methodologies: agile, GitHub Flow, modular design, reusability",
+        "competences.techSkills": "Technical Skills",
+        "competences.aiDataSkills": "AI & Data Science",
+        "competences.softSkillsTitle": "Personal Skills",
+        "competences.artificialIntelligence": "Artificial Intelligence",
+        "competences.dataScience": "Data Science",
+        "competences.programming": "Programming",
+        "competences.web": "Web Development",
+        "competences.languages": "Languages",
+        "competences.paradigms": "Paradigms",
+        "competences.frontend": "Frontend",
+        "competences.backend": "Backend",
+        "competences.databases": "Databases",
+        "competences.tools": "Tools",
+        "competences.aiModels": "Models & Techniques",
+        "competences.aiTools": "AI Tools",
+        "competences.dataAnalysis": "Analysis & Manipulation",
+        "competences.dataProjects": "Notable Projects",
+        "competences.project1": "Synthetic data generation for fine-tuning",
+        "competences.project2": "Search engine with TF-IDF & BM25",
+        "competences.teamwork": "Teamwork",
+        "competences.leadership": "Leadership",
+        "competences.problemSolving": "Problem Solving",
+        "competences.continuousLearning": "Continuous Learning",
+        "competences.teamworkDesc": "Effective collaboration, clear communication, team spirit",
+        "competences.leadershipDesc": "GDSC experience, mentoring, collaborative project management",
+        "competences.problemSolvingDesc": "Analytical thinking, systematic approach, creative solutions",
+        "competences.continuousLearningDesc": "Technology watch, quick adaptation, self-learning",
       },
       ar: {
+        "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024)",
+        "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)",
+        "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
+        "page.title": "المعرض - مفتاح زينب",
+        "nav.title": "مفتاح زينب",
         "header.title": "مفتاح زينب",
         "contact.heading": "الاتصال",
         "info.telephone": "☎ الهاتف",
@@ -193,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "info.portfolio": "🌐 الموقع الشخصي",
         "info.github": "🐙 جيتهاب",
         "info.huggingface": "🤖 هاجينغ فايس",
-        "header.subtitle": "مهندس ذكاء اصطناعي ومطور متكامل",
+        "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
         "nav.contact": "اتصل",
         "nav.profil": "نبذة",
         "nav.formation": "التعليم",
@@ -205,14 +374,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "contact.heading": "اتصل",
         "profil.heading": "نبذة عني",
         "profil.greeting": "مرحبًا، أنا مفتاح زينب.",
-        "profil.bio1": "أنا مهندسة رقمية ومبتكرة شغوفة أدمج الذكاء الاصطناعي مع فن التطوير لإنشاء حلول ثورية تعيد تعريف المستقبل.",
+        "profil.bio1": "أنا مهندسة رقمية ومبتعة شغوفة أدمج الذكاء الاصطناعي مع فن التطوير لإنشاء حلول ثورية تعيد تعريف المستقبل.",
         "profil.bio2": "مستكشفة لأحدث الخوارزميات وساعية دومًا وراء أفكار جديدة، كل مشروع هو مغامرة نحو الابتكار.",
-        "formation.heading": "التعليم",
+        "formation.heading": "التعليم والشهادات",
         "formation.ensia": "ENSIA، الجزائر",
-        "formation.ensiaDiplome": "الشهادة: هندسة الذكاء الاصطناعي (السنة الأولى والثانية)",
+        "formation.ensiaDiplome": "<strong>الشهادة:</strong> هندسة الذكاء الاصطناعي (السنة الأولى والثانية)",
         "formation.ensiaCert": "عرض الشهادة",
         "formation.avignon": "جامعة أفينيون (CERI)، فرنسا",
-        "formation.avignonDiplome": "الشهادة: علوم البيانات (السنة الثانية جارية، نتائج ممتازة)",
+        "formation.avignonDiplome": "<strong>الشهادة:</strong> علوم البيانات (السنة الثانية جارية، نتائج ممتازة)",
         "formation.avignonCert": "عرض الشهادة",
         "publications.heading": "المنشورات",
         "publication.date": "📅 20 ديسمبر 2024",
@@ -245,99 +414,281 @@ document.addEventListener("DOMContentLoaded", () => {
         "projects.roadmap.title": "تحليل شبكة الطرق",
         "projects.roadmap.description": "خوارزميات متقدمة وتحليل بياني.",
         "projects.roadmap.details": "مشروع لتحليل شبكات الطرق باستخدام الرسوم البيانية، يتضمن حساب أقصر الطرق والتحقق من الاتصال وتحسين الشبكات.",
-        "competences.heading": "المهارات",
-        "competences.certifications": "الشهادات",
-        "competences.datacamp": "عرض الشهادة",
-        "competences.programming": "البرمجة",
-        "competences.web": "تطوير الويب",
-        "competences.dataScience": "علوم البيانات والذكاء الاصطناعي",
-        "competences.tools": "الأدوات",
-        "competences.softSkills": "المهارات الشخصية",
-        "competences.leadership": "القيادة",
-        "competences.teamwork": "العمل الجماعي",
-        "competences.communication": "الاتصال",
-        "competences.projectManagement": "إدارة المشاريع",
-        "langues.heading": "اللغات",
-        "langues.french": "الفرنسية",
-        "langues.frenchCert": "عرض الشهادة",
-        "langues.english": "الإنجليزية",
-        "langues.englishCert": "عرض الشهادة",
-        "langues.arabic": "العربية",
-        "experience.heading": "الخبرة والقيادة",
-        "experience.card1.title": "مديرة تقنية",
-        "experience.card1.detail": "مجموعة طلاب مطوري جوجل ENSIA (2023-2024)",
-        "experience.card2.title": "مشاركة AYLP",
-        "experience.card2.detail": "السفارة الأمريكية في الجزائر (2021)",
-        "experience.card2.cert": "عرض الشهادة",
-        "experience.card3.title": "منظمة فعاليات",
-        "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي، تطوير الويب",
-        "experience.card4.title": "إنجازات أخرى",
-        "experience.card4.detail": "المشاركة في هاكاثونات ومشاريع تعاونية متنوعة للابتكار والتميز",
-        "projects.heading": "المشاريع والخبرة",
-        "projects.hover": "مرر فوق البطاقة لرؤية التفاصيل",
-        "projects.link": "عرض على GitHub",
-        "projects.link.instagram": "عرض على Instagram",
+        "projects.p0.title": "مولد مواقع الويب بالذكاء الاصطناعي",
+        "projects.p0.short": "إنشاء مواقع ويب من توجيهات نصية.",
+        "projects.p0.desc": "إنشاء نظام يولد مواقع ويب فعالة من تعليمات بلغة طبيعية باستخدام نماذج LLM. التقنيات: Python، OpenAI API، أتمتة الويب.",
 
         "projects.p1.title": "تخصيص المنتجات بالذكاء الاصطناعي",
-        "projects.p1.short": "حوّل أفكارك إلى منتجات فريدة.",
-        "projects.p1.desc": "نظام يمكّن المستخدمين من تحويل أفكارهم إلى منتجات مخصصة باستخدام نماذج الذكاء الاصطناعي، مع إمكانية الانتقال إلى الإنتاج الواقعي.",
+        "projects.p1.short": "حول أفكارك إلى منتجات مخصصة.",
+        "projects.p1.desc": "نظام يمكن المستخدمين من تحويل أفكارهم إلى منتجات مخصصة باستخدام نماذج الذكاء الاصطناعي، مع انتقال سلس إلى الإنتاج.",
 
-        "projects.p2.title": "موجة الأخبار",
-        "projects.p2.short": "أخبار مخصصة مدعومة بالذكاء الاصطناعي.",
-        "projects.p2.desc": "مجمّع أخبار ذكي يقدم تحديثات فورية مخصصة من أفضل المصادر العالمية، وفقًا لاهتمامات المستخدم.",
+        "projects.p2.title": "News Wave",
+        "projects.p2.short": "أخبارك الشخصية المدعومة بالذكاء الاصطناعي.",
+        "projects.p2.desc": "مُجمِّع أخبار مخصص بالذكاء الاصطناعي يوفر تحديثات في الوقت الفعيل من أهم المصادر العالمية، مصفاة حسب اهتمامات المستخدم.",
 
         "projects.p3.title": "تحسين الخطة الزراعية",
-        "projects.p3.short": "زراعة مستدامة بالذكاء الاصطناعي.",
-        "projects.p3.desc": "مشروع لتحسين الإنتاج الزراعي في الجزائر باستخدام خوارزميات البحث على الرسوم البيانية وتقنيات الإرضاء المقيد.",
+        "projects.p3.short": "زراعة مستدامة قائمة على الذكاء الاصطناعي.",
+        "projects.p3.desc": "مشروع ذكاء اصطناعي لتحسين الإنتاج الزراعي في الجزائر باستخدام خوارزميات البحث في الرسوم البيانية وإرضاء القيود.",
 
         "projects.p4.title": "G-Jobs",
-        "projects.p4.short": "منصة ذكية للوظائف في الجزائر.",
-        "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأرباب العمل باستخدام فلاتر متقدمة ومراسلة وتتبع للوظائف.",
+        "projects.p4.short": "منصة توظيف ذكية في الجزائر.",
+        "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأصحاب العمل من خلال فلاتر متقدمة والمراسلة وأدوات تتبع الوظائف.",
 
         "projects.p5.title": "محرك بحث متقدم",
-        "projects.p5.short": "بحث نصي باستخدام TF-IDF وBM25.",
-        "projects.p5.desc": "محرك بحث مبني بلغة Java يستخدم خوارزميات TF-IDF وBM25 لفهرسة وتحليل وترتيب المستندات النصية بكفاءة ودقة.",
+        "projects.p5.short": "بحث نصي مع TF-IDF & BM25.",
+        "projects.p5.desc": "محرك بحث قائم على Java يستخدم TF-IDF و BM25 لفهرسة وتحليل وترتيب المستندات النصية بدقة.",
 
         "projects.p6.title": "سلسلة مطاعم",
-        "projects.p6.short": "إدارة متعددة الفروع للمطاعم.",
-        "projects.p6.desc": "نظام لإدارة سلسلة مطاعم في عدة دول، يتضمن تنظيم الحجوزات، المخزون، وإدارة الموظفين.",
+        "projects.p6.short": "إدارة مطاعم متعددة المواقع.",
+        "projects.p6.desc": "نظام إدارة لسلسلة مطاعم متعددة البلدان، يتيح الحجز المنظم والمخزون والتحكم في الموظفين.",
 
-        "projects.p7.title": "سوبرماركت رقمي",
-        "projects.p7.short": "نظام ذكي لإدارة السوبرماركت (CLI).",
-        "projects.p7.desc": "تطبيق CLI لإدارة رقمية لسوبرماركت: الموردين، المخزون، المبيعات، والتقارير.",
+        "projects.p7.title": "سوبرماركت الإنترنت الخاص بي",
+        "projects.p7.short": "نظام سوبرماركت ذكي قائم على CLI.",
+        "projects.p7.desc": "تطبيق سطر أوامر لرقمنة إدارة السوبرماركت: الموردين، المخزون، المبيعات، التقارير والإحصائيات.",
 
-        "projects.p8.title": "تحليل الشبكة الطرقية (خريطة)",
-        "projects.p8.short": "خوارزميات رسوم بيانية متقدمة.",
-        "projects.p8.desc": "مشروع تحليل شبكة الطرق في أفينيون باستخدام الرسوم البيانية: إيجاد المسارات القصيرة، التحقق من الاتصال وتحسين الشبكة.",
-        "profile.heading": "نبذة عني",
-        "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
-        "profile.text1": "مهندسة رقمية ومبتكرة شغوفة، أدمج الذكاء الاصطناعي مع فن التطوير لابتكار حلول مبتكرة تعيد تعريف المستقبل.",
-        "profile.text2": "مستكشفة لخوارزميات متقدمة، أدفع باستمرار حدود الممكن من خلال المزج بين الخبرة التقنية والإبداع. كل مشروع هو مغامرة نحو الابتكار.",
-        "profile.more": "معرفة المزيد عن مسيرتي",
-        "langues.arabicLevel": "(C1) اللغة الأم",
-        "langues.englishLevel": "(B2)طلِق",
-        "langues.frenchLevel": "(B2)متقدم"
+        "projects.p8.title": "تحليل شبكة الطرق (MAP)",
+        "projects.p8.short": "خوارزميات الرسوم البيانية المتقدمة.",
+        "projects.p8.desc": "تحليل شبكة الطرق القائم على الرسوم البيانية في أفينيون باستخدام خوارزميات لأقصر المسارات والاتصال والأداء.",
 
-      }
-    };  
+        "projects.p9.title": "مدرب LeRobot PushT",
+        "projects.p9.short": "تدريب/تقييم سياسات PushT.",
+        "projects.p9.desc": "تطبيق ويب لتدريب وتقييم سياسات PushT. يدعم نقاط التفتيش والنشر على Hugging Face. التقنيات: Python، LeRobot، Gradio، CUDA.",
+
+        "projects.p10.title": "محاكي رؤية الروبوت",
+        "projects.p10.short": "محاكي تفاعلي لرؤية الروبوت.",
+        "projects.p10.desc": "محاكي متصفح: تنقل على شبكة، التقاط/وضع والأوامر بلغة طبيعية. رؤية COCO‑SSD، خوارزمية A* للمسار. التقنيات: JS/Canvas، TF.js.",
+
+        // Add missing Arabic translations for profile section
+        "profile.greeting": "مرحباً، أنا مفتاح زينب.",
+        "profile.text1": "طالبة علوم الحاسوب شغوفة بالذكاء الاصطناعي المطبق على الروبوتات وتطوير الخدمات الخلفية، أقوم بتصميم أنظمة ذكية تجمع بين نماذج اللغة الكبيرة والتعلم العميق وأتمتة الويب.",
+        "profile.text2": "تنفذ مشاريعي نماذج OpenAI، ومحاكيات تفاعلية، وحلول شاملة من البداية إلى النهاية.",
+        "profile.more": "تعرف أكثر على مسيرتي",
+
+        // Add missing Arabic translations for certificates section
+        "certs.heading": "الشهادات",
+        "certs.pytorch.title": "مقدمة في التعلم العميق مع PyTorch - DataCamp",
+        "certs.pytorch.desc": "تدريب عبر الإنترنت حول الشبكات العصبية واستخدام PyTorch.",
+        "certs.aylp.title": "برنامج القيادة الشبابية الجزائري - مركز شمال نيفادا الدولي",
+        "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار والتعاون بين الثقافات.",
+        "certs.eplus.title": "مستوى اللغة الإنجليزية - مركز E-Plus",
+        "certs.eplus.desc": "شهادة كفاءة في اللغة الإنجليزية.",
+        "certs.fcc.title": "شهادة تصميم الويب المتجاوب - freeCodeCamp",
+        "certs.fcc.desc": "شهادة تركز على أساسيات HTML و CSS و Flexbox والتصميم المتجاوب.",
+        "certs.cta": "عرض الشهادة",
+
+        // Add missing new projects translations for French
+        "projects.p0.title": "Générateur de sites web IA",
+        "projects.p0.short": "Générez des sites web depuis une consigne.",
+        "projects.p0.desc": "Création d'un système générant des sites web fonctionnels à partir d'instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.",
+
+        "projects.p9.title": "LeRobot PushT Trainer",
+        "projects.p9.short": "Entraînez/évaluez des politiques PushT.",
+        "projects.p9.desc": "App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack: Python, LeRobot, Gradio, CUDA.",
+
+        "projects.p10.title": "Simulateur de vision robotique",
+        "projects.p10.short": "Simulateur interactif de vision robotique.",
+        "projects.p10.desc": "Simulateur navigateur: robot sur grille, pick/place et commandes en langue naturelle. COCO‑SSD pour la vision, A* pour le pathfinding. Stack: JS/Canvas, TF.js.",
+        
+        // Add missing Languages section translations for French
+        "langues.heading": "Langues",
+        "langues.french": "Français",
+        "langues.frenchlevel": "Intermédiaire (B2)",
+        "langues.frenchCert": "Voir certificat",
+        "langues.english": "Anglais",
+        "langues.englishlevel": "Courant",
+        "langues.englishCert": "Voir certificat",
+        "langues.arabic": "عربي",
+        "langues.arabicLevel": "اللغة الأم",
+      },
+    };
+    
+    // --- Mobile Menu Functionality ---
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    
+    function toggleMobileMenu() {
+        if (hamburger && mobileNav) {
+            hamburger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+    }
+    
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking on a link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (hamburger && mobileNav) {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileNav && mobileNav.classList.contains('active') && 
+            !mobileNav.contains(e.target) && 
+            hamburger && !hamburger.contains(e.target)) {
+            toggleMobileMenu();
+        }
+    });
+
+    // --- Mobile Language Dropdown ---
+    const mobileLangButton = document.querySelector('.mobile-lang-button');
+    const mobileLangOptions = document.querySelector('.mobile-lang-options');
+    const mobileLangButtons = document.querySelectorAll('.mobile-lang-options button');
+    
+    if (mobileLangButton && mobileLangOptions) {
+        mobileLangButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileLangOptions.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileLangButton.contains(e.target) && !mobileLangOptions.contains(e.target)) {
+                mobileLangOptions.classList.remove('active');
+            }
+        });
+    }
+    
+    mobileLangButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.getAttribute('data-lang');
+            translatePage(selectedLang);
+            
+            // Update mobile button text
+            const langNames = { fr: 'Français', en: 'English', ar: 'العربية' };
+            if (mobileLangButton) {
+                const currentLangSpan = mobileLangButton.querySelector('.current-lang');
+                if (currentLangSpan) {
+                    currentLangSpan.textContent = langNames[selectedLang] || selectedLang.toUpperCase();
+                }
+            }
+            
+            // Close dropdown
+            if (mobileLangOptions) {
+                mobileLangOptions.classList.remove('active');
+            }
+        });
+    });
+
     // --- Translation Function ---
     function translatePage(lang) {
-      const translatableElements = document.querySelectorAll('[data-translate]');
-      translatableElements.forEach(el => {
-        const key = el.getAttribute('data-translate');
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
+        const html = document.documentElement;
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        const translatableElements = document.querySelectorAll('[data-translate]');
+        const dict = translations[lang] || {};
+        
+        translatableElements.forEach(el => {
+            const key = el.getAttribute('data-translate');
+            if (dict && dict[key] != null) {
+                if (el.hasAttribute('data-translate-html')) {
+                    el.innerHTML = dict[key];
+                } else if (el.children.length === 0 || el.classList.contains('flip-card-front') || 
+                          el.classList.contains('flip-card-back') ||
+                          el.classList.contains('language-card') ||
+                          el.classList.contains('formation-item') ||
+                          el.classList.contains('soft-skill-card') ||
+                          el.tagName === 'H3' || el.tagName === 'H4') {
+                    el.textContent = dict[key];
+                } else if (el.querySelector('p') && !el.querySelector('a')) {
+                    el.textContent = dict[key];
+                }
+            }
+        });
+
+        // Special handling for specific sections that have nested content
+        // Certificates section
+        document.querySelectorAll('[data-translate="certs.heading"]').forEach(el => {
+          if (dict["certs.heading"]) {
+            el.textContent = dict["certs.heading"];
+          }
+        });
+        
+        // Project cards - force update titles and descriptions
+        document.querySelectorAll('.flip-card-front h3, .flip-card-back h3').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        
+        document.querySelectorAll('.flip-card-front p, .flip-card-back p').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        
+        // Experience cards
+        document.querySelectorAll('.experience-card h3').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        
+        // Experience card details (paragraphs)
+        document.querySelectorAll('.experience-details p').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        
+        // Experience card highlight list items
+        document.querySelectorAll('.xp-highlights li').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+        
+        // Languages section
+        document.querySelectorAll('.language-card h3, .language-card p span').forEach(el => {
+          const key = el.getAttribute('data-translate');
+          if (key && dict[key]) {
+            el.textContent = dict[key];
+          }
+        });
+
+        // Update <title>
+        if (dict["page.title"]) {
+          document.title = dict["page.title"];
         }
-      });
-  
-      // Also update the <title>
-      document.title = translations[lang]["page.title"] || document.title;
+
+        // Update pressed state on language buttons (both desktop and mobile)
+        document.querySelectorAll('.lang-switcher button[data-lang], .mobile-lang-options button[data-lang]').forEach(b => {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+        });
+
+        // Update mobile language button text
+        const langNames = { fr: 'Français', en: 'English', ar: 'العربية' };
+        const mobileLangButton = document.querySelector('.mobile-lang-button .current-lang');
+        if (mobileLangButton) {
+            mobileLangButton.textContent = langNames[lang] || lang.toUpperCase();
+        }
+
+        // Persist selection
+        try { localStorage.setItem('lang', lang); } catch {}
     }
   
-    // --- Initialize translations on page load (default to French) ---
-    translatePage("fr");
+    // --- Initialize translations on page load (restore saved or default to French) ---
+    const savedLang = (() => {
+      try { return localStorage.getItem('lang'); } catch { return null; }
+    })();
+    translatePage(savedLang || "fr");
   
-    // --- Language Switcher ---
+    // --- Language Switcher (Desktop) ---
     const langButtons = document.querySelectorAll(".lang-switcher button");
     langButtons.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -345,22 +696,8 @@ document.addEventListener("DOMContentLoaded", () => {
         translatePage(selectedLang);
       });
     });
-  
-    // --- Other existing code for smooth scrolling, theme toggle, etc. ---
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute("href").slice(1);
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop - 60,
-            behavior: "smooth"
-          });
-        }
-      });
-    });
+
+
   
     const sections = document.querySelectorAll(".section");
     const observerOptions = { threshold: 0.2 };
@@ -377,46 +714,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
     const scrollIndicator = document.getElementById("scrollIndicator");
-    scrollIndicator.addEventListener("click", () => {
-      const firstSection = document.querySelector("main section");
-      if (firstSection) {
-        window.scrollTo({
-          top: firstSection.offsetTop - 60,
-          behavior: "smooth"
-        });
-      }
-    });
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener("click", () => {
+        const firstSection = document.querySelector("main section");
+        if (firstSection) {
+          window.scrollTo({
+            top: firstSection.offsetTop - 60,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
   
     const themeToggle = document.getElementById("themeToggle");
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light-theme");
-      themeToggle.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
-    });
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        themeToggle.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
+      });
+    }
 
     // Animate competence cards and their progress bars when they scroll into view
     const skillCards = document.querySelectorAll('.skill-card');
     const skillObserverOptions = { threshold: 0.5 };
 
     const skillObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-        // Add 'in-view' class to trigger scaling animation
-        entry.target.classList.add('in-view');
-        // Animate each progress bar from 0 to its target value (stored in the inline --progress variable)
-        const progressBars = entry.target.querySelectorAll('.skill-progress');
-        progressBars.forEach(pb => {
+          // Add 'in-view' class to trigger scaling animation
+          entry.target.classList.add('in-view');
+          // Animate each progress bar from 0 to its target value (stored in the inline --progress variable)
+          const progressBars = entry.target.querySelectorAll('.skill-progress');
+          progressBars.forEach(pb => {
             // Get the target width from the inline style property --progress
             const targetWidth = getComputedStyle(pb).getPropertyValue('--progress');
             pb.style.width = targetWidth;
-        });
-        // Once animated, unobserve to prevent re-triggering
-        observer.unobserve(entry.target);
+          });
+          // Once animated, unobserve to prevent re-triggering
+          observer.unobserve(entry.target);
         }
-    });
+      });
     }, skillObserverOptions);
 
     skillCards.forEach(card => {
-    skillObserver.observe(card);
+      skillObserver.observe(card);
     });
 
     const languageCards = document.querySelectorAll('.language-card');
@@ -434,15 +775,102 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }, languageObserverOptions);
+    
     languageCards.forEach(card => {
       languageObserver.observe(card);
     });
 
-  // Hamburger menu toggle for mobile
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
-  });
-  });
-  
+    // Hide-on-scroll (desktop + mobile)
+    let lastScrollY = window.scrollY || 0;
+    const navEl = document.querySelector('nav[role="navigation"]');
+    const SCROLL_DELTA = 6;          // small threshold to avoid jitter
+    const MIN_SHOW_EDGE = 0;         // always show when at very top
+
+    function handleScroll() {
+      const y = window.scrollY || 0;
+      if (!navEl) return;
+
+      if (y <= MIN_SHOW_EDGE) {
+        // Always show navbar at the top of the page
+        navEl.classList.remove('nav-hidden');
+      } else if (y > lastScrollY + SCROLL_DELTA) {
+        // Scrolling DOWN: hide nav
+        navEl.classList.add('nav-hidden');
+      } else if (y < lastScrollY - SCROLL_DELTA) {
+        // Scrolling UP: show nav
+        navEl.classList.remove('nav-hidden');
+      }
+      lastScrollY = y;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Add click handlers for flip cards (mobile support)
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Toggle flipped class on click
+        card.classList.toggle('flipped');
+        
+        // Update aria-pressed for accessibility
+        const isFlipped = card.classList.contains('flipped');
+        card.setAttribute('aria-pressed', isFlipped);
+      });
+      
+      // Make cards keyboard accessible
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+});
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Close drawer when clicking anywhere outside it (only when open)
+    document.addEventListener('click', (e) => {
+      const isOpen = menuToggle && menuToggle.getAttribute('aria-expanded') === 'true';
+      if (!isOpen) return;
+      const clickInsideMenu = mobileMenu && mobileMenu.contains(e.target);
+      const clickOnToggle = menuToggle && menuToggle.contains(e.target);
+      if (!clickInsideMenu && !clickOnToggle) {
+        setMenuOpen(false);
+      }
+    });
+
+    // Add click handlers for flip cards (mobile support)
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Toggle flipped class on click
+        card.classList.toggle('flipped');
+        
+        // Update aria-pressed for accessibility
+        const isFlipped = card.classList.contains('flipped');
+        card.setAttribute('aria-pressed', isFlipped);
+      });
+      
+      // Make cards keyboard accessible
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    // Close drawer when clicking anywhere outside it (only when open)
+    document.addEventListener('click', (e) => {
+      const isOpen = menuToggle && menuToggle.getAttribute('aria-expanded') === 'true';
+      if (!isOpen) return;
+      const clickInsideMenu = mobileMenu && mobileMenu.contains(e.target);
+      const clickOnToggle = menuToggle && menuToggle.contains(e.target);
+      if (!clickInsideMenu && !clickOnToggle) {
+        setMenuOpen(false);
+      }
+
+      
+});

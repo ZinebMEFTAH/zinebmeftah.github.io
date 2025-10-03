@@ -2,24 +2,37 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portfolio de Meftah Zineb, Ingénieur en Intelligence Artificielle & Développeur Full Stack." />
+    <meta name="description" content="Portfolio de Meftah Zineb, Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer." />
     <meta name="keywords" content="Portfolio, Intelligence Artificielle, Développement, Projets, Publications, Formation" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-translate="page.title">Portfolio - Meftah Zineb</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <!-- Add hover detection zone -->
+    <div class="nav-hover-zone"></div>
     <!-- Navigation with Language Switcher -->
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <div class="nav-container">
+        <!-- Logo -->
         <div class="logo">
           <a href="#header" data-translate="nav.title">Meftah Zineb</a>
         </div>
-        <ul>
+
+        <!-- Burger Icon -->
+        <div class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" role="button">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+        <!-- Page Sections -->
+        <ul class="nav-links">
           <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
           <li><a href="#profil" data-translate="nav.profil">Profil</a></li>
           <li><a href="#formation" data-translate="nav.formation">Formation</a></li>
@@ -29,35 +42,28 @@
           <li><a href="#competences" data-translate="nav.competences">Compétences</a></li>
           <li><a href="#langues" data-translate="nav.langues">Langues</a></li>
         </ul>
-        <button id="themeToggle" aria-label="Toggle light/dark theme">🌙</button>
-        <!-- Language Switcher Buttons -->
-        <div class="lang-switcher">
-          <button data-lang="en">English</button>
-          <button data-lang="fr">Français</button>
-          <button data-lang="ar">عربي</button>
+
+        <!-- Theme + Language Switcher -->
+        <div class="controls">
+          <button id="themeToggle" class="themeToggle" aria-label="Toggle theme">🌙</button>
+
+          <div class="lang-switcher">
+            <div class="lang-toggle" tabindex="0">🌍</div>
+            <div class="lang-options">
+              <button data-lang="en">English</button>
+              <button data-lang="fr">Français</button>
+              <button data-lang="ar">عربي</button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
-
-        <!-- Mobile Menu (visible only on small screens when toggled) -->
-        <div class="mobile-menu">
-            <ul>
-              <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
-              <li><a href="#profil" data-translate="nav.profil">À Propos de Moi</a></li>
-              <li><a href="#formation" data-translate="nav.formation">Formation</a></li>
-              <li><a href="#publications" data-translate="nav.publications">Publications</a></li>
-              <li><a href="#projects" data-translate="nav.projects">Projets et Expériences</a></li>
-              <li><a href="#competences" data-translate="nav.competences">Compétences</a></li>
-              <li><a href="#langues" data-translate="nav.langues">Langues</a></li>
-              <li><a href="#experience" data-translate="nav.experience">Expérience & Leadership</a></li>
-            </ul>
-          </div>
     <!-- Header -->
     <header id="header" role="banner">
       <div class="header-overlay"></div>
       <div class="header-content">
-        <h1 data-translate="header.title">Meftah Zineb</h1>
-        <p data-translate="header.subtitle">Ingénieur en Intelligence Artificielle & Développeur Full Stack</p>
+        <h1 data-translate="header.title">MEFTAH Zineb</h1>
+        <p data-translate="header.subtitle">Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer</p>
       </div>
       <div class="scroll-indicator" id="scrollIndicator">
         <span></span>
@@ -65,8 +71,9 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main">
       <!-- Contact Section -->
+      <!-- Fix LinkedIn URL to include scheme -->
       <section id="contact" class="section" aria-labelledby="contact-heading">
         <div class="container">
           <h2 id="contact-heading" data-translate="contact.heading">Contact</h2>
@@ -77,18 +84,18 @@
             </div>
             <div class="info-card">
               <h3 data-translate="info.email">✉ Email</h3>
-              <p><a href="mailto:meftahworld@gmail.com">meftahworld@gmail.com</a></p>
+              <p><a href="mailto:meftahworld@gmail.com">zineb.meftah36@gmail.com</a></p>
             </div>
             <div class="info-card">
               <h3 data-translate="info.linkedin">🔗 LinkedIn</h3>
               <p>
-                <a href="www.linkedin.com/in/zinebmeftah" target="_blank">Meftah Zineb</a>
+                <a href="https://www.linkedin.com/in/zinebmeftah" target="_blank">Meftah Zineb</a>
               </p>
             </div>
             <div class="info-card">
               <h3 data-translate="info.portfolio">🌐 Portfolio</h3>
               <p>
-                <a href="https://votreportfolio.com" target="_blank">VotrePortfolio.com</a>
+                <a href="https://votreportfolio.com" target="_blank">zinebmeftah.github.io</a>
               </p>
             </div>
             <div class="info-card">
@@ -115,10 +122,10 @@
             <div class="profile-text">
               <h3 data-translate="profile.greeting">Bonjour, je suis Meftah Zineb.</h3>
               <p data-translate="profile.text1">
-                Architecte digital et innovateur passionné, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.
+                Étudiante en Informatique passionnée par l’IA appliquée à la robotique et le développement backend, je conçois des systèmes intelligents combinant LLM, deep learning et automatisation web. 
               </p>
               <p data-translate="profile.text2">
-                Explorateur des algorithmes de pointe, je repousse les limites du possible en alliant expertise technique et créativité. Chaque projet est une aventure vers l'innovation.
+                Mes projets mettent en œuvre des modèles OpenAI, des simulateurs interactifs, et des solutions complètes de bout-en-bout.
               </p>
               <p>
                 <a href="https://example.com/my-innovative-bio" target="_blank" class="cert-link" data-translate="profile.more">
@@ -133,16 +140,19 @@
       <!-- Formation Section -->
       <section id="formation" class="section" aria-labelledby="formation-heading">
         <div class="container">
-          <h2 id="formation-heading" data-translate="formation.heading">Formation</h2>
+          <h2 id="formation-heading" data-translate="formation.heading">Formation & Certifications</h2>
           <ul class="formation-timeline">
             <li class="formation-item">
               <span class="formation-icon" aria-hidden="true">🎓</span>
               <div class="formation-content">
                 <h3 data-translate="formation.ensia">ENSIA, Algérie</h3>
-                <p data-translate="formation.ensiaDiplome"><strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)</p>
+                <!-- Formation: ENSIA diploma -->
+                <p data-translate="formation.ensiaDiplome" data-translate-html>
+                  <strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)
+                </p>
                 <p>2022 - Juin 2024</p>
                 <p>
-                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=1dab1d9e9abad6136ff63a9346eb9f1d736e151f&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f316461623164396539616261643631333666663633613933343665623966316437333665313531662f436572746966696361742033656d6520616e6e65cc816520454e5349412e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=Certificat+3eme+année+ENSIA.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#be53a163-343f-451e-b658-1e6651d53629" target="_blank" class="cert-link" data-translate="formation.ensiaCert">
+                  <a href="assets/images/Certificat_ENSIA_3eme_année.pdf" target="_blank" class="cert-link" data-translate="formation.ensiaCert">
                     Voir diplôme
                   </a>
                 </p>
@@ -152,12 +162,60 @@
               <span class="formation-icon" aria-hidden="true">🎓</span>
               <div class="formation-content">
                 <h3 data-translate="formation.avignon">Université d'Avignon (CERI), France</h3>
-                <p data-translate="formation.avignonDiplome"><strong>Diplôme :</strong> Data Science (2ᵉ année en cours, excellents résultats)</p>
+                <!-- Formation: Avignon diploma -->
+                <p data-translate="formation.avignonDiplome" data-translate-html>
+                  <strong>Diplôme :</strong> Data Science (3ᵉ année en cours, excellents résultats)
+                </p>
                 <p>Septembre 2024 - Aujourd'hui</p>
                 <p>
-                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=3ef1273a78c3e6de2a6532cd3b2f0b8773c7e7bc&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f336566313237336137386333653664653261363533326364336232663062383737336337653762632f436572697466696361742032c3a96d6520616e6ec3a96520434552492e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=Ceritficat+2éme+année+CERI.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#20223658-91ce-45ee-a6b1-631b07f814ed" target="_blank" class="cert-link" data-translate="formation.avignonCert">
+                  <a href="assets/images/L3_Informatique_Avignon_Certificat.pdf" target="_blank" class="cert-link" data-translate="formation.avignonCert">
                     Voir diplôme
                   </a>
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Certifications (same style as formation items) -->
+          <h3 data-translate="certs.heading">Certifications</h3>
+          <ul class="formation-timeline">
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎖️</span>
+              <div class="formation-content">
+                <h3 data-translate="certs.pytorch.title">Introduction to Deep Learning with PyTorch – DataCamp</h3>
+                <p data-translate="certs.pytorch.desc">Formation en ligne sur les réseaux de neurones et l’utilisation de PyTorch.</p>
+                <p>
+                  <a href="assets/images/Deep_Learning_PyTorch.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a>
+                </p>
+              </div>
+            </li>
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎖️</span>
+              <div class="formation-content">
+                <h3 data-translate="certs.aylp.title">Algerian Youth Leadership Program – Northern Nevada International Center</h3>
+                <p data-translate="certs.aylp.desc">Programme d’échanges axé sur le leadership, l’innovation et la collaboration interculturelle.</p>
+                <p>
+                  <a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a>
+                </p>
+              </div>
+            </li>
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎖️</span>
+              <div class="formation-content">
+                <h3 data-translate="certs.eplus.title">English Level – E-Plus Center</h3>
+                <p data-translate="certs.eplus.desc"></p>
+                <p>
+                  <a href="assets/images/E-Plus.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a>
+                </p>
+              </div>
+            </li>
+            <li class="formation-item">
+              <span class="formation-icon" aria-hidden="true">🎖️</span>
+              <div class="formation-content">
+                <h3 data-translate="certs.fcc.title">Responsive Web Design Certificate – freeCodeCamp</h3>
+                <p data-translate="certs.fcc.desc">Certification axée sur les fondamentaux du HTML, CSS, Flexbox et design adaptatif.</p>
+                <p>
+                  <a href="assets/images/responsive_web_design.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a>
                 </p>
               </div>
             </li>
@@ -196,20 +254,17 @@
                 <tbody>
                   <tr>
                     <td>Global Economy, Inflation Challenges, Currencies, World Trade Organization, Financial Markets                    </td>
-                    <td>Navigating inflation challenges has become a central focus for policymakers and financial markets as global economic recovery efforts are increasingly tested by rising price levels and currency fluctuations. Inflationary pressures, driven by supply chain disruptions and increased demand post-pandemic, have prompted central banks to reconsider monetary policies to balance economic growth with price stability. The World Trade Organization is actively engaged in addressing trade barriers that exacerbate inflationary trends, advocating for policy coherence and international cooperation to ensure smooth trade flows and market access. Currency volatility, particularly in emerging markets, poses significant risks to financial stability, necessitating adaptive measures such as foreign exchange interventions and diversified reserves. Moreover, inflation indicators are being closely monitored to guide fiscal policies that support vulnerable populations through targeted interventions, mitigating the social impacts of rising living costs. In this complex landscape, the interplay between global economic dynamics and domestic policy responses underscores the importance of agility and foresight in crafting strategies that foster resilience and equitable growth.
-                    </td>
+                    <td class="preview">Navigating inflation challenges has become a central focus for policymakers and financial markets as global economic recovery efforts are increasingly tested by rising price levels and currency fluctuations…</td>
                   </tr>
                   <tr>
                     <td>Brazil, Biodiversity, Deforestation, Amazon Rainforest, Conservation
                     </td>
-                    <td>Brazil's rich biodiversity is increasingly threatened by deforestation, particularly in the Amazon rainforest, which plays a critical role in global climate regulation. Conservation efforts are being intensified to combat illegal logging and land clearing driven by agricultural expansion. Innovative policies that integrate satellite monitoring with law enforcement are proving effective in tracking deforestation activities and protecting vulnerable ecosystems. Furthermore, indigenous communities are recognized as vital stewards of the forest, with their traditional knowledge contributing to sustainable management practices that balance ecological health and economic development. International partnerships and funding are supporting reforestation projects that aim to restore degraded areas and enhance carbon sequestration capacities of the forest. Public awareness campaigns highlighting the cultural and ecological significance of the Amazon are fostering wider support for conservation initiatives. As Brazil navigates the challenges of economic growth and environmental protection, comprehensive strategies that prioritize biodiversity conservation are essential for ensuring the resilience of its natural landscapes and the services they provide to humanity.
-                    </td>
+                    <td class="preview">Brazil's rich biodiversity is increasingly threatened by deforestation, particularly in the Amazon rainforest, which plays a critical role in global climate regulation…</td>
                   </tr>
                   <tr>
                     <td>Tropical Cyclone Aftermath, Emergency Relief Efforts, Infrastructure Recovery, Weather Forecasting Challenges, Resilience
                     </td>
-                    <td>Tropical cyclones leave behind a trail of destruction, prompting urgent emergency relief efforts and discussions around infrastructure recovery to enhance resilience against future storms. As affected regions grapple with the immediate impacts, including displacement and damaged livelihoods, coordinated responses involving government agencies and humanitarian organizations are mobilizing resources to provide shelter, food, and medical assistance. The complexity of recovery extends beyond immediate needs, necessitating comprehensive planning that addresses long-term infrastructure improvements, such as strengthening coastal defenses and enhancing urban drainage systems. This multifaceted approach aims to build resilient communities capable of withstanding the increasing frequency and intensity of tropical cyclones, attributed to climate change influences on weather patterns. Furthermore, the integration of advanced weather forecasting technologies is proving critical in disaster preparedness, providing timely alerts and risk assessments that inform evacuation and response strategies. Community engagement in resilience-building initiatives fosters local ownership and knowledge sharing, enhancing adaptive capacities in the face of environmental challenges. As the dialogue around tropical cyclone impacts evolves, the focus is increasingly on proactive measures that leverage post-disaster recovery as opportunities for transformative change and improved ecological balance.
-                    </td>
+                    <td class="preview">Tropical cyclones leave behind a trail of destruction, prompting urgent emergency relief efforts and discussions around infrastructure recovery to enhance resilience against future storms…</td>
                   </tr>
 
                 </tbody>
@@ -224,8 +279,68 @@
     <h2 id="projects-heading" data-translate="projects.heading">Projets et Expériences</h2>
     <div class="projects-scroll">
 
-      <!-- Project 1 -->
-      <div class="flip-card">
+      <!-- NEW: AI Website Generator -->
+      <div class="flip-card" tabindex="0" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p0.title">Générateur IA de sites web</h3>
+            <p data-translate="projects.p0.short">Générez des sites web depuis une consigne.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p0.title">Générateur IA de sites web</h3>
+            <p data-translate="projects.p0.desc">
+              Création d’un système générant des sites web fonctionnels à partir d’instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.
+            </p>
+            <a href="https://www.instagram.com/reel/DOjTIVMDUJT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D" target="_blank" class="github-link" data-translate="projects.link.demo">Voir la démo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: LeRobot PushT Trainer -->
+      <div class="flip-card" tabindex="0" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p9.title">LeRobot PushT Trainer</h3>
+            <p data-translate="projects.p9.short">Entraînez/évaluez des politiques PushT.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p9.title">LeRobot PushT Trainer</h3>
+            <p data-translate="projects.p9.desc">
+              App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack: Python, LeRobot, Gradio, CUDA.
+            </p>
+            <div class="card-links">
+              <a href="https://huggingface.co/zino36/lerobot-pusht-colab" target="_blank" class="github-link" data-translate="projects.link.modelRepo">Dépôt du modèle</a>
+              <a href="https://huggingface.co/spaces/zino36/lerobot-pusht-trainer" target="_blank" class="github-link" data-translate="projects.link.demoSpace">Espace de démo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NEW: Robot Vision Simulator -->
+      <div class="flip-card" tabindex="0" aria-pressed="false">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3 data-translate="projects.p10.title">Robot Vision Simulator</h3>
+            <p data-translate="projects.p10.short">Simulateur interactif de vision robotique.</p>
+            <p class="hover-text" data-translate="projects.hover">Survolez pour voir les détails</p>
+          </div>
+          <div class="flip-card-back">
+            <h3 data-translate="projects.p10.title">Robot Vision Simulator</h3>
+            <p data-translate="projects.p10.desc">
+              Simulateur navigateur: robot sur grille, pick/place et commandes en langue naturelle. COCO‑SSD pour la vision, A* pour le pathfinding. Stack: JS/Canvas, TF.js.
+            </p>
+            <div class="card-links">
+              <a href="https://github.com/ZinebMEFTAH/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Dépôt GitHub</a>
+              <a href="https://zinebmeftah.github.io/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.liveDemo">Démo en ligne</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Existing projects... -->
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p1.title">Personnalisation de produits par l’IA</h3>
@@ -243,7 +358,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p2.title">News Wave</h3>
@@ -261,7 +376,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p3.title">Agricultural Plan Optimization</h3>
@@ -279,7 +394,7 @@
       </div>
 
       <!-- Project 4 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p4.title">G-Jobs</h3>
@@ -297,7 +412,7 @@
       </div>
 
       <!-- Project 5 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p5.title">Advanced Search Engine</h3>
@@ -315,7 +430,7 @@
       </div>
 
       <!-- Project 6 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p6.title">Restaurant Chain</h3>
@@ -333,7 +448,7 @@
       </div>
 
       <!-- Project 7 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p7.title">My Online Supermarket</h3>
@@ -351,7 +466,7 @@
       </div>
 
       <!-- Project 8 -->
-      <div class="flip-card">
+      <div class="flip-card" tabindex="0" aria-pressed="false">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <h3 data-translate="projects.p8.title">Road Network Analysis (MAP)</h3>
@@ -381,7 +496,7 @@
             <!-- Experience Card 1 -->
             <div class="experience-card">
               <div class="experience-media">
-                <img src="https://media.licdn.com/dms/image/v2/D4D12AQF4QrcQVYydmg/article-cover_image-shrink_423_752/article-cover_image-shrink_423_752/0/1721174030049?e=1749081600&v=beta&t=VkV9sJ2-e3fLiCj_3U1vnWGDDnLLmCsiG5NVEzPZBhg" alt="Responsable informatique" class="experience-img" loading="lazy" />
+                <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/gdsc-social-share.png" alt="Responsable informatique" class="experience-img" loading="lazy" />
                   <div class="experience-details">
                   <p data-translate="experience.card1.detail">Google Developer Student Club ENSIA (2023-2024)</p>
                 </div>
@@ -393,8 +508,8 @@
               <div class="experience-media">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFIRqUAh8HkjF-tRYnRxGldaMJSuhL54ypA&s" alt="Participant AYLP" class="experience-img" loading="lazy" />
                 <div class="experience-details">
-                  <p data-translate="experience.card2.detail">Ambassade des États-Unis à Alger (2021) Algerian Youth Leadership Program</p>
-                  <p><a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=3ef1273a78c3e6de2a6532cd3b2f0b8773c7e7bc&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f336566313237336137386333653664653261363533326364336232663062383737336337653762632f41594c5025323043657274696669636174652e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=AYLP+Certificate.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#db3f0e31-2424-472d-ab60-fcdf0a5758a3" target="_blank" class="cert-link" data-translate="experience.card2.cert">Voir certificat</a></p>
+                  <p data-translate="experience.card2.detail">Northern Nevada International Center (2021) Algerian Youth Leadership Program</p>
+                  <p><a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="experience.card2.cert">Voir certificat</a></p>
                 </div>
               </div>
               <h3 data-translate="experience.card2.title">Participant AYLP</h3>
@@ -414,9 +529,11 @@
               <div class="experience-media">
                 <img src="https://ggba.swiss/app/uploads/2024/04/Idiap-AI-Challenge-2360x1622-1.jpeg" alt="Autres réalisations" class="experience-img" loading="lazy" />
                 <div class="experience-details">
-                  <p data-translate="experience.card4.detail">
-                    Participation à divers hackathons et projets collaboratifs pour innover et exceller.
-                  </p>
+                  <ul class="xp-highlights">
+                    <li data-translate="experience.card4.item1">Hackathon IA Avignon (24h, 2024)</li>
+                    <li data-translate="experience.card4.item2">Mentor junior – GDSC (2023)</li>
+                    <li data-translate="experience.card4.item3">Projet tutoré G‑JOBS (2024): tâches, Git, review</li>
+                  </ul>
                 </div>
               </div>
               <h3 data-translate="experience.card4.title">Autres Réalisations</h3>
@@ -425,168 +542,201 @@
         </div>
       </section>
 
-        <!-- Compétences Section -->
-        <section id="competences" class="section" aria-labelledby="competences-heading">
-            <div class="container">
-            <h2 id="competences-heading" data-translate="competences.heading">Compétences</h2>
-            <div class="skills-grid">
-                <!-- Certifications Card (unchanged) -->
-                <div class="skill-card">
-                <h3 data-translate="competences.certifications">Certifications</h3>
-                <ul class="skill-list">
-                    <li>
-                    Introduction to Deep Learning with PyTorch – DataCamp
-                    <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
-                    </li>
-                    <li>
-                      Algerian Youth Leadership Program – US Embassy in Algeria
-                      <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
-                    </li>
-                    <li>
-                      English Level – E-Plus Center
-                      <a href="https://example.com/datacamp-certificate" target="_blank" class="cert-link" data-translate="competences.datacamp">Voir certificat</a>
-                    </li>
-                </ul>
-                </div>
-                <!-- Programmation Card -->
-                <div class="skill-card">
-                <h3 data-translate="competences.programming">Programmation</h3>
-                <ul class="skill-list">
-                    <li style="--progress:80%;">
-                    <span class="skill-name">Java</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:90%;">
-                    <span class="skill-name">Python</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:70%;">
-                    <span class="skill-name">C++</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:75%;">
-                    <span class="skill-name">PHP</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:85%;">
-                    <span class="skill-name">JavaScript</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:90%;">
-                    <span class="skill-name">HTML/CSS</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-                <!-- Développement Web Card -->
-                <div class="skill-card">
-                <h3 data-translate="competences.web">Développement Web</h3>
-                <ul class="skill-list">
-                    <li style="--progress:80%;">
-                    <span class="skill-name">Node.js</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:75%;">
-                    <span class="skill-name">PHP</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:85%;">
-                    <span class="skill-name">MySQL</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-                <!-- Data Science & IA Card -->
-                <div class="skill-card">
-                <h3 data-translate="competences.dataScience">Data Science & IA</h3>
-                <ul class="skill-list">
-                    <li style="--progress:90%;">
-                    <span class="skill-name">Machine Learning</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:85%;">
-                    <span class="skill-name">Model Training</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:80%;">
-                    <span class="skill-name">Fine-tuning</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:75%;">
-                    <span class="skill-name">Data Generation</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-                <!-- Outils Card -->
-                <div class="skill-card">
-                <h3 data-translate="competences.tools">Outils</h3>
-                <ul class="skill-list">
-                    <li style="--progress:95%;">
-                    <span class="skill-name">Git</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:85%;">
-                    <span class="skill-name">Pandas</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:85%;">
-                    <span class="skill-name">NumPy</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                    <li style="--progress:80%;">
-                    <span class="skill-name">Scikit-learn</span>
-                    <div class="skill-bar">
-                        <div class="skill-progress"></div>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-                <!-- Soft Skills Card -->
-                <div class="skill-card">
-                <h3 data-translate="competences.softSkills">Soft Skills</h3>
-                <ul class="skill-list">
-                    <li><span class="skill-name" data-translate="competences.leadership">Leadership</span></li>
-                    <li><span class="skill-name" data-translate="competences.teamwork">Travail en équipe</span></li>
-                    <li><span class="skill-name" data-translate="competences.communication">Communication</span></li>
-                    <li><span class="skill-name" data-translate="competences.projectManagement">Gestion de projet</span></li>
-                </ul>
-                </div>
+        <!-- Compétences Section - Updated structure -->
+<section id="competences" class="section" aria-labelledby="competences-heading">
+  <div class="container">
+    <h2 id="competences-heading" data-translate="competences.heading">Compétences</h2>
+    
+    <!-- Programming & Development -->
+    <div class="skills-category-container">
+      <h3 class="skills-category-title" data-translate="competences.techSkills">Compétences Techniques</h3>
+      
+      <div class="skills-grid">
+        <!-- Programming -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">💻</span>
+            <h4 data-translate="competences.programming">Programmation</h4>
+          </div>
+          
+          <div class="skill-content">
+            <div class="skill-group">
+              <h5 data-translate="competences.languages">Langages</h5>
+              <ul class="tag-list">
+                <li class="tag tag-featured">Python</li>
+                <li class="tag">C++</li>
+                <li class="tag">Java</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">PHP</li>
+                <li class="tag">SQL</li>
+                <li class="tag">Bash</li>
+              </ul>
             </div>
+            
+            <div class="skill-group">
+              <h5 data-translate="competences.paradigms">Paradigmes</h5>
+              <ul class="tag-list">
+                <li class="tag">POO</li>
+                <li class="tag">Programmation fonctionnelle</li>
+                <li class="tag">Logique métier</li>
+              </ul>
             </div>
-        </section>
+          </div>
+        </div>
+        
+        <!-- Web Development -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">🌐</span>
+            <h4 data-translate="competences.web">Développement Web</h4>
+          </div>
+          
+          <div class="skill-content">
+            <div class="skill-columns">
+              <div class="skill-column">
+                <div class="skill-group">
+                  <h5 data-translate="competences.frontend">Frontend</h5>
+                  <ul class="tag-list">
+                    <li class="tag">HTML5</li>
+                    <li class="tag">CSS3</li>
+                    <li class="tag">JavaScript</li>
+                    <li class="tag">React</li>
+                  </ul>
+                </div>
+                
+                <div class="skill-group">
+                  <h5 data-translate="competences.backend">Backend</h5>
+                  <ul class="tag-list">
+                    <li class="tag">Node.js</li>
+                    <li class="tag">PHP</li>
+                    <li class="tag">Python</li>
+                    <li class="tag">REST API</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="skill-column">
+                <div class="skill-group">
+                  <h5 data-translate="competences.databases">Bases de données</h5>
+                  <ul class="tag-list">
+                    <li class="tag">MySQL</li>
+                    <li class="tag">PostgreSQL</li>
+                  </ul>
+                </div>
+                
+                <div class="skill-group">
+                  <h5 data-translate="competences.tools">Outils</h5>
+                  <ul class="tag-list">
+                    <li class="tag">Git</li>
+                    <li class="tag">GitHub Actions</li>
+                    <li class="tag">Webpack</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- AI & Data Science -->
+    <div class="skills-category-container">
+      <h3 class="skills-category-title" data-translate="competences.aiDataSkills">IA & Data Science</h3>
+      
+      <div class="skills-grid">
+        <!-- AI -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">🤖</span>
+            <h4 data-translate="competences.artificialIntelligence">Intelligence Artificielle</h4>
+          </div>
+          
+          <div class="skill-content">
+            <div class="skill-group">
+              <h5 data-translate="competences.aiModels">Modèles & Techniques</h5>
+              <ul class="tag-list">
+                <li class="tag tag-featured">LLMs</li>
+                <li class="tag">Fine-tuning</li>
+                <li class="tag">Reinforcement Learning</li>
+                <li class="tag">Computer Vision</li>
+                <li class="tag">NLP</li>
+              </ul>
+            </div>
+            
+            <div class="skill-group">
+              <h5 data-translate="competences.aiTools">Outils</h5>
+              <ul class="tag-list">
+                <li class="tag">PyTorch</li>
+                <li class="tag">OpenAI API</li>
+                <li class="tag">Hugging Face</li>
+                <li class="tag">TensorFlow.js</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Data Science -->
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">📊</span>
+            <h4 data-translate="competences.dataScience">Data Science</h4>
+          </div>
+          
+          <div class="skill-content">
+            <div class="skill-group">
+              <h5 data-translate="competences.dataAnalysis">Analyse & Manipulation</h5>
+              <ul class="tag-list">
+                <li class="tag">Pandas</li>
+                <li class="tag">NumPy</li>
+                <li class="tag">Scikit-learn</li>
+                <li class="tag">Matplotlib</li>
+              </ul>
+            </div>
+            
+            <div class="skill-group">
+              <h5 data-translate="competences.dataProjects">Projets notables</h5>
+              <ul class="feature-list">
+                <li data-translate="competences.project1">Génération de données synthétiques pour fine-tuning</li>
+                <li data-translate="competences.project2">Moteur de recherche avec TF-IDF & BM25</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Soft Skills -->
+    <div class="skills-category-container">
+      <h3 class="skills-category-title" data-translate="competences.softSkillsTitle">Compétences Personnelles</h3>
+      
+      <div class="soft-skills-grid">
+        <div class="soft-skill-card">
+          <div class="soft-skill-icon">👥</div>
+          <h4 data-translate="competences.teamwork">Travail en équipe</h4>
+          <p data-translate="competences.teamworkDesc">Collaboration efficace, communication claire, esprit d'équipe</p>
+        </div>
+        
+        <div class="soft-skill-card">
+          <div class="soft-skill-icon">🚀</div>
+          <h4 data-translate="competences.leadership">Leadership</h4>
+          <p data-translate="competences.leadershipDesc">Expérience GDSC, mentorat, gestion de projets collaboratifs</p>
+        </div>
+        
+        <div class="soft-skill-card">
+          <div class="soft-skill-icon">🧠</div>
+          <h4 data-translate="competences.problemSolving">Résolution de problèmes</h4>
+          <p data-translate="competences.problemSolvingDesc">Pensée analytique, approche systématique, solutions créatives</p>
+        </div>
+        
+        <div class="soft-skill-card">
+          <div class="soft-skill-icon">📚</div>
+          <h4 data-translate="competences.continuousLearning">Apprentissage continu</h4>
+          <p data-translate="competences.continuousLearningDesc">Veille technologique, adaptation rapide, autoformation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Langues Section -->
       <section id="langues" class="section" aria-labelledby="langues-heading">
@@ -594,41 +744,74 @@
           <h2 id="langues-heading" data-translate="langues.heading">Langues</h2>
           <div class="languages-grid">
             <div class="language-card">
-                <h3 data-translate="langues.french">Français</h3>
-                <div class="language-scale">
-                  <div class="language-progress" style="--progress: 70%;"></div>
+              <h3 data-translate="langues.french">Français</h3>
+              <div class="language-meta">
+                <span class="level-badge">B2</span>
+                <div class="level-dots">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
                 </div>
-                <p data-translate="langues.frenchlevel">
-                  Intermédiaire (B2)
-                  <br />
-                  <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=5c3cc5467b29e9df7034207ae7c2e117d90f4bad&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f356333636335343637623239653964663730333432303761653763326531313764393066346261642f5443462e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=TCF.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#a3be68b6-b883-4ce5-a799-651eed0917d7" target="_blank" class="cert-link" data-translate="langues.frenchCert">
-                    Voir certificat
-                  </a>
-                </p>
               </div>
+              <!-- Langues: Français -->
+              <p>
+                <span data-translate="langues.frenchlevel">Intermédiaire (B2)</span><br />
+                <a href="assets/images/TCF.pdf"
+     target="_blank" class="cert-link" data-translate="langues.frenchCert">Voir certificat</a>
+              </p>
+            </div>
+
             <div class="language-card">
               <h3 data-translate="langues.english">Anglais</h3>
-              <div class="language-scale">
-                <div class="language-progress" style="--progress: 90%;"></div>
+              <div class="language-meta">
+                <span class="level-badge">B2</span>
+                <div class="level-dots">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                </div>
               </div>
-              <p data-translate="langues.englishlevel">
-                Courant
-                <br />
-                <a href="https://viewscreen.githubusercontent.com/view/pdf?browser=safari&bypass_fastly=true&color_mode=auto&commit=5c3cc5467b29e9df7034207ae7c2e117d90f4bad&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f5a696e65624d45465441482f4365727469666963617465732d2f356333636335343637623239653964663730333432303761653763326531313764393066346261642f452d506c75732532304365727469666963617465253230456e676c6973682e706466&logged_in=true&nwo=ZinebMEFTAH%2FCertificates-&path=E-Plus+Certificate+English.pdf&platform=mac&repository_id=945626501&repository_type=Repository&version=18#0a813f2c-bb69-4ea3-afc2-10ebd833bfa3" target="_blank" class="cert-link" data-translate="langues.englishCert">
-                  Voir certificat
-                </a>
+              <!-- Langues: Anglais -->
+              <p>
+                <span data-translate="langues.englishlevel">Courant</span><br />
+                <a href="assets/images/E-Plus.pdf" target="_blank" class="cert-link" data-translate="langues.englishCert">Voir certificat</a>
               </p>
             </div>
             <div class="language-card">
               <h3 data-translate="langues.arabic">Arabe</h3>
-              <div class="language-scale">
-                <div class="language-progress" style="--progress: 90%;"></div>
+              <div class="language-meta">
+                <span class="level-badge">C1</span>
+                <div class="level-dots">
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                  <span class="dot active"></span>
+                </div>
               </div>
               <p data-translate="langues.arabicLevel">Courant</p>
             </div>
           </div>
         </div>
-      </section>
+      </section> <!-- end of #langues -->
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="container">
+        <p>&copy; 2025 Meftah Zineb. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+        </div>
+      </section> <!-- end of #langues -->
     </main>
 
     <!-- Footer -->
