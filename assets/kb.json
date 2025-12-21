@@ -1,0 +1,39 @@
+{
+  "docs": [
+    {
+      "id": "about",
+      "title": "about",
+      "content": "# About\n\nName: Meftah Zineb  \nTitle: Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer\n\n## Profile\n- Computer science student focused on AI applied to robotics and backend development.\n- Builds intelligent systems combining LLMs, deep learning, and web automation.\n- Projects include OpenAI-based systems, interactive simulators, and end-to-end solutions.\n\n## Interests\n- AI for robotics\n- Backend development\n- Web automation"
+    },
+    {
+      "id": "contact",
+      "title": "contact",
+      "content": "# Contact\n\nPhone: +33 (0) 6 10 79 07 36  \nEmail: zineb.meftah36@gmail.com  \nLinkedIn: https://www.linkedin.com/in/zinebmeftah  \nPortfolio: zinebmeftah.github.io  \nGitHub: zineb-hub  \nHugging Face: https://huggingface.co/zino36"
+    },
+    {
+      "id": "education",
+      "title": "education",
+      "content": "# Education\n\n## ENSIA, Algeria\n- Degree: Artificial Intelligence Engineering (1st & 2nd year validated)\n- Period: 2022 - June 2024\n- Certificate: assets/images/Certificat_ENSIA_3eme_année.pdf\n\n## Université d'Avignon (CERI), France\n- Degree: Data Science (3rd year ongoing, excellent results)\n- Period: September 2024 - Present\n- Certificate: assets/images/L3_Informatique_Avignon_Certificat.pdf\n\n## Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algeria)\n- Mention: Excellent — Average 17.82 (Scientific track)\n- Period: 2019 / 2022\n- Certificate: assets/images/BAC_Certificat_Officiel.pdf\n- Transcripts: assets/images/BAC_Releves_Notes.pdf\n\n# Certifications\n- Introduction to Deep Learning with PyTorch – DataCamp\n  - Certificate: assets/images/Deep_Learning_PyTorch.pdf\n- Algerian Youth Leadership Program – Northern Nevada International Center\n  - Certificate: assets/images/AYLP.pdf\n- English Level – E-Plus Center\n  - Certificate: assets/images/E-Plus.pdf\n- Responsive Web Design Certificate – freeCodeCamp\n  - Certificate: assets/images/responsive_web_design.pdf"
+    },
+    {
+      "id": "experience",
+      "title": "experience",
+      "content": "# Experience & Leadership\n\n## IT Manager / Responsable informatique\n- Google Developer Student Club ENSIA\n- Period: 2023 - 2024\n\n## AYLP Participant\n- Northern Nevada International Center (2021) – Algerian Youth Leadership Program\n- Certificate: assets/images/AYLP.pdf\n\n## Event Organization\n- Hackathons, AI, Web Development\n\n## Other Achievements\n- Hackathon IA Avignon (24h, 2024)\n- Junior mentor – GDSC (2023)\n- Supervised project G-JOBS (2024): tasks, Git, review"
+    },
+    {
+      "id": "faq",
+      "title": "faq",
+      "content": "# FAQ\n\n## Who are you?\nMeftah Zineb, computer science student and future AI engineer focused on robotics-oriented AI and backend development.\n\n## What do you build?\nLLM-powered systems, deep learning projects, interactive simulators, and end-to-end web/AI solutions.\n\n## What are your strongest areas?\n- Python + AI tooling (PyTorch, OpenAI API, Hugging Face)\n- Backend development (NestJS/Node, REST APIs)\n- Web + interactive demos (JS/Canvas, TF.js)\n\n## Where can I see your work?\n- Projects are listed in the Projects section with GitHub, Hugging Face, and demo links.\n- Publication on Hugging Face blog: https://huggingface.co/blog/zino36/tags-generation-dataset-article\n\n## What languages do you speak?\n- French: B2 (certificate: assets/images/TCF.pdf)\n- English: strong level (certificate: assets/images/E-Plus.pdf)\n- Arabic: C1 (native-level usage)"
+    },
+    {
+      "id": "projects",
+      "title": "projects",
+      "content": "# Projects\n\n## AI Website Generator\n- Description: System that generates functional websites from natural-language instructions using LLMs.\n- Stack: Python, OpenAI API, web automation\n- Demo: https://www.instagram.com/reel/DOjTIVMDUJT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D\n\n## LeRobot PushT Trainer\n- Description: Web app to train and evaluate PushT policies, manage checkpoints, and publish to Hugging Face.\n- Stack: Python, LeRobot, Gradio, CUDA\n- Model repo: https://huggingface.co/zino36/lerobot-pusht-colab\n- Demo Space: https://huggingface.co/spaces/zino36/lerobot-pusht-trainer\n\n## Robot Vision Simulator\n- Description: Browser simulator with a robot on a grid (navigation + pick/place) and natural-language commands.\n- Vision: COCO-SSD\n- Pathfinding: A*\n- Stack: JavaScript, HTML5 Canvas, TensorFlow.js\n- GitHub: https://github.com/ZinebMEFTAH/robot-vision-sim\n- Live demo: https://zinebmeftah.github.io/robot-vision-sim\n\n## AI Product Personalization\n- Description: Users transform ideas into personalized products using AI models, with a transition to production.\n- Instagram: https://www.instagram.com/anything.personalized\n\n## News Wave\n- Description: AI personalized news aggregator with real-time updates from major sources, filtered by user interests.\n- GitHub: https://github.com/zineb-hub/NewsWave\n\n## Agricultural Plan Optimization\n- Description: AI project optimizing agricultural production in Algeria using graph search and constraint satisfaction.\n- GitHub: https://github.com/zineb-hub/Agricultural-Plan-Optimization\n\n## G-Jobs\n- Description: Smart platform connecting job seekers with recruiters (filters, messaging, application tracking).\n- GitHub: https://github.com/zineb-hub/G-JOB\n\n## Advanced Search Engine\n- Description: Java search engine using TF-IDF and BM25 for indexing, analysis, and ranking.\n- GitHub: https://github.com/zineb-hub/Search-Engine\n\n## Restaurant Chain\n- Description: Multi-country restaurant management system (bookings, stock, staff).\n- GitHub: https://github.com/zineb-hub/Restaurant-Chain\n\n## My Online Supermarket (CLI)\n- Description: CLI app for supermarket management: suppliers, stock, sales, reports, statistics.\n- GitHub: https://github.com/zineb-hub/SuperMarket\n\n## Road Network Analysis (MAP)\n- Description: Graph-based road network analysis in Avignon: shortest paths, connectivity, network performance.\n- GitHub: https://github.com/zineb-hub/Map"
+    },
+    {
+      "id": "skills",
+      "title": "skills",
+      "content": "# Skills\n\n## Programming\n- Languages: Python, C++, Java, JavaScript, PHP, SQL, Bash\n- Paradigms: OOP, functional programming, business logic\n\n## Web Development\n- Frontend: Next.js, JavaScript, React, Bootstrap, HTML5, CSS3\n- Backend: NestJS, Node.js, PHP, Python, REST APIs\n- Databases: MySQL, PostgreSQL\n- Tools: Git, GitHub Actions, Webpack\n\n## AI & Data Science\n- Models & techniques: LLMs, fine-tuning, reinforcement learning, computer vision, NLP\n- Tools: PyTorch, OpenAI API, Hugging Face, TensorFlow.js\n- Data analysis: Pandas, NumPy, Scikit-learn, Matplotlib\n\n## Soft Skills\n- Teamwork, clear communication\n- Leadership (GDSC, AYLP)\n- Problem solving\n- Continuous learning and tech watch"
+    }
+  ]
+}
