@@ -1,0 +1,9 @@
+# Backend / worker
+worker/
+node_modules/
+.env
+
+# Build / logs
+dist/
+npm-debug.log*
+.DS_Store
