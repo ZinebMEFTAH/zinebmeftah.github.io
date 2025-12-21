@@ -796,23 +796,22 @@
         <p data-translate="footer.copy">© 2025 Meftah Zineb. Tous droits réservés.</p>
       </div>
     </footer>
-<button id="chat-toggle" type="button" aria-label="Open chat">💬</button>
-    <div id="chatbox" class="hidden">
-      <div class="chat-header">
-        <span>Ask me about my projects</span>
-        <button id="chat-close" type="button" aria-label="Close chat">✕</button>
-      </div>
+<!-- Chat Widget -->
+<a id="chat-toggle" href="#" aria-label="Open chat">Chat</a>
 
-      <div class="chat-body">
-        <div id="chat-messages" class="chat-messages"></div>
-      </div>
+<div id="chatbox" class="chatbox hidden" role="dialog" aria-label="Portfolio chat">
+  <div class="chatbox-header">
+    <div class="chatbox-title">Assistant Portfolio</div>
+    <button id="chat-close" type="button" aria-label="Close chat">×</button>
+  </div>
 
-      <form id="chat-form" class="chat-form">
-        <input type="text" id="chat-input" placeholder="Ask a question..." autocomplete="off" required />
-        <button type="submit" class="chat-send">Send</button>
-      </form>
-    </div>
+  <div id="chat-messages" class="chatbox-messages" aria-live="polite"></div>
 
+  <form id="chat-form" class="chatbox-form">
+    <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+</div>
     <script src="script.js"></script>
   </body>
 </html>
