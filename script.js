@@ -65,7 +65,21 @@ if (burger && navLinks) {
 
     const openChat = () => chatBox.classList.remove("hidden");
     const closeChat = () => chatBox.classList.add("hidden");
+    const buildContext = () => {
+      const safeText = (sel) => document.querySelector(sel)?.innerText?.trim() || "";
 
+      const parts = [
+        safeText("#profil"),
+        safeText("#projects"),
+        safeText("#experience"),
+        safeText("#competences"),
+        safeText("#publications"),
+        safeText("#formation"),
+        safeText("#langues"),
+      ].filter(Boolean);
+
+      return parts.join("\n\n").slice(0, 12000);
+    };
     chatToggle.addEventListener("click", (e) => {
       e.preventDefault();
       chatBox.classList.toggle("hidden");
@@ -93,12 +107,15 @@ if (burger && navLinks) {
 
       chatInput.value = "";
       append(q, "user");
-      
+
       try {
         const res = await fetch("https://portfolio-chat.zinebmeftah.workers.dev", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: q })
+          body: JSON.stringify({
+            message: q,
+            context: buildContext()
+          })
         });
 
         const data = await res.json();
