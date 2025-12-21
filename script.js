@@ -238,26 +238,32 @@ if (burger && navLinks) {
   "langues.arabic": "Arabe",
   "langues.arabicLevel": "Langue maternelle",
   "experience.card4.item1": "Hackathon IA Avignon (24h, 2024)",
-"experience.card4.item2": "Mentor junior – GDSC (2023)",
-"experience.card4.item3": "Projet encadré G-JOBS (2024) : tâches, Git, revue",
+  "experience.card4.item2": "Mentor junior – GDSC (2023)",
+  "experience.card4.item3": "Projet encadré G-JOBS (2024) : tâches, Git, revue",
 
-"projects.p0.title": "Générateur de sites web IA",
-"projects.p0.short": "Générez des sites web depuis une consigne.",
-"projects.p0.desc": "Création d'un système générant des sites web fonctionnels à partir d'instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.",
+  "projects.p0.title": "Générateur de sites web IA",
+  "projects.p0.short": "Générez des sites web depuis une consigne.",
+  "projects.p0.desc": "Création d'un système générant des sites web fonctionnels à partir d'instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.",
 
-"projects.p9.title": "LeRobot PushT Trainer",
-"projects.p9.short": "Entraînez/évaluez des politiques PushT.",
-"projects.p9.desc": "App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack : Python, LeRobot, Gradio, CUDA.",
+  "projects.p9.title": "LeRobot PushT Trainer",
+  "projects.p9.short": "Entraînez/évaluez des politiques PushT.",
+  "projects.p9.desc": "App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack : Python, LeRobot, Gradio, CUDA.",
 
-"projects.p10.title": "Simulateur de vision robotique",
-"projects.p10.short": "Simulateur interactif de vision robotique.",
-"projects.p10.desc": "Simulateur navigateur : robot sur grille, pick/place et commandes en langue naturelle. COCO-SSD pour la vision, A* pour le pathfinding. Stack : JS/Canvas, TF.js.",
+  "projects.p10.title": "Simulateur de vision robotique",
+  "projects.p10.short": "Simulateur interactif de vision robotique.",
+  "projects.p10.desc": "Simulateur navigateur : robot sur grille, pick/place et commandes en langue naturelle. COCO-SSD pour la vision, A* pour le pathfinding. Stack : JS/Canvas, TF.js.",
 
-"footer.copy": "© 2025 Meftah Zineb. Tous droits réservés.",
-"formation.bac": "Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algérie)",
-"formation.bacDiplome": "<strong>Mention :</strong> Excellent — Moyenne 17,82 (Filière scientifique)",
-"formation.bacCert": "Voir attestation BAC",
-"formation.bacTranscript": "Voir relevés de notes"
+  "footer.copy": "© 2025 Meftah Zineb. Tous droits réservés.",
+  "formation.bac": "Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algérie)",
+  "formation.bacDiplome": "<strong>Mention :</strong> Excellent — Moyenne 17,82 (Filière scientifique)",
+  "formation.bacCert": "Voir attestation BAC",
+  "formation.bacTranscript": "Voir relevés de notes",
+
+  "chat.open": "Chat",
+  "chat.title": "Assistant Portfolio",
+  "chat.placeholder": "Pose une question...",
+  "chat.send": "Envoyer",
+  "chat.note": "Réponses basées sur le contenu du portfolio."
       },
       en: {
         "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
@@ -450,9 +456,14 @@ if (burger && navLinks) {
   "langues.arabicLevel": "Native",
   "footer.copy": "© 2025 Zineb Meftah. All rights reserved.",
   "formation.bac": "Scientific Baccalaureate — Abd-El-Kader El-Yajouri High School, Guemar (Algeria)",
-"formation.bacDiplome": "<strong>Honors:</strong> Excellent — Average 17.82 (Scientific stream)",
-"formation.bacCert": "View BAC certificate",
-"formation.bacTranscript": "View grade transcripts"
+  "formation.bacDiplome": "<strong>Honors:</strong> Excellent — Average 17.82 (Scientific stream)",
+  "formation.bacCert": "View BAC certificate",
+  "formation.bacTranscript": "View grade transcripts",
+  "chat.open": "Chat",
+  "chat.title": "Portfolio Assistant",
+  "chat.placeholder": "Ask a question...",
+  "chat.send": "Send",
+  "chat.note": "Answers based on portfolio content."
       },
       ar: {
         "profile.heading": "نبذة عني",
@@ -668,9 +679,14 @@ if (burger && navLinks) {
   "competences.programming.projects": "المشاريع: مترجم شبيه بـ Pascal، تحسين الشبكات، محرك بحث، سوبرماركت CLI، توليد الويب عبر LLM",
   "footer.copy": "© 2025 مفتاح زينب. جميع الحقوق محفوظة.",
   "formation.bac": "بكالوريا علوم تجريبية — ثانوية عبد القادر الياجوري، قمار (الجزائر)",
-"formation.bacDiplome": "<strong>التقدير:</strong> ممتاز — معدل 17.82 (شعبة علوم تجريبية)",
-"formation.bacCert": "عرض شهادة البكالوريا",
-"formation.bacTranscript": "عرض كشف النقاط"
+  "formation.bacDiplome": "<strong>التقدير:</strong> ممتاز — معدل 17.82 (شعبة علوم تجريبية)",
+  "formation.bacCert": "عرض شهادة البكالوريا",
+  "formation.bacTranscript": "عرض كشف النقاط",
+  "chat.open": "محادثة",
+  "chat.title": "مساعد السيرة",
+  "chat.placeholder": "اسأل سؤالاً...",
+  "chat.send": "إرسال",
+  "chat.note": "الإجابات مبنية على محتوى الموقع."
       },
     };
     
@@ -1048,5 +1064,73 @@ if (burger && navLinks) {
         setMenuOpen(false);
       }
     });
-      
+  
+
+  (function initChatbox() {
+    const chatFab = document.getElementById("chatFab");
+    const chatWidget = document.getElementById("chatWidget");
+    const chatClose = document.getElementById("chatClose");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatInput = document.getElementById("chatInput");
+    const chatSend = document.getElementById("chatSend");
+
+    if (!chatFab || !chatWidget || !chatClose || !chatMessages || !chatInput || !chatSend) return;
+
+    const API_URL = "https://portfolio-chat.zinebmeftah.workers.dev"; // Étape 3: on crée ce endpoint côté backend (RAG)
+
+    const append = (text, who) => {
+      const div = document.createElement("div");
+      div.className = `chat-bubble ${who}`;
+      div.textContent = text;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      return div;
+    };
+
+    const setOpen = (open) => {
+      chatWidget.classList.toggle("open", open);
+      chatWidget.setAttribute("aria-hidden", open ? "false" : "true");
+      if (open) chatInput.focus();
+    };
+
+    chatFab.addEventListener("click", () => setOpen(true));
+    chatClose.addEventListener("click", () => setOpen(false));
+
+    const send = async () => {
+      const q = (chatInput.value || "").trim();
+      if (!q) return;
+
+      chatInput.value = "";
+      append(q, "user");
+
+      chatSend.disabled = true;
+      const loading = append("...", "bot");
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: q })
+        });
+
+        const data = await res.json().catch(() => ({}));
+        const answer = data.answer || data.output || "Erreur: réponse vide.";
+        loading.textContent = answer;
+      } catch (e) {
+        loading.textContent = "Erreur: backend indisponible (on le fait à l’étape 3).";
+      } finally {
+        chatSend.disabled = false;
+      }
+    };
+
+    chatSend.addEventListener("click", send);
+    chatInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") send();
+    });
+
+    // Message d'accueil
+    append("Salut. Pose une question sur mon profil/projets.", "bot");
+  })();
+
 });
+
