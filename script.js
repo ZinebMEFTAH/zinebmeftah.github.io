@@ -46,7 +46,72 @@ if (burger && navLinks) {
   });
 }
 
-    // --- Translation Dictionary ---
+  // --- Chat (single implementation) ---
+  const chatToggle = document.getElementById("chat-toggle");
+  const chatBox = document.getElementById("chatbox");
+  const chatClose = document.getElementById("chat-close");
+  const chatForm = document.getElementById("chat-form");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  if (chatToggle && chatBox && chatClose && chatForm && chatInput && chatMessages) {
+    const append = (text, who) => {
+      const div = document.createElement("div");
+      div.className = `chat-bubble ${who}`;
+      div.textContent = text;
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    };
+
+    const openChat = () => chatBox.classList.remove("hidden");
+    const closeChat = () => chatBox.classList.add("hidden");
+
+    chatToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      chatBox.classList.toggle("hidden");
+      if (!chatBox.classList.contains("hidden")) chatInput.focus();
+    });
+
+    chatClose.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeChat();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (chatBox.classList.contains("hidden")) return;
+      if (!chatBox.contains(e.target) && !chatToggle.contains(e.target)) closeChat();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeChat();
+    });
+
+    chatForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const q = chatInput.value.trim();
+      if (!q) return;
+
+      chatInput.value = "";
+      append(q, "user");
+      
+      try {
+        const res = await fetch("https://portfolio-chat.zinebmeftah.workers.dev", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: q })
+        });
+
+        const data = await res.json();
+        append(data.answer || "No answer.", "bot");
+      } catch (err) {
+        append("Server error. Try again later.", "bot");
+      }
+    });
+
+    append("Hi. Ask me anything about my projects.", "bot");
+  }
+
+  // --- Translation Dictionary ---
     const translations = {
       fr: {
         "page.title": "Portfolio - Meftah Zineb",
@@ -113,7 +178,6 @@ if (burger && navLinks) {
         "nav.competences": "Compétences",
         "nav.langues": "Langues",
         "nav.experience": "Expérience",
-        "contact.heading": "Contact",
         "profil.heading": "À Propos de Moi",
         "profil.greeting": "Bonjour, je suis Meftah Zineb.",
         "profil.bio1": "Architecte digital et innovateur passionné, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.",
@@ -237,13 +301,6 @@ if (burger && navLinks) {
   "langues.englishCert": "Voir certificat",
   "langues.arabic": "Arabe",
   "langues.arabicLevel": "Langue maternelle",
-  "experience.card4.item1": "Hackathon IA Avignon (24h, 2024)",
-  "experience.card4.item2": "Mentor junior – GDSC (2023)",
-  "experience.card4.item3": "Projet encadré G-JOBS (2024) : tâches, Git, revue",
-
-  "projects.p0.title": "Générateur de sites web IA",
-  "projects.p0.short": "Générez des sites web depuis une consigne.",
-  "projects.p0.desc": "Création d'un système générant des sites web fonctionnels à partir d'instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.",
 
   "projects.p9.title": "LeRobot PushT Trainer",
   "projects.p9.short": "Entraînez/évaluez des politiques PushT.",
@@ -299,7 +356,6 @@ if (burger && navLinks) {
         "nav.competences": "Skills",
         "nav.langues": "Languages",
         "nav.experience": "Experience",
-        "contact.heading": "Contact",
         "profil.heading": "About Me",
         "profil.greeting": "Hi, I’m Zineb Meftah.",
         "profil.bio1": "A digital architect and passionate innovator, I blend AI with the art of development to create disruptive solutions that redefine the future.",
@@ -489,7 +545,6 @@ if (burger && navLinks) {
         "nav.competences": "المهارات",
         "nav.langues": "اللغات",
         "nav.experience": "الخبرة",
-        "contact.heading": "اتصل",
         "profil.heading": "نبذة عني",
         "profil.greeting": "مرحبًا، أنا مفتاح زينب.",
         "profil.bio1": "أنا مهندسة رقمية ومبتعة شغوفة أدمج الذكاء الاصطناعي مع فن التطوير لإنشاء حلول ثورية تعيد تعريف المستقبل.",
@@ -614,9 +669,6 @@ if (burger && navLinks) {
   "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي، تطوير الويب",
   "experience.card4.title": "إنجازات أخرى",
   "experience.card4.detail": "المشاركة في عدة هاكاثونات ومشاريع تعاونية للابتكار والتميز.",
-  "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024)",
-  "experience.card4.item2": "مُرشِدة مبتدئة – GDSC (2023)",
-  "experience.card4.item3": "مشروع مؤطَّر G-JOBS (2024): مهام، Git، مراجعة",
 
   // Languages section
   "langues.heading": "اللغات",
@@ -690,43 +742,6 @@ if (burger && navLinks) {
       },
     };
     
-    // --- Mobile Menu Functionality ---
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-    
-    function toggleMobileMenu() {
-        if (hamburger && mobileNav) {
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-    }
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', toggleMobileMenu);
-    }
-    
-    // Close mobile menu when clicking on a link
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (hamburger && mobileNav) {
-                hamburger.classList.remove('active');
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-    
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (mobileNav && mobileNav.classList.contains('active') && 
-            !mobileNav.contains(e.target) && 
-            hamburger && !hamburger.contains(e.target)) {
-            toggleMobileMenu();
-        }
-    });
-
     // --- Mobile Language Dropdown ---
     const mobileLangButton = document.querySelector('.mobile-lang-button');
     const mobileLangOptions = document.querySelector('.mobile-lang-options');
@@ -1051,86 +1066,8 @@ if (burger && navLinks) {
           card.setAttribute('aria-pressed', String(isFlipped));
         }
       });
-    });
+    });  
 
-
-    // Close drawer when clicking anywhere outside it (only when open)
-    document.addEventListener('click', (e) => {
-      const isOpen = menuToggle && menuToggle.getAttribute('aria-expanded') === 'true';
-      if (!isOpen) return;
-      const clickInsideMenu = mobileMenu && mobileMenu.contains(e.target);
-      const clickOnToggle = menuToggle && menuToggle.contains(e.target);
-      if (!clickInsideMenu && !clickOnToggle) {
-        setMenuOpen(false);
-      }
-    });
   
-
-  (function initChatbox() {
-    const chatFab = document.getElementById("chatFab");
-    const chatWidget = document.getElementById("chatWidget");
-    const chatClose = document.getElementById("chatClose");
-    const chatMessages = document.getElementById("chatMessages");
-    const chatInput = document.getElementById("chatInput");
-    const chatSend = document.getElementById("chatSend");
-
-    if (!chatFab || !chatWidget || !chatClose || !chatMessages || !chatInput || !chatSend) return;
-
-    const API_URL = "https://portfolio-chat.zinebmeftah.workers.dev"; // Étape 3: on crée ce endpoint côté backend (RAG)
-
-    const append = (text, who) => {
-      const div = document.createElement("div");
-      div.className = `chat-bubble ${who}`;
-      div.textContent = text;
-      chatMessages.appendChild(div);
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-      return div;
-    };
-
-    const setOpen = (open) => {
-      chatWidget.classList.toggle("open", open);
-      chatWidget.setAttribute("aria-hidden", open ? "false" : "true");
-      if (open) chatInput.focus();
-    };
-
-    chatFab.addEventListener("click", () => setOpen(true));
-    chatClose.addEventListener("click", () => setOpen(false));
-
-    const send = async () => {
-      const q = (chatInput.value || "").trim();
-      if (!q) return;
-
-      chatInput.value = "";
-      append(q, "user");
-
-      chatSend.disabled = true;
-      const loading = append("...", "bot");
-
-      try {
-        const res = await fetch(API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: q })
-        });
-
-        const data = await res.json().catch(() => ({}));
-        const answer = data.answer || data.output || "Erreur: réponse vide.";
-        loading.textContent = answer;
-      } catch (e) {
-        loading.textContent = "Erreur: backend indisponible (on le fait à l’étape 3).";
-      } finally {
-        chatSend.disabled = false;
-      }
-    };
-
-    chatSend.addEventListener("click", send);
-    chatInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") send();
-    });
-
-    // Message d'accueil
-    append("Salut. Pose une question sur mon profil/projets.", "bot");
-  })();
-
 });
 
