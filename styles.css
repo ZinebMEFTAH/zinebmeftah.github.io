@@ -2533,3 +2533,22 @@ html[lang="ar"] .projects-scroll > * {
   transform: scale(1.08);
   box-shadow: 0 14px 30px rgba(0,0,0,0.3);
 }
+
+/* Final override: chat button color + icon size */
+#chat-toggle.chat-toggle{
+  width: 58px !important;
+  height: 58px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end)) !important;
+  color: #fff !important;
+  font-size: 28px !important;
+  line-height: 1 !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+#chat-toggle.chat-toggle:hover{
+  transform: scale(1.08) !important;
+}
