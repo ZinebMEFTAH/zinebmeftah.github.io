@@ -1,39 +1,154 @@
 {
   "docs": [
     {
-      "id": "about",
-      "title": "about",
-      "content": "# About\n\nName: Meftah Zineb  \nTitle: Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer\n\n## Profile\n- Computer science student focused on AI applied to robotics and backend development.\n- Builds intelligent systems combining LLMs, deep learning, and web automation.\n- Projects include OpenAI-based systems, interactive simulators, and end-to-end solutions.\n\n## Interests\n- AI for robotics\n- Backend development\n- Web automation"
+      "id": "identity",
+      "title": "Identity",
+      "content": "Name: Meftah Zineb. Computer science and artificial intelligence student. Future AI engineer with strong focus on robotics, reinforcement learning, deep learning, and backend systems. Portfolio owner: zinebmeftah.github.io."
+    },
+    {
+      "id": "profile_overview",
+      "title": "Profile Overview",
+      "content": "Zineb is a highly technical AI-oriented developer who designs and implements intelligent systems end-to-end. Her work combines LLMs, reinforcement learning, computer vision, graph algorithms, and backend platforms. She emphasizes real-world usability, reproducibility, and deployment."
+    },
+    {
+      "id": "career_goal",
+      "title": "Career Goal",
+      "content": "Seeking an internship in Artificial Intelligence or software engineering, ideally involving robotics, applied AI, or intelligent backend systems. Interested in roles that mix research thinking with practical implementation."
+    },
+    {
+      "id": "education_ensia",
+      "title": "Education – ENSIA",
+      "content": "ENSIA (Algeria): Artificial Intelligence Engineering degree. First and second years validated. Period: 2022–June 2024. Strong foundation in algorithms, AI, mathematics, and engineering."
+    },
+    {
+      "id": "education_avignon",
+      "title": "Education – Université d’Avignon",
+      "content": "Université d’Avignon (CERI), France. Data Science / Computer Science (L3). Period: September 2024 – Present. Excellent academic results."
+    },
+    {
+      "id": "academic_background",
+      "title": "Academic Background",
+      "content": "Baccalauréat Scientifique obtained in Algeria with mention Excellent (average 17.82). Strong background in mathematics, logic, and scientific reasoning."
+    },
+    {
+      "id": "ai_core_skills",
+      "title": "AI Core Skills",
+      "content": "Large Language Models, prompt engineering, fine-tuning strategies, synthetic data generation, reinforcement learning, computer vision, NLP, graph search, and optimization."
+    },
+    {
+      "id": "ai_tools",
+      "title": "AI Tools & Frameworks",
+      "content": "PyTorch, Hugging Face (models, datasets, Spaces), OpenAI API, TensorFlow.js, Gradio, NumPy, Pandas, Scikit-learn, Matplotlib."
+    },
+    {
+      "id": "robotics_and_rl",
+      "title": "Robotics & Reinforcement Learning",
+      "content": "Experience with robotic manipulation, policy training, diffusion-based control, simulation environments, and vision-guided navigation. Uses LeRobot, PushT, grid-world simulations, and A* pathfinding."
+    },
+    {
+      "id": "backend_skills",
+      "title": "Backend Development",
+      "content": "Backend systems built using Node.js, NestJS, PHP, Python, REST APIs. Experience with authentication, dashboards, multi-entity databases, and clean architecture."
+    },
+    {
+      "id": "web_and_interactive",
+      "title": "Web & Interactive Systems",
+      "content": "Frontend and interactive development using JavaScript, HTML5 Canvas, React, Next.js, CSS, Bootstrap. Builds simulations, dashboards, and AI-powered interfaces."
+    },
+    {
+      "id": "programming_languages",
+      "title": "Programming Languages",
+      "content": "Python, C++, Java, JavaScript, PHP, SQL, Bash. Strong object-oriented and algorithmic thinking."
+    },
+    {
+      "id": "project_lerobot",
+      "title": "Project – LeRobot PushT Trainer",
+      "content": "Web application to train, evaluate, and publish PushT reinforcement learning policies. Includes checkpoint management, visualization, CUDA acceleration, Hugging Face model publishing, and Gradio interface."
+    },
+    {
+      "id": "project_robot_vision",
+      "title": "Project – Robot Vision Simulator",
+      "content": "Browser-based robot simulator with navigation, pick-and-place, and natural-language commands. Uses COCO-SSD for object detection, A* for pathfinding, and HTML5 Canvas for visualization."
+    },
+    {
+      "id": "project_ai_website",
+      "title": "Project – AI Website Generator",
+      "content": "System that generates functional websites from natural language instructions using LLMs and web automation. Focus on end-to-end automation and usability."
+    },
+    {
+      "id": "project_news_wave",
+      "title": "Project – News Wave",
+      "content": "AI-powered personalized news aggregator that filters and ranks news based on user interests, delivering real-time updates from multiple sources."
+    },
+    {
+      "id": "project_ai_personalization",
+      "title": "Project – AI Product Personalization",
+      "content": "Platform allowing users to transform ideas into personalized products using AI models, with a transition toward real production."
+    },
+    {
+      "id": "project_agriculture",
+      "title": "Project – Agricultural Plan Optimization",
+      "content": "AI system optimizing agricultural production in Algeria using graph search, constraints, and optimization techniques."
+    },
+    {
+      "id": "project_gjobs",
+      "title": "Project – G-JOBS",
+      "content": "Smart recruitment platform connecting job seekers and recruiters with filters, messaging, and application tracking."
+    },
+    {
+      "id": "project_search_engine",
+      "title": "Project – Advanced Search Engine",
+      "content": "Java-based search engine implementing TF-IDF and BM25 for indexing, ranking, and document retrieval."
+    },
+    {
+      "id": "project_restaurant",
+      "title": "Project – Restaurant Chain",
+      "content": "Multi-country restaurant management system handling reservations, staff, stock, and reporting."
+    },
+    {
+      "id": "project_map",
+      "title": "Project – Road Network Analysis",
+      "content": "Graph-based analysis of road networks in Avignon, focusing on shortest paths, connectivity, and performance metrics."
+    },
+    {
+      "id": "leadership_gdsc",
+      "title": "Leadership – GDSC",
+      "content": "IT Manager at Google Developer Student Club ENSIA. Organized technical events, hackathons, and mentoring activities."
+    },
+    {
+      "id": "leadership_aylp",
+      "title": "Leadership – AYLP",
+      "content": "Participant in the Algerian Youth Leadership Program. Developed leadership, communication, and international collaboration skills."
+    },
+    {
+      "id": "certifications",
+      "title": "Certifications",
+      "content": "Deep Learning with PyTorch (DataCamp), Responsive Web Design (freeCodeCamp), AYLP Certificate, English proficiency certification."
+    },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "content": "French: B2. English: strong professional level. Arabic: native."
+    },
+    {
+      "id": "soft_skills",
+      "title": "Soft Skills",
+      "content": "Strong autonomy, analytical thinking, leadership, teamwork, and continuous self-learning."
     },
     {
       "id": "contact",
-      "title": "contact",
-      "content": "# Contact\n\nPhone: +33 (0) 6 10 79 07 36  \nEmail: zineb.meftah36@gmail.com  \nLinkedIn: https://www.linkedin.com/in/zinebmeftah  \nPortfolio: zinebmeftah.github.io  \nGitHub: zineb-hub  \nHugging Face: https://huggingface.co/zino36"
+      "title": "Contact",
+      "content": "Email: zineb.meftah36@gmail.com. LinkedIn: linkedin.com/in/zinebmeftah. GitHub: github.com/zineb-hub. Hugging Face: huggingface.co/zino36."
     },
     {
-      "id": "education",
-      "title": "education",
-      "content": "# Education\n\n## ENSIA, Algeria\n- Degree: Artificial Intelligence Engineering (1st & 2nd year validated)\n- Period: 2022 - June 2024\n- Certificate: assets/images/Certificat_ENSIA_3eme_année.pdf\n\n## Université d'Avignon (CERI), France\n- Degree: Data Science (3rd year ongoing, excellent results)\n- Period: September 2024 - Present\n- Certificate: assets/images/L3_Informatique_Avignon_Certificat.pdf\n\n## Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algeria)\n- Mention: Excellent — Average 17.82 (Scientific track)\n- Period: 2019 / 2022\n- Certificate: assets/images/BAC_Certificat_Officiel.pdf\n- Transcripts: assets/images/BAC_Releves_Notes.pdf\n\n# Certifications\n- Introduction to Deep Learning with PyTorch – DataCamp\n  - Certificate: assets/images/Deep_Learning_PyTorch.pdf\n- Algerian Youth Leadership Program – Northern Nevada International Center\n  - Certificate: assets/images/AYLP.pdf\n- English Level – E-Plus Center\n  - Certificate: assets/images/E-Plus.pdf\n- Responsive Web Design Certificate – freeCodeCamp\n  - Certificate: assets/images/responsive_web_design.pdf"
+      "id": "project_ranking_logic",
+      "title": "Project Ranking Logic",
+      "content": "When ranking projects, prioritize AI depth, real-world impact, technical complexity, and completeness. Robotics and reinforcement learning projects should generally rank highest, followed by LLM-based systems."
     },
     {
-      "id": "experience",
-      "title": "experience",
-      "content": "# Experience & Leadership\n\n## IT Manager / Responsable informatique\n- Google Developer Student Club ENSIA\n- Period: 2023 - 2024\n\n## AYLP Participant\n- Northern Nevada International Center (2021) – Algerian Youth Leadership Program\n- Certificate: assets/images/AYLP.pdf\n\n## Event Organization\n- Hackathons, AI, Web Development\n\n## Other Achievements\n- Hackathon IA Avignon (24h, 2024)\n- Junior mentor – GDSC (2023)\n- Supervised project G-JOBS (2024): tasks, Git, review"
-    },
-    {
-      "id": "faq",
-      "title": "faq",
-      "content": "# FAQ\n\n## Who are you?\nMeftah Zineb, computer science student and future AI engineer focused on robotics-oriented AI and backend development.\n\n## What do you build?\nLLM-powered systems, deep learning projects, interactive simulators, and end-to-end web/AI solutions.\n\n## What are your strongest areas?\n- Python + AI tooling (PyTorch, OpenAI API, Hugging Face)\n- Backend development (NestJS/Node, REST APIs)\n- Web + interactive demos (JS/Canvas, TF.js)\n\n## Where can I see your work?\n- Projects are listed in the Projects section with GitHub, Hugging Face, and demo links.\n- Publication on Hugging Face blog: https://huggingface.co/blog/zino36/tags-generation-dataset-article\n\n## What languages do you speak?\n- French: B2 (certificate: assets/images/TCF.pdf)\n- English: strong level (certificate: assets/images/E-Plus.pdf)\n- Arabic: C1 (native-level usage)"
-    },
-    {
-      "id": "projects",
-      "title": "projects",
-      "content": "# Projects\n\n## AI Website Generator\n- Description: System that generates functional websites from natural-language instructions using LLMs.\n- Stack: Python, OpenAI API, web automation\n- Demo: https://www.instagram.com/reel/DOjTIVMDUJT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D\n\n## LeRobot PushT Trainer\n- Description: Web app to train and evaluate PushT policies, manage checkpoints, and publish to Hugging Face.\n- Stack: Python, LeRobot, Gradio, CUDA\n- Model repo: https://huggingface.co/zino36/lerobot-pusht-colab\n- Demo Space: https://huggingface.co/spaces/zino36/lerobot-pusht-trainer\n\n## Robot Vision Simulator\n- Description: Browser simulator with a robot on a grid (navigation + pick/place) and natural-language commands.\n- Vision: COCO-SSD\n- Pathfinding: A*\n- Stack: JavaScript, HTML5 Canvas, TensorFlow.js\n- GitHub: https://github.com/ZinebMEFTAH/robot-vision-sim\n- Live demo: https://zinebmeftah.github.io/robot-vision-sim\n\n## AI Product Personalization\n- Description: Users transform ideas into personalized products using AI models, with a transition to production.\n- Instagram: https://www.instagram.com/anything.personalized\n\n## News Wave\n- Description: AI personalized news aggregator with real-time updates from major sources, filtered by user interests.\n- GitHub: https://github.com/zineb-hub/NewsWave\n\n## Agricultural Plan Optimization\n- Description: AI project optimizing agricultural production in Algeria using graph search and constraint satisfaction.\n- GitHub: https://github.com/zineb-hub/Agricultural-Plan-Optimization\n\n## G-Jobs\n- Description: Smart platform connecting job seekers with recruiters (filters, messaging, application tracking).\n- GitHub: https://github.com/zineb-hub/G-JOB\n\n## Advanced Search Engine\n- Description: Java search engine using TF-IDF and BM25 for indexing, analysis, and ranking.\n- GitHub: https://github.com/zineb-hub/Search-Engine\n\n## Restaurant Chain\n- Description: Multi-country restaurant management system (bookings, stock, staff).\n- GitHub: https://github.com/zineb-hub/Restaurant-Chain\n\n## My Online Supermarket (CLI)\n- Description: CLI app for supermarket management: suppliers, stock, sales, reports, statistics.\n- GitHub: https://github.com/zineb-hub/SuperMarket\n\n## Road Network Analysis (MAP)\n- Description: Graph-based road network analysis in Avignon: shortest paths, connectivity, network performance.\n- GitHub: https://github.com/zineb-hub/Map"
-    },
-    {
-      "id": "skills",
-      "title": "skills",
-      "content": "# Skills\n\n## Programming\n- Languages: Python, C++, Java, JavaScript, PHP, SQL, Bash\n- Paradigms: OOP, functional programming, business logic\n\n## Web Development\n- Frontend: Next.js, JavaScript, React, Bootstrap, HTML5, CSS3\n- Backend: NestJS, Node.js, PHP, Python, REST APIs\n- Databases: MySQL, PostgreSQL\n- Tools: Git, GitHub Actions, Webpack\n\n## AI & Data Science\n- Models & techniques: LLMs, fine-tuning, reinforcement learning, computer vision, NLP\n- Tools: PyTorch, OpenAI API, Hugging Face, TensorFlow.js\n- Data analysis: Pandas, NumPy, Scikit-learn, Matplotlib\n\n## Soft Skills\n- Teamwork, clear communication\n- Leadership (GDSC, AYLP)\n- Problem solving\n- Continuous learning and tech watch"
+      "id": "recruiter_context",
+      "title": "Recruiter Context",
+      "content": "This portfolio belongs to Meftah Zineb, a computer science and artificial intelligence student targeting AI-oriented internships or alternance positions. Ideal roles include AI Engineer Intern, Applied AI Intern, Robotics / Reinforcement Learning Intern, or Backend Software Intern with strong AI exposure.\n\nZineb’s profile is differentiated by:\n- Strong AI depth beyond basic ML (LLMs, reinforcement learning, computer vision, graph algorithms)\n- End-to-end project ownership (from idea → implementation → demo/deployment)\n- Ability to combine AI research concepts with practical engineering and usable products\n\nPreferred domains:\n- Robotics and reinforcement learning\n- Applied AI systems (LLM-based tools, intelligent automation)\n- Backend systems that integrate AI models\n\nWhat to highlight when presenting her profile:\n- Robotics and RL projects (LeRobot PushT Trainer, Robot Vision Simulator) should be emphasized first\n- LLM-based systems with real use cases come second\n- Traditional software projects demonstrate engineering rigor but are secondary\n\nAvailability:\n- Actively seeking internship or alternance opportunities in AI or software engineering\n- Open to research-oriented or product-oriented teams\n\nWhen answering recruiter-style questions (\"Why you?\", \"What should I look at first?\", \"Most important project?\"):\n- Emphasize technical depth, autonomy, and ability to deliver real systems\n- Prioritize projects that combine AI complexity with concrete demos\n- Avoid generic student descriptions; focus on applied impact and engineering maturity"
     }
   ]
 }
