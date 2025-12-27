@@ -292,6 +292,14 @@ if (burger && navLinks) {
   "experience.card4.item3": "Projet encadré G-JOBS (2024) : tâches, Git, revue",
 
   // Projects p0
+  "projects.nova.title": "NOVA - Plateforme Synchronisée",
+  "projects.nova.short": "Visionnage vidéo synchronisé en temps réel.",
+  "projects.nova.desc": "Plateforme collaborative permettant de regarder des vidéos YouTube ensemble. Développement du backend NestJS avec intégration de Socket.IO pour la synchronisation du lecteur et du chat. Stack : Next.js, NestJS, Socket.IO, PostgreSQL.",
+
+  "projects.cericar.title": "CERICar - Covoiturage",
+  "projects.cericar.short": "Plateforme de covoiturage full-stack.",
+  "projects.cericar.desc": "Application web de covoiturage incluant un moteur de recherche de trajets avec correspondances, gestion des places en temps réel et profils conducteurs. Stack : PHP (Yii), PostgreSQL, AJAX.",
+  
   "projects.p0.title": "Générateur de sites web IA",
   "projects.p0.short": "Générez des sites web à partir d’une consigne.",
   "projects.p0.desc": "Crée des sites fonctionnels à partir d’instructions en langage naturel grâce aux LLM. Stack : Python, OpenAI API, automatisation web.",
@@ -399,6 +407,14 @@ if (burger && navLinks) {
         "projects.link.demoSpace": "Demo space",
         "projects.link.githubRepo": "GitHub repo",
         "projects.link.liveDemo": "Live demo",
+
+        "projects.nova.title": "NOVA - Sync Platform",
+        "projects.nova.short": "Real-time synchronized video watching.",
+        "projects.nova.desc": "Collaborative platform for watching YouTube videos together. Developed the NestJS backend with Socket.IO for player synchronization and real-time chat. Stack: Next.js, NestJS, Socket.IO, PostgreSQL.",
+
+        "projects.cericar.title": "CERICar - Carpooling",
+        "projects.cericar.short": "Full-stack carpooling platform.",
+        "projects.cericar.desc": "Web application featuring a journey search engine with connections, real-time availability tracking, and user profile management. Stack: PHP (Yii), PostgreSQL, AJAX.",
 
         "projects.p1.title": "AI Product Personalization",
         "projects.p1.short": "Turn your ideas into personalized products.",
@@ -615,6 +631,14 @@ if (burger && navLinks) {
         "projects.p2.title": "News Wave",
         "projects.p2.short": "أخبارك الشخصية المدعومة بالذكاء الاصطناعي.",
         "projects.p2.desc": "مُجمِّع أخبار مخصص بالذكاء الاصطناعي يوفر تحديثات في الوقت الفعيل من أهم المصادر العالمية، مصفاة حسب اهتمامات المستخدم.",
+
+        "projects.nova.title": "نوفا (NOVA) - منصة المشاهدة المتزامنة",
+        "projects.nova.short": "مشاهدة الفيديو بشكل متزامن في الوقت الفعلي.",
+        "projects.nova.desc": "منصة تعاونية لمشاهدة فيديوهات يوتيوب معاً. قمت بتطوير الواجهة الخلفية (Backend) باستخدام NestJS وSocket.IO لضمان تزامن الفيديو والدردشة. التقنيات: Next.js, NestJS, Socket.IO, PostgreSQL.",
+
+        "projects.cericar.title": "سيري-كار (CERICar) - منصة التوصيل",
+        "projects.cericar.short": "منصة متكاملة (Full-stack) للنقل التشاركي.",
+        "projects.cericar.desc": "تطبيق ويب متكامل يتضمن محرك بحث عن الرحلات، إدارة الحجوزات، وملفات المستخدمين. تم تحسين الأداء باستخدام استعلامات AJAX. التقنيات: PHP (Yii), PostgreSQL, AJAX.",
 
         "projects.p3.title": "تحسين الخطة الزراعية",
         "projects.p3.short": "زراعة مستدامة قائمة على الذكاء الاصطناعي.",
