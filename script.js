@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. Language Switcher Logic (Desktop) ---
   const langToggle = document.querySelector(".lang-toggle");
   const langSwitcher = document.querySelector(".lang-switcher");
 
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- 2. Mobile Navigation (Burger Menu) ---
   const burger = document.getElementById("burger");
   const navLinks = document.querySelector(".nav-links");
 
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       burger.classList.toggle("toggle");
     });
 
+    // Close menu when clicking outside
     document.addEventListener("click", (e) => {
       if (
         navLinks.classList.contains("nav-active") &&
@@ -35,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Close menu on scroll
     window.addEventListener("scroll", () => {
       if (navLinks.classList.contains("nav-active")) {
         navLinks.classList.remove("nav-active");
@@ -43,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- 3. Chat Widget Logic ---
   const chatToggle = document.getElementById("chat-toggle");
   const chatBox = document.getElementById("chatbox");
   const chatClose = document.getElementById("chat-close");
@@ -61,9 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openChat = () => chatBox.classList.remove("hidden");
     const closeChat = () => chatBox.classList.add("hidden");
+    
+    // Builds context from page content for the AI
     const buildContext = () => {
       const safeText = (sel) => document.querySelector(sel)?.innerText?.trim() || "";
-
       const parts = [
         safeText("#profil"),
         safeText("#projects"),
@@ -73,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         safeText("#formation"),
         safeText("#langues"),
       ].filter(Boolean);
-
       return parts.join("\n\n").slice(0, 12000);
     };
 
@@ -125,579 +130,274 @@ document.addEventListener("DOMContentLoaded", () => {
     append("Hi. Ask me anything about my projects.", "bot");
   }
 
+  // --- 4. Translations Data ---
   const translations = {
     fr: {
       "page.title": "Portfolio - Meftah Zineb",
       "nav.title": "Meftah Zineb",
-      "header.title": "Meftah Zineb",
-      "contact.heading": "Contact",
-      "info.telephone": "☎ Téléphone",
-      "info.email": "✉ Email",
-      "info.linkedin": "🔗 LinkedIn",
-      "info.portfolio": "🌐 Portfolio",
-      "info.github": "🐙 GitHub",
-      "info.huggingface": "🤖 Hugging Face",
-      "profile.heading": "À propos de moi",
+      "header.title": "MEFTAH Zineb",
+      "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
+      "nav.contact": "Contact", "nav.profil": "Profil", "nav.formation": "Formation",
+      "nav.publications": "Publications", "nav.projects": "Projets", "nav.competences": "Compétences",
+      "nav.langues": "Langues", "nav.experience": "Expérience",
+      
+      // Certificate - English Specifics (Updated)
+      "certs.english.title": "EF SET English Certificate (C2 Proficient)",
+      "certs.english.desc": "Score : 75/100 (C2 Proficient). Certification standardisée reconnue mondialement attestant d'une maîtrise bilingue.",
+      "certs.cta": "Voir certificat",
+
+      // Languages - C2 Update
+      "langues.englishlevel": "Bilingue (C2)",
+      "langues.frenchlevel": "Intermédiaire (B2)",
+      "langues.arabicLevel": "Langue maternelle",
+
+      // New Compiler Project
+      "projects.compiler.title": "Compilateur Pascal-like",
+      "projects.compiler.short": "Compilateur complet (Lexique, Syntaxe, Sémantique).",
+      "projects.compiler.desc": "Développement d'un compilateur pour un sous-ensemble du langage Pascal (Mini-Pascal). Implémentation des analyses lexicale, syntaxique et sémantique, gestion des tables de symboles et génération de quadruplets. Stack: C, Flex, Bison.",
+
+      // Existing Projects
+      "projects.p9.title": "LeRobot PushT Trainer",
+      "projects.p9.short": "Entraînez/évaluez des politiques PushT.",
+      "projects.p9.desc": "App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack: Python, LeRobot, Gradio, CUDA.",
+      
+      "projects.p10.title": "Robot Vision Simulator",
+      "projects.p10.short": "Simulateur interactif de vision robotique.",
+      "projects.p10.desc": "Simulateur navigateur: robot sur grille, pick/place et commandes en langue naturelle. COCO‑SSD pour la vision, A* pour le pathfinding. Stack: JS/Canvas, TF.js.",
+
+      "projects.p0.title": "Générateur IA de sites web",
+      "projects.p0.short": "Générez des sites web depuis une consigne.",
+      "projects.p0.desc": "Création d’un système générant des sites web fonctionnels à partir d’instructions en langage naturel grâce à des modèles LLM. Stack : Python, OpenAI API, Automatisation web.",
+
+      "projects.nova.title": "NOVA",
+      "projects.nova.short": "Visionnage vidéo synchronisé.",
+      "projects.nova.desc": "Plateforme collaborative (type Watch2Gether) avec synchronisation temps réel des lecteurs vidéo et chatbox. Développement du backend NestJS et gestion des WebSockets.",
+
+      "projects.cericar.title": "CERICar",
+      "projects.cericar.short": "Covoiturage Full-Stack.",
+      "projects.cericar.desc": "Application complète de covoiturage : moteur de recherche de trajets complexes, gestion des réservations et profils utilisateurs. Stack: PHP (Yii), PostgreSQL, AJAX.",
+
+      "projects.p3.title": "Optimisation Agricole",
+      "projects.p3.short": "Agriculture durable avec IA.",
+      "projects.p3.desc": "Projet IA d’optimisation de la production agricole en Algérie en utilisant des algorithmes de recherche sur graphes et de satisfaction de contraintes.",
+
+      "projects.p4.title": "G-Jobs",
+      "projects.p4.short": "Plateforme d'emploi intelligente.",
+      "projects.p4.desc": "Une plateforme intelligente connectant les chercheurs d’emploi algériens avec les recruteurs à travers des filtres avancés, messagerie, et suivi des candidatures.",
+
+      "projects.p5.title": "Moteur de Recherche Avancé",
+      "projects.p5.short": "Recherche documentaire (TF-IDF/BM25).",
+      "projects.p5.desc": "Moteur de recherche Java basé sur TF-IDF et BM25 pour indexer, analyser et trier efficacement des documents textuels avec précision.",
+
+      "projects.p6.title": "Chaîne de Restaurants",
+      "projects.p6.short": "Gestion multisites.",
+      "projects.p6.desc": "Système de gestion d’une chaîne de restaurants multi-pays, permettant une organisation optimale des réservations, des stocks et du personnel.",
+
+      "projects.p7.title": "Mon Supermarché Numérique",
+      "projects.p7.short": "Gestion stock CLI.",
+      "projects.p7.desc": "Application CLI pour digitaliser la gestion d’un supermarché : fournisseurs, stock, ventes, rapports et statistiques.",
+
+      "projects.p8.title": "Analyse Réseau Routier",
+      "projects.p8.short": "Algorithmes de graphes.",
+      "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes : chemins optimaux, connexité, performance réseau.",
+
+      "experience.heading": "Expérience & Leadership",
+      "competences.heading": "Compétences",
+      "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés.",
+      
+      // Section headers & static text
+      "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
       "profile.text1": "Étudiante en Informatique passionnée par l’IA appliquée à la robotique et le développement backend, je conçois des systèmes intelligents combinant LLM, deep learning et automatisation web.",
       "profile.text2": "Mes projets mettent en œuvre des modèles OpenAI, des simulateurs interactifs, et des solutions complètes de bout-en-bout.",
-      "profile.more": "En savoir plus sur mon parcours",
-      "projects.hover": "Survolez ou cliquez pour voir les détails",
-      "projects.link": "Voir le code sur GitHub",
-      "projects.link.instagram" : "Voir la page sur Instagram",
-      "projects.link.demo": "Voir la démo",
-      "projects.link.modelRepo": "Dépôt du modèle",
-      "projects.link.demoSpace": "Espace de démo",
-      "projects.link.githubRepo": "Dépôt GitHub",
-      "projects.link.liveDemo": "Démo en ligne",
-      "projects.p1.title": "Personnalisation de produits par l’IA",
-      "projects.p1.short": "Transformez vos idées en produits uniques.",
-      "projects.p1.desc": "Système permettant aux utilisateurs de transformer leurs idées en produits personnalisés via des modèles d’IA, avec une transition vers la production.",
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "Votre actualité personnalisée avec l’IA.",
-      "projects.p2.desc": "Agrégateur de nouvelles personnalisées par l'IA qui offre des mises à jour en temps réel à partir des principales sources mondiales, filtrées selon les intérêts de l'utilisateur.",
-      "projects.p3.title": "Optimisation Agricole",
-      "projects.p3.short": "Agriculture durable basée sur l’IA.",
-      "projects.p3.desc": "Projet IA d’optimisation de la production agricole en Algérie en utilisant des algorithmes de recherche sur graphes et de satisfaction de contraintes.",
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "Plateforme d’emploi intelligente en Algérie.",
-      "projects.p4.desc": "Une plateforme intelligente connectant les chercheurs d’emploi algériens avec les recruteurs à travers des filtres avancés, messagerie, et suivi des candidatures.",
-      "projects.p5.title": "Moteur de Recherche Avancé",
-      "projects.p5.short": "Recherche documentaire avec TF-IDF & BM25.",
-      "projects.p5.desc": "Moteur de recherche Java basé sur TF-IDF et BM25 pour indexer, analyser et trier efficacement des documents textuels avec précision.",
-      "projects.p6.title": "Chaîne de Restaurants",
-      "projects.p6.short": "Gestion multisites de restaurants.",
-      "projects.p6.desc": "Système de gestion d’une chaîne de restaurants multi-pays, permettant une organisation optimale des réservations, des stocks et du personnel.",
-      "projects.p7.title": "Mon Supermarché Numérique",
-      "projects.p7.short": "Supermarché intelligent en ligne (CLI).",
-      "projects.p7.desc": "Application CLI pour digitaliser la gestion d’un supermarché : fournisseurs, stock, ventes, rapports et statistiques.",
-      "projects.p8.title": "Analyse du Réseau Routier (MAP)",
-      "projects.p8.short": "Algorithmes avancés sur les graphes.",
-      "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes : chemins optimaux, connexité, performance réseau.",
-      "header.subtitle": "Ingénieure en IA du futur | Apprentissage profond | Apprentissage automatique | Développeuse full-stack",
-      "nav.contact": "Contact",
-      "nav.profil": "Profil",
-      "nav.formation": "Formation",
-      "nav.publications": "Publications",
-      "nav.projects": "Projets",
-      "nav.competences": "Compétences",
-      "nav.langues": "Langues",
-      "nav.experience": "Expérience",
-      "profil.heading": "À Propos de Moi",
-      "profil.greeting": "Bonjour, je suis Meftah Zineb.",
-      "profil.bio1": "Architecte digital et innovateur passionné, je fusionne l'intelligence artificielle avec l'art du développement pour créer des solutions disruptives qui redéfinissent le futur.",
-      "profil.bio2": "Explorateur des algorithmes de pointe et toujours en quête de nouvelles idées, chaque projet est une aventure vers l'innovation.",
       "formation.heading": "Formation & Certifications",
-      "formation.ensia": "ENSIA, Algérie",
-      "formation.ensiaDiplome": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
-      "formation.ensiaCert": "Voir diplôme",
-      "formation.avignon": "Université d'Avignon (CERI), France",
-      "formation.avignonDiplome": "<strong>Diplôme :</strong> Data Science (3ᵉ année en cours, excellents résultats)",
-      "formation.avignonCert": "Voir diplôme",
       "publications.heading": "Publications",
-      "publication.date": "📅 20 décembre 2024",
-      "publication.location": "📍 Hugging Face",
-      "publication.description": "Découvrez notre approche révolutionnaire qui utilise un fine-tuning inversé pour générer des données synthétiques. Conçues pour extraire des mots-clés précis, ces données servent à entraîner des modèles de génération de tags ultra-performants.",
-      "publication.cta": "Lire l'article complet",
-      "publication.tableTitle": "Exemple de base de données",
       "projects.heading": "Projets et Expériences",
-      "competences.heading": "Compétences",
-      "competences.web": "🧑‍💻 Développement Web",
-      "competences.web.frontend": "Frontend : HTML, CSS, JavaScript, Bootstrap, AJAX, TensorFlow.js, HTML5 Canvas",
-      "competences.web.backend": "Backend : Node.js, PHP, Python (Flask, Django), REST API, SQL",
-      "competences.web.fullstack": "Full-Stack : Laravel, React, Django, Flask",
-      "competences.web.database": "Base de données : MySQL, PostgreSQL",
-      "competences.web.security": "Sécurité Web : Sessions, Cookies, CSRF, URL Rewriting",
-      "competences.web.tools": "Outils associés : Git, GitHub, GitHub Actions, Makefile",
-      "competences.data": "🤖 Data Science & Intelligence Artificielle",
-      "competences.data.tools": "Langages & Outils : Python, PyTorch, OpenAI API, Hugging Face, Scikit-learn, Pandas",
-      "competences.data.models": "Modèles & Techniques : LLM, Fine-tuning, Diffusion Models, Reinforcement Learning, Classification, Génération de données synthétiques",
-      "competences.data.apps": "Applications IA : Vision par ordinateur, NLP, Génération de tags, Sites web IA, Recommandation intelligente",
-      "competences.data.projects": "Projets notables : LeRobot, Générateur de sites web IA, News Wave, Génération automatique de tags",
-      "competences.data.extra": "Outils : Jupyter, Colab, Transformers, OpenAI Playground, TensorBoard, NumPy, Matplotlib",
-      "competences.programming": "💻 Programmation",
-      "competences.programming.languages": "Langages : Python, C++, Java, PHP, JavaScript, Bash, SQL",
-      "competences.programming.paradigms": "Paradigmes : POO, fonctionnelle, logique métier",
-      "competences.programming.experience": "Expériences : Compilation, Algorithmes de graphes (Dijkstra, A*, BM25), Scripting CLI",
-      "competences.programming.projects": "Projets : Compilateur Pascal-like, Optimisation réseaux, Moteur de recherche, CLI Supermarché, Génération web via LLM",
-      "competences.soft": "🤝 Compétences interpersonnelles",
-      "competences.soft.list": "Autonomie, travail en équipe, communication claire, leadership (GDSC, AYLP), résolution de problèmes, apprentissage rapide, rigueur technique, gestion de projet",
-      "competences.extra": "🧩 Compétences complémentaires",
-      "competences.extra.cognitive": "Cognitives : pensée algorithmique, esprit critique, modélisation",
-      "competences.extra.techniques": "Techniques : API REST, WebSockets, CI/CD, Git workflows",
-      "competences.extra.learning": "Apprentissage : veille technologique, frameworks IA",
-      "competences.extra.presentation": "Communication : vulgarisation, rédaction technique, présentations",
-      "competences.extra.methods": "Méthodologies : agile, GitHub Flow, conception modulaire, réutilisabilité",
-      "competences.techSkills": "Compétences Techniques",
-      "competences.aiDataSkills": "IA & Data Science",
-      "competences.softSkillsTitle": "Compétences Personnelles",
-      "competences.artificialIntelligence": "Intelligence Artificielle",
-      "competences.dataScience": "Data Science",
-      "competences.languages": "Langages",
-      "competences.paradigms": "Paradigmes",
-      "competences.frontend": "Frontend",
-      "competences.backend": "Backend",
-      "competences.databases": "Bases de données",
-      "competences.tools": "Outils",
-      "competences.aiModels": "Modèles & Techniques",
-      "competences.aiTools": "Outils IA",
-      "competences.dataAnalysis": "Analyse & Manipulation",
-      "competences.dataProjects": "Projets notables",
-      "competences.project1": "Génération de données synthétiques pour fine-tuning",
-      "competences.project2": "Moteur de recherche avec TF-IDF & BM25",
-      "competences.teamwork": "Travail en équipe",
-      "competences.leadership": "Leadership",
-      "competences.problemSolving": "Résolution de problèmes",
-      "competences.continuousLearning": "Apprentissage continu",
-      "competences.teamworkDesc": "Collaboration efficace, communication claire, esprit d'équipe",
-      "competences.leadershipDesc": "Expérience GDSC, mentorat, gestion de projets collaboratifs",
-      "competences.problemSolvingDesc": "Pensée analytique, approche systématique, solutions créatives",
-      "competences.continuousLearningDesc": "Veille technologique, adaptation rapide, autoformation",
-      "experience.heading": "Expérience & Leadership",
-      "experience.card1.title": "Responsable IT",
-      "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024)",
-      "experience.card2.title": "Participant AYLP",
-      "experience.card2.detail": "Northern Nevada International Center (2021) – Programme Algérien de Leadership des Jeunes",
-      "experience.card2.cert": "Voir le certificat",
-      "experience.card3.title": "Organisatrice d’événements",
-      "experience.card3.detail": "Hackathons, IA, Développement Web",
-      "experience.card4.title": "Autres réalisations",
-      "experience.card4.detail": "Participation à divers hackathons et projets collaboratifs pour innover et exceller.",
-      "experience.card4.item1": "Hackathon IA Avignon (24h, 2024)",
-      "experience.card4.item2": "Mentor junior – GDSC (2023)",
-      "experience.card4.item3": "Projet encadré G-JOBS (2024) : tâches, Git, revue",
-      "projects.nova.title": "NOVA - Plateforme Synchronisée",
-      "projects.nova.short": "Visionnage vidéo synchronisé en temps réel.",
-      "projects.nova.desc": "Plateforme collaborative permettant de regarder des vidéos YouTube ensemble. Développement du backend NestJS avec intégration de Socket.IO pour la synchronisation du lecteur et du chat. Stack : Next.js, NestJS, Socket.IO, PostgreSQL.",
-      "projects.cericar.title": "CERICar - Covoiturage",
-      "projects.cericar.short": "Plateforme de covoiturage full-stack.",
-      "projects.cericar.desc": "Application web de covoiturage incluant un moteur de recherche de trajets avec correspondances, gestion des places en temps réel et profils conducteurs. Stack : PHP (Yii), PostgreSQL, AJAX.",
-      "projects.p0.title": "Générateur de sites web IA",
-      "projects.p0.short": "Générez des sites web à partir d’une consigne.",
-      "projects.p0.desc": "Crée des sites fonctionnels à partir d’instructions en langage naturel grâce aux LLM. Stack : Python, OpenAI API, automatisation web.",
-      "certs.heading": "Certificats",
-      "certs.pytorch.title": "Introduction au Deep Learning avec PyTorch – DataCamp",
-      "certs.pytorch.desc": "Formation en ligne sur les réseaux de neurones et l’utilisation de PyTorch.",
-      "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
-      "certs.aylp.desc": "Programme d’échange axé sur le leadership, l’innovation et la collaboration interculturelle.",
-      "certs.english.title": "English Certification",
-      "certs.english.desc": "Attestation de niveau d'anglais (Nouveau).",
-      "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
-      "certs.fcc.desc": "Certification couvrant HTML, CSS, Flexbox et le design responsive.",
-      "certs.cta": "Voir le certificat",
       "langues.heading": "Langues",
-      "langues.french": "Français",
-      "langues.frenchlevel": "Intermédiaire (B2)",
-      "langues.frenchCert": "Voir certificat",
-      "langues.english": "Anglais",
-      "langues.englishlevel": "Courant",
-      "langues.englishCert": "Voir certificat",
-      "langues.arabic": "Arabe",
-      "langues.arabicLevel": "Langue maternelle",
-      "projects.p9.title": "LeRobot PushT Trainer",
-      "projects.p9.short": "Entraînez/évaluez des politiques PushT.",
-      "projects.p9.desc": "App web pour entraîner et évaluer des politiques PushT. Gère checkpoints et publication sur Hugging Face. Stack : Python, LeRobot, Gradio, CUDA.",
-      "projects.p10.title": "Simulateur de vision robotique",
-      "projects.p10.short": "Simulateur interactif de vision robotique.",
-      "projects.p10.desc": "Simulateur navigateur : robot sur grille, pick/place et commandes en langue naturelle. COCO-SSD pour la vision, A* pour le pathfinding. Stack : JS/Canvas, TF.js.",
-      "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés.",
-      "formation.bac": "Baccalauréat Scientifique — Lycée Abd-El-Kader El-Yajouri, Guemar (Algérie)",
-      "formation.bacDiplome": "<strong>Mention :</strong> Excellent — Moyenne 17,82 (Filière scientifique)",
-      "formation.bacCert": "Voir attestation BAC",
-      "formation.bacTranscript": "Voir relevés de notes",
-      "chat.open": "Chat",
-      "chat.title": "Assistant Portfolio",
-      "chat.placeholder": "Pose une question...",
-      "chat.send": "Envoyer",
-      "chat.note": "Réponses basées sur le contenu du portfolio."
+      "contact.heading": "Contact",
+      "projects.link": "Voir le code sur GitHub",
+      "projects.link.demo": "Voir la démo",
+      "projects.link.modelRepo": "Dépôt modèle",
+      "projects.link.demoSpace": "Espace Démo",
+      "projects.link.githubRepo": "Dépôt GitHub",
+      "projects.link.liveDemo": "Démo Live"
     },
     en: {
-      "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
-      "experience.card4.item2": "Junior Mentor – GDSC (2023)",
-      "experience.card4.item3": "Supervised Project G‑JOBS (2024): tasks, Git, review",
-      "experience.heading": "Experience & Leadership",
-      "experience.card1.title": "IT Manager",
-      "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
-      "experience.card2.title": "AYLP Participant",
-      "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
-      "experience.card2.cert": "View Certificate",
-      "experience.card3.title": "Event Organizer",
-      "experience.card3.detail": "Hackathons, AI, Web Development",
-      "experience.card4.title": "Other Achievements",
-      "experience.card4.detail": "Participated in various hackathons and collaborative projects to innovate and excel.",
       "page.title": "Portfolio - Zineb Meftah",
-      "nav.title": "Zineb Meftah",
       "header.title": "Zineb Meftah",
-      "contact.heading": "Contact",
-      "info.telephone": "☎ Phone",
-      "info.email": "✉ Email",
-      "info.linkedin": "🔗 LinkedIn",
-      "info.portfolio": "🌐 Portfolio",
-      "info.github": "🐙 GitHub",
-      "info.huggingface": "🤖 Hugging Face",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
-      "nav.contact": "Contact",
-      "nav.profil": "About",
-      "nav.formation": "Education",
-      "nav.publications": "Publications",
-      "nav.projects": "Projects",
-      "nav.competences": "Skills",
-      "nav.langues": "Languages",
-      "nav.experience": "Experience",
-      "profil.heading": "About Me",
-      "profil.greeting": "Hi, I’m Zineb Meftah.",
-      "profil.bio1": "A digital architect and passionate innovator, I blend AI with the art of development to create disruptive solutions that redefine the future.",
-      "profil.bio2": "Explorer of cutting-edge algorithms and always pushing creative boundaries — each project is a journey toward innovation.",
-      "formation.heading": "Education & Certificates",
-      "formation.ensia": "ENSIA, Algeria",
-      "formation.ensiaDiplome": "<strong>Degree:</strong> Artificial Intelligence Engineering (1st & 2nd Year Completed)",
-      "formation.ensiaCert": "View Certificate",
-      "formation.avignon": "Université d'Avignon (CERI), France",
-      "formation.avignonDiplome": "<strong>Degree:</strong> Data Science (3rd year ongoing, excellent results)",
-      "formation.avignonCert": "View Certificate",
-      "publications.heading": "Publications",
-      "publication.date": "📅 December 20, 2024",
-      "publication.location": "📍 Hugging Face",
-      "publication.description": "Discover our revolutionary approach using reverse fine-tuning to generate synthetic data. Designed to extract accurate keywords and train highly efficient tag generation models.",
-      "publication.cta": "Read Full Article",
-      "publication.tableTitle": "Sample Database",
-      "projects.heading": "Projects & Experience",
-      "projects.hover": "Hover or click to view details",
-      "projects.link": "View Code on GitHub",
-      "projects.link.instagram" : "View page on Instagram",
-      "projects.link.demo": "View demo",
-      "projects.link.modelRepo": "Model repo",
-      "projects.link.demoSpace": "Demo space",
-      "projects.link.githubRepo": "GitHub repo",
-      "projects.link.liveDemo": "Live demo",
-      "projects.nova.title": "NOVA - Sync Platform",
-      "projects.nova.short": "Real-time synchronized video watching.",
-      "projects.nova.desc": "Collaborative platform for watching YouTube videos together. Developed the NestJS backend with Socket.IO for player synchronization and real-time chat. Stack: Next.js, NestJS, Socket.IO, PostgreSQL.",
-      "projects.cericar.title": "CERICar - Carpooling",
-      "projects.cericar.short": "Full-stack carpooling platform.",
-      "projects.cericar.desc": "Web application featuring a journey search engine with connections, real-time availability tracking, and user profile management. Stack: PHP (Yii), PostgreSQL, AJAX.",
-      "projects.p1.title": "AI Product Personalization",
-      "projects.p1.short": "Turn your ideas into personalized products.",
-      "projects.p1.desc": "A system enabling users to convert their ideas into custom products using AI models, with a smooth transition to production.",
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "Your AI-powered personalized news.",
-      "projects.p2.desc": "AI-powered personalized news aggregator offering real-time updates from top global sources, filtered based on user interests.",
-      "projects.p3.title": "Agricultural Plan Optimization",
-      "projects.p3.short": "AI-based sustainable agriculture.",
-      "projects.p3.desc": "AI project to optimize agricultural production in Algeria using graph search and constraint satisfaction algorithms.",
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "Smart job platform in Algeria.",
-      "projects.p4.desc": "A smart platform connecting Algerian job seekers with employers through advanced filters, messaging, and job tracking tools.",
-      "projects.p5.title": "Advanced Search Engine",
-      "projects.p5.short": "Text search with TF-IDF & BM25.",
-      "projects.p5.desc": "Java-based search engine using TF-IDF and BM25 to index, analyze, and accurately rank text documents.",
-      "projects.p6.title": "Restaurant Chain",
-      "projects.p6.short": "Multi-location restaurant management.",
-      "projects.p6.desc": "Management system for a multi-country restaurant chain, enabling organized booking, inventory, and staff control.",
-      "projects.p7.title": "My Online Supermarket",
-      "projects.p7.short": "Smart CLI-based supermarket system.",
-      "projects.p7.desc": "A command-line application for digitizing supermarket management: suppliers, stock, sales, reports, and statistics.",
-      "projects.p8.title": "Road Network Analysis (MAP)",
-      "projects.p8.short": "Advanced graph algorithms.",
-      "projects.p8.desc": "Graph-based road network analysis in Avignon using algorithms for shortest paths, connectivity, and performance.",
-      "projects.p0.title": "AI Website Generator",
-      "projects.p0.short": "Generate websites from a prompt.",
-      "projects.p0.desc": "Builds functional websites from natural language instructions using LLMs. Stack: Python, OpenAI API, Web automation.",
+      "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
+      "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
+      "nav.langues": "Languages", "nav.experience": "Experience",
+      
+      // Certificate - English Specifics
+      "certs.english.title": "EF SET English Certificate (C2 Proficient)",
+      "certs.english.desc": "Score: 75/100 (C2 Proficient). Globally recognized standardized certification verifying bilingual proficiency.",
+      "certs.cta": "View Certificate",
+
+      // Languages - C2 Update
+      "langues.englishlevel": "Bilingual (C2)",
+      "langues.frenchlevel": "Intermediate (B2)",
+      "langues.arabicLevel": "Native",
+
+      // New Compiler Project
+      "projects.compiler.title": "Pascal-like Compiler",
+      "projects.compiler.short": "Full compiler (Lexical, Syntax, Semantic).",
+      "projects.compiler.desc": "Developed a compiler for a subset of Pascal (Mini-Pascal). Implemented lexical, syntactic, and semantic analysis, symbol table management, and quadruplet generation. Stack: C, Flex, Bison.",
+
+      // Projects
       "projects.p9.title": "LeRobot PushT Trainer",
       "projects.p9.short": "Train/evaluate PushT policies.",
       "projects.p9.desc": "Web app to train/evaluate PushT policies. Supports checkpoints and push to Hugging Face. Stack: Python, LeRobot, Gradio, CUDA.",
+
       "projects.p10.title": "Robot Vision Simulator",
       "projects.p10.short": "Interactive robot vision simulator.",
       "projects.p10.desc": "Browser simulator: grid nav, pick/place, natural‑language commands. COCO‑SSD vision, A* pathfinding. Stack: JS/Canvas, TF.js.",
+      
+      "projects.p0.title": "AI Website Generator",
+      "projects.p0.short": "Generate websites from a prompt.",
+      "projects.p0.desc": "Builds functional websites from natural language instructions using LLMs. Stack: Python, OpenAI API, Web automation.",
+
+      "projects.nova.title": "NOVA",
+      "projects.nova.short": "Real-time synchronized video.",
+      "projects.nova.desc": "Collaborative platform for watching YouTube videos together. Developed the NestJS backend with Socket.IO for player synchronization. Stack: Next.js, NestJS, Socket.IO.",
+
+      "projects.cericar.title": "CERICar",
+      "projects.cericar.short": "Full-stack carpooling.",
+      "projects.cericar.desc": "Web application featuring a journey search engine, real-time availability tracking, and user profile management. Stack: PHP (Yii), PostgreSQL, AJAX.",
+
+      "projects.p3.title": "Agricultural Plan Optimization",
+      "projects.p3.short": "AI-based sustainable agriculture.",
+      "projects.p3.desc": "AI project to optimize agricultural production in Algeria using graph search and constraint satisfaction algorithms.",
+
+      "projects.p4.title": "G-Jobs",
+      "projects.p4.short": "Smart job platform.",
+      "projects.p4.desc": "A smart platform connecting Algerian job seekers with employers through advanced filters, messaging, and job tracking tools.",
+
+      "projects.p5.title": "Advanced Search Engine",
+      "projects.p5.short": "Text search (TF-IDF/BM25).",
+      "projects.p5.desc": "Java-based search engine using TF-IDF and BM25 to index, analyze, and accurately rank text documents.",
+
+      "projects.p6.title": "Restaurant Chain",
+      "projects.p6.short": "Multi-location management.",
+      "projects.p6.desc": "Management system for a multi-country restaurant chain, enabling organized booking, inventory, and staff control.",
+
+      "projects.p7.title": "My Online Supermarket",
+      "projects.p7.short": "CLI Inventory System.",
+      "projects.p7.desc": "A command-line application for digitizing supermarket management: suppliers, stock, sales, reports, and statistics.",
+
+      "projects.p8.title": "Road Network Analysis",
+      "projects.p8.short": "Advanced graph algorithms.",
+      "projects.p8.desc": "Graph-based road network analysis in Avignon using algorithms for shortest paths, connectivity, and performance.",
+
+      "experience.heading": "Experience & Leadership",
+      "competences.heading": "Skills",
+      "footer.copy": "© 2026 Zineb Meftah. All rights reserved.",
       "profile.heading": "About Me",
-      "profile.greeting": "Hello, I'm Meftah Zineb.",
+      "profile.greeting": "Hi, I’m Zineb Meftah.",
       "profile.text1": "A computer science student passionate about AI applied to robotics and backend development, I design intelligent systems combining LLM, deep learning and web automation.",
       "profile.text2": "My projects implement OpenAI models, interactive simulators, and complete end-to-end solutions.",
-      "profile.more": "Learn more about my journey",
-      "competences.heading": "Skills",
-      "competences.web": "🧑‍💻 Web Development",
-      "competences.web.frontend": "Frontend: HTML, CSS, JavaScript, Bootstrap, AJAX, TensorFlow.js, HTML5 Canvas",
-      "competences.web.backend": "Backend: Node.js, PHP, Python (Flask, Django), REST API, SQL",
-      "competences.web.fullstack": "Full-Stack: Laravel, React, Django, Flask",
-      "competences.web.database": "Databases: MySQL, PostgreSQL",
-      "competences.web.security": "Web Security: Sessions, Cookies, CSRF, URL Rewriting",
-      "competences.web.tools": "Related Tools: Git, GitHub, GitHub Actions, Makefile",
-      "competences.data": "🤖 Data Science & Artificial Intelligence",
-      "competences.data.tools": "Languages & Tools: Python, PyTorch, OpenAI API, Hugging Face, Scikit-learn, Pandas",
-      "competences.data.models": "Models & Techniques: LLM, Fine-tuning, Diffusion Models, Reinforcement Learning, Classification, Synthetic Data Generation",
-      "competences.data.apps": "AI Applications: Computer Vision, NLP, Tag Generation, AI-powered websites, Smart Recommendation",
-      "competences.data.projects": "Notable Projects: LeRobot, AI Website Generator, News Wave, Automatic Tag Generation",
-      "competences.data.extra": "Tools: Jupyter, Colab, Transformers, OpenAI Playground, TensorBoard, NumPy, Matplotlib",
-      "competences.programming": "💻 Programming",
-      "competences.programming.languages": "Languages: Python, C++, Java, PHP, JavaScript, Bash, SQL",
-      "competences.programming.paradigms": "Paradigms: OOP, Functional, Business Logic",
-      "competences.programming.experience": "Experience: Compilation, Graph Algorithms (Dijkstra, A*, BM25), CLI Scripting",
-      "competences.programming.projects": "Projects: Pascal-like Compiler, Network Optimization, Search Engine, Supermarket CLI, Web Generation via LLM",
-      "competences.soft": "🤝 Interpersonal Skills",
-      "competences.soft.list": "Autonomy, teamwork, clear communication, leadership (GDSC, AYLP), problem-solving, fast learning, technical rigor, project management",
-      "competences.extra": "🧩 Extra Skills",
-      "competences.extra.cognitive": "Cognitive: algorithmic thinking, critical mind, modeling",
-      "competences.extra.techniques": "Technical: REST API, WebSockets, CI/CD, Git workflows",
-      "competences.extra.learning": "Learning: tech watch, AI frameworks",
-      "competences.extra.presentation": "Communication: popularization, technical writing, presentations",
-      "competences.extra.methods": "Methodologies: agile, GitHub Flow, modular design, reusability",
-      "competences.techSkills": "Technical Skills",
-      "competences.aiDataSkills": "AI & Data Science",
-      "competences.softSkillsTitle": "Personal Skills",
-      "competences.artificialIntelligence": "Artificial Intelligence",
-      "competences.dataScience": "Data Science",
-      "competences.languages": "Languages",
-      "competences.paradigms": "Paradigms",
-      "competences.frontend": "Frontend",
-      "competences.backend": "Backend",
-      "competences.databases": "Databases",
-      "competences.tools": "Tools",
-      "competences.aiModels": "Models & Techniques",
-      "competences.aiTools": "AI Tools",
-      "competences.dataAnalysis": "Analysis & Manipulation",
-      "competences.dataProjects": "Notable Projects",
-      "competences.project1": "Synthetic data generation for fine-tuning",
-      "competences.project2": "Search engine with TF-IDF & BM25",
-      "competences.teamwork": "Teamwork",
-      "competences.leadership": "Leadership",
-      "competences.problemSolving": "Problem Solving",
-      "competences.continuousLearning": "Continuous Learning",
-      "competences.teamworkDesc": "Effective collaboration, clear communication, team spirit",
-      "competences.leadershipDesc": "GDSC experience, mentoring, collaborative project management",
-      "competences.problemSolvingDesc": "Analytical thinking, systematic approach, creative solutions",
-      "competences.continuousLearningDesc": "Technology watch, quick adaptation, self-learning",
-      "certs.heading": "Certificates",
-      "certs.pytorch.title": "Introduction to Deep Learning with PyTorch – DataCamp",
-      "certs.pytorch.desc": "Online training on neural networks and using PyTorch.",
-      "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
-      "certs.aylp.desc": "Exchange program focused on leadership, innovation, and cross-cultural collaboration.",
-      "certs.english.title": "English Certification",
-      "certs.english.desc": "Certificate of English proficiency (New).",
-      "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
-      "certs.fcc.desc": "Certificate covering HTML, CSS, Flexbox, and responsive design.",
-      "certs.cta": "View Certificate",
+      "formation.heading": "Education & Certificates",
+      "publications.heading": "Publications",
+      "projects.heading": "Projects & Experience",
       "langues.heading": "Languages",
-      "langues.french": "French",
-      "langues.frenchlevel": "Intermediate (B2)",
-      "langues.frenchCert": "View certificate",
-      "langues.english": "English",
-      "langues.englishlevel": "Fluent",
-      "langues.englishCert": "View certificate",
-      "langues.arabic": "Arabic",
-      "langues.arabicLevel": "Native",
-      "footer.copy": "© 2026 Zineb Meftah. All rights reserved.",
-      "formation.bac": "Scientific Baccalaureate — Abd-El-Kader El-Yajouri High School, Guemar (Algeria)",
-      "formation.bacDiplome": "<strong>Honors:</strong> Excellent — Average 17.82 (Scientific stream)",
-      "formation.bacCert": "View BAC certificate",
-      "formation.bacTranscript": "View grade transcripts",
-      "chat.open": "Chat",
-      "chat.title": "Portfolio Assistant",
-      "chat.placeholder": "Ask a question...",
-      "chat.send": "Send",
-      "chat.note": "Answers based on portfolio content."
+      "contact.heading": "Contact",
+      "projects.link": "View Code on GitHub",
+      "projects.link.demo": "View Demo",
+      "projects.link.modelRepo": "Model Repo",
+      "projects.link.demoSpace": "Demo Space",
+      "projects.link.githubRepo": "GitHub Repo",
+      "projects.link.liveDemo": "Live Demo"
     },
     ar: {
-      "profile.heading": "نبذة عني",
-      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024)",
-      "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)",
-      "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
       "page.title": "المعرض - مفتاح زينب",
-      "nav.title": "مفتاح زينب",
       "header.title": "مفتاح زينب",
-      "contact.heading": "الاتصال",
-      "info.telephone": "☎ الهاتف",
-      "info.email": "✉ البريد الإلكتروني",
-      "info.linkedin": "🔗 لينكد إن",
-      "info.portfolio": "🌐 الموقع الشخصي",
-      "info.github": "🐙 جيتهاب",
-      "info.huggingface": "🤖 هاجينغ فايس",
       "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
-      "nav.contact": "اتصل",
-      "nav.profil": "نبذة",
-      "nav.formation": "التعليم",
-      "nav.publications": "المنشورات",
-      "nav.projects": "المشاريع",
-      "nav.competences": "المهارات",
-      "nav.langues": "اللغات",
-      "nav.experience": "الخبرة",
-      "profil.heading": "نبذة عني",
-      "profil.greeting": "مرحبًا، أنا مفتاح زينب.",
-      "profil.bio1": "أنا مهندسة رقمية ومبتعة شغوفة أدمج الذكاء الاصطناعي مع فن التطوير لإنشاء حلول ثورية تعيد تعريف المستقبل.",
-      "profil.bio2": "مستكشفة لأحدث الخوارزميات وساعية دومًا وراء أفكار جديدة، كل مشروع هو مغامرة نحو الابتكار.",
-      "formation.heading": "التعليم والشهادات",
-      "formation.ensia": "ENSIA، الجزائر",
-      "formation.ensiaDiplome": "<strong>الشهادة:</strong> هندسة الذكاء الاصطناعي (السنة الأولى والثانية)",
-      "formation.ensiaCert": "عرض الشهادة",
-      "formation.avignon": "جامعة أفينيون (CERI)، فرنسا",
-      "formation.avignonDiplome": "<strong>الشهادة:</strong> علوم البيانات (السنة الثالثة جارية، نتائج ممتازة)",
-      "formation.avignonCert": "عرض الشهادة",
-      "publications.heading": "المنشورات",
-      "publication.date": "📅 20 ديسمبر 2024",
-      "publication.location": "📍 Hugging Face",
-      "publication.description": "اكتشف نهجنا الثوري الذي يستخدم الضبط العكسي لتوليد بيانات تركيبية. صممت هذه البيانات لاستخراج الكلمات الرئيسية الدقيقة وتدريب نماذج توليد العلامات بكفاءة عالية.",
-      "publication.cta": "اقرأ المقال الكامل",
-      "publication.tableTitle": "عينة قاعدة البيانات",
-      "projects.heading": "المشاريع والخبرة",
-      "projects.product.title": "تخصيص المنتجات بالذكاء الاصطناعي",
-      "projects.product.description": "حوّل أفكارك إلى منتجات مخصصة باستخدام الذكاء الاصطناعي.",
-      "projects.product.details": "نظام يسمح للمستخدمين بتحويل أفكارهم إلى منتجات مخصصة عبر نماذج ذكاء اصطناعي مع إمكانية إنتاجها.",
-      "projects.newswave.title": "News Wave",
-      "projects.newswave.description": "موجز أخبار شخصي مدعوم بالذكاء الاصطناعي.",
-      "projects.newswave.details": "تطبيق يجلب لك آخر الأخبار من مصادر موثوقة ويخصصها حسب اهتماماتك باستخدام الذكاء الاصطناعي.",
-      "projects.agriopt.title": "تحسين الخطة الزراعية",
-      "projects.agriopt.description": "زراعة ذكية باستخدام الذكاء الاصطناعي.",
-      "projects.agriopt.details": "مشروع لتحسين الإنتاج الزراعي في الجزائر باستخدام خوارزميات البحث والقيود لتحقيق الاكتفاء الذاتي.",
-      "projects.gjobs.title": "G-Jobs",
-      "projects.gjobs.description": "أفضل منصة توظيف في الجزائر.",
-      "projects.gjobs.details": "منصة توظيف ذكية تربط بين الباحثين عن عمل وأرباب العمل الجزائريين، وتوفر فلاتر متقدمة ورسائل وأدوات تتبع.",
-      "projects.searchengine.title": "محرك بحث متقدم",
-      "projects.searchengine.description": "تحسين استرجاع النصوص باستخدام TF-IDF وBM25.",
-      "projects.searchengine.details": "محرك بحث مطور بلغة Java يستخدم نماذج TF-IDF وBM25 لمعالجة وترتيب الوثائق النصية بكفاءة.",
-      "projects.restaurant.title": "سلسلة مطاعم",
-      "projects.restaurant.description": "نظام إدارة للمطاعم متعددة الفروع.",
-      "projects.restaurant.details": "نظام إداري لسلسلة مطاعم عبر دول متعددة، يشمل إدارة الوقت والمكان.",
-      "projects.supermarket.title": "سوبرماركت رقمي",
-      "projects.supermarket.description": "نظام ذكي لإدارة السوبرماركت.",
-      "projects.supermarket.details": "تطبيق سطر أوامر لإدارة السوبرماركت يشمل الموردين والمخزون والمبيعات والتقارير.",
-      "projects.roadmap.title": "تحليل شبكة الطرق",
-      "projects.roadmap.description": "خوارزميات متقدمة وتحليل بياني.",
-      "projects.roadmap.details": "مشروع لتحليل شبكات الطرق باستخدام الرسوم البيانية، يتضمن حساب أقصر الطرق والتحقق من الاتصال وتحسين الشبكات.",
-      "projects.p0.title": "مولد مواقع الويب بالذكاء الاصطناعي",
-      "projects.p0.short": "إنشاء مواقع ويب من توجيهات نصية.",
-      "projects.p0.desc": "إنشاء نظام يولد مواقع ويب فعالة من تعليمات بلغة طبيعية باستخدام نماذج LLM. التقنيات: Python، OpenAI API، أتمتة الويب.",
-      "projects.p1.title": "تخصيص المنتجات بالذكاء الاصطناعي",
-      "projects.p1.short": "حول أفكارك إلى منتجات مخصصة.",
-      "projects.p1.desc": "نظام يمكن المستخدمين من تحويل أفكارهم إلى منتجات مخصصة باستخدام نماذج الذكاء الاصطناعي، مع انتقال سلس إلى الإنتاج.",
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "أخبارك الشخصية المدعومة بالذكاء الاصطناعي.",
-      "projects.p2.desc": "مُجمِّع أخبار مخصص بالذكاء الاصطناعي يوفر تحديثات في الوقت الفعيل من أهم المصادر العالمية، مصفاة حسب اهتمامات المستخدم.",
-      "projects.nova.title": "نوفا (NOVA) - منصة المشاهدة المتزامنة",
-      "projects.nova.short": "مشاهدة الفيديو بشكل متزامن في الوقت الفعلي.",
-      "projects.nova.desc": "منصة تعاونية لمشاهدة فيديوهات يوتيوب معاً. قمت بتطوير الواجهة الخلفية (Backend) باستخدام NestJS وSocket.IO لضمان تزامن الفيديو والدردشة. التقنيات: Next.js, NestJS, Socket.IO, PostgreSQL.",
-      "projects.cericar.title": "سيري-كار (CERICar) - منصة التوصيل",
-      "projects.cericar.short": "منصة متكاملة (Full-stack) للنقل التشاركي.",
-      "projects.cericar.desc": "تطبيق ويب متكامل يتضمن محرك بحث عن الرحلات، إدارة الحجوزات، وملفات المستخدمين. تم تحسين الأداء باستخدام استعلامات AJAX. التقنيات: PHP (Yii), PostgreSQL, AJAX.",
-      "projects.p3.title": "تحسين الخطة الزراعية",
-      "projects.p3.short": "زراعة مستدامة قائمة على الذكاء الاصطناعي.",
-      "projects.p3.desc": "مشروع ذكاء اصطناعي لتحسين الإنتاج الزراعي في الجزائر باستخدام خوارزميات البحث في الرسوم البيانية وإرضاء القيود.",
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "منصة توظيف ذكية في الجزائر.",
-      "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأصحاب العمل من خلال فلاتر متقدمة والمراسلة وأدوات تتبع الوظائف.",
-      "projects.p5.title": "محرك بحث متقدم",
-      "projects.p5.short": "بحث نصي مع TF-IDF & BM25.",
-      "projects.p5.desc": "محرك بحث قائم على Java يستخدم TF-IDF و BM25 لفهرسة وتحليل وترتيب المستندات النصية بدقة.",
-      "projects.p6.title": "سلسلة مطاعم",
-      "projects.p6.short": "إدارة مطاعم متعددة المواقع.",
-      "projects.p6.desc": "نظام إدارة لسلسلة مطاعم متعددة البلدان، يتيح الحجز المنظم والمخزون والتحكم في الموظفين.",
-      "projects.p7.title": "سوبرماركت الإنترنت الخاص بي",
-      "projects.p7.short": "نظام سوبرماركت ذكي قائم على CLI.",
-      "projects.p7.desc": "تطبيق سطر أوامر لرقمنة إدارة السوبرماركت: الموردين، المخزون، المبيعات، التقارير والإحصائيات.",
-      "projects.p8.title": "تحليل شبكة الطرق (MAP)",
-      "projects.p8.short": "خوارزميات الرسوم البيانية المتقدمة.",
-      "projects.p8.desc": "تحليل شبكة الطرق القائم على الرسوم البيانية في أفينيون باستخدام خوارزميات لأقصر المسارات والاتصال والأداء.",
+      "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
+      "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
+      "nav.langues": "اللغات", "nav.experience": "الخبرة",
+
+      // Certificate - English Specifics
+      "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
+      "certs.english.desc": "النتيجة: 75/100 (C2 محترف). شهادة موحدة معترف بها عالمياً تثبت الكفاءة ثنائية اللغة.",
+      "certs.cta": "عرض الشهادة",
+
+      // Languages - C2 Update
+      "langues.englishlevel": "ثنائي اللغة (C2)",
+      "langues.frenchlevel": "متوسط (B2)",
+      "langues.arabicLevel": "اللغة الأم",
+
+      // New Compiler Project
+      "projects.compiler.title": "مترجم شبيه بـ Pascal",
+      "projects.compiler.short": "مترجم كامل (لفظي، نحوي، دلالي).",
+      "projects.compiler.desc": "تطوير مترجم لمجموعة فرعية من لغة Pascal (Mini-Pascal). تنفيذ التحليل اللفظي والنحوي والدلالي، وإدارة جدول الرموز، وتوليد الكود الرباعي. التقنيات: C، Flex، Bison.",
+
       "projects.p9.title": "مدرب LeRobot PushT",
       "projects.p9.short": "تدريب/تقييم سياسات PushT.",
       "projects.p9.desc": "تطبيق ويب لتدريب وتقييم سياسات PushT. يدعم نقاط التفتيش والنشر على Hugging Face. التقنيات: Python، LeRobot، Gradio، CUDA.",
+
       "projects.p10.title": "محاكي رؤية الروبوت",
       "projects.p10.short": "محاكي تفاعلي لرؤية الروبوت.",
       "projects.p10.desc": "محاكي متصفح: تنقل على شبكة، التقاط/وضع والأوامر بلغة طبيعية. رؤية COCO‑SSD، خوارزمية A* للمسار. التقنيات: JS/Canvas، TF.js.",
-      "profile.greeting": "مرحباً، أنا مفتاح زينب.",
-      "profile.text1": "طالبة علوم الحاسوب شغوفة بالذكاء الاصطناعي المطبق على الروبوتات وتطوير الخدمات الخلفية، أقوم بتصميم أنظمة ذكية تجمع بين نماذج اللغة الكبيرة والتعلم العميق وأتمتة الويب.",
-      "profile.text2": "تنفذ مشاريعي نماذج OpenAI، ومحاكيات تفاعلية، وحلول شاملة من البداية إلى النهاية.",
-      "profile.more": "تعرف أكثر على مسيرتي",
-      "certs.heading": "الشهادات",
-      "certs.pytorch.title": "مقدمة في التعلم العميق مع PyTorch - DataCamp",
-      "certs.pytorch.desc": "تدريب عبر الإنترنت حول الشبكات العصبية واستخدام PyTorch.",
-      "certs.aylp.title": "برنامج القيادة الشبابية الجزائري - مركز شمال نيفادا الدولي",
-      "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار والتعاون بين الثقافات.",
-      "certs.english.title": "شهادة اللغة الإنجليزية",
-      "certs.english.desc": "شهادة كفاءة في اللغة الإنجليزية (جديد).",
-      "certs.fcc.title": "شهادة تصميم الويب المتجاوب - freeCodeCamp",
-      "certs.fcc.desc": "شهادة تركز على أساسيات HTML و CSS و Flexbox والتصميم المتجاوب.",
-      "certs.cta": "عرض الشهادة",
-      "projects.hover": "مرّر أو انقر لعرض التفاصيل",
-      "projects.link": "عرض الكود على GitHub",
-      "projects.link.instagram": "عرض الصفحة على إنستغرام",
+
+      "projects.p0.title": "مولد مواقع الويب بالذكاء الاصطناعي",
+      "projects.p0.short": "إنشاء مواقع ويب من توجيهات نصية.",
+      "projects.p0.desc": "إنشاء نظام يولد مواقع ويب فعالة من تعليمات بلغة طبيعية باستخدام نماذج LLM. التقنيات: Python، OpenAI API، أتمتة الويب.",
+
+      "projects.nova.title": "نوفا (NOVA)",
+      "projects.nova.short": "مشاهدة متزامنة.",
+      "projects.nova.desc": "منصة تعاونية لمشاهدة فيديوهات يوتيوب معاً. قمت بتطوير الواجهة الخلفية باستخدام NestJS وSocket.IO.",
+
+      "projects.cericar.title": "سيري-كار (CERICar)",
+      "projects.cericar.short": "نقل تشاركي متكامل.",
+      "projects.cericar.desc": "تطبيق ويب متكامل يتضمن محرك بحث عن الرحلات، إدارة الحجوزات، وملفات المستخدمين. التقنيات: PHP (Yii), PostgreSQL, AJAX.",
+
+      "projects.p3.title": "تحسين الخطة الزراعية",
+      "projects.p3.short": "زراعة مستدامة بالذكاء الاصطناعي.",
+      "projects.p3.desc": "مشروع ذكاء اصطناعي لتحسين الإنتاج الزراعي في الجزائر باستخدام خوارزميات البحث في الرسوم البيانية وإرضاء القيود.",
+
+      "projects.p4.title": "G-Jobs",
+      "projects.p4.short": "منصة توظيف ذكية.",
+      "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأصحاب العمل من خلال فلاتر متقدمة والمراسلة.",
+
+      "projects.p5.title": "محرك بحث متقدم",
+      "projects.p5.short": "بحث نصي (TF-IDF/BM25).",
+      "projects.p5.desc": "محرك بحث قائم على Java يستخدم TF-IDF و BM25 لفهرسة وتحليل وترتيب المستندات النصية بدقة.",
+
+      "projects.p6.title": "سلسلة مطاعم",
+      "projects.p6.short": "إدارة متعددة المواقع.",
+      "projects.p6.desc": "نظام إدارة لسلسلة مطاعم متعددة البلدان، يتيح الحجز المنظم والمخزون والتحكم في الموظفين.",
+
+      "projects.p7.title": "سوبرماركت الإنترنت",
+      "projects.p7.short": "نظام إدارة CLI.",
+      "projects.p7.desc": "تطبيق سطر أوامر لرقمنة إدارة السوبرماركت: الموردين، المخزون، المبيعات، التقارير والإحصائيات.",
+
+      "projects.p8.title": "تحليل شبكة الطرق",
+      "projects.p8.short": "خوارزميات الرسوم البيانية.",
+      "projects.p8.desc": "تحليل شبكة الطرق القائم على الرسوم البيانية في أفينيون باستخدام خوارزميات لأقصر المسارات والاتصال والأداء.",
+
+      "experience.heading": "الخبرة والقيادة",
+      "competences.heading": "المهارات",
+      "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة.",
+      "profile.heading": "نبذة عني",
+      "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
+      "profile.text1": "طالبة علوم الحاسوب شغوفة بالذكاء الاصطناعي المطبق على الروبوتات وتطوير الخدمات الخلفية، أقوم بتصميم أنظمة ذكية.",
+      "profile.text2": "تنفذ مشاريعي نماذج OpenAI، ومحاكيات تفاعلية، وحلول شاملة.",
+      "formation.heading": "التعليم والشهادات",
+      "publications.heading": "المنشورات",
+      "projects.heading": "المشاريع والخبرة",
+      "langues.heading": "اللغات",
+      "contact.heading": "الاتصال",
+      "projects.link": "عرض الكود",
       "projects.link.demo": "عرض العرض التوضيحي",
       "projects.link.modelRepo": "مستودع النموذج",
       "projects.link.demoSpace": "مساحة العرض",
       "projects.link.githubRepo": "مستودع GitHub",
-      "projects.link.liveDemo": "عرض مباشر",
-      "experience.heading": "الخبرة والقيادة",
-      "experience.card1.title": "مسؤولة تقنية المعلومات",
-      "experience.card1.detail": "نادي مطوري Google – ENSIA (2023–2024)",
-      "experience.card2.title": "مشاركة في AYLP",
-      "experience.card2.detail": "المركز الدولي لشمال نيفادا (2021) – برنامج القيادة للشباب الجزائري",
-      "experience.card2.cert": "عرض الشهادة",
-      "experience.card3.title": "منظِّمة فعاليات",
-      "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي، تطوير الويب",
-      "experience.card4.title": "إنجازات أخرى",
-      "experience.card4.detail": "المشاركة في عدة هاكاثونات ومشاريع تعاونية للابتكار والتميز.",
-      "langues.heading": "اللغات",
-      "langues.french": "الفرنسية",
-      "langues.frenchlevel": "متوسط (B2)",
-      "langues.frenchCert": "عرض الشهادة",
-      "langues.english": "الإنجليزية",
-      "langues.englishlevel": "طلاقة",
-      "langues.englishCert": "عرض الشهادة",
-      "langues.arabic": "العربية",
-      "langues.arabicLevel": "اللغة الأم",
-      "competences.heading": "المهارات",
-      "competences.techSkills": "المهارات التقنية",
-      "competences.aiDataSkills": "الذكاء الاصطناعي وعلوم البيانات",
-      "competences.softSkillsTitle": "المهارات الشخصية",
-      "competences.artificialIntelligence": "الذكاء الاصطناعي",
-      "competences.dataScience": "علوم البيانات",
-      "competences.programming": "البرمجة",
-      "competences.web": "تطوير الويب",
-      "competences.languages": "اللغات",
-      "competences.paradigms": "الأنماط",
-      "competences.frontend": "الواجهة الأمامية",
-      "competences.backend": "الواجهة الخلفية",
-      "competences.databases": "قواعد البيانات",
-      "competences.tools": "الأدوات",
-      "competences.aiModels": "النماذج والتقنيات",
-      "competences.aiTools": "أدوات الذكاء الاصطناعي",
-      "competences.dataAnalysis": "التحليل والمعالجة",
-      "competences.dataProjects": "مشاريع بارزة",
-      "competences.project1": "توليد بيانات تركيبية للتدريب الدقيق",
-      "competences.project2": "محرك بحث باستخدام TF-IDF وBM25",
-      "competences.teamwork": "العمل الجماعي",
-      "competences.leadership": "القيادة",
-      "competences.problemSolving": "حل المشكلات",
-      "competences.continuousLearning": "التعلّم المستمر",
-      "competences.teamworkDesc": "تعاون فعّال، تواصل واضح، روح الفريق",
-      "competences.leadershipDesc": "خبرة GDSC، إرشاد، إدارة مشاريع تعاونية",
-      "competences.problemSolvingDesc": "تفكير تحليلي، نهج منهجي، حلول مبتكرة",
-      "competences.continuousLearningDesc": "متابعة تقنية، تكيّف سريع، تعلّم ذاتي",
-      "competences.web.frontend": "الواجهة الأمامية: HTML، CSS، JavaScript، Bootstrap، AJAX، TensorFlow.js، HTML5 Canvas",
-      "competences.web.backend": "الواجهة الخلفية: Node.js، PHP، Python (Flask، Django)، REST API، SQL",
-      "competences.web.fullstack": "كامل المكدس: Laravel، React، Django، Flask",
-      "competences.web.database": "قواعد البيانات: MySQL، PostgreSQL",
-      "competences.web.security": "أمن الويب: الجلسات، الكوكيز، CSRF، إعادة كتابة الروابط",
-      "competences.web.tools": "أدوات مرتبطة: Git، GitHub، GitHub Actions، Makefile",
-      "competences.data.tools": "اللغات والأدوات: Python، PyTorch، OpenAI API، Hugging Face، Scikit-learn، Pandas",
-      "competences.data.models": "النماذج والتقنيات: LLM، الضبط الدقيق، نماذج الانتشار، التعلم المعزز، التصنيف، توليد البيانات التركيبية",
-      "competences.data.apps": "تطبيقات الذكاء الاصطناعي: رؤية حاسوبية، معالجة لغة طبيعية، توليد الوسوم، مواقع مدعومة بالذكاء الاصطناعي، توصية ذكية",
-      "competences.data.projects": "مشاريع بارزة: LeRobot، مولد مواقع بالذكاء الاصطناعي، News Wave، توليد تلقائي للوسوم",
-      "competences.data.extra": "أدوات: Jupyter، Colab، Transformers، OpenAI Playground، TensorBoard، NumPy، Matplotlib",
-      "competences.programming.languages": "اللغات: Python، C++، Java، PHP، JavaScript، Bash، SQL",
-      "competences.programming.paradigms": "الأنماط: كائنية، وظيفية، منطق الأعمال",
-      "competences.programming.experience": "الخبرات: ترجمة، خوارزميات الرسوم البيانية (ديكسترا، A*، BM25)، سكربتات CLI",
-      "competences.programming.projects": "المشاريع: مترجم شبيه بـ Pascal، تحسين الشبكات، محرك بحث، سوبرماركت CLI، توليد الويب عبر LLM",
-      "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة.",
-      "formation.bac": "بكالوريا علوم تجريبية — ثانوية عبد القادر الياجوري، قمار (الجزائر)",
-      "formation.bacDiplome": "<strong>التقدير:</strong> ممتاز — معدل 17.82 (شعبة علوم تجريبية)",
-      "formation.bacCert": "عرض شهادة البكالوريا",
-      "formation.bacTranscript": "عرض كشف النقاط",
-      "chat.open": "محادثة",
-      "chat.title": "مساعد السيرة",
-      "chat.placeholder": "اسأل سؤالاً...",
-      "chat.send": "إرسال",
-      "chat.note": "الإجابات مبنية على محتوى الموقع."
-    },
+      "projects.link.liveDemo": "عرض مباشر"
+    }
   };
 
+  // --- 5. Mobile Language Dropdown ---
   const mobileLangButton = document.querySelector('.mobile-lang-button');
   const mobileLangOptions = document.querySelector('.mobile-lang-options');
   const mobileLangButtons = document.querySelectorAll('.mobile-lang-options button');
@@ -734,31 +434,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // --- 6. Translation Function ---
   function translatePage(lang) {
     const html = document.documentElement;
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
+    // Horizontal scroll reset
     const scrollers = document.querySelectorAll('.projects-scroll');
     scrollers.forEach((el) => {
       const prevBehavior = el.style.scrollBehavior;
       el.style.scrollBehavior = 'auto';
-
       const applyPosition = () => {
         const max = el.scrollWidth - el.clientWidth;
         el.scrollLeft = (lang === 'ar') ? max : 0;
         el.style.scrollBehavior = prevBehavior || '';
       };
-
       el.scrollLeft = 0;
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(applyPosition);
-      });
+      requestAnimationFrame(() => { requestAnimationFrame(applyPosition); });
     });
 
-    const translatableElements = document.querySelectorAll('[data-translate]');
     const dict = translations[lang] || {};
+    const translatableElements = document.querySelectorAll('[data-translate]');
       
     translatableElements.forEach(el => {
       const key = el.getAttribute('data-translate');
@@ -778,71 +475,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    document.querySelectorAll('[data-translate="certs.heading"]').forEach(el => {
-      if (dict["certs.heading"]) {
-        el.textContent = dict["certs.heading"];
-      }
-    });
-      
-    document.querySelectorAll('.flip-card-front h3, .flip-card-back h3').forEach(el => {
+    // Handle nested text specifically for complex cards
+    document.querySelectorAll('.flip-card-front h3, .flip-card-back h3, .flip-card-front p, .flip-card-back p').forEach(el => {
       const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
-      
-    document.querySelectorAll('.flip-card-front p, .flip-card-back p').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
-      
-    document.querySelectorAll('.experience-card h3').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
-      
-    document.querySelectorAll('.experience-details p').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
-      
-    document.querySelectorAll('.xp-highlights li').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
-      
-    document.querySelectorAll('.language-card h3, .language-card p span').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (key && dict[key]) {
-        el.textContent = dict[key];
-      }
+      if (key && dict[key]) el.textContent = dict[key];
     });
 
-    if (dict["page.title"]) {
-      document.title = dict["page.title"];
-    }
+    // Update <title>
+    if (dict["page.title"]) document.title = dict["page.title"];
 
+    // Update buttons state
     document.querySelectorAll('.lang-switcher button[data-lang], .mobile-lang-options button[data-lang]').forEach(b => {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });
 
-    const langNames = { fr: 'Français', en: 'English', ar: 'العربية' };
-    const mobileLangButton = document.querySelector('.mobile-lang-button .current-lang');
-    if (mobileLangButton) {
-      mobileLangButton.textContent = langNames[lang] || lang.toUpperCase();
-    }
-
+    // Persist
     try { localStorage.setItem('lang', lang); } catch {}
   }
 
+  // --- 7. Init Language ---
   const savedLang = (() => {
     try { return localStorage.getItem('lang'); } catch { return null; }
   })();
@@ -854,13 +505,11 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation(); 
       const selectedLang = btn.getAttribute("data-lang");
       translatePage(selectedLang);
-
-      if (langSwitcher) {
-        langSwitcher.classList.remove("open");
-      }
+      if (langSwitcher) langSwitcher.classList.remove("open");
     });
   });
 
+  // --- 8. Intersection Observers (Animations) ---
   const sections = document.querySelectorAll(".section");
   const observerOptions = { threshold: 0.2 };
   const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -875,19 +524,18 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionObserver.observe(section);
   });
 
+  // --- 9. Scroll Indicator ---
   const scrollIndicator = document.getElementById("scrollIndicator");
   if (scrollIndicator) {
     scrollIndicator.addEventListener("click", () => {
       const firstSection = document.querySelector("main section");
       if (firstSection) {
-        window.scrollTo({
-          top: firstSection.offsetTop - 60,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: firstSection.offsetTop - 60, behavior: "smooth" });
       }
     });
   }
 
+  // --- 10. Theme Toggle ---
   const themeToggle = document.getElementById("themeToggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
@@ -896,47 +544,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- 11. Skill Bars Animation ---
   const skillCards = document.querySelectorAll('.skill-card');
-  const skillObserverOptions = { threshold: 0.5 };
-
   const skillObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
-        const progressBars = entry.target.querySelectorAll('.skill-progress');
-        progressBars.forEach(pb => {
-          const targetWidth = getComputedStyle(pb).getPropertyValue('--progress');
-          pb.style.width = targetWidth;
-        });
+        // If there were bars, they would animate here. 
+        // Current design uses tags, so this just fades in the card.
         observer.unobserve(entry.target);
       }
     });
-  }, skillObserverOptions);
-
-  skillCards.forEach(card => {
-    skillObserver.observe(card);
-  });
+  }, { threshold: 0.5 });
+  skillCards.forEach(card => skillObserver.observe(card));
 
   const languageCards = document.querySelectorAll('.language-card');
-  const languageObserverOptions = { threshold: 0.5 };
   const languageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in-view');
-        const progressBar = entry.target.querySelector('.language-progress');
-        if (progressBar) {
-          const targetWidth = getComputedStyle(progressBar).getPropertyValue('--progress');
-          progressBar.style.width = targetWidth;
-        }
         observer.unobserve(entry.target);
       }
     });
-  }, languageObserverOptions);
-  
-  languageCards.forEach(card => {
-    languageObserver.observe(card);
-  });
+  }, { threshold: 0.5 });
+  languageCards.forEach(card => languageObserver.observe(card));
 
+  // --- 12. Hide Nav on Scroll ---
   let lastScrollY = window.scrollY || 0;
   const navEl = document.querySelector('nav[role="navigation"]');
   const SCROLL_DELTA = 6;          
@@ -945,7 +578,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleScroll() {
     const y = window.scrollY || 0;
     if (!navEl) return;
-
     if (y <= MIN_SHOW_EDGE) {
       navEl.classList.remove('nav-hidden');
     } else if (y > lastScrollY + SCROLL_DELTA) {
@@ -955,9 +587,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     lastScrollY = y;
   }
-
   window.addEventListener('scroll', handleScroll, { passive: true });
 
+  // --- 13. Flip Card Interactions ---
   const flipCards = document.querySelectorAll('.flip-card');
   flipCards.forEach(card => {
     card.setAttribute('tabindex', '0');
@@ -984,5 +616,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });  
-
 });
