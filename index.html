@@ -706,16 +706,18 @@
       <div class="container"><p data-translate="footer.copy">© 2026 Meftah Zineb. Tous droits réservés.</p></div>
     </footer>
 
+    <p data-translate="dates.avignon">Septembre 2024 - Aujourd'hui</p>
+    
     <button id="chat-toggle" class="chat-toggle" aria-label="Open chat">💬</button>
     <div id="chatbox" class="chatbox hidden" role="dialog" aria-label="Portfolio chat">
       <div class="chatbox-header">
-        <div class="chatbox-title">Assistant Portfolio</div>
+        <div class="chatbox-title" data-translate="chat.title">Assistant Portfolio</div>
         <button id="chat-close" type="button" aria-label="Close chat">×</button>
       </div>
       <div id="chat-messages" class="chatbox-messages" aria-live="polite"></div>
       <form id="chat-form" class="chatbox-form">
-        <input id="chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
-        <button type="submit">Send</button>
+        <input id="chat-input" type="text" data-translate-placeholder="chat.placeholder" placeholder="Ask a question..." autocomplete="off" />
+        <button type="submit" data-translate="chat.send">Send</button>
       </form>
     </div>
     <script src="script.js"></script>
