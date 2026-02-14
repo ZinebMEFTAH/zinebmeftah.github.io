@@ -141,9 +141,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================
   const translations = {
     fr: {
-      "projects.clustering.title": "Segmentation Client (Clustering)",
+"projects.clustering.title": "Segmentation Client (Clustering)",
 "projects.clustering.short": "Analyse de données non supervisée.",
 "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means pour identifier des segments de marché distincts et optimiser les stratégies marketing. Stack: Python, Scikit-learn.",
+
+"projects.sentiment.title": "Analyse de Sentiments (Avis)",
+"projects.sentiment.short": "NLP & Classification de textes.",
+"projects.sentiment.desc": "Modèle de traitement du langage naturel (NLP) pour analyser et classer les avis clients (positif/négatif) afin d'extraire des insights produits. Stack: Python, NLTK, BERT.",
       
       "page.title": "Portfolio - Meftah Zineb",
       "nav.title": "Meftah Zineb",
@@ -282,9 +286,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
     en: {
-      "projects.clustering.title": "Customer Segmentation (Clustering)",
+"projects.clustering.title": "Customer Segmentation (Clustering)",
 "projects.clustering.short": "Unsupervised Data Analysis.",
 "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm to identify distinct market segments and optimize marketing strategies. Stack: Python, Scikit-learn.",
+
+"projects.sentiment.title": "Sentiment Analysis (Reviews)",
+"projects.sentiment.short": "NLP & Text Classification.",
+"projects.sentiment.desc": "Natural Language Processing (NLP) model to analyze and classify customer reviews (positive/negative) to extract product insights. Stack: Python, NLTK, BERT.",
       
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
@@ -395,9 +403,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     ar: {
 
-      "projects.clustering.title": "تجزئة العملاء (Clustering)",
+"projects.clustering.title": "تجزئة العملاء (Clustering)",
 "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
 "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means لتحديد قطاعات السوق المتميزة وتحسين استراتيجيات التسويق.",
+
+"projects.sentiment.title": "تحليل المشاعر (المراجعات)",
+"projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
+"projects.sentiment.desc": "نموذج معالجة اللغة الطبيعية (NLP) لتحليل وتصنيف مراجعات العملاء (إيجابية/سلبية) لاستخراج رؤى حول المنتجات.",
       
       "page.title": "المعرض - مفتاح زينب",
       "header.title": "مفتاح زينب",
