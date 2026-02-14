@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Certificate - English Specifics (Updated)
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score : 75/100 (C2 Proficient). Certification standardisée reconnue mondialement attestant d'une maîtrise bilingue.",
+      "certs.english.desc": "Score : 92/100 (C2 Proficient). Certification standardisée reconnue mondialement attestant d'une maîtrise bilingue.",
       "certs.cta": "Voir certificat",
 
       // Languages - C2 Update
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Certificate - English Specifics
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score: 75/100 (C2 Proficient). Globally recognized standardized certification verifying bilingual proficiency.",
+      "certs.english.desc": "Score: 92/100 (C2 Proficient). Globally recognized standardized certification verifying bilingual proficiency.",
       "certs.cta": "View Certificate",
 
       // Languages - C2 Update
@@ -319,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Certificate - English Specifics
       "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
-      "certs.english.desc": "النتيجة: 75/100 (C2 محترف). شهادة موحدة معترف بها عالمياً تثبت الكفاءة ثنائية اللغة.",
+      "certs.english.desc": "النتيجة: 92/100 (C2 محترف). شهادة موحدة معترف بها عالمياً تثبت الكفاءة ثنائية اللغة.",
       "certs.cta": "عرض الشهادة",
 
       // Languages - C2 Update
