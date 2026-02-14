@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // CERTIFICATES
       "certs.heading": "Certificats",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score : 75/100 (C2 Proficient). Certification standardisée reconnue mondialement attestant d'une maîtrise bilingue.",
+      "certs.english.desc": "Score : 92/100 (C2 Proficient). Certification standardisée reconnue mondialement attestant d'une maîtrise bilingue.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Programme d’échanges axé sur le leadership, l’innovation et la collaboration interculturelle.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch – DataCamp",
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Certs
       "certs.heading": "Certificates",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score: 75/100 (C2 Proficient). Globally recognized standardized certification verifying bilingual proficiency.",
+      "certs.english.desc": "Score: 92/100 (C2 Proficient). Globally recognized standardized certification verifying bilingual proficiency.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Exchange program focused on leadership, innovation, and cross-cultural collaboration.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch – DataCamp",
@@ -505,7 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Certs
       "certs.heading": "الشهادات",
       "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
-      "certs.english.desc": "النتيجة: 75/100. شهادة معترف بها عالمياً تثبت الكفاءة ثنائية اللغة.",
+      "certs.english.desc": "النتيجة: 92/100. شهادة معترف بها عالمياً تثبت الكفاءة ثنائية اللغة.",
       "certs.aylp.title": "برنامج القيادة الشبابية الجزائري - NNIC",
       "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار والتعاون بين الثقافات.",
       "certs.pytorch.title": "مقدمة في التعلم العميق مع PyTorch - DataCamp",
