@@ -139,21 +139,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================
   // 4. Translations Data
   // =========================================
+// =========================================
+  // 4. Translations Data
+  // =========================================
   const translations = {
     fr: {
-
       "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)",
       "competences.writing": "Rédaction Scientifique",
       "competences.writingDesc": "Publication d'articles techniques (Hugging Face), documentation structurée.",
-      
-"projects.clustering.title": "Segmentation Client (Clustering)",
-"projects.clustering.short": "Analyse de données non supervisée.",
-"projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means pour identifier des segments de marché distincts et optimiser les stratégies marketing. Stack: Python, Scikit-learn.",
-
-"projects.sentiment.title": "Analyse de Sentiments (Avis)",
-"projects.sentiment.short": "NLP & Classification de textes.",
-"projects.sentiment.desc": "Modèle de traitement du langage naturel (NLP) pour analyser et classer les avis clients (positif/négatif) afin d'extraire des insights produits. Stack: Python, NLTK, BERT.",
-      
+      "projects.clustering.title": "Segmentation Client (Clustering)",
+      "projects.clustering.short": "Analyse de données non supervisée.",
+      "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means pour identifier des segments de marché distincts et optimiser les stratégies marketing. Stack: Python, Scikit-learn.",
+      "projects.sentiment.title": "Analyse de Sentiments (Avis)",
+      "projects.sentiment.short": "NLP & Classification de textes.",
+      "projects.sentiment.desc": "Modèle de traitement du langage naturel (NLP) pour analyser et classer les avis clients (positif/négatif) afin d'extraire des insights produits. Stack: Python, NLTK, BERT.",
       "page.title": "Portfolio - Meftah Zineb",
       "nav.title": "Meftah Zineb",
       "header.title": "MEFTAH Zineb",
@@ -290,20 +289,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // FOOTER
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
-    en: 
-    
-    "competences.project3": "Graph Algorithms (A*, Dijkstra)",
+    en: {
+      "competences.project3": "Graph Algorithms (A*, Dijkstra)",
       "competences.writing": "Scientific Writing",
       "competences.writingDesc": "Technical blog publishing (Hugging Face), structured documentation.",
-  {
-"projects.clustering.title": "Customer Segmentation (Clustering)",
-"projects.clustering.short": "Unsupervised Data Analysis.",
-"projects.clustering.desc": "Customer behavior analysis using K-Means algorithm to identify distinct market segments and optimize marketing strategies. Stack: Python, Scikit-learn.",
-
-"projects.sentiment.title": "Sentiment Analysis (Reviews)",
-"projects.sentiment.short": "NLP & Text Classification.",
-"projects.sentiment.desc": "Natural Language Processing (NLP) model to analyze and classify customer reviews (positive/negative) to extract product insights. Stack: Python, NLTK, BERT.",
-      
+      "projects.clustering.title": "Customer Segmentation (Clustering)",
+      "projects.clustering.short": "Unsupervised Data Analysis.",
+      "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm to identify distinct market segments and optimize marketing strategies. Stack: Python, Scikit-learn.",
+      "projects.sentiment.title": "Sentiment Analysis (Reviews)",
+      "projects.sentiment.short": "NLP & Text Classification.",
+      "projects.sentiment.desc": "Natural Language Processing (NLP) model to analyze and classify customer reviews (positive/negative) to extract product insights. Stack: Python, NLTK, BERT.",
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
@@ -412,18 +407,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
-"competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
+      "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
       "competences.writing": "الكتابة العلمية",
       "competences.writingDesc": "نشر المقالات التقنية (Hugging Face)، التوثيق الهيكلي.",
-  
-"projects.clustering.title": "تجزئة العملاء (Clustering)",
-"projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
-"projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means لتحديد قطاعات السوق المتميزة وتحسين استراتيجيات التسويق.",
-
-"projects.sentiment.title": "تحليل المشاعر (المراجعات)",
-"projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
-"projects.sentiment.desc": "نموذج معالجة اللغة الطبيعية (NLP) لتحليل وتصنيف مراجعات العملاء (إيجابية/سلبية) لاستخراج رؤى حول المنتجات.",
-      
+      "projects.clustering.title": "تجزئة العملاء (Clustering)",
+      "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
+      "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means لتحديد قطاعات السوق المتميزة وتحسين استراتيجيات التسويق.",
+      "projects.sentiment.title": "تحليل المشاعر (المراجعات)",
+      "projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
+      "projects.sentiment.desc": "نموذج معالجة اللغة الطبيعية (NLP) لتحليل وتصنيف مراجعات العملاء (إيجابية/سلبية) لاستخراج رؤى حول المنتجات.",
       "page.title": "المعرض - مفتاح زينب",
       "header.title": "مفتاح زينب",
       "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
@@ -525,7 +517,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
     }
   };
-
+  
   // =========================================
   // 5. Mobile Language Dropdown
   // =========================================
