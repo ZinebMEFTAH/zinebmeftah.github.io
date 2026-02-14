@@ -141,6 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================
   const translations = {
     fr: {
+      "projects.clustering.title": "Segmentation Client (Clustering)",
+"projects.clustering.short": "Analyse de données non supervisée.",
+"projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means pour identifier des segments de marché distincts et optimiser les stratégies marketing. Stack: Python, Scikit-learn.",
+      
       "page.title": "Portfolio - Meftah Zineb",
       "nav.title": "Meftah Zineb",
       "header.title": "MEFTAH Zineb",
@@ -278,6 +282,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
     en: {
+      "projects.clustering.title": "Customer Segmentation (Clustering)",
+"projects.clustering.short": "Unsupervised Data Analysis.",
+"projects.clustering.desc": "Customer behavior analysis using K-Means algorithm to identify distinct market segments and optimize marketing strategies. Stack: Python, Scikit-learn.",
+      
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
@@ -386,6 +394,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
+
+      "projects.clustering.title": "تجزئة العملاء (Clustering)",
+"projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
+"projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means لتحديد قطاعات السوق المتميزة وتحسين استراتيجيات التسويق.",
+      
       "page.title": "المعرض - مفتاح زينب",
       "header.title": "مفتاح زينب",
       "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
