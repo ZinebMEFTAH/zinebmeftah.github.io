@@ -141,6 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================
   const translations = {
     fr: {
+
+      "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)",
+      "competences.writing": "Rédaction Scientifique",
+      "competences.writingDesc": "Publication d'articles techniques (Hugging Face), documentation structurée.",
+      
 "projects.clustering.title": "Segmentation Client (Clustering)",
 "projects.clustering.short": "Analyse de données non supervisée.",
 "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means pour identifier des segments de marché distincts et optimiser les stratégies marketing. Stack: Python, Scikit-learn.",
@@ -285,7 +290,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // FOOTER
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
-    en: {
+    en: 
+    
+    "competences.project3": "Graph Algorithms (A*, Dijkstra)",
+      "competences.writing": "Scientific Writing",
+      "competences.writingDesc": "Technical blog publishing (Hugging Face), structured documentation.",
+  {
 "projects.clustering.title": "Customer Segmentation (Clustering)",
 "projects.clustering.short": "Unsupervised Data Analysis.",
 "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm to identify distinct market segments and optimize marketing strategies. Stack: Python, Scikit-learn.",
@@ -402,7 +412,10 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
-
+"competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
+      "competences.writing": "الكتابة العلمية",
+      "competences.writingDesc": "نشر المقالات التقنية (Hugging Face)، التوثيق الهيكلي.",
+  
 "projects.clustering.title": "تجزئة العملاء (Clustering)",
 "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
 "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means لتحديد قطاعات السوق المتميزة وتحسين استراتيجيات التسويق.",
