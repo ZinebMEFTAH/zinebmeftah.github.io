@@ -466,7 +466,15 @@ const translations = {
     const html = document.documentElement;
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
+    const navEl = document.querySelector('nav[role="navigation"]');
+        if (navEl) {
+          navEl.classList.remove('nav-hidden');
+          // Force Safari repaint
+          navEl.style.display = 'none';
+          navEl.offsetHeight; // trigger reflow
+          navEl.style.display = '';
+    }
+    
     // Horizontal scroll reset
     const scrollers = document.querySelectorAll('.projects-scroll');
     scrollers.forEach((el) => {
