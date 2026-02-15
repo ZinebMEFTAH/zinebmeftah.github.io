@@ -171,7 +171,11 @@ body {
 nav {
     position: fixed;
     top: 0;
-    width: 100%;
+    /* CHANGE HERE: Remove width: 100% and use left/right anchors */
+    left: 0;
+    right: 0;
+    width: auto; 
+    
     background: rgba(26, 31, 46, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
