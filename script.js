@@ -464,18 +464,32 @@ const translations = {
   // 6. Translation Function
   function translatePage(lang) {
     const html = document.documentElement;
+    
+    // --- SAFARI FIX START ---
+    const navEl = document.querySelector('nav[role="navigation"]');
+    
+    // 1. Temporarily disable transition to prevent glitches during switch
+    if (navEl) {
+        navEl.style.transition = 'none'; 
+        navEl.classList.remove('nav-hidden'); // Ensure it's visible
+        navEl.style.transform = 'translateY(0)'; // Reset position
+    }
+
+    // 2. Change the language
     html.setAttribute('lang', lang);
     html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    const navEl = document.querySelector('nav[role="navigation"]');
-        if (navEl) {
-          navEl.classList.remove('nav-hidden');
-          // Force Safari repaint
-          navEl.style.display = 'none';
-          navEl.offsetHeight; // trigger reflow
-          navEl.style.display = '';
+
+    // 3. Force browser to accept the change (Reflow)
+    if (navEl) void navEl.offsetWidth; 
+
+    // 4. Re-enable transition after a tiny delay
+    if (navEl) {
+        setTimeout(() => {
+            navEl.style.transition = ''; // Remove inline style to revert to CSS
+            navEl.style.transform = '';  // Remove inline transform
+        }, 50);
     }
-    
-    // Horizontal scroll reset
+    // --- SAFARI FIX END ---    // Horizontal scroll reset
     const scrollers = document.querySelectorAll('.projects-scroll');
     scrollers.forEach((el) => {
       const prevBehavior = el.style.scrollBehavior;
