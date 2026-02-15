@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // =========================================
   // 1. Language Switcher Logic
-  // =========================================
   const langToggle = document.querySelector(".lang-toggle");
   const langSwitcher = document.querySelector(".lang-switcher");
 
@@ -17,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
   // 2. Mobile Navigation
-  // =========================================
   const burger = document.getElementById("burger");
   const navLinks = document.querySelector(".nav-links");
 
@@ -46,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
   // 3. Chat Widget Logic
-  // =========================================
   const chatToggle = document.getElementById("chat-toggle");
   const chatBox = document.getElementById("chatbox");
   const chatClose = document.getElementById("chat-close");
@@ -68,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const openChat = () => chatBox.classList.remove("hidden");
     const closeChat = () => chatBox.classList.add("hidden");
     
-    // Builds context from page content
     const buildContext = () => {
       const safeText = (sel) => document.querySelector(sel)?.innerText?.trim() || "";
       const parts = [
@@ -130,9 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     append("Hi. Ask me anything about my projects.", "bot");
   }
 
-  // =========================================
-  // 4. Translations Data (FIXED SYNTAX)
-  // =========================================
+  // 4. Translations Data
   const translations = {
     fr: {
       "page.title": "Portfolio - Meftah Zineb",
@@ -142,7 +133,16 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.publications": "Publications", "nav.projects": "Projets", "nav.competences": "Compétences",
       "nav.langues": "Langues", "nav.experience": "Expérience",
       
-      // Sections
+      // NEW KEYS Added for completeness
+      "nav.skip": "Aller au contenu",
+      "dates.ensia": "2022 - Juin 2024",
+      "dates.avignon": "Septembre 2024 - Aujourd'hui",
+      "pub.keywords": "Mots-clés",
+      "pub.articles": "Articles",
+      "chat.title": "Assistant Portfolio",
+      "chat.placeholder": "Posez une question...",
+      "chat.send": "Envoyer",
+
       "formation.heading": "Formation & Certifications",
       "publications.heading": "Publications",
       "projects.heading": "Projets et Expériences",
@@ -151,19 +151,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "experience.heading": "Expérience & Leadership",
       "contact.heading": "Contact",
 
-      // Profile
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
       "profile.text1": "Ingénieure en devenir passionnée par l'IA et la robotique. Je conçois des architectures neuronales avancées et des systèmes full-stack robustes.",
       "profile.text2": "Mon expertise couvre le Fine-tuning de LLM, la Vision par Ordinateur et le développement de pipelines ML.",
 
-      // Chat & Dates (NEW)
-      "chat.title": "Assistant Portfolio",
-      "chat.placeholder": "Posez une question...",
-      "chat.send": "Envoyer",
-      "dates.avignon": "Septembre 2024 - Aujourd'hui",
-
-      // Skills
       "competences.languages": "Langages",
       "competences.programming": "Programmation",
       "competences.web": "Développement Web",
@@ -174,10 +166,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "competences.writing": "Rédaction Scientifique",
       "competences.writingDesc": "Publication d'articles techniques (Hugging Face), documentation structurée.",
 
-      // Projects
       "projects.hover": "Survolez pour voir les détails",
       "projects.link": "Voir le code",
       "projects.link.demo": "Voir la démo",
+      "projects.link.modelRepo": "Dépôt modèle",
+      "projects.link.demoSpace": "Espace Démo",
+      "projects.link.githubRepo": "Dépôt GitHub",
+      "projects.link.liveDemo": "Démo Live",
       
       "projects.clustering.title": "Segmentation Client (Clustering)",
       "projects.clustering.short": "Analyse de données non supervisée.",
@@ -243,14 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.p8.short": "Algorithmes de graphes.",
       "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes.",
 
-      // Langs & Certs
       "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)",
       "langues.frenchDetail": "Année universitaire validée en France",
       "langues.english": "Anglais", "langues.englishlevel": "Bilingue (C2)",
       "langues.arabic": "Arabe", "langues.arabicLevel": "Langue maternelle",
       "certs.heading": "Certificats",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score : 75/100 (C2). Certification standardisée reconnue mondialement.",
+      "certs.english.desc": "Score : 92/100 (C2). Certification standardisée reconnue mondialement.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Programme d’échanges axé sur le leadership et l’innovation.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
@@ -267,6 +261,17 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
       "nav.langues": "Languages", "nav.experience": "Experience",
+      
+      // NEW KEYS
+      "nav.skip": "Skip to content",
+      "dates.ensia": "2022 - June 2024",
+      "dates.avignon": "Sept 2024 - Present",
+      "pub.keywords": "Keywords",
+      "pub.articles": "Articles",
+      "chat.title": "Portfolio Assistant",
+      "chat.placeholder": "Ask a question...",
+      "chat.send": "Send",
+
       "formation.heading": "Education & Certificates",
       "publications.heading": "Publications",
       "projects.heading": "Projects & Experience",
@@ -279,12 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "profile.greeting": "Hi, I’m Zineb Meftah.",
       "profile.text1": "An aspiring AI Engineer passionate about Robotics and backend development. I design advanced neural architectures and robust full-stack systems.",
       "profile.text2": "My expertise covers LLM Fine-tuning, Computer Vision, and building end-to-end Machine Learning pipelines.",
-
-      // Chat & Dates (NEW)
-      "chat.title": "Portfolio Assistant",
-      "chat.placeholder": "Ask a question...",
-      "chat.send": "Send",
-      "dates.avignon": "Sept 2024 - Present",
 
       "competences.project3": "Graph Algorithms (A*, Dijkstra)",
       "competences.writing": "Scientific Writing",
@@ -362,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "langues.arabic": "Arabic", "langues.arabicLevel": "Native",
 
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score: 75/100 (C2). Globally recognized standardized certification.",
+      "certs.english.desc": "Score: 92/100 (C2). Globally recognized standardized certification.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Exchange program focused on leadership and innovation.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
@@ -379,16 +378,21 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة",
+      
+      // NEW KEYS
+      "nav.skip": "تخطي إلى المحتوى",
+      "dates.ensia": "2022 - يونيو 2024",
+      "dates.avignon": "سبتمبر 2024 - الحاضر",
+      "pub.keywords": "الكلمات المفتاحية",
+      "pub.articles": "المقالات",
+      "chat.title": "مساعد المعرض",
+      "chat.placeholder": "اطرح سؤالاً...",
+      "chat.send": "إرسال",
+
       "profile.heading": "نبذة عني",
       "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
       "profile.text1": "مهندسة طموحة شغوفة بالذكاء الاصطناعي والروبوتات. أقوم بتصميم بنى عصبية متقدمة وأنظمة شاملة.",
       "profile.text2": "تشمل خبرتي الضبط الدقيق لنماذج اللغة الكبيرة (LLM)، والرؤية الحاسوبية.",
-
-      // Chat & Dates (NEW)
-      "chat.title": "مساعد المعرض",
-      "chat.placeholder": "اطرح سؤالاً...",
-      "chat.send": "إرسال",
-      "dates.avignon": "سبتمبر 2024 - الحاضر",
 
       "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
       "competences.writing": "الكتابة العلمية",
@@ -451,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "langues.arabic": "العربية", "langues.arabicLevel": "اللغة الأم",
       "certs.heading": "الشهادات",
       "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
-      "certs.english.desc": "النتيجة: 75/100. شهادة معترف بها عالمياً.",
+      "certs.english.desc": "النتيجة: 92/100. شهادة معترف بها عالمياً.",
       "certs.aylp.title": "برنامج القيادة الشبابية الجزائري - NNIC",
       "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار.",
       "certs.pytorch.title": "مقدمة في التعلم العميق مع PyTorch",
@@ -463,9 +467,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // =========================================
   // 5. Mobile Language Dropdown
-  // =========================================
   const mobileLangButton = document.querySelector('.mobile-lang-button');
   const mobileLangOptions = document.querySelector('.mobile-lang-options');
   const mobileLangButtons = document.querySelectorAll('.mobile-lang-options button');
@@ -502,9 +504,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // =========================================
   // 6. Translation Function
-  // =========================================
   function translatePage(lang) {
     const html = document.documentElement;
     html.setAttribute('lang', lang);
@@ -543,19 +543,27 @@ document.addEventListener("DOMContentLoaded", () => {
           el.textContent = dict[key];
         } else if (el.tagName === 'BUTTON' || el.tagName === 'A') {
           el.textContent = dict[key];
+        } else if (el.tagName === 'TH') { // Added TH for table headers
+          el.textContent = dict[key];
         } else if (el.tagName === 'P') {
           el.textContent = dict[key];
         }
       }
     });
 
-    // Specific handler for placeholder text
+    // Handle placeholder for chat input
     const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
     placeholderElements.forEach(el => {
       const key = el.getAttribute('data-translate-placeholder');
       if (dict && dict[key]) {
         el.setAttribute('placeholder', dict[key]);
       }
+    });
+
+    // Handle nested text specifically for complex cards (Safety Check)
+    document.querySelectorAll('.flip-card-front h3, .flip-card-back h3, .flip-card-front p, .flip-card-back p').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      if (key && dict[key]) el.textContent = dict[key];
     });
 
     // Update <title>
@@ -570,9 +578,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try { localStorage.setItem('lang', lang); } catch {}
   }
 
-  // =========================================
   // 7. Initialization
-  // =========================================
   const savedLang = (() => {
     try { return localStorage.getItem('lang'); } catch { return null; }
   })();
@@ -588,9 +594,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // =========================================
   // 8. Intersection Observers (Animations)
-  // =========================================
   const sections = document.querySelectorAll(".section");
   const observerOptions = { threshold: 0.2 };
   const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -605,9 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionObserver.observe(section);
   });
 
-  // =========================================
   // 9. Scroll Indicator
-  // =========================================
   const scrollIndicator = document.getElementById("scrollIndicator");
   if (scrollIndicator) {
     scrollIndicator.addEventListener("click", () => {
@@ -618,9 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
   // 10. Theme Toggle
-  // =========================================
   const themeToggle = document.getElementById("themeToggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
@@ -629,9 +629,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================================
   // 11. Skill & Language Animations
-  // =========================================
   const skillCards = document.querySelectorAll('.skill-card');
   const skillObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -654,9 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.5 });
   languageCards.forEach(card => languageObserver.observe(card));
 
-  // =========================================
   // 12. Hide Nav on Scroll
-  // =========================================
   let lastScrollY = window.scrollY || 0;
   const navEl = document.querySelector('nav[role="navigation"]');
   const SCROLL_DELTA = 6; 
@@ -676,9 +672,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener('scroll', handleScroll, { passive: true });
 
-  // =========================================
   // 13. Flip Card Interactions
-  // =========================================
   const flipCards = document.querySelectorAll('.flip-card');
   flipCards.forEach(card => {
     card.setAttribute('tabindex', '0');
