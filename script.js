@@ -129,20 +129,22 @@ document.addEventListener("DOMContentLoaded", () => {
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
+      
+      // Nav
       "nav.contact": "Contact", "nav.profil": "Profil", "nav.formation": "Formation",
       "nav.publications": "Publications", "nav.projects": "Projets", "nav.competences": "Compétences",
       "nav.langues": "Langues", "nav.experience": "Expérience",
-      
-      // NEW KEYS Added for completeness
       "nav.skip": "Aller au contenu",
-      "dates.ensia": "2022 - Juin 2024",
-      "dates.avignon": "Septembre 2024 - Aujourd'hui",
-      "pub.keywords": "Mots-clés",
-      "pub.articles": "Articles",
-      "chat.title": "Assistant Portfolio",
-      "chat.placeholder": "Posez une question...",
-      "chat.send": "Envoyer",
 
+      // Contact info
+      "info.telephone": "☎ Téléphone",
+      "info.email": "✉ Email",
+      "info.linkedin": "🔗 LinkedIn",
+      "info.portfolio": "🌐 Portfolio",
+      "info.github": "🐙 GitHub",
+      "info.huggingface": "🤖 Hugging Face",
+
+      // Section Headers
       "formation.heading": "Formation & Certifications",
       "publications.heading": "Publications",
       "projects.heading": "Projets et Expériences",
@@ -151,37 +153,61 @@ document.addEventListener("DOMContentLoaded", () => {
       "experience.heading": "Expérience & Leadership",
       "contact.heading": "Contact",
 
+      // Profile
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
       "profile.text1": "Ingénieure en devenir passionnée par l'IA et la robotique. Je conçois des architectures neuronales avancées et des systèmes full-stack robustes.",
       "profile.text2": "Mon expertise couvre le Fine-tuning de LLM, la Vision par Ordinateur et le développement de pipelines ML.",
 
-      "competences.languages": "Langages",
-      "competences.programming": "Programmation",
-      "competences.web": "Développement Web",
+      // Dates & Buttons
+      "dates.ensia": "2022 - Juin 2024",
+      "dates.avignon": "Septembre 2024 - Aujourd'hui",
+      "common.viewDiploma": "Voir diplôme",
+      "certs.cta": "Voir certificat",
+      
+      // Skills Headers
       "competences.aiDataSkills": "IA & Data Science",
       "competences.techSkills": "Compétences Techniques",
-      "competences.softSkillsTitle": "Soft Skills",
-      "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)",
+      "competences.softSkillsTitle": "Compétences Personnelles",
+      
+      // Skill Sub-headers
+      "competences.artificialIntelligence": "Intelligence Artificielle",
+      "competences.dataScience": "Data Science",
+      "competences.programming": "Programmation & Systèmes",
+      "competences.web": "Full-Stack Web",
+      "competences.aiModels": "Techniques",
+      "competences.aiTools": "Frameworks & Outils",
+      "competences.dataAnalysis": "Analyse & Visualisation",
+      "competences.dataProjects": "Concepts Clés",
+      "competences.languages": "Langages",
+      "competences.tools": "DevOps & Outils",
+      "competences.backend": "Backend",
+      "competences.frontend": "Frontend",
+      
+      // Soft Skills
       "competences.writing": "Rédaction Scientifique",
       "competences.writingDesc": "Publication d'articles techniques (Hugging Face), documentation structurée.",
+      "competences.teamwork": "Leadership & Teamwork",
+      "competences.teamworkDesc": "Expérience GDSC, mentorat, gestion de projets agiles.",
+      "competences.problemSolving": "Résolution de problèmes",
+      "competences.problemSolvingDesc": "Approche algorithmique, optimisation de performance.",
+      "competences.continuousLearning": "Apprentissage continu",
+      "competences.continuousLearningDesc": "Veille technologique active (Papers with Code, arXiv).",
 
+      // Skill Items
+      "competences.project1": "Génération de données synthétiques",
+      "competences.project2": "Clustering & Segmentation (K-Means)",
+      "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)",
+
+      // Projects
       "projects.hover": "Survolez pour voir les détails",
-      "projects.link": "Voir le code",
-      "projects.link.demo": "Voir la démo",
-      "projects.link.modelRepo": "Dépôt modèle",
-      "projects.link.demoSpace": "Espace Démo",
+      "projects.link.modelRepo": "Dépôt du modèle",
+      "projects.link.demoSpace": "Espace de démo",
+      "projects.link.viewCode": "Voir le code",
       "projects.link.githubRepo": "Dépôt GitHub",
-      "projects.link.liveDemo": "Démo Live",
-      
-      "projects.clustering.title": "Segmentation Client (Clustering)",
-      "projects.clustering.short": "Analyse de données non supervisée.",
-      "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means.",
-      
-      "projects.sentiment.title": "Analyse de Sentiments (Avis)",
-      "projects.sentiment.short": "NLP & Classification de textes.",
-      "projects.sentiment.desc": "Modèle NLP pour analyser et classer les avis clients (positif/négatif).",
+      "projects.link.liveDemo": "Démo en ligne",
 
+      // Project Content
       "projects.p9.title": "LeRobot PushT Trainer",
       "projects.p9.short": "Entraînement de politiques robotiques.",
       "projects.p9.desc": "Pipeline complet pour l'entraînement et l'évaluation de politiques PushT.",
@@ -193,6 +219,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.p10.title": "Robot Vision Simulator",
       "projects.p10.short": "Simulateur interactif de vision.",
       "projects.p10.desc": "Simulateur web de robotique intégrant la détection d'objets (COCO-SSD).",
+
+      "projects.sentiment.title": "Analyse de Sentiments (Avis)",
+      "projects.sentiment.short": "NLP & Classification de textes.",
+      "projects.sentiment.desc": "Modèle NLP pour analyser et classer les avis clients (positif/négatif).",
+
+      "projects.clustering.title": "Segmentation Client (Clustering)",
+      "projects.clustering.short": "Analyse de données non supervisée.",
+      "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means.",
 
       "projects.p0.title": "Générateur IA de sites web",
       "projects.p0.short": "Du texte au site web fonctionnel.",
@@ -238,20 +272,46 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.p8.short": "Algorithmes de graphes.",
       "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes.",
 
+      // Publications
+      "pub.keywords": "Mots-clés",
+      "pub.articles": "Articles",
+      "publication.description": "Découvrez notre approche révolutionnaire qui utilise un fine-tuning inversé pour générer des données synthétiques.",
+      "publication.cta": "Lire l'article complet",
+      "publication.tableTitle": "Exemple de base de données",
+
+      // Experience
+      "experience.card1.title": "Responsable informatique",
+      "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
+      "experience.card2.title": "Participant AYLP",
+      "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
+      "experience.card3.title": "Organisation d'événements",
+      "experience.card3.detail": "Hackathons, IA, Développement Web",
+      "experience.card4.title": "Autres Réalisations",
+      "experience.card4.item1": "Hackathon IA Avignon (24h, 2024)",
+      "experience.card4.item2": "Mentor junior – GDSC (2023)",
+      "experience.card4.item3": "Projet tutoré G‑JOBS (2024): tâches, Git, review",
+
+      // Langs
       "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)",
       "langues.frenchDetail": "Année universitaire validée en France",
       "langues.english": "Anglais", "langues.englishlevel": "Bilingue (C2)",
       "langues.arabic": "Arabe", "langues.arabicLevel": "Langue maternelle",
-      "certs.heading": "Certificats",
+
+      // Chat
+      "chat.title": "Assistant Portfolio",
+      "chat.placeholder": "Posez une question...",
+      "chat.send": "Envoyer",
+
+      // Certs
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
       "certs.english.desc": "Score : 92/100 (C2). Certification standardisée reconnue mondialement.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
-      "certs.aylp.desc": "Programme d’échanges axé sur le leadership et l’innovation.",
+      "certs.aylp.desc": "Programme d’échanges axé sur le leadership.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
       "certs.pytorch.desc": "Formation en ligne sur les réseaux de neurones.",
       "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
       "certs.fcc.desc": "Certification axée sur les fondamentaux du HTML/CSS.",
-      "certs.cta": "Voir certificat",
+
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
     en: {
@@ -261,17 +321,17 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
       "nav.langues": "Languages", "nav.experience": "Experience",
-      
-      // NEW KEYS
       "nav.skip": "Skip to content",
-      "dates.ensia": "2022 - June 2024",
-      "dates.avignon": "Sept 2024 - Present",
-      "pub.keywords": "Keywords",
-      "pub.articles": "Articles",
-      "chat.title": "Portfolio Assistant",
-      "chat.placeholder": "Ask a question...",
-      "chat.send": "Send",
 
+      // Contact
+      "info.telephone": "☎ Phone",
+      "info.email": "✉ Email",
+      "info.linkedin": "🔗 LinkedIn",
+      "info.portfolio": "🌐 Portfolio",
+      "info.github": "🐙 GitHub",
+      "info.huggingface": "🤖 Hugging Face",
+
+      // Section Headers
       "formation.heading": "Education & Certificates",
       "publications.heading": "Publications",
       "projects.heading": "Projects & Experience",
@@ -280,24 +340,59 @@ document.addEventListener("DOMContentLoaded", () => {
       "langues.heading": "Languages",
       "contact.heading": "Contact",
 
+      // Profile
       "profile.heading": "About Me",
       "profile.greeting": "Hi, I’m Zineb Meftah.",
       "profile.text1": "An aspiring AI Engineer passionate about Robotics and backend development. I design advanced neural architectures and robust full-stack systems.",
       "profile.text2": "My expertise covers LLM Fine-tuning, Computer Vision, and building end-to-end Machine Learning pipelines.",
 
-      "competences.project3": "Graph Algorithms (A*, Dijkstra)",
+      // Dates & Buttons
+      "dates.ensia": "2022 - June 2024",
+      "dates.avignon": "Sept 2024 - Present",
+      "common.viewDiploma": "View Diploma",
+      "certs.cta": "View Certificate",
+
+      // Skills Headers
+      "competences.aiDataSkills": "AI & Data Science",
+      "competences.techSkills": "Technical Skills",
+      "competences.softSkillsTitle": "Personal Skills",
+
+      // Skill Sub-headers
+      "competences.artificialIntelligence": "Artificial Intelligence",
+      "competences.dataScience": "Data Science",
+      "competences.programming": "Programming & Systems",
+      "competences.web": "Full-Stack Web",
+      "competences.aiModels": "Techniques",
+      "competences.aiTools": "Frameworks & Tools",
+      "competences.dataAnalysis": "Analysis & Visualization",
+      "competences.dataProjects": "Key Concepts",
+      "competences.languages": "Languages",
+      "competences.tools": "DevOps & Tools",
+      "competences.backend": "Backend",
+      "competences.frontend": "Frontend",
+
+      // Soft Skills
       "competences.writing": "Scientific Writing",
       "competences.writingDesc": "Technical blog publishing (Hugging Face), structured documentation.",
-      
+      "competences.teamwork": "Leadership & Teamwork",
+      "competences.teamworkDesc": "GDSC experience, mentoring, agile project management.",
+      "competences.problemSolving": "Problem Solving",
+      "competences.problemSolvingDesc": "Algorithmic thinking, performance optimization.",
+      "competences.continuousLearning": "Continuous Learning",
+      "competences.continuousLearningDesc": "Active tech watch (Papers with Code, arXiv).",
+
+      // Skill Items
+      "competences.project1": "Synthetic Data Generation",
+      "competences.project2": "Clustering & Segmentation (K-Means)",
+      "competences.project3": "Graph Algorithms (A*, Dijkstra)",
+
+      // Projects
       "projects.hover": "Hover or click for technical details",
-      "projects.link": "View Code",
-      "projects.clustering.title": "Customer Segmentation (Clustering)",
-      "projects.clustering.short": "Unsupervised Data Analysis.",
-      "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm.",
-      
-      "projects.sentiment.title": "Sentiment Analysis (Reviews)",
-      "projects.sentiment.short": "NLP & Text Classification.",
-      "projects.sentiment.desc": "NLP model to analyze and classify customer reviews (positive/negative).",
+      "projects.link.modelRepo": "Model Repo",
+      "projects.link.demoSpace": "Demo Space",
+      "projects.link.viewCode": "View Code",
+      "projects.link.githubRepo": "GitHub Repo",
+      "projects.link.liveDemo": "Live Demo",
 
       "projects.p9.title": "LeRobot PushT Trainer",
       "projects.p9.short": "Robotic Policy Training.",
@@ -310,6 +405,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.p10.title": "Robot Vision Simulator",
       "projects.p10.short": "Interactive Vision Simulator.",
       "projects.p10.desc": "Web-based robotics simulator integrating object detection (COCO-SSD).",
+
+      "projects.sentiment.title": "Sentiment Analysis (Reviews)",
+      "projects.sentiment.short": "NLP & Text Classification.",
+      "projects.sentiment.desc": "NLP model to analyze and classify customer reviews (positive/negative).",
+
+      "projects.clustering.title": "Customer Segmentation (Clustering)",
+      "projects.clustering.short": "Unsupervised Data Analysis.",
+      "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm.",
 
       "projects.p0.title": "AI Website Generator",
       "projects.p0.short": "Text to Functional Website.",
@@ -355,6 +458,30 @@ document.addEventListener("DOMContentLoaded", () => {
       "projects.p8.short": "Advanced Graph Algorithms.",
       "projects.p8.desc": "Graph-based road network analysis in Avignon using algorithms for shortest paths.",
 
+      // Publications
+      "pub.keywords": "Keywords",
+      "pub.articles": "Articles",
+      "publication.description": "Discover our revolutionary approach using reverse fine-tuning to generate synthetic data.",
+      "publication.cta": "Read Full Article",
+      "publication.tableTitle": "Sample Database",
+
+      // Experience
+      "experience.card1.title": "IT Manager",
+      "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
+      "experience.card2.title": "AYLP Participant",
+      "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
+      "experience.card3.title": "Event Organizer",
+      "experience.card3.detail": "Hackathons, AI, Web Development",
+      "experience.card4.title": "Other Achievements",
+      "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
+      "experience.card4.item2": "Junior Mentor – GDSC (2023)",
+      "experience.card4.item3": "Supervised Project G‑JOBS (2024): tasks, Git, review",
+
+      // Chat
+      "chat.title": "Portfolio Assistant",
+      "chat.placeholder": "Ask a question...",
+      "chat.send": "Send",
+
       "langues.french": "French", "langues.frenchlevel": "Advanced (C1)",
       "langues.frenchDetail": "Validated year in French university",
       "langues.english": "English", "langues.englishlevel": "Bilingual (C2)",
@@ -368,7 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "certs.pytorch.desc": "Online training on neural networks and PyTorch.",
       "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
       "certs.fcc.desc": "Certificate covering HTML, CSS, Flexbox.",
-      "certs.cta": "View Certificate",
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
@@ -378,76 +504,166 @@ document.addEventListener("DOMContentLoaded", () => {
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة",
-      
-      // NEW KEYS
       "nav.skip": "تخطي إلى المحتوى",
-      "dates.ensia": "2022 - يونيو 2024",
-      "dates.avignon": "سبتمبر 2024 - الحاضر",
-      "pub.keywords": "الكلمات المفتاحية",
-      "pub.articles": "المقالات",
-      "chat.title": "مساعد المعرض",
-      "chat.placeholder": "اطرح سؤالاً...",
-      "chat.send": "إرسال",
 
+      // Contact
+      "info.telephone": "☎ الهاتف",
+      "info.email": "✉ البريد",
+      "info.linkedin": "🔗 لينكد إن",
+      "info.portfolio": "🌐 المعرض",
+      "info.github": "🐙 جيتهاب",
+      "info.huggingface": "🤖 هاجينغ فايس",
+
+      // Section Headers
+      "formation.heading": "التعليم والشهادات",
+      "publications.heading": "المنشورات",
+      "projects.heading": "المشاريع والخبرة",
+      "experience.heading": "الخبرة والقيادة",
+      "competences.heading": "المهارات",
+      "langues.heading": "اللغات",
+      "contact.heading": "اتصل",
+
+      // Profile
       "profile.heading": "نبذة عني",
       "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
       "profile.text1": "مهندسة طموحة شغوفة بالذكاء الاصطناعي والروبوتات. أقوم بتصميم بنى عصبية متقدمة وأنظمة شاملة.",
       "profile.text2": "تشمل خبرتي الضبط الدقيق لنماذج اللغة الكبيرة (LLM)، والرؤية الحاسوبية.",
 
-      "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
+      // Dates & Buttons
+      "dates.ensia": "2022 - يونيو 2024",
+      "dates.avignon": "سبتمبر 2024 - الحاضر",
+      "common.viewDiploma": "عرض الشهادة",
+      "certs.cta": "عرض الشهادة",
+
+      // Skills Headers
+      "competences.aiDataSkills": "الذكاء الاصطناعي وعلوم البيانات",
+      "competences.techSkills": "المهارات التقنية",
+      "competences.softSkillsTitle": "المهارات الشخصية",
+
+      // Skill Sub-headers
+      "competences.artificialIntelligence": "الذكاء الاصطناعي",
+      "competences.dataScience": "علوم البيانات",
+      "competences.programming": "البرمجة والأنظمة",
+      "competences.web": "تطوير الويب الشامل",
+      "competences.aiModels": "التقنيات",
+      "competences.aiTools": "الأطر والأدوات",
+      "competences.dataAnalysis": "التحليل والتصور",
+      "competences.dataProjects": "المفاهيم الرئيسية",
+      "competences.languages": "لغات البرمجة",
+      "competences.tools": "أدوات التطوير",
+      "competences.backend": "الخلفية",
+      "competences.frontend": "الواجهة الأمامية",
+
+      // Soft Skills
       "competences.writing": "الكتابة العلمية",
       "competences.writingDesc": "نشر المقالات التقنية (Hugging Face)، التوثيق الهيكلي.",
-      "projects.clustering.title": "تجزئة العملاء (Clustering)",
-      "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
-      "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means.",
-      "projects.sentiment.title": "تحليل المشاعر (المراجعات)",
-      "projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
-      "projects.sentiment.desc": "نموذج NLP لتحليل وتصنيف مراجعات العملاء.",
-      
+      "competences.teamwork": "القيادة والعمل الجماعي",
+      "competences.teamworkDesc": "خبرة GDSC، الإرشاد، إدارة المشاريع المرنة.",
+      "competences.problemSolving": "حل المشكلات",
+      "competences.problemSolvingDesc": "التفكير الخوارزمي، تحسين الأداء.",
+      "competences.continuousLearning": "التعلم المستمر",
+      "competences.continuousLearningDesc": "متابعة تقنية نشطة (الأوراق البحثية، arXiv).",
+
+      // Skill Items
+      "competences.project1": "توليد البيانات الاصطناعية",
+      "competences.project2": "التجميع والتجزئة (K-Means)",
+      "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
+
+      // Projects
       "projects.hover": "مرّر أو انقر لعرض التفاصيل",
-      "projects.link": "عرض الكود",
+      "projects.link.modelRepo": "مستودع النموذج",
+      "projects.link.demoSpace": "مساحة العرض",
+      "projects.link.viewCode": "عرض الكود",
+      "projects.link.githubRepo": "مستودع GitHub",
+      "projects.link.liveDemo": "عرض مباشر",
+
       "projects.p9.title": "مدرب LeRobot PushT",
       "projects.p9.short": "تدريب السياسات الروبوتية.",
       "projects.p9.desc": "نظام كامل لتدريب وتقييم سياسات PushT.",
+
       "projects.cancer.title": "كشف سرطان الثدي",
       "projects.cancer.short": "تشخيص طبي بالتعلم العميق.",
       "projects.cancer.desc": "نظام تصنيف صور الأنسجة باستخدام شبكات CNN المحسنة.",
+
       "projects.p10.title": "محاكي رؤية الروبوت",
       "projects.p10.short": "محاكي رؤية تفاعلي.",
       "projects.p10.desc": "محاكي روبوتات قائم على الويب يدمج اكتشاف الأشياء.",
+
+      "projects.sentiment.title": "تحليل المشاعر (المراجعات)",
+      "projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
+      "projects.sentiment.desc": "نموذج NLP لتحليل وتصنيف مراجعات العملاء.",
+
+      "projects.clustering.title": "تجزئة العملاء (Clustering)",
+      "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
+      "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means.",
+
       "projects.p0.title": "مولد مواقع الويب بالذكاء الاصطناعي",
       "projects.p0.short": "من نص إلى موقع ويب.",
       "projects.p0.desc": "نظام ذكاء اصطناعي توليدي قادر على تصميم ونشر مواقع ويب كاملة.",
+
       "projects.p2.title": "News Wave",
       "projects.p2.short": "مجمع أخبار ذكي.",
       "projects.p2.desc": "تطبيق أخبار مخصص يستخدم معالجة اللغة الطبيعية.",
+
       "projects.compiler.title": "مترجم شبيه بـ Pascal",
       "projects.compiler.short": "هندسة مترجم كاملة.",
       "projects.compiler.desc": "تصميم مترجم لـ Mini-Pascal: تحليل معجمي، نحوي، ودلالي.",
+
       "projects.nova.title": "نوفا (NOVA)",
       "projects.nova.short": "مشاهدة متزامنة.",
       "projects.nova.desc": "منصة اجتماعية للمشاهدة المتزامنة.",
+
       "projects.cericar.title": "سيري-كار (CERICar)",
       "projects.cericar.short": "نقل تشاركي متكامل.",
       "projects.cericar.desc": "تطبيق ويب متكامل يتضمن محرك بحث عن الرحلات.",
+
       "projects.p3.title": "تحسين الخطة الزراعية",
       "projects.p3.short": "زراعة مستدامة بالذكاء الاصطناعي.",
       "projects.p3.desc": "نظام دعم القرار لتعظيم الإنتاج الزراعي باستخدام CSP.",
+
       "projects.p4.title": "G-Jobs",
       "projects.p4.short": "منصة توظيف ذكية.",
       "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأصحاب العمل.",
+
       "projects.p5.title": "محرك بحث متقدم",
       "projects.p5.short": "فهرسة وبحث نصي.",
       "projects.p5.desc": "محرك بحث عالي الأداء يطبق نماذج TF-IDF و BM25.",
+
       "projects.p6.title": "سلسلة مطاعم",
       "projects.p6.short": "إدارة متعددة المواقع.",
       "projects.p6.desc": "نظام إدارة لسلسلة مطاعم متعددة البلدان.",
+
       "projects.p7.title": "سوبرماركت الإنترنت",
       "projects.p7.short": "نظام إدارة CLI.",
       "projects.p7.desc": "تطبيق سطر أوامر لرقمنة إدارة السوبرماركت.",
+
       "projects.p8.title": "تحليل شبكة الطرق",
       "projects.p8.short": "خوارزميات الرسوم البيانية.",
       "projects.p8.desc": "تحليل شبكة الطرق القائم على الرسوم البيانية في أفينيون.",
+
+      // Publications
+      "pub.keywords": "الكلمات المفتاحية",
+      "pub.articles": "المقالات",
+      "publication.description": "اكتشف نهجنا الثوري الذي يستخدم الضبط العكسي لتوليد بيانات تركيبية.",
+      "publication.cta": "اقرأ المقال الكامل",
+      "publication.tableTitle": "عينة قاعدة البيانات",
+
+      // Experience
+      "experience.card1.title": "مسؤولة تقنية المعلومات",
+      "experience.card1.detail": "نادي مطوري Google – ENSIA (2023–2024)",
+      "experience.card2.title": "مشاركة في AYLP",
+      "experience.card2.detail": "المركز الدولي لشمال نيفادا (2021) – برنامج القيادة للشباب الجزائري",
+      "experience.card3.title": "منظِّمة فعاليات",
+      "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي، تطوير الويب",
+      "experience.card4.title": "إنجازات أخرى",
+      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024)",
+      "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)",
+      "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
+
+      // Chat
+      "chat.title": "مساعد المعرض",
+      "chat.placeholder": "اطرح سؤالاً...",
+      "chat.send": "إرسال",
 
       "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)",
       "langues.frenchDetail": "سنة جامعية مصادق عليها في فرنسا",
@@ -462,7 +678,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "certs.pytorch.desc": "تدريب عبر الإنترنت حول الشبكات العصبية.",
       "certs.fcc.title": "شهادة تصميم الويب المتجاوب",
       "certs.fcc.desc": "شهادة تركز على أساسيات HTML و CSS.",
-      "certs.cta": "عرض الشهادة",
       "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
     }
   };
@@ -543,9 +758,11 @@ document.addEventListener("DOMContentLoaded", () => {
           el.textContent = dict[key];
         } else if (el.tagName === 'BUTTON' || el.tagName === 'A') {
           el.textContent = dict[key];
-        } else if (el.tagName === 'TH') { // Added TH for table headers
+        } else if (el.tagName === 'TH') {
           el.textContent = dict[key];
         } else if (el.tagName === 'P') {
+          el.textContent = dict[key];
+        } else if (el.tagName === 'LI') { // Added list items for experience details
           el.textContent = dict[key];
         }
       }
