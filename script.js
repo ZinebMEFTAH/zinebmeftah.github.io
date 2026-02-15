@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 4. Translations Data
-  const translations = {
+const translations = {
     fr: {
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
@@ -133,16 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // Nav
       "nav.contact": "Contact", "nav.profil": "Profil", "nav.formation": "Formation",
       "nav.publications": "Publications", "nav.projects": "Projets", "nav.competences": "Compétences",
-      "nav.langues": "Langues", "nav.experience": "Expérience",
-      "nav.skip": "Aller au contenu",
+      "nav.langues": "Langues", "nav.experience": "Expérience", "nav.skip": "Aller au contenu",
 
-      // Contact info
-      "info.telephone": "☎ Téléphone",
-      "info.email": "✉ Email",
-      "info.linkedin": "🔗 LinkedIn",
-      "info.portfolio": "🌐 Portfolio",
-      "info.github": "🐙 GitHub",
-      "info.huggingface": "🤖 Hugging Face",
+      // Contact
+      "info.telephone": "☎ Téléphone", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
 
       // Section Headers
       "formation.heading": "Formation & Certifications",
@@ -159,342 +153,178 @@ document.addEventListener("DOMContentLoaded", () => {
       "profile.text1": "Ingénieure en devenir passionnée par l'IA et la robotique. Je conçois des architectures neuronales avancées et des systèmes full-stack robustes.",
       "profile.text2": "Mon expertise couvre le Fine-tuning de LLM, la Vision par Ordinateur et le développement de pipelines ML.",
 
-      // Dates & Buttons
+      // FORMATION (Detailed)
+      "formation.ensia.title": "ENSIA, Algérie",
+      "formation.ensia.desc": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
+      "formation.avignon.title": "Université d'Avignon (CERI), France",
+      "formation.avignon.desc": "<strong>Diplôme :</strong> Data Science (3ᵉ année en cours, excellents résultats)",
+      "formation.bac.title": "Baccalauréat Scientifique",
+      "formation.bac.desc": "<strong>Mention :</strong> Excellent — Moyenne 17,82",
+      "formation.bac.cert": "Voir attestation BAC",
+      "formation.bac.transcript": "Voir relevés de notes",
       "dates.ensia": "2022 - Juin 2024",
       "dates.avignon": "Septembre 2024 - Aujourd'hui",
       "common.viewDiploma": "Voir diplôme",
-      "certs.cta": "Voir certificat",
-      
-      // Skills Headers
-      "competences.aiDataSkills": "IA & Data Science",
-      "competences.techSkills": "Compétences Techniques",
-      "competences.softSkillsTitle": "Compétences Personnelles",
-      
-      // Skill Sub-headers
-      "competences.artificialIntelligence": "Intelligence Artificielle",
-      "competences.dataScience": "Data Science",
-      "competences.programming": "Programmation & Systèmes",
-      "competences.web": "Full-Stack Web",
-      "competences.aiModels": "Techniques",
-      "competences.aiTools": "Frameworks & Outils",
-      "competences.dataAnalysis": "Analyse & Visualisation",
-      "competences.dataProjects": "Concepts Clés",
-      "competences.languages": "Langages",
-      "competences.tools": "DevOps & Outils",
-      "competences.backend": "Backend",
-      "competences.frontend": "Frontend",
-      
-      // Soft Skills
-      "competences.writing": "Rédaction Scientifique",
-      "competences.writingDesc": "Publication d'articles techniques (Hugging Face), documentation structurée.",
-      "competences.teamwork": "Leadership & Teamwork",
-      "competences.teamworkDesc": "Expérience GDSC, mentorat, gestion de projets agiles.",
-      "competences.problemSolving": "Résolution de problèmes",
-      "competences.problemSolvingDesc": "Approche algorithmique, optimisation de performance.",
-      "competences.continuousLearning": "Apprentissage continu",
-      "competences.continuousLearningDesc": "Veille technologique active (Papers with Code, arXiv).",
 
-      // Skill Items
-      "competences.project1": "Génération de données synthétiques",
-      "competences.project2": "Clustering & Segmentation (K-Means)",
-      "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)",
-
-      // Projects
-      "projects.hover": "Survolez pour voir les détails",
-      "projects.link.modelRepo": "Dépôt du modèle",
-      "projects.link.demoSpace": "Espace de démo",
-      "projects.link.viewCode": "Voir le code",
-      "projects.link.githubRepo": "Dépôt GitHub",
-      "projects.link.liveDemo": "Démo en ligne",
-
-      // Project Content
-      "projects.p9.title": "LeRobot PushT Trainer",
-      "projects.p9.short": "Entraînement de politiques robotiques.",
-      "projects.p9.desc": "Pipeline complet pour l'entraînement et l'évaluation de politiques PushT.",
-
-      "projects.cancer.title": "Détection du Cancer du Sein",
-      "projects.cancer.short": "Diagnostic médical par Deep Learning.",
-      "projects.cancer.desc": "Système de classification d'images histopathologiques utilisant des CNN optimisés.",
-
-      "projects.p10.title": "Robot Vision Simulator",
-      "projects.p10.short": "Simulateur interactif de vision.",
-      "projects.p10.desc": "Simulateur web de robotique intégrant la détection d'objets (COCO-SSD).",
-
-      "projects.sentiment.title": "Analyse de Sentiments (Avis)",
-      "projects.sentiment.short": "NLP & Classification de textes.",
-      "projects.sentiment.desc": "Modèle NLP pour analyser et classer les avis clients (positif/négatif).",
-
-      "projects.clustering.title": "Segmentation Client (Clustering)",
-      "projects.clustering.short": "Analyse de données non supervisée.",
-      "projects.clustering.desc": "Analyse comportementale des clients utilisant l'algorithme K-Means.",
-
-      "projects.p0.title": "Générateur IA de sites web",
-      "projects.p0.short": "Du texte au site web fonctionnel.",
-      "projects.p0.desc": "Système d'IA générative capable de concevoir et déployer des sites web complets.",
-
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "Agrégateur d'actualités intelligent.",
-      "projects.p2.desc": "Application d'actualités personnalisée utilisant le NLP pour filtrer les articles.",
-
-      "projects.compiler.title": "Compilateur Pascal-like",
-      "projects.compiler.short": "Architecture de compilateur complète.",
-      "projects.compiler.desc": "Conception d'un compilateur pour Mini-Pascal : analyse lexicale, syntaxique et sémantique.",
-
-      "projects.nova.title": "NOVA",
-      "projects.nova.short": "Co-watching vidéo temps réel.",
-      "projects.nova.desc": "Plateforme sociale de visionnage synchronisé.",
-
-      "projects.cericar.title": "CERICar",
-      "projects.cericar.short": "Covoiturage Full-Stack.",
-      "projects.cericar.desc": "Application complète de covoiturage.",
-
-      "projects.p3.title": "Optimisation Agricole",
-      "projects.p3.short": "IA pour l'agriculture durable.",
-      "projects.p3.desc": "Système d'aide à la décision maximisant la production agricole (CSP).",
-
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "Plateforme d'emploi intelligente.",
-      "projects.p4.desc": "Plateforme intelligente connectant les chercheurs d’emploi avec les recruteurs.",
-
-      "projects.p5.title": "Moteur de Recherche",
-      "projects.p5.short": "Indexation et recherche textuelle.",
-      "projects.p5.desc": "Moteur haute performance implémentant TF-IDF et BM25.",
-
-      "projects.p6.title": "Chaîne de Restaurants",
-      "projects.p6.short": "Gestion multisites.",
-      "projects.p6.desc": "Système de gestion d’une chaîne de restaurants multi-pays.",
-
-      "projects.p7.title": "Mon Supermarché Numérique",
-      "projects.p7.short": "Gestion stock CLI.",
-      "projects.p7.desc": "Application CLI pour digitaliser la gestion d’un supermarché.",
-
-      "projects.p8.title": "Analyse Réseau Routier",
-      "projects.p8.short": "Algorithmes de graphes.",
-      "projects.p8.desc": "Analyse de réseau routier à Avignon basée sur la théorie des graphes.",
-
-      // Publications
-      "pub.keywords": "Mots-clés",
-      "pub.articles": "Articles",
+      // PUBLICATIONS
+      "publication.date": "📅 20 décembre 2024",
+      "publication.location": "📍 Hugging Face",
       "publication.description": "Découvrez notre approche révolutionnaire qui utilise un fine-tuning inversé pour générer des données synthétiques.",
       "publication.cta": "Lire l'article complet",
       "publication.tableTitle": "Exemple de base de données",
+      "pub.keywords": "Mots-clés",
+      "pub.articles": "Articles",
 
-      // Experience
-      "experience.card1.title": "Responsable informatique",
-      "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
-      "experience.card2.title": "Participant AYLP",
-      "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
-      "experience.card3.title": "Organisation d'événements",
-      "experience.card3.detail": "Hackathons, IA, Développement Web",
-      "experience.card4.title": "Autres Réalisations",
-      "experience.card4.item1": "Hackathon IA Avignon (24h, 2024)",
-      "experience.card4.item2": "Mentor junior – GDSC (2023)",
-      "experience.card4.item3": "Projet tutoré G‑JOBS (2024): tâches, Git, review",
+      // SKILLS
+      "competences.aiDataSkills": "IA & Data Science", "competences.techSkills": "Compétences Techniques", "competences.softSkillsTitle": "Soft Skills",
+      "competences.artificialIntelligence": "Intelligence Artificielle", "competences.dataScience": "Data Science", "competences.programming": "Programmation", "competences.web": "Full-Stack Web",
+      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks", "competences.dataAnalysis": "Analyse", "competences.dataProjects": "Concepts Clés",
+      "competences.languages": "Langages", "competences.tools": "DevOps", "competences.backend": "Backend", "competences.frontend": "Frontend",
+      "competences.writing": "Rédaction Scientifique", "competences.writingDesc": "Publication d'articles techniques, documentation.",
+      "competences.teamwork": "Leadership", "competences.teamworkDesc": "Expérience GDSC, gestion de projets.",
+      "competences.problemSolving": "Résolution de problèmes", "competences.problemSolvingDesc": "Approche algorithmique, optimisation.",
+      "competences.continuousLearning": "Apprentissage continu", "competences.continuousLearningDesc": "Veille technologique active.",
+      "competences.project1": "Génération de données synthétiques", "competences.project2": "Clustering & Segmentation", "competences.project3": "Algorithmes de Graphes",
 
-      // Langs
-      "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)",
-      "langues.frenchDetail": "Année universitaire validée en France",
+      // LANGUAGES
+      "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)", "langues.frenchDetail": "Année universitaire validée en France",
       "langues.english": "Anglais", "langues.englishlevel": "Bilingue (C2)",
       "langues.arabic": "Arabe", "langues.arabicLevel": "Langue maternelle",
 
-      // Chat
-      "chat.title": "Assistant Portfolio",
-      "chat.placeholder": "Posez une question...",
-      "chat.send": "Envoyer",
-
-      // Certs
+      // CERTIFICATES
+      "certs.heading": "Certificats",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score : 92/100 (C2). Certification standardisée reconnue mondialement.",
+      "certs.english.desc": "Score : 75/100 (C2). Certification standardisée reconnue mondialement.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Programme d’échanges axé sur le leadership.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
       "certs.pytorch.desc": "Formation en ligne sur les réseaux de neurones.",
-      "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
+      "certs.fcc.title": "Responsive Web Design",
       "certs.fcc.desc": "Certification axée sur les fondamentaux du HTML/CSS.",
+      "certs.cta": "Voir certificat",
 
+      // EXPERIENCE
+      "experience.card1.title": "Responsable informatique", "experience.card1.detail": "Google Developer Student Club ENSIA",
+      "experience.card2.title": "Participant AYLP", "experience.card2.detail": "Northern Nevada International Center",
+      "experience.card3.title": "Organisation d'événements", "experience.card3.detail": "Hackathons, IA, Dev Web",
+      "experience.card4.title": "Autres Réalisations",
+      "experience.card4.item1": "Hackathon IA Avignon (24h)", "experience.card4.item2": "Mentor junior – GDSC", "experience.card4.item3": "Projet tutoré G‑JOBS",
+
+      // PROJECTS
+      "projects.hover": "Survolez pour les détails", "projects.link": "Voir code", "projects.link.modelRepo": "Dépôt modèle", "projects.link.demoSpace": "Démo", "projects.link.viewCode": "Voir code", "projects.link.githubRepo": "GitHub", "projects.link.liveDemo": "Démo Live",
+      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Politiques robotiques.", "projects.p9.desc": "Entraînement et évaluation de politiques PushT avec Hugging Face.",
+      "projects.cancer.title": "Détection du Cancer du Sein", "projects.cancer.short": "Diagnostic Deep Learning.", "projects.cancer.desc": "Classification d'images histopathologiques par CNN.",
+      "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif.", "projects.p10.desc": "Navigation autonome et détection d'objets (Web).",
+      "projects.sentiment.title": "Analyse de Sentiments", "projects.sentiment.short": "NLP & Classification.", "projects.sentiment.desc": "Modèle NLP pour analyser les avis clients.",
+      "projects.clustering.title": "Segmentation Client", "projects.clustering.short": "Clustering de données.", "projects.clustering.desc": "Analyse comportementale via K-Means.",
+      "projects.p0.title": "Générateur Site IA", "projects.p0.short": "Texte vers Site Web.", "projects.p0.desc": "Génération de sites via OpenAI API.",
+      "projects.p2.title": "News Wave", "projects.p2.short": "Actus Intelligentes.", "projects.p2.desc": "Agrégateur personnalisé via NLP.",
+      "projects.compiler.title": "Compilateur Pascal", "projects.compiler.short": "Architecture Compilateur.", "projects.compiler.desc": "Lexique, syntaxe, sémantique (C/Flex/Bison).",
+      "projects.nova.title": "NOVA", "projects.nova.short": "Co-watching vidéo.", "projects.nova.desc": "Visionnage synchronisé temps réel.",
+      "projects.cericar.title": "CERICar", "projects.cericar.short": "Covoiturage Full-Stack.", "projects.cericar.desc": "Réservation et recherche de trajets.",
+      "projects.p3.title": "Optimisation Agricole", "projects.p3.short": "IA Durable.", "projects.p3.desc": "Maximisation de production via CSP.",
+      "projects.p4.title": "G-Jobs", "projects.p4.short": "Plateforme Emploi.", "projects.p4.desc": "Mise en relation intelligente recruteurs/candidats.",
+      "projects.p5.title": "Moteur de Recherche", "projects.p5.short": "Indexation Textuelle.", "projects.p5.desc": "Implémentation TF-IDF et BM25.",
+      "projects.p6.title": "Chaîne Restaurants", "projects.p6.short": "Gestion Multisites.", "projects.p6.desc": "Gestion centralisée de restaurants.",
+      "projects.p7.title": "Supermarché CLI", "projects.p7.short": "Gestion Stock.", "projects.p7.desc": "Application CLI de gestion.",
+      "projects.p8.title": "Réseau Routier", "projects.p8.short": "Graphes Avancés.", "projects.p8.desc": "Analyse de réseau et chemins optimaux.",
+
+      "chat.title": "Assistant Portfolio", "chat.placeholder": "Posez une question...", "chat.send": "Envoyer",
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
     en: {
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
+      
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
-      "nav.langues": "Languages", "nav.experience": "Experience",
-      "nav.skip": "Skip to content",
+      "nav.langues": "Languages", "nav.experience": "Experience", "nav.skip": "Skip to content",
 
-      // Contact
-      "info.telephone": "☎ Phone",
-      "info.email": "✉ Email",
-      "info.linkedin": "🔗 LinkedIn",
-      "info.portfolio": "🌐 Portfolio",
-      "info.github": "🐙 GitHub",
-      "info.huggingface": "🤖 Hugging Face",
+      "info.telephone": "☎ Phone", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
 
-      // Section Headers
-      "formation.heading": "Education & Certificates",
-      "publications.heading": "Publications",
-      "projects.heading": "Projects & Experience",
-      "experience.heading": "Experience & Leadership",
-      "competences.heading": "Skills",
-      "langues.heading": "Languages",
-      "contact.heading": "Contact",
+      "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
-      // Profile
-      "profile.heading": "About Me",
-      "profile.greeting": "Hi, I’m Zineb Meftah.",
-      "profile.text1": "An aspiring AI Engineer passionate about Robotics and backend development. I design advanced neural architectures and robust full-stack systems.",
-      "profile.text2": "My expertise covers LLM Fine-tuning, Computer Vision, and building end-to-end Machine Learning pipelines.",
+      "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
+      "profile.text1": "An aspiring AI Engineer passionate about Robotics and backend development.",
+      "profile.text2": "My expertise covers LLM Fine-tuning, Computer Vision, and end-to-end Machine Learning pipelines.",
 
-      // Dates & Buttons
+      // FORMATION
+      "formation.ensia.title": "ENSIA, Algeria",
+      "formation.ensia.desc": "<strong>Degree:</strong> Artificial Intelligence Engineering (1st & 2nd Year Completed)",
+      "formation.avignon.title": "Avignon University (CERI), France",
+      "formation.avignon.desc": "<strong>Degree:</strong> Data Science (3rd year ongoing, excellent results)",
+      "formation.bac.title": "Scientific Baccalaureate",
+      "formation.bac.desc": "<strong>Honors:</strong> Excellent — Average 17.82",
+      "formation.bac.cert": "View BAC certificate",
+      "formation.bac.transcript": "View grade transcripts",
       "dates.ensia": "2022 - June 2024",
       "dates.avignon": "Sept 2024 - Present",
       "common.viewDiploma": "View Diploma",
-      "certs.cta": "View Certificate",
 
-      // Skills Headers
-      "competences.aiDataSkills": "AI & Data Science",
-      "competences.techSkills": "Technical Skills",
-      "competences.softSkillsTitle": "Personal Skills",
-
-      // Skill Sub-headers
-      "competences.artificialIntelligence": "Artificial Intelligence",
-      "competences.dataScience": "Data Science",
-      "competences.programming": "Programming & Systems",
-      "competences.web": "Full-Stack Web",
-      "competences.aiModels": "Techniques",
-      "competences.aiTools": "Frameworks & Tools",
-      "competences.dataAnalysis": "Analysis & Visualization",
-      "competences.dataProjects": "Key Concepts",
-      "competences.languages": "Languages",
-      "competences.tools": "DevOps & Tools",
-      "competences.backend": "Backend",
-      "competences.frontend": "Frontend",
-
-      // Soft Skills
-      "competences.writing": "Scientific Writing",
-      "competences.writingDesc": "Technical blog publishing (Hugging Face), structured documentation.",
-      "competences.teamwork": "Leadership & Teamwork",
-      "competences.teamworkDesc": "GDSC experience, mentoring, agile project management.",
-      "competences.problemSolving": "Problem Solving",
-      "competences.problemSolvingDesc": "Algorithmic thinking, performance optimization.",
-      "competences.continuousLearning": "Continuous Learning",
-      "competences.continuousLearningDesc": "Active tech watch (Papers with Code, arXiv).",
-
-      // Skill Items
-      "competences.project1": "Synthetic Data Generation",
-      "competences.project2": "Clustering & Segmentation (K-Means)",
-      "competences.project3": "Graph Algorithms (A*, Dijkstra)",
-
-      // Projects
-      "projects.hover": "Hover or click for technical details",
-      "projects.link.modelRepo": "Model Repo",
-      "projects.link.demoSpace": "Demo Space",
-      "projects.link.viewCode": "View Code",
-      "projects.link.githubRepo": "GitHub Repo",
-      "projects.link.liveDemo": "Live Demo",
-
-      "projects.p9.title": "LeRobot PushT Trainer",
-      "projects.p9.short": "Robotic Policy Training.",
-      "projects.p9.desc": "End-to-end pipeline for training and evaluating PushT policies.",
-
-      "projects.cancer.title": "Breast Cancer Detection",
-      "projects.cancer.short": "Deep Learning Diagnosis.",
-      "projects.cancer.desc": "Histopathology image classification system using optimized CNNs.",
-
-      "projects.p10.title": "Robot Vision Simulator",
-      "projects.p10.short": "Interactive Vision Simulator.",
-      "projects.p10.desc": "Web-based robotics simulator integrating object detection (COCO-SSD).",
-
-      "projects.sentiment.title": "Sentiment Analysis (Reviews)",
-      "projects.sentiment.short": "NLP & Text Classification.",
-      "projects.sentiment.desc": "NLP model to analyze and classify customer reviews (positive/negative).",
-
-      "projects.clustering.title": "Customer Segmentation (Clustering)",
-      "projects.clustering.short": "Unsupervised Data Analysis.",
-      "projects.clustering.desc": "Customer behavior analysis using K-Means algorithm.",
-
-      "projects.p0.title": "AI Website Generator",
-      "projects.p0.short": "Text to Functional Website.",
-      "projects.p0.desc": "Generative AI system capable of designing and deploying complete websites.",
-
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "Smart News Aggregator.",
-      "projects.p2.desc": "Personalized news app using NLP to filter relevant articles.",
-
-      "projects.compiler.title": "Pascal-like Compiler",
-      "projects.compiler.short": "Full Compiler Architecture.",
-      "projects.compiler.desc": "Engineered a compiler for Mini-Pascal: lexical, syntactic, and semantic analysis.",
-
-      "projects.nova.title": "NOVA",
-      "projects.nova.short": "Real-time Co-watching.",
-      "projects.nova.desc": "Social platform for synchronized video viewing. Event-driven architecture.",
-
-      "projects.cericar.title": "CERICar",
-      "projects.cericar.short": "Full-stack Carpooling.",
-      "projects.cericar.desc": "Web application featuring a journey search engine and profile management.",
-
-      "projects.p3.title": "Agricultural Optimization",
-      "projects.p3.short": "AI for Sustainable Farming.",
-      "projects.p3.desc": "Decision support system maximizing agricultural yield using CSP algorithms.",
-
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "Smart Job Platform.",
-      "projects.p4.desc": "A smart platform connecting Algerian job seekers with employers.",
-
-      "projects.p5.title": "Search Engine",
-      "projects.p5.short": "Text Indexing & Retrieval.",
-      "projects.p5.desc": "High-performance search engine implementing TF-IDF and BM25.",
-
-      "projects.p6.title": "Restaurant Chain",
-      "projects.p6.short": "Multi-location Management.",
-      "projects.p6.desc": "Management system for a multi-country restaurant chain.",
-
-      "projects.p7.title": "My Online Supermarket",
-      "projects.p7.short": "CLI Inventory System.",
-      "projects.p7.desc": "A command-line application for digitizing supermarket management.",
-
-      "projects.p8.title": "Road Network Analysis",
-      "projects.p8.short": "Advanced Graph Algorithms.",
-      "projects.p8.desc": "Graph-based road network analysis in Avignon using algorithms for shortest paths.",
-
-      // Publications
-      "pub.keywords": "Keywords",
-      "pub.articles": "Articles",
+      // PUBLICATIONS
+      "publication.date": "📅 December 20, 2024",
+      "publication.location": "📍 Hugging Face",
       "publication.description": "Discover our revolutionary approach using reverse fine-tuning to generate synthetic data.",
       "publication.cta": "Read Full Article",
       "publication.tableTitle": "Sample Database",
+      "pub.keywords": "Keywords", "pub.articles": "Articles",
 
-      // Experience
-      "experience.card1.title": "IT Manager",
-      "experience.card1.detail": "Google Developer Student Club ENSIA (2023-2024)",
-      "experience.card2.title": "AYLP Participant",
-      "experience.card2.detail": "Northern Nevada International Center (2021) Algerian Youth Leadership Program",
-      "experience.card3.title": "Event Organizer",
-      "experience.card3.detail": "Hackathons, AI, Web Development",
-      "experience.card4.title": "Other Achievements",
-      "experience.card4.item1": "AI Hackathon Avignon (24h, 2024)",
-      "experience.card4.item2": "Junior Mentor – GDSC (2023)",
-      "experience.card4.item3": "Supervised Project G‑JOBS (2024): tasks, Git, review",
+      // SKILLS
+      "competences.aiDataSkills": "AI & Data Science", "competences.techSkills": "Technical Skills", "competences.softSkillsTitle": "Personal Skills",
+      "competences.artificialIntelligence": "Artificial Intelligence", "competences.dataScience": "Data Science", "competences.programming": "Programming & Systems", "competences.web": "Full-Stack Web",
+      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks", "competences.dataAnalysis": "Analysis", "competences.dataProjects": "Key Concepts",
+      "competences.languages": "Languages", "competences.tools": "DevOps", "competences.backend": "Backend", "competences.frontend": "Frontend",
+      "competences.writing": "Scientific Writing", "competences.writingDesc": "Technical blog publishing, structured documentation.",
+      "competences.teamwork": "Leadership", "competences.teamworkDesc": "GDSC experience, mentoring, agile management.",
+      "competences.problemSolving": "Problem Solving", "competences.problemSolvingDesc": "Algorithmic thinking, optimization.",
+      "competences.continuousLearning": "Continuous Learning", "competences.continuousLearningDesc": "Active tech watch (Papers with Code).",
+      "competences.project1": "Synthetic Data Generation", "competences.project2": "Clustering & Segmentation", "competences.project3": "Graph Algorithms",
 
-      // Chat
-      "chat.title": "Portfolio Assistant",
-      "chat.placeholder": "Ask a question...",
-      "chat.send": "Send",
-
-      "langues.french": "French", "langues.frenchlevel": "Advanced (C1)",
-      "langues.frenchDetail": "Validated year in French university",
+      // LANGUAGES
+      "langues.french": "French", "langues.frenchlevel": "Advanced (C1)", "langues.frenchDetail": "Validated year in French university",
       "langues.english": "English", "langues.englishlevel": "Bilingual (C2)",
       "langues.arabic": "Arabic", "langues.arabicLevel": "Native",
 
+      // CERTIFICATES
+      "certs.heading": "Certificates",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score: 92/100 (C2). Globally recognized standardized certification.",
+      "certs.english.desc": "Score: 75/100 (C2). Globally recognized standardized certification.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Exchange program focused on leadership and innovation.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
-      "certs.pytorch.desc": "Online training on neural networks and PyTorch.",
-      "certs.fcc.title": "Responsive Web Design – freeCodeCamp",
+      "certs.pytorch.desc": "Online training on neural networks.",
+      "certs.fcc.title": "Responsive Web Design",
       "certs.fcc.desc": "Certificate covering HTML, CSS, Flexbox.",
+      "certs.cta": "View Certificate",
+
+      // EXPERIENCE
+      "experience.card1.title": "IT Manager", "experience.card1.detail": "Google Developer Student Club ENSIA",
+      "experience.card2.title": "AYLP Participant", "experience.card2.detail": "Northern Nevada International Center",
+      "experience.card3.title": "Event Organizer", "experience.card3.detail": "Hackathons, AI, Web Dev",
+      "experience.card4.title": "Other Achievements",
+      "experience.card4.item1": "AI Hackathon Avignon (24h)", "experience.card4.item2": "Junior Mentor – GDSC", "experience.card4.item3": "Supervised Project G‑JOBS",
+
+      // PROJECTS
+      "projects.hover": "Hover or click for details", "projects.link": "View Code", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
+      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "End-to-end pipeline for training PushT policies.",
+      "projects.cancer.title": "Breast Cancer Detection", "projects.cancer.short": "Deep Learning Diagnosis.", "projects.cancer.desc": "Histopathology image classification using CNNs.",
+      "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Interactive Vision Simulator.", "projects.p10.desc": "Web-based robotics simulator (COCO-SSD).",
+      "projects.sentiment.title": "Sentiment Analysis", "projects.sentiment.short": "NLP & Classification.", "projects.sentiment.desc": "NLP model to analyze customer reviews.",
+      "projects.clustering.title": "Customer Segmentation", "projects.clustering.short": "Data Clustering.", "projects.clustering.desc": "Customer behavior analysis using K-Means.",
+      "projects.p0.title": "AI Website Generator", "projects.p0.short": "Text to Website.", "projects.p0.desc": "Generative AI system for website creation.",
+      "projects.p2.title": "News Wave", "projects.p2.short": "Smart News Aggregator.", "projects.p2.desc": "Personalized news app using NLP.",
+      "projects.compiler.title": "Pascal-like Compiler", "projects.compiler.short": "Full Compiler.", "projects.compiler.desc": "Compiler for Mini-Pascal (C, Flex, Bison).",
+      "projects.nova.title": "NOVA", "projects.nova.short": "Real-time Co-watching.", "projects.nova.desc": "Synchronized video viewing platform.",
+      "projects.cericar.title": "CERICar", "projects.cericar.short": "Full-stack Carpooling.", "projects.cericar.desc": "Journey search and profile management.",
+      "projects.p3.title": "Agricultural Optimization", "projects.p3.short": "Sustainable Farming AI.", "projects.p3.desc": "Yield maximization using CSP algorithms.",
+      "projects.p4.title": "G-Jobs", "projects.p4.short": "Smart Job Platform.", "projects.p4.desc": "Connecting job seekers with employers.",
+      "projects.p5.title": "Search Engine", "projects.p5.short": "Text Indexing.", "projects.p5.desc": "Search engine implementing TF-IDF/BM25.",
+      "projects.p6.title": "Restaurant Chain", "projects.p6.short": "Multi-location Management.", "projects.p6.desc": "System for multi-country restaurant chain.",
+      "projects.p7.title": "My Online Supermarket", "projects.p7.short": "CLI Inventory.", "projects.p7.desc": "Command-line supermarket management.",
+      "projects.p8.title": "Road Network Analysis", "projects.p8.short": "Graph Algorithms.", "projects.p8.desc": "Network analysis in Avignon (Shortest paths).",
+
+      "chat.title": "Portfolio Assistant", "chat.placeholder": "Ask a question...", "chat.send": "Send",
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
@@ -503,185 +333,97 @@ document.addEventListener("DOMContentLoaded", () => {
       "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
-      "nav.langues": "اللغات", "nav.experience": "الخبرة",
-      "nav.skip": "تخطي إلى المحتوى",
+      "nav.langues": "اللغات", "nav.experience": "الخبرة", "nav.skip": "تخطي إلى المحتوى",
 
-      // Contact
-      "info.telephone": "☎ الهاتف",
-      "info.email": "✉ البريد",
-      "info.linkedin": "🔗 لينكد إن",
-      "info.portfolio": "🌐 المعرض",
-      "info.github": "🐙 جيتهاب",
-      "info.huggingface": "🤖 هاجينغ فايس",
+      "info.telephone": "☎ الهاتف", "info.email": "✉ البريد", "info.linkedin": "🔗 لينكد إن", "info.portfolio": "🌐 المعرض", "info.github": "🐙 جيتهاب", "info.huggingface": "🤖 هاجينغ فايس",
 
-      // Section Headers
-      "formation.heading": "التعليم والشهادات",
-      "publications.heading": "المنشورات",
-      "projects.heading": "المشاريع والخبرة",
-      "experience.heading": "الخبرة والقيادة",
-      "competences.heading": "المهارات",
-      "langues.heading": "اللغات",
-      "contact.heading": "اتصل",
+      "formation.heading": "التعليم والشهادات", "publications.heading": "المنشورات", "projects.heading": "المشاريع والخبرة", "experience.heading": "الخبرة والقيادة", "competences.heading": "المهارات", "langues.heading": "اللغات", "contact.heading": "اتصل",
 
-      // Profile
-      "profile.heading": "نبذة عني",
-      "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
-      "profile.text1": "مهندسة طموحة شغوفة بالذكاء الاصطناعي والروبوتات. أقوم بتصميم بنى عصبية متقدمة وأنظمة شاملة.",
+      "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
+      "profile.text1": "مهندسة طموحة شغوفة بالذكاء الاصطناعي والروبوتات.",
       "profile.text2": "تشمل خبرتي الضبط الدقيق لنماذج اللغة الكبيرة (LLM)، والرؤية الحاسوبية.",
 
-      // Dates & Buttons
+      // FORMATION
+      "formation.ensia.title": "ENSIA، الجزائر",
+      "formation.ensia.desc": "<strong>الشهادة:</strong> هندسة الذكاء الاصطناعي (السنة الأولى والثانية)",
+      "formation.avignon.title": "جامعة أفينيون (CERI)، فرنسا",
+      "formation.avignon.desc": "<strong>الشهادة:</strong> علوم البيانات (السنة الثالثة جارية)",
+      "formation.bac.title": "بكالوريا علمية",
+      "formation.bac.desc": "<strong>التقدير:</strong> ممتاز — معدل 17.82",
+      "formation.bac.cert": "عرض شهادة البكالوريا",
+      "formation.bac.transcript": "عرض كشف النقاط",
       "dates.ensia": "2022 - يونيو 2024",
       "dates.avignon": "سبتمبر 2024 - الحاضر",
       "common.viewDiploma": "عرض الشهادة",
-      "certs.cta": "عرض الشهادة",
 
-      // Skills Headers
-      "competences.aiDataSkills": "الذكاء الاصطناعي وعلوم البيانات",
-      "competences.techSkills": "المهارات التقنية",
-      "competences.softSkillsTitle": "المهارات الشخصية",
-
-      // Skill Sub-headers
-      "competences.artificialIntelligence": "الذكاء الاصطناعي",
-      "competences.dataScience": "علوم البيانات",
-      "competences.programming": "البرمجة والأنظمة",
-      "competences.web": "تطوير الويب الشامل",
-      "competences.aiModels": "التقنيات",
-      "competences.aiTools": "الأطر والأدوات",
-      "competences.dataAnalysis": "التحليل والتصور",
-      "competences.dataProjects": "المفاهيم الرئيسية",
-      "competences.languages": "لغات البرمجة",
-      "competences.tools": "أدوات التطوير",
-      "competences.backend": "الخلفية",
-      "competences.frontend": "الواجهة الأمامية",
-
-      // Soft Skills
-      "competences.writing": "الكتابة العلمية",
-      "competences.writingDesc": "نشر المقالات التقنية (Hugging Face)، التوثيق الهيكلي.",
-      "competences.teamwork": "القيادة والعمل الجماعي",
-      "competences.teamworkDesc": "خبرة GDSC، الإرشاد، إدارة المشاريع المرنة.",
-      "competences.problemSolving": "حل المشكلات",
-      "competences.problemSolvingDesc": "التفكير الخوارزمي، تحسين الأداء.",
-      "competences.continuousLearning": "التعلم المستمر",
-      "competences.continuousLearningDesc": "متابعة تقنية نشطة (الأوراق البحثية، arXiv).",
-
-      // Skill Items
-      "competences.project1": "توليد البيانات الاصطناعية",
-      "competences.project2": "التجميع والتجزئة (K-Means)",
-      "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)",
-
-      // Projects
-      "projects.hover": "مرّر أو انقر لعرض التفاصيل",
-      "projects.link.modelRepo": "مستودع النموذج",
-      "projects.link.demoSpace": "مساحة العرض",
-      "projects.link.viewCode": "عرض الكود",
-      "projects.link.githubRepo": "مستودع GitHub",
-      "projects.link.liveDemo": "عرض مباشر",
-
-      "projects.p9.title": "مدرب LeRobot PushT",
-      "projects.p9.short": "تدريب السياسات الروبوتية.",
-      "projects.p9.desc": "نظام كامل لتدريب وتقييم سياسات PushT.",
-
-      "projects.cancer.title": "كشف سرطان الثدي",
-      "projects.cancer.short": "تشخيص طبي بالتعلم العميق.",
-      "projects.cancer.desc": "نظام تصنيف صور الأنسجة باستخدام شبكات CNN المحسنة.",
-
-      "projects.p10.title": "محاكي رؤية الروبوت",
-      "projects.p10.short": "محاكي رؤية تفاعلي.",
-      "projects.p10.desc": "محاكي روبوتات قائم على الويب يدمج اكتشاف الأشياء.",
-
-      "projects.sentiment.title": "تحليل المشاعر (المراجعات)",
-      "projects.sentiment.short": "معالجة اللغة الطبيعية وتصنيف النصوص.",
-      "projects.sentiment.desc": "نموذج NLP لتحليل وتصنيف مراجعات العملاء.",
-
-      "projects.clustering.title": "تجزئة العملاء (Clustering)",
-      "projects.clustering.short": "تحليل بيانات غير خاضع للرقابة.",
-      "projects.clustering.desc": "تحليل سلوك العملاء باستخدام خوارزمية K-Means.",
-
-      "projects.p0.title": "مولد مواقع الويب بالذكاء الاصطناعي",
-      "projects.p0.short": "من نص إلى موقع ويب.",
-      "projects.p0.desc": "نظام ذكاء اصطناعي توليدي قادر على تصميم ونشر مواقع ويب كاملة.",
-
-      "projects.p2.title": "News Wave",
-      "projects.p2.short": "مجمع أخبار ذكي.",
-      "projects.p2.desc": "تطبيق أخبار مخصص يستخدم معالجة اللغة الطبيعية.",
-
-      "projects.compiler.title": "مترجم شبيه بـ Pascal",
-      "projects.compiler.short": "هندسة مترجم كاملة.",
-      "projects.compiler.desc": "تصميم مترجم لـ Mini-Pascal: تحليل معجمي، نحوي، ودلالي.",
-
-      "projects.nova.title": "نوفا (NOVA)",
-      "projects.nova.short": "مشاهدة متزامنة.",
-      "projects.nova.desc": "منصة اجتماعية للمشاهدة المتزامنة.",
-
-      "projects.cericar.title": "سيري-كار (CERICar)",
-      "projects.cericar.short": "نقل تشاركي متكامل.",
-      "projects.cericar.desc": "تطبيق ويب متكامل يتضمن محرك بحث عن الرحلات.",
-
-      "projects.p3.title": "تحسين الخطة الزراعية",
-      "projects.p3.short": "زراعة مستدامة بالذكاء الاصطناعي.",
-      "projects.p3.desc": "نظام دعم القرار لتعظيم الإنتاج الزراعي باستخدام CSP.",
-
-      "projects.p4.title": "G-Jobs",
-      "projects.p4.short": "منصة توظيف ذكية.",
-      "projects.p4.desc": "منصة ذكية تربط الباحثين عن عمل الجزائريين بأصحاب العمل.",
-
-      "projects.p5.title": "محرك بحث متقدم",
-      "projects.p5.short": "فهرسة وبحث نصي.",
-      "projects.p5.desc": "محرك بحث عالي الأداء يطبق نماذج TF-IDF و BM25.",
-
-      "projects.p6.title": "سلسلة مطاعم",
-      "projects.p6.short": "إدارة متعددة المواقع.",
-      "projects.p6.desc": "نظام إدارة لسلسلة مطاعم متعددة البلدان.",
-
-      "projects.p7.title": "سوبرماركت الإنترنت",
-      "projects.p7.short": "نظام إدارة CLI.",
-      "projects.p7.desc": "تطبيق سطر أوامر لرقمنة إدارة السوبرماركت.",
-
-      "projects.p8.title": "تحليل شبكة الطرق",
-      "projects.p8.short": "خوارزميات الرسوم البيانية.",
-      "projects.p8.desc": "تحليل شبكة الطرق القائم على الرسوم البيانية في أفينيون.",
-
-      // Publications
-      "pub.keywords": "الكلمات المفتاحية",
-      "pub.articles": "المقالات",
+      // PUBLICATIONS
+      "publication.date": "📅 20 ديسمبر 2024",
+      "publication.location": "📍 Hugging Face",
       "publication.description": "اكتشف نهجنا الثوري الذي يستخدم الضبط العكسي لتوليد بيانات تركيبية.",
       "publication.cta": "اقرأ المقال الكامل",
       "publication.tableTitle": "عينة قاعدة البيانات",
+      "pub.keywords": "الكلمات المفتاحية", "pub.articles": "المقالات",
 
-      // Experience
-      "experience.card1.title": "مسؤولة تقنية المعلومات",
-      "experience.card1.detail": "نادي مطوري Google – ENSIA (2023–2024)",
-      "experience.card2.title": "مشاركة في AYLP",
-      "experience.card2.detail": "المركز الدولي لشمال نيفادا (2021) – برنامج القيادة للشباب الجزائري",
-      "experience.card3.title": "منظِّمة فعاليات",
-      "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي، تطوير الويب",
-      "experience.card4.title": "إنجازات أخرى",
-      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024)",
-      "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)",
-      "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
+      // SKILLS
+      "competences.aiDataSkills": "الذكاء الاصطناعي وعلوم البيانات", "competences.techSkills": "المهارات التقنية", "competences.softSkillsTitle": "المهارات الشخصية",
+      "competences.artificialIntelligence": "الذكاء الاصطناعي", "competences.dataScience": "علوم البيانات", "competences.programming": "البرمجة والأنظمة", "competences.web": "تطوير الويب",
+      "competences.aiModels": "التقنيات", "competences.aiTools": "الأطر والأدوات", "competences.dataAnalysis": "التحليل", "competences.dataProjects": "المفاهيم",
+      "competences.languages": "اللغات", "competences.tools": "الأدوات", "competences.backend": "الخلفية", "competences.frontend": "الواجهة الأمامية",
+      "competences.writing": "الكتابة العلمية", "competences.writingDesc": "نشر المقالات التقنية والتوثيق.",
+      "competences.teamwork": "القيادة والعمل الجماعي", "competences.teamworkDesc": "خبرة GDSC، الإرشاد.",
+      "competences.problemSolving": "حل المشكلات", "competences.problemSolvingDesc": "التفكير الخوارزمي.",
+      "competences.continuousLearning": "التعلم المستمر", "competences.continuousLearningDesc": "متابعة تقنية نشطة.",
+      "competences.project1": "توليد البيانات الاصطناعية", "competences.project2": "التجميع والتجزئة", "competences.project3": "خوارزميات الرسوم البيانية",
 
-      // Chat
-      "chat.title": "مساعد المعرض",
-      "chat.placeholder": "اطرح سؤالاً...",
-      "chat.send": "إرسال",
-
-      "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)",
-      "langues.frenchDetail": "سنة جامعية مصادق عليها في فرنسا",
+      // LANGUAGES
+      "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)", "langues.frenchDetail": "سنة جامعية مصادق عليها في فرنسا",
       "langues.english": "الإنجليزية", "langues.englishlevel": "ثنائي اللغة (C2)",
       "langues.arabic": "العربية", "langues.arabicLevel": "اللغة الأم",
+
+      // CERTIFICATES
       "certs.heading": "الشهادات",
       "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
-      "certs.english.desc": "النتيجة: 92/100. شهادة معترف بها عالمياً.",
-      "certs.aylp.title": "برنامج القيادة الشبابية الجزائري - NNIC",
+      "certs.english.desc": "النتيجة: 75/100. شهادة معترف بها عالمياً.",
+      "certs.aylp.title": "برنامج القيادة الشبابية الجزائري",
       "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار.",
-      "certs.pytorch.title": "مقدمة في التعلم العميق مع PyTorch",
+      "certs.pytorch.title": "مقدمة في التعلم العميق (PyTorch)",
       "certs.pytorch.desc": "تدريب عبر الإنترنت حول الشبكات العصبية.",
-      "certs.fcc.title": "شهادة تصميم الويب المتجاوب",
+      "certs.fcc.title": "تصميم الويب المتجاوب",
       "certs.fcc.desc": "شهادة تركز على أساسيات HTML و CSS.",
+      "certs.cta": "عرض الشهادة",
+
+      // EXPERIENCE
+      "experience.card1.title": "مسؤولة تقنية المعلومات", "experience.card1.detail": "نادي مطوري Google – ENSIA",
+      "experience.card2.title": "مشاركة في AYLP", "experience.card2.detail": "المركز الدولي لشمال نيفادا",
+      "experience.card3.title": "منظِّمة فعاليات", "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي",
+      "experience.card4.title": "إنجازات أخرى",
+      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون", "experience.card4.item2": "مرشدة مبتدئة – GDSC", "experience.card4.item3": "مشروع مؤطر G‑JOBS",
+
+      // PROJECTS
+      "projects.hover": "مرّر أو انقر لعرض التفاصيل", "projects.link": "عرض الكود", "projects.link.modelRepo": "مستودع النموذج", "projects.link.demoSpace": "مساحة العرض", "projects.link.viewCode": "عرض الكود", "projects.link.githubRepo": "مستودع GitHub", "projects.link.liveDemo": "عرض مباشر",
+      "projects.p9.title": "مدرب LeRobot PushT", "projects.p9.short": "تدريب السياسات.", "projects.p9.desc": "نظام كامل لتدريب وتقييم سياسات PushT.",
+      "projects.cancer.title": "كشف سرطان الثدي", "projects.cancer.short": "تشخيص طبي.", "projects.cancer.desc": "تصنيف صور الأنسجة باستخدام CNN.",
+      "projects.p10.title": "محاكي رؤية الروبوت", "projects.p10.short": "محاكي تفاعلي.", "projects.p10.desc": "محاكي روبوتات ويب.",
+      "projects.sentiment.title": "تحليل المشاعر", "projects.sentiment.short": "تصنيف النصوص.", "projects.sentiment.desc": "نموذج NLP لتحليل المراجعات.",
+      "projects.clustering.title": "تجزئة العملاء", "projects.clustering.short": "تحليل بيانات.", "projects.clustering.desc": "تحليل سلوك العملاء (K-Means).",
+      "projects.p0.title": "مولد مواقع الويب", "projects.p0.short": "من نص إلى موقع.", "projects.p0.desc": "تصميم ونشر مواقع ويب كاملة.",
+      "projects.p2.title": "News Wave", "projects.p2.short": "مجمع أخبار ذكي.", "projects.p2.desc": "تطبيق أخبار مخصص.",
+      "projects.compiler.title": "مترجم Pascal", "projects.compiler.short": "هندسة مترجم.", "projects.compiler.desc": "تصميم مترجم لـ Mini-Pascal.",
+      "projects.nova.title": "نوفا (NOVA)", "projects.nova.short": "مشاهدة متزامنة.", "projects.nova.desc": "منصة اجتماعية للمشاهدة.",
+      "projects.cericar.title": "سيري-كار", "projects.cericar.short": "نقل تشاركي.", "projects.cericar.desc": "تطبيق ويب متكامل للنقل.",
+      "projects.p3.title": "تحسين الزراعة", "projects.p3.short": "زراعة ذكية.", "projects.p3.desc": "تعظيم الإنتاج الزراعي (CSP).",
+      "projects.p4.title": "G-Jobs", "projects.p4.short": "منصة توظيف.", "projects.p4.desc": "ربط الباحثين عن عمل بأصحاب العمل.",
+      "projects.p5.title": "محرك بحث", "projects.p5.short": "فهرسة وبحث.", "projects.p5.desc": "محرك بحث (TF-IDF/BM25).",
+      "projects.p6.title": "سلسلة مطاعم", "projects.p6.short": "إدارة مواقع.", "projects.p6.desc": "نظام إدارة سلسلة مطاعم.",
+      "projects.p7.title": "سوبرماركت الإنترنت", "projects.p7.short": "نظام CLI.", "projects.p7.desc": "إدارة السوبرماركت (CLI).",
+      "projects.p8.title": "تحليل الطرق", "projects.p8.short": "خوارزميات.", "projects.p8.desc": "تحليل شبكة الطرق (أفينيون).",
+
+      "chat.title": "مساعد المعرض", "chat.placeholder": "اطرح سؤالاً...", "chat.send": "إرسال",
       "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
     }
   };
 
+  
   // 5. Mobile Language Dropdown
   const mobileLangButton = document.querySelector('.mobile-lang-button');
   const mobileLangOptions = document.querySelector('.mobile-lang-options');
