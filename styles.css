@@ -171,10 +171,8 @@ body {
 nav {
     position: fixed;
     top: 0;
-    /* CHANGE HERE: Remove width: 100% and use left/right anchors */
-    left: 0;
-    right: 0;
-    width: auto; 
+    left: 0;             /* Always anchor to the physical left, even in Arabic */
+    width: 100vw;        /* Force full viewport width, ignoring RTL flow */
     
     background: rgba(26, 31, 46, 0.95);
     backdrop-filter: blur(12px);
@@ -183,8 +181,14 @@ nav {
     padding: 16px 0;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 12px var(--shadow-color);
-    transition: transform 0.3s ease; 
+    
+    /* Animation settings */
+    transition: transform 0.3s ease;
     will-change: transform;
+    
+    /* SAFARI FIX: Promotes layer to GPU to prevent disappearance in RTL */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); 
 }
 
 body.light-theme nav {
