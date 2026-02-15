@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 4. Translations Data
 const translations = {
     fr: {
+      // ... (Keep previous translations the same) ...
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
       "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
@@ -153,7 +154,7 @@ const translations = {
       "profile.text1": "Ingénieure en devenir passionnée par l'IA et la robotique. Je conçois des architectures neuronales avancées et des systèmes full-stack robustes.",
       "profile.text2": "Mon expertise couvre le Fine-tuning de LLM, la Vision par Ordinateur et le développement de pipelines ML.",
 
-      // FORMATION (Detailed)
+      // FORMATION
       "formation.ensia.title": "ENSIA, Algérie",
       "formation.ensia.desc": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
       "formation.avignon.title": "Université d'Avignon (CERI), France",
@@ -210,10 +211,16 @@ const translations = {
       "experience.card4.title": "Autres Réalisations",
       "experience.card4.item1": "Hackathon IA Avignon (24h)", "experience.card4.item2": "Mentor junior – GDSC", "experience.card4.item3": "Projet tutoré G‑JOBS",
 
-      // PROJECTS
+      // PROJECTS (UPDATED SECTION)
       "projects.hover": "Survolez pour les détails", "projects.link": "Voir code", "projects.link.modelRepo": "Dépôt modèle", "projects.link.demoSpace": "Démo", "projects.link.viewCode": "Voir code", "projects.link.githubRepo": "GitHub", "projects.link.liveDemo": "Démo Live",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Politiques robotiques.", "projects.p9.desc": "Entraînement et évaluation de politiques PushT avec Hugging Face.",
-      "projects.cancer.title": "Détection du Cancer du Sein", "projects.cancer.short": "Diagnostic Deep Learning.", "projects.cancer.desc": "Classification d'images histopathologiques par CNN.",
+      
+      // --- FIXED: LUNG CANCER ---
+      "projects.cancer.title": "Détection du Cancer du Poumon", 
+      "projects.cancer.short": "Diagnostic Carcinomes (CT).", 
+      "projects.cancer.desc": "Classification de 4 types de cancer du poumon via CNN sur scanners CT.",
+      // --------------------------
+
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif.", "projects.p10.desc": "Navigation autonome et détection d'objets (Web).",
       "projects.sentiment.title": "Analyse de Sentiments", "projects.sentiment.short": "NLP & Classification.", "projects.sentiment.desc": "Modèle NLP pour analyser les avis clients.",
       "projects.clustering.title": "Segmentation Client", "projects.clustering.short": "Clustering de données.", "projects.clustering.desc": "Analyse comportementale via K-Means.",
@@ -305,10 +312,16 @@ const translations = {
       "experience.card4.title": "Other Achievements",
       "experience.card4.item1": "AI Hackathon Avignon (24h)", "experience.card4.item2": "Junior Mentor – GDSC", "experience.card4.item3": "Supervised Project G‑JOBS",
 
-      // PROJECTS
+      // PROJECTS (UPDATED SECTION)
       "projects.hover": "Hover or click for details", "projects.link": "View Code", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "End-to-end pipeline for training PushT policies.",
-      "projects.cancer.title": "Breast Cancer Detection", "projects.cancer.short": "Deep Learning Diagnosis.", "projects.cancer.desc": "Histopathology image classification using CNNs.",
+      
+      // --- FIXED: LUNG CANCER ---
+      "projects.cancer.title": "Lung Cancer Detection", 
+      "projects.cancer.short": "Carcinoma Diagnosis (CT).", 
+      "projects.cancer.desc": "Classification of 4 lung cancer types using CNNs on CT scans.",
+      // --------------------------
+
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Interactive Vision Simulator.", "projects.p10.desc": "Web-based robotics simulator (COCO-SSD).",
       "projects.sentiment.title": "Sentiment Analysis", "projects.sentiment.short": "NLP & Classification.", "projects.sentiment.desc": "NLP model to analyze customer reviews.",
       "projects.clustering.title": "Customer Segmentation", "projects.clustering.short": "Data Clustering.", "projects.clustering.desc": "Customer behavior analysis using K-Means.",
@@ -399,10 +412,16 @@ const translations = {
       "experience.card4.title": "إنجازات أخرى",
       "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون", "experience.card4.item2": "مرشدة مبتدئة – GDSC", "experience.card4.item3": "مشروع مؤطر G‑JOBS",
 
-      // PROJECTS
+      // PROJECTS (UPDATED SECTION)
       "projects.hover": "مرّر أو انقر لعرض التفاصيل", "projects.link": "عرض الكود", "projects.link.modelRepo": "مستودع النموذج", "projects.link.demoSpace": "مساحة العرض", "projects.link.viewCode": "عرض الكود", "projects.link.githubRepo": "مستودع GitHub", "projects.link.liveDemo": "عرض مباشر",
       "projects.p9.title": "مدرب LeRobot PushT", "projects.p9.short": "تدريب السياسات.", "projects.p9.desc": "نظام كامل لتدريب وتقييم سياسات PushT.",
-      "projects.cancer.title": "كشف سرطان الثدي", "projects.cancer.short": "تشخيص طبي.", "projects.cancer.desc": "تصنيف صور الأنسجة باستخدام CNN.",
+      
+      // --- FIXED: LUNG CANCER ---
+      "projects.cancer.title": "كشف سرطان الرئة", 
+      "projects.cancer.short": "تشخيص الأورام (CT).", 
+      "projects.cancer.desc": "تصنيف 4 أنواع من سرطان الرئة باستخدام CNN على صور الأشعة المقطعية.",
+      // --------------------------
+
       "projects.p10.title": "محاكي رؤية الروبوت", "projects.p10.short": "محاكي تفاعلي.", "projects.p10.desc": "محاكي روبوتات ويب.",
       "projects.sentiment.title": "تحليل المشاعر", "projects.sentiment.short": "تصنيف النصوص.", "projects.sentiment.desc": "نموذج NLP لتحليل المراجعات.",
       "projects.clustering.title": "تجزئة العملاء", "projects.clustering.short": "تحليل بيانات.", "projects.clustering.desc": "تحليل سلوك العملاء (K-Means).",
@@ -422,7 +441,6 @@ const translations = {
       "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
     }
   };
-
   
   // 5. Mobile Language Dropdown
   const mobileLangButton = document.querySelector('.mobile-lang-button');
