@@ -94,7 +94,7 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
 .table-wrapper { overflow-x: auto; }
 .sample-table { min-width: 520px; }
 
-@media (max-width: 1024px) {
+@media (max-width: 1175px) {
   .section { margin: 60px auto; padding: 44px 28px; }
   .profile-content { gap: 20px; }
   .experience-media { height: 160px; }
@@ -1947,7 +1947,7 @@ html[dir="ltr"] .hover-text {
   font-size: 0.9rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1175px) {
   .burger {
     display: flex;
     flex-direction: column;
