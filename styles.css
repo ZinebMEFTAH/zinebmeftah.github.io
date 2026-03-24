@@ -100,7 +100,7 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
   .experience-media { height: 160px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1175px) {
   header { min-height: 85vh; background-attachment: scroll; }
   .header-content { padding: 0 12px; }
   .projects-scroll { gap: 16px; padding: 12px 0; }
