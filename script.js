@@ -195,7 +195,7 @@ const translations = {
       // CERTIFICATES
       "certs.heading": "Certificats",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score : 75/100 (C2). Certification standardisée reconnue mondialement.",
+      "certs.english.desc": "Score : 92/100 (C2). Certification standardisée reconnue mondialement.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Programme d’échanges axé sur le leadership.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
@@ -296,7 +296,7 @@ const translations = {
       // CERTIFICATES
       "certs.heading": "Certificates",
       "certs.english.title": "EF SET English Certificate (C2 Proficient)",
-      "certs.english.desc": "Score: 75/100 (C2). Globally recognized standardized certification.",
+      "certs.english.desc": "Score: 92/100 (C2). Globally recognized standardized certification.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Exchange program focused on leadership and innovation.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
@@ -396,7 +396,7 @@ const translations = {
       // CERTIFICATES
       "certs.heading": "الشهادات",
       "certs.english.title": "شهادة EF SET للغة الإنجليزية (C2 محترف)",
-      "certs.english.desc": "النتيجة: 75/100. شهادة معترف بها عالمياً.",
+      "certs.english.desc": "النتيجة: 92/100. شهادة معترف بها عالمياً.",
       "certs.aylp.title": "برنامج القيادة الشبابية الجزائري",
       "certs.aylp.desc": "برنامج تبادل يركز على القيادة والابتكار.",
       "certs.pytorch.title": "مقدمة في التعلم العميق (PyTorch)",
