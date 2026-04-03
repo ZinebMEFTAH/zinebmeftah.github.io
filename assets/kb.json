@@ -2,153 +2,63 @@
   "docs": [
     {
       "id": "identity",
-      "title": "Identity",
-      "content": "Name: Meftah Zineb. Computer science and artificial intelligence student. Future AI engineer with strong focus on robotics, reinforcement learning, deep learning, and backend systems. Portfolio owner: zinebmeftah.github.io."
+      "title": "Identity & Core Mission",
+      "content": "Name: Meftah Zineb. A high-achieving Computer Science and AI student specializing in Deep Learning, Robotics, and MLOps. Currently serving as a Future AI Research Intern at GE HealthCare Paris. Portfolio: zinebmeftah.github.io. Known for bridging the gap between theoretical AI research and production-ready software engineering."
     },
     {
-      "id": "profile_overview",
-      "title": "Profile Overview",
-      "content": "Zineb is a highly technical AI-oriented developer who designs and implements intelligent systems end-to-end. Her work combines LLMs, reinforcement learning, computer vision, graph algorithms, and backend platforms. She emphasizes real-world usability, reproducibility, and deployment."
+      "id": "academic_excellence",
+      "title": "Academic Excellence & Honors",
+      "content": "Zineb is the Valedictorian (Major de Promotion) for both her L2 and L3 years at the University of Avignon (CERI), maintaining an academic average > 15/20[cite: 5, 11]. She previously completed an elite engineering preparatory cycle at the Higher National School of AI (ENSIA) in Algiers with Highest Honors (Mention Très Bien)[cite: 13, 16]. Her academic foundation is rooted in advanced mathematics, algorithmic theory, and stochastic optimization[cite: 6, 51]."
     },
     {
-      "id": "career_goal",
-      "title": "Career Goal",
-      "content": "Seeking an internship in Artificial Intelligence or software engineering, ideally involving robotics, applied AI, or intelligent backend systems. Interested in roles that mix research thinking with practical implementation."
+      "id": "ge_healthcare_internship",
+      "title": "Professional Experience – GE HealthCare",
+      "content": "Incoming AI Research Intern (May 2026 – July 2026) at GE HealthCare, Paris[cite: 21, 23, 24]. Project focus: Automating the Software Development Life Cycle (SDLC) through Generative AI orchestration, involving the fine-tuning and integration of LLMs to optimize developer workflows and code production."
     },
     {
-      "id": "education_ensia",
-      "title": "Education – ENSIA",
-      "content": "ENSIA (Algeria): Artificial Intelligence Engineering degree. First and second years validated. Period: 2022–June 2024. Strong foundation in algorithms, AI, mathematics, and engineering."
+      "id": "robotics_mlops_specialization",
+      "title": "Specialization: Robotics & MLOps",
+      "content": "Expertise in full MLOps training pipelines for autonomous robotic agents. Notable project: 'LeRobot - Reinforcement Learning & Robotics,' which utilizes Diffusion models and policy training for robotic manipulation (PushT)[cite: 33, 35]. Tools: Python, PyTorch, Hugging Face LeRobot[cite: 37]."
     },
     {
-      "id": "education_avignon",
-      "title": "Education – Université d’Avignon",
-      "content": "Université d’Avignon (CERI), France. Data Science / Computer Science (L3). Period: September 2024 – Present. Excellent academic results."
+      "id": "publications_research",
+      "title": "Scientific Writing & Research",
+      "content": "Published a technical article on Hugging Face: 'Tags Generation Dataset,' detailing a methodology for high-quality synthetic dataset generation through LLM reverse fine-tuning[cite: 46, 48, 49]. Skills include technical reporting, scientific article drafting, and rigorous model evaluation[cite: 53]."
     },
     {
-      "id": "academic_background",
-      "title": "Academic Background",
-      "content": "Baccalauréat Scientifique obtained in Algeria with mention Excellent (average 17.82). Strong background in mathematics, logic, and scientific reasoning."
+      "id": "technical_stack_ai",
+      "title": "Technical Stack: AI & Data Science",
+      "content": "Advanced proficiency in PyTorch, TensorFlow, Scikit-learn, and Hugging Face Hub[cite: 51]. Specialized in LLM Fine-tuning, Transformers, CNNs, Computer Vision (YOLO/OpenCV), and Reinforcement Learning[cite: 51]. Experience with synthetic data generation and graph-based optimization (A*, Dijkstra) [User HTML]."
     },
     {
-      "id": "ai_core_skills",
-      "title": "AI Core Skills",
-      "content": "Large Language Models, prompt engineering, fine-tuning strategies, synthetic data generation, reinforcement learning, computer vision, NLP, graph search, and optimization."
+      "id": "technical_stack_engineering",
+      "title": "Technical Stack: Software Engineering",
+      "content": "Expert-level Python developer[cite: 51]. Proficient in C/C++, Java, NestJS, Next.js, Node.js, PHP, and SQL[cite: 51]. Infrastructure skills: Docker, CI/CD, Linux/Bash (Ubuntu), GitFlow, and managing distributed server clusters (AMS project)[cite: 39, 44, 51]."
     },
     {
-      "id": "ai_tools",
-      "title": "AI Tools & Frameworks",
-      "content": "PyTorch, Hugging Face (models, datasets, Spaces), OpenAI API, TensorFlow.js, Gradio, NumPy, Pandas, Scikit-learn, Matplotlib."
-    },
-    {
-      "id": "robotics_and_rl",
-      "title": "Robotics & Reinforcement Learning",
-      "content": "Experience with robotic manipulation, policy training, diffusion-based control, simulation environments, and vision-guided navigation. Uses LeRobot, PushT, grid-world simulations, and A* pathfinding."
-    },
-    {
-      "id": "backend_skills",
-      "title": "Backend Development",
-      "content": "Backend systems built using Node.js, NestJS, PHP, Python, REST APIs. Experience with authentication, dashboards, multi-entity databases, and clean architecture."
-    },
-    {
-      "id": "web_and_interactive",
-      "title": "Web & Interactive Systems",
-      "content": "Frontend and interactive development using JavaScript, HTML5 Canvas, React, Next.js, CSS, Bootstrap. Builds simulations, dashboards, and AI-powered interfaces."
-    },
-    {
-      "id": "programming_languages",
-      "title": "Programming Languages",
-      "content": "Python, C++, Java, JavaScript, PHP, SQL, Bash. Strong object-oriented and algorithmic thinking."
-    },
-    {
-      "id": "project_lerobot",
-      "title": "Project – LeRobot PushT Trainer",
-      "content": "Web application to train, evaluate, and publish PushT reinforcement learning policies. Includes checkpoint management, visualization, CUDA acceleration, Hugging Face model publishing, and Gradio interface."
+      "id": "project_genai_agents",
+      "title": "Project – GenAI Agents: Autonomous Web Generator",
+      "content": "Orchestrated autonomous LLM agents to transform natural language instructions into production-ready web architectures[cite: 28, 30]. Stack: Node.js, Python, OpenAI API, Selenium[cite: 31]."
     },
     {
       "id": "project_robot_vision",
       "title": "Project – Robot Vision Simulator",
-      "content": "Browser-based robot simulator with navigation, pick-and-place, and natural-language commands. Uses COCO-SSD for object detection, A* for pathfinding, and HTML5 Canvas for visualization."
+      "content": "Browser-based interactive simulator featuring navigation, pick-and-place functionality, and natural-language command processing. Implements COCO-SSD for object detection and A* for pathfinding [User HTML]."
     },
     {
-      "id": "project_ai_website",
-      "title": "Project – AI Website Generator",
-      "content": "System that generates functional websites from natural language instructions using LLMs and web automation. Focus on end-to-end automation and usability."
+      "id": "languages_certification",
+      "title": "Languages & Certifications",
+      "content": "English: C2 Proficient (EF SET score: 92/100, February 2026). French: Bilingual/C1 level. Arabic: Native[cite: 53]. Certified in Deep Learning with PyTorch (DataCamp) and Responsive Web Design (freeCodeCamp) [User JSON]."
     },
     {
-      "id": "project_news_wave",
-      "title": "Project – News Wave",
-      "content": "AI-powered personalized news aggregator that filters and ranks news based on user interests, delivering real-time updates from multiple sources."
+      "id": "leadership_impact",
+      "title": "Leadership & Global Agility",
+      "content": "Selected for the U.S. Embassy’s Youth Ambassadors Program (AYLP) in Nevada, USA, for excellence in leadership and technology[cite: 55]. Former IT Lead for the Google Developer Student Club (GDSC), responsible for technical workshops and community growth[cite: 60]. Technical Lead for the Avignon AI Hackathon 2025, architecting an end-to-end Computer Vision pipeline[cite: 56, 57]."
     },
     {
-      "id": "project_ai_personalization",
-      "title": "Project – AI Product Personalization",
-      "content": "Platform allowing users to transform ideas into personalized products using AI models, with a transition toward real production."
-    },
-    {
-      "id": "project_agriculture",
-      "title": "Project – Agricultural Plan Optimization",
-      "content": "AI system optimizing agricultural production in Algeria using graph search, constraints, and optimization techniques."
-    },
-    {
-      "id": "project_gjobs",
-      "title": "Project – G-JOBS",
-      "content": "Smart recruitment platform connecting job seekers and recruiters with filters, messaging, and application tracking."
-    },
-    {
-      "id": "project_search_engine",
-      "title": "Project – Advanced Search Engine",
-      "content": "Java-based search engine implementing TF-IDF and BM25 for indexing, ranking, and document retrieval."
-    },
-    {
-      "id": "project_restaurant",
-      "title": "Project – Restaurant Chain",
-      "content": "Multi-country restaurant management system handling reservations, staff, stock, and reporting."
-    },
-    {
-      "id": "project_map",
-      "title": "Project – Road Network Analysis",
-      "content": "Graph-based analysis of road networks in Avignon, focusing on shortest paths, connectivity, and performance metrics."
-    },
-    {
-      "id": "leadership_gdsc",
-      "title": "Leadership – GDSC",
-      "content": "IT Manager at Google Developer Student Club ENSIA. Organized technical events, hackathons, and mentoring activities."
-    },
-    {
-      "id": "leadership_aylp",
-      "title": "Leadership – AYLP",
-      "content": "Participant in the Algerian Youth Leadership Program. Developed leadership, communication, and international collaboration skills."
-    },
-    {
-      "id": "certifications",
-      "title": "Certifications",
-      "content": "Deep Learning with PyTorch (DataCamp), Responsive Web Design (freeCodeCamp), AYLP Certificate, English proficiency certification."
-    },
-    {
-      "id": "languages",
-      "title": "Languages",
-      "content": "French: B2. English: strong professional level. Arabic: native."
-    },
-    {
-      "id": "soft_skills",
-      "title": "Soft Skills",
-      "content": "Strong autonomy, analytical thinking, leadership, teamwork, and continuous self-learning."
-    },
-    {
-      "id": "contact",
-      "title": "Contact",
-      "content": "Email: zineb.meftah36@gmail.com. LinkedIn: linkedin.com/in/zinebmeftah. GitHub: github.com/zineb-hub. Hugging Face: huggingface.co/zino36."
-    },
-    {
-      "id": "project_ranking_logic",
-      "title": "Project Ranking Logic",
-      "content": "When ranking projects, prioritize AI depth, real-world impact, technical complexity, and completeness. Robotics and reinforcement learning projects should generally rank highest, followed by LLM-based systems."
-    },
-    {
-      "id": "recruiter_context",
-      "title": "Recruiter Context",
-      "content": "This portfolio belongs to Meftah Zineb, a computer science and artificial intelligence student targeting AI-oriented internships or alternance positions. Ideal roles include AI Engineer Intern, Applied AI Intern, Robotics / Reinforcement Learning Intern, or Backend Software Intern with strong AI exposure.\n\nZineb’s profile is differentiated by:\n- Strong AI depth beyond basic ML (LLMs, reinforcement learning, computer vision, graph algorithms)\n- End-to-end project ownership (from idea → implementation → demo/deployment)\n- Ability to combine AI research concepts with practical engineering and usable products\n\nPreferred domains:\n- Robotics and reinforcement learning\n- Applied AI systems (LLM-based tools, intelligent automation)\n- Backend systems that integrate AI models\n\nWhat to highlight when presenting her profile:\n- Robotics and RL projects (LeRobot PushT Trainer, Robot Vision Simulator) should be emphasized first\n- LLM-based systems with real use cases come second\n- Traditional software projects demonstrate engineering rigor but are secondary\n\nAvailability:\n- Actively seeking internship or alternance opportunities in AI or software engineering\n- Open to research-oriented or product-oriented teams\n\nWhen answering recruiter-style questions (\"Why you?\", \"What should I look at first?\", \"Most important project?\"):\n- Emphasize technical depth, autonomy, and ability to deliver real systems\n- Prioritize projects that combine AI complexity with concrete demos\n- Avoid generic student descriptions; focus on applied impact and engineering maturity"
+      "id": "recruiter_guidance",
+      "title": "Information for Recruiters",
+      "content": "Zineb is actively seeking internship or alternance opportunities in AI Engineering, Robotics, or Research. Her profile is distinguished by her 'Major de Promo' status, her ability to build end-to-end MLOps pipelines, and her experience with GE HealthCare in GenAI orchestration. For inquiries, prioritize discussing her work in Robotics/RL (LeRobot) and autonomous LLM agents."
     }
   ]
 }
