@@ -2476,3 +2476,90 @@ html[lang="ar"] .projects-scroll > * {
 #chat-toggle:hover{
   transform: scale(1.08) !important;
 }
+
+/* ===================== POLISH ENHANCEMENTS ===================== */
+
+/* Hero: replace dead Unsplash bg with layered brand glow */
+#header {
+  background:
+    radial-gradient(55% 45% at 18% 22%, rgba(88,166,255,0.20), transparent 60%),
+    radial-gradient(50% 42% at 82% 28%, rgba(247,120,186,0.18), transparent 60%),
+    radial-gradient(75% 60% at 50% 108%, rgba(88,166,255,0.10), transparent 70%),
+    var(--bg-color) !important;
+  background-attachment: scroll !important;
+}
+body.light-theme #header {
+  background:
+    radial-gradient(55% 45% at 18% 22%, rgba(9,105,218,0.12), transparent 60%),
+    radial-gradient(50% 42% at 82% 28%, rgba(209,36,124,0.10), transparent 60%),
+    var(--bg-color) !important;
+}
+.header-overlay { display: none; }
+.header-content { max-width: 880px; }
+.header-content h1 { letter-spacing: -0.02em; }
+.header-content p { margin-bottom: 4px; }
+
+/* Hero credibility chips */
+.hero-chips {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 10px; margin: 24px 0 30px;
+}
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 15px; border-radius: 999px;
+  background: rgba(var(--primary-rgb), 0.08);
+  border: 1px solid rgba(var(--primary-rgb), 0.28);
+  color: var(--text-color); font-size: 0.84rem; font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+/* Hero CTA buttons */
+.hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 26px; border-radius: 10px;
+  font-weight: 700; font-size: 0.95rem; text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, color .2s ease;
+  cursor: pointer; border: 1px solid transparent;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: #fff; box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.45); }
+.btn-secondary { background: transparent; color: var(--text-color); border-color: var(--border-color); }
+.btn-secondary:hover { transform: translateY(-2px); border-color: var(--primary-color); color: var(--primary-color); }
+
+/* Stats band (About) */
+.stats-band {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px; margin-top: 34px;
+}
+.stat {
+  background: var(--card-bg); border: 1px solid var(--border-color);
+  border-radius: 14px; padding: 22px 16px; text-align: center;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: transform .25s ease, border-color .25s ease;
+}
+.stat:hover { transform: translateY(-3px); border-color: rgba(var(--primary-rgb), 0.5); }
+.stat-num {
+  display: block; font-size: 1.7rem; font-weight: 800; line-height: 1.1;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-label { display: block; margin-top: 9px; font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; }
+@media (max-width: 760px) { .stats-band { grid-template-columns: repeat(2, 1fr); } }
+
+/* Featured flagship projects */
+.flip-card.featured .flip-card-front,
+.flip-card.featured .flip-card-back {
+  border: 1.5px solid rgba(var(--accent-rgb), 0.75);
+  box-shadow: 0 6px 24px rgba(var(--accent-rgb), 0.28);
+}
+.featured-badge {
+  position: absolute; top: 10px; right: 10px; z-index: 3;
+  background: rgba(0,0,0,0.32); color: #fff;
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.05em;
+  padding: 4px 10px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4); text-transform: uppercase;
+}
