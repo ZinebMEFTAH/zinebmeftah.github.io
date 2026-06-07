@@ -129,7 +129,7 @@ const translations = {
       // ... (Keep previous translations the same) ...
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
-      "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
+      "header.subtitle": "Ingénieure IA · MLOps · Deep Learning — Systèmes d'IA autonomes en production",
       
       // Nav
       "nav.contact": "Contact", "nav.profil": "Profil", "nav.formation": "Formation",
@@ -151,14 +151,17 @@ const translations = {
       // Profile
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
-      "profile.text1": "Ingénieure en devenir passionnée par l'IA et la robotique. Je conçois des architectures neuronales avancées et des systèmes full-stack robustes.",
-      "profile.text2": "Mon expertise couvre le Fine-tuning de LLM, la Vision par Ordinateur et le développement de pipelines ML.",
+      "profile.text1": "Major de promotion en L2 et L3 à l'Université d'Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d'élite de l'ENSIA (Alger). Actuellement en stage d'ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d'IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
+      "profile.text2": "J'ai notamment développé un agent RAG permettant d'interroger des documentations techniques complexes en langage naturel, ainsi qu'un système d'outreach IA entièrement autonome déployé en production. Admise dans plusieurs formations d'excellence orientées IA à Paris pour 2026-2027.",
 
       // FORMATION
       "formation.ensia.title": "ENSIA, Algérie",
-      "formation.ensia.desc": "<strong>Diplôme :</strong> Ingénierie en Intelligence Artificielle (1ʳᵉ et 2ᵉ année validées)",
+      "formation.ensia.desc": "<strong>Cycle préparatoire d'élite en IA</strong> — école nationale ultra-sélective, cursus entièrement en anglais. 1ʳᵉ et 2ᵉ années validées (120 ECTS, Mention Très Bien).",
       "formation.avignon.title": "Université d'Avignon (CERI), France",
-      "formation.avignon.desc": "<strong>Diplôme :</strong> Data Science (3ᵉ année en cours, excellents résultats)",
+      "formation.avignon.desc": "<strong>Licence Informatique — Parcours IA :</strong> Major de promotion L2 & L3 (1ʳᵉ sur 126), moyenne > 15/20.",
+      "projects.stationf.title": "Agent d'Outreach IA · Production", "projects.stationf.short": "Système d'IA autonome déployé en production.", "projects.stationf.desc": "Pipeline d'IA entièrement autonome en production : qualification d'offres par LLM, génération d'emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Oracle Cloud VM.",
+      "projects.gerag.title": "Agent RAG · GE HealthCare", "projects.gerag.short": "Recherche documentaire en langage naturel.", "projects.gerag.desc": "Agent RAG en production chez GE HealthCare permettant d'interroger des documentations techniques complexes en langage naturel, avec réponses sourcées — réduisant des recherches de plusieurs heures à quelques secondes. Stack : Python, LLM, retrieval multi-étapes, intégrations d'outils internes.",
+      "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (Mai–Juil. 2026). Développement d'un agent RAG en production et de systèmes d'IA autonomes.",
       "formation.bac.title": "Baccalauréat Scientifique",
       "formation.bac.desc": "<strong>Mention :</strong> Excellent — Moyenne 17,82",
       "formation.bac.cert": "Voir attestation BAC",
@@ -244,7 +247,7 @@ const translations = {
     en: {
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
-      "header.subtitle": "Future AI Engineer | Deep Learning | Machine Learning | Full-Stack Developer",
+      "header.subtitle": "AI & MLOps Engineer · Deep Learning · Autonomous AI Systems in Production",
       
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
@@ -255,14 +258,17 @@ const translations = {
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
-      "profile.text1": "An aspiring AI Engineer passionate about Robotics and backend development.",
-      "profile.text2": "My expertise covers LLM Fine-tuning, Computer Vision, and end-to-end Machine Learning pipelines.",
+      "profile.text1": "Valedictorian in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Currently an AI & MLOps Engineering intern at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
+      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, and a fully autonomous AI outreach system deployed in production. Admitted to several leading AI-focused master's programs in Paris for 2026-2027.",
 
       // FORMATION
       "formation.ensia.title": "ENSIA, Algeria",
-      "formation.ensia.desc": "<strong>Degree:</strong> Artificial Intelligence Engineering (1st & 2nd Year Completed)",
+      "formation.ensia.desc": "<strong>Elite AI preparatory program</strong> — ultra-selective national school, taught entirely in English. 1st & 2nd years completed (120 ECTS, High Honors).",
       "formation.avignon.title": "Avignon University (CERI), France",
-      "formation.avignon.desc": "<strong>Degree:</strong> Data Science (3rd year ongoing, excellent results)",
+      "formation.avignon.desc": "<strong>BSc Computer Science — AI track:</strong> Valedictorian in L2 & L3 (1st of 126), average > 15/20.",
+      "projects.stationf.title": "AI Outreach Agent · Production", "projects.stationf.short": "Fully autonomous AI system in production.", "projects.stationf.desc": "Fully autonomous AI pipeline in production: LLM-based opportunity qualification, personalized email generation, SMTP delivery, IMAP follow-up and reply classification. 7 LLM skills orchestrated on cron. Stack: Python, Claude API, Playwright, Oracle Cloud VM.",
+      "projects.gerag.title": "RAG Agent · GE HealthCare", "projects.gerag.short": "Natural-language document retrieval.", "projects.gerag.desc": "Production RAG agent at GE HealthCare letting teams query complex technical documentation in natural language with cited sources — turning hours of manual lookup into seconds. Stack: Python, LLM, multi-step retrieval, internal tool integrations.",
+      "experience.ge.title": "GE HealthCare — AI & MLOps Intern", "experience.ge.detail": "AI & MLOps Engineering internship — Paris (May–Jul 2026). Built a production RAG agent and autonomous AI systems.",
       "formation.bac.title": "Scientific Baccalaureate",
       "formation.bac.desc": "<strong>Honors:</strong> Excellent — Average 17.82",
       "formation.bac.cert": "View BAC certificate",
