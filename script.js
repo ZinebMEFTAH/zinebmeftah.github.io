@@ -131,7 +131,7 @@ const translations = {
       "header.title": "MEFTAH Zineb",
       "header.subtitle": "Ingénieure IA · MLOps · Deep Learning — Systèmes d'IA autonomes en production",
       "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · 92/100",
-      "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
+      "hero.ctaCV": "⬇ Télécharger mon CV", "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
       "stat.rank": "Major de promotion L2 & L3", "stat.avg": "Moyenne générale", "stat.english": "Anglais C2 · EF SET", "stat.prod": "Systèmes IA @ GE HealthCare",
       "badge.production": "Production",
       
@@ -253,7 +253,7 @@ const translations = {
       "header.title": "Zineb Meftah",
       "header.subtitle": "AI & MLOps Engineer · Deep Learning · Autonomous AI Systems in Production",
       "hero.chip1": "Valedictorian · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
-      "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
+      "hero.ctaCV": "⬇ Download my CV", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
       "stat.rank": "Valedictorian L2 & L3", "stat.avg": "Overall average", "stat.english": "English C2 · EF SET", "stat.prod": "AI systems @ GE HealthCare",
       "badge.production": "Production",
       
