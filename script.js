@@ -141,7 +141,7 @@ const translations = {
       "nav.langues": "Langues", "nav.experience": "Expérience", "nav.skip": "Aller au contenu",
 
       // Contact
-      "info.telephone": "☎ Téléphone", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
+      "info.telephone": "☎ Téléphone", "info.location": "📍 Localisation", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
 
       // Section Headers
       "formation.heading": "Formation & Certifications",
@@ -265,7 +265,7 @@ const translations = {
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
       "nav.langues": "Languages", "nav.experience": "Experience", "nav.skip": "Skip to content",
 
-      "info.telephone": "☎ Phone", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
+      "info.telephone": "☎ Phone", "info.location": "📍 Location", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
 
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
@@ -376,7 +376,7 @@ const translations = {
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة", "nav.skip": "تخطي إلى المحتوى",
 
-      "info.telephone": "☎ الهاتف", "info.email": "✉ البريد", "info.linkedin": "🔗 لينكد إن", "info.portfolio": "🌐 المعرض", "info.github": "🐙 جيتهاب", "info.huggingface": "🤖 هاجينغ فايس",
+      "info.telephone": "☎ الهاتف", "info.location": "📍 الموقع", "info.email": "✉ البريد", "info.linkedin": "🔗 لينكد إن", "info.portfolio": "🌐 المعرض", "info.github": "🐙 جيتهاب", "info.huggingface": "🤖 هاجينغ فايس",
 
       "formation.heading": "التعليم والشهادات", "publications.heading": "المنشورات", "projects.heading": "المشاريع والخبرة", "experience.heading": "الخبرة والقيادة", "competences.heading": "المهارات", "langues.heading": "اللغات", "contact.heading": "اتصل",
 
