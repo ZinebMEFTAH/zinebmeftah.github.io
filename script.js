@@ -129,9 +129,9 @@ const translations = {
       // ... (Keep previous translations the same) ...
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
-      "header.subtitle": "Ingénieure IA · MLOps · Deep Learning — Systèmes d'IA autonomes en production",
-      "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · 92/100",
-      "hero.ctaCV": "⬇ Télécharger mon CV", "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
+      "header.subtitle": "Double compétence : Ingénierie logicielle + IA · MLOps · Deep Learning",
+      "hero.chip0": "Double profil : Ingénierie + IA", "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · 92/100",
+      "hero.ctaCV": "⬇ Télécharger mon CV", "hero.ctaLetter": "⬇ Lettre de motivation", "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
       "stat.rank": "Major de promotion L2 & L3", "stat.avg": "Moyenne générale", "stat.english": "Anglais C2 · EF SET", "stat.prod": "Systèmes IA @ GE HealthCare",
       "badge.production": "Production",
       
@@ -157,6 +157,7 @@ const translations = {
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
       "profile.text1": "Major de promotion en L2 et L3 à l'Université d'Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d'élite de l'ENSIA (Alger). Actuellement en stage d'ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d'IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
       "profile.text2": "J'ai notamment développé un agent RAG permettant d'interroger des documentations techniques complexes en langage naturel, ainsi qu'un système d'outreach IA entièrement autonome déployé en production. À la rentrée 2026, j'intègre en alternance le Master 1 MLSD (Machine Learning pour la Science des Données) à l'Université Paris Cité.",
+      "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d'ingénieure — code, backend, systèmes complexes — et la maîtrise de l'IA pour en faire des solutions qui tournent réellement, en production.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
@@ -254,9 +255,9 @@ const translations = {
     en: {
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
-      "header.subtitle": "AI & MLOps Engineer · Deep Learning · Autonomous AI Systems in Production",
-      "hero.chip1": "Valedictorian · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
-      "hero.ctaCV": "⬇ Download my CV", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
+      "header.subtitle": "Dual expertise: Software Engineering + AI · MLOps · Deep Learning",
+      "hero.chip0": "Dual profile: Engineering + AI", "hero.chip1": "Valedictorian · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
+      "hero.ctaCV": "⬇ Download my CV", "hero.ctaLetter": "⬇ Cover letter", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
       "stat.rank": "Valedictorian L2 & L3", "stat.avg": "Overall average", "stat.english": "English C2 · EF SET", "stat.prod": "AI systems @ GE HealthCare",
       "badge.production": "Production",
       
@@ -271,6 +272,7 @@ const translations = {
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
       "profile.text1": "Valedictorian in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Currently an AI & MLOps Engineering intern at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
       "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, and a fully autonomous AI outreach system deployed in production. In September 2026 I start the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité as a work-study student.",
+      "profile.highlight": "What sets me apart: combining genuine engineering rigor — code, backend, complex systems — with strong AI expertise to ship solutions that actually run in production.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
@@ -367,7 +369,9 @@ const translations = {
     ar: {
       "page.title": "المعرض - مفتاح زينب",
       "header.title": "مفتاح زينب",
-      "header.subtitle": "مهندس الذكاء الاصطناعي المستقبلي | التعلم العميق | التعلم الآلي | مطور كامل الحزمة",
+      "header.subtitle": "كفاءة مزدوجة: هندسة برمجيات + ذكاء اصطناعي · MLOps · تعلّم عميق",
+      "hero.chip0": "ملف مزدوج: هندسة + ذكاء اصطناعي", "hero.chip1": "الأولى على الدفعة · 1/126", "hero.chip2": "ذكاء اصطناعي في الإنتاج @ GE HealthCare", "hero.chip3": "إنجليزية C2 · 92/100",
+      "hero.ctaCV": "⬇ تحميل سيرتي الذاتية", "hero.ctaLetter": "⬇ رسالة الدافع", "hero.ctaProjects": "مشاريعي", "hero.ctaContact": "تواصل معي",
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة", "nav.skip": "تخطي إلى المحتوى",
@@ -379,6 +383,7 @@ const translations = {
       "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
       "profile.text1": "طالبة علوم الحاسوب، الأولى على دفعتها (السنتان الثانية والثالثة) بجامعة أفينيون (1 من 126، معدل > 15/20) وخريجة الطور التحضيري النخبوي لمدرسة ENSIA (الجزائر). حاليًا متدربة في هندسة الذكاء الاصطناعي وMLOps لدى GE HealthCare بباريس، أصمّم وأنشر أنظمة ذكاء اصطناعي في الإنتاج: وكلاء RAG، وخطوط معالجة LLM، وأنظمة مستقلة.",
       "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج. في سبتمبر 2026 ألتحق بالتناوب بماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي.",
+      "profile.highlight": "ما يميّزني: الجمع بين صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — وإتقان الذكاء الاصطناعي لإنتاج حلول تعمل فعليًا في الإنتاج.",
 
       // FORMATION
       "formation.paris.title": "جامعة باريس سيتي، فرنسا",

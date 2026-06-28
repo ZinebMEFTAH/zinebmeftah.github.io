@@ -2563,3 +2563,49 @@ body.light-theme #header {
   padding: 4px 10px; border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.4); text-transform: uppercase;
 }
+
+/* ===================== Dual-profile emphasis ===================== */
+.profile-highlight {
+  margin-top: 18px;
+  padding: 16px 20px;
+  border-inline-start: 4px solid var(--primary-color);
+  border-radius: 10px;
+  background: rgba(var(--primary-rgb), 0.08);
+  font-size: clamp(1rem, 1.4vw, 1.14rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+.hero-chip-star {
+  background: linear-gradient(135deg, var(--gradient-start, var(--primary-color)), var(--gradient-end, var(--primary-color)));
+  color: #fff;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.35);
+}
+
+/* ===================== Responsive polish & overflow safety ===================== */
+html, body { overflow-x: hidden; }
+img, svg, video, canvas, table { max-width: 100%; }
+* { min-width: 0; }
+
+/* Tablet / iPad range */
+@media (max-width: 1024px) {
+  .info-cards, .experience-grid, .skills-grid { gap: 18px; }
+  .profile-content { gap: 24px; }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .hero-cta { width: 100%; }
+  .hero-cta .btn { flex: 1 1 100%; justify-content: center; }
+  .profile-highlight { font-size: 1rem; padding: 14px 16px; }
+  .stats-band { gap: 12px; }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .hero-chip { font-size: 0.76rem; padding: 6px 11px; }
+  .btn { padding: 12px 18px; font-size: 0.9rem; }
+  .info-card, .skill-card { padding: 22px 18px; }
+}
