@@ -167,7 +167,7 @@ const translations = {
       "formation.avignon.desc": "<strong>Licence Informatique — Parcours IA :</strong> Major de promotion L2 & L3 (1ʳᵉ sur 126), moyenne > 15/20.",
       "projects.stationf.title": "Agent d'Outreach IA · Production", "projects.stationf.short": "Système d'IA autonome déployé en production.", "projects.stationf.desc": "Pipeline d'IA entièrement autonome en production : qualification d'offres par LLM, génération d'emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Oracle Cloud VM.",
       "projects.gerag.title": "Agent RAG · GE HealthCare", "projects.gerag.short": "Recherche documentaire en langage naturel.", "projects.gerag.desc": "Agent RAG en production chez GE HealthCare permettant d'interroger des documentations techniques complexes en langage naturel, avec réponses sourcées — réduisant des recherches de plusieurs heures à quelques secondes. Stack : Python, LLM, retrieval multi-étapes, intégrations d'outils internes.",
-      "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (Mai–Juil. 2026). Développement d'un agent RAG en production et de systèmes d'IA autonomes.",
+      "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (2026). Agent RAG en production ; pipeline complet codé de bout en bout (skills modulaires), puis architecture multi-agents sur Microsoft Copilot Studio pour optimiser la qualité et les temps de traitement.",
       "formation.bac.title": "Baccalauréat Scientifique",
       "formation.bac.desc": "<strong>Mention :</strong> Excellent — Moyenne 17,82",
       "formation.bac.cert": "Voir attestation BAC",
@@ -215,9 +215,9 @@ const translations = {
       "certs.cta": "Voir certificat",
 
       // EXPERIENCE
-      "experience.card1.title": "Responsable informatique", "experience.card1.detail": "Google Developer Student Club ENSIA",
+      "experience.card1.title": "Responsable informatique", "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024) — gestion de l'infrastructure, animation d'ateliers techniques et accompagnement des membres sur leurs projets.",
       "experience.card2.title": "Participant AYLP", "experience.card2.detail": "Northern Nevada International Center",
-      "experience.card3.title": "Organisation d'événements", "experience.card3.detail": "Hackathons, IA, Dev Web",
+      "experience.card3.title": "Organisation d'événements", "experience.card3.detail": "Organisation de hackathons et d'ateliers en IA et développement web : logistique, mentorat et animation technique.",
       "experience.card4.title": "Autres Réalisations",
       "experience.card4.item1": "Hackathon IA Avignon (24h)", "experience.card4.item2": "Mentor junior – GDSC", "experience.card4.item3": "Projet tutoré G‑JOBS",
 
@@ -281,7 +281,7 @@ const translations = {
       "formation.avignon.desc": "<strong>BSc Computer Science — AI track:</strong> Valedictorian in L2 & L3 (1st of 126), average > 15/20.",
       "projects.stationf.title": "AI Outreach Agent · Production", "projects.stationf.short": "Fully autonomous AI system in production.", "projects.stationf.desc": "Fully autonomous AI pipeline in production: LLM-based opportunity qualification, personalized email generation, SMTP delivery, IMAP follow-up and reply classification. 7 LLM skills orchestrated on cron. Stack: Python, Claude API, Playwright, Oracle Cloud VM.",
       "projects.gerag.title": "RAG Agent · GE HealthCare", "projects.gerag.short": "Natural-language document retrieval.", "projects.gerag.desc": "Production RAG agent at GE HealthCare letting teams query complex technical documentation in natural language with cited sources — turning hours of manual lookup into seconds. Stack: Python, LLM, multi-step retrieval, internal tool integrations.",
-      "experience.ge.title": "GE HealthCare — AI & MLOps Intern", "experience.ge.detail": "AI & MLOps Engineering internship — Paris (May–Jul 2026). Built a production RAG agent and autonomous AI systems.",
+      "experience.ge.title": "GE HealthCare — AI & MLOps Intern", "experience.ge.detail": "AI & MLOps Engineering internship — Paris (2026). Production RAG agent; full pipeline coded end to end (modular skills), then a multi-agent architecture on Microsoft Copilot Studio to optimize answer quality and processing time.",
       "formation.bac.title": "Scientific Baccalaureate",
       "formation.bac.desc": "<strong>Honors:</strong> Excellent — Average 17.82",
       "formation.bac.cert": "View BAC certificate",
@@ -328,9 +328,9 @@ const translations = {
       "certs.cta": "View Certificate",
 
       // EXPERIENCE
-      "experience.card1.title": "IT Manager", "experience.card1.detail": "Google Developer Student Club ENSIA",
+      "experience.card1.title": "IT Manager", "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024) — managed infrastructure, ran technical workshops, and supported members on their projects.",
       "experience.card2.title": "AYLP Participant", "experience.card2.detail": "Northern Nevada International Center",
-      "experience.card3.title": "Event Organizer", "experience.card3.detail": "Hackathons, AI, Web Dev",
+      "experience.card3.title": "Event Organizer", "experience.card3.detail": "Organized AI and web-development hackathons and workshops: logistics, mentoring, and technical facilitation.",
       "experience.card4.title": "Other Achievements",
       "experience.card4.item1": "AI Hackathon Avignon (24h)", "experience.card4.item2": "Junior Mentor – GDSC", "experience.card4.item3": "Supervised Project G‑JOBS",
 
@@ -433,9 +433,10 @@ const translations = {
       "certs.cta": "عرض الشهادة",
 
       // EXPERIENCE
-      "experience.card1.title": "مسؤولة تقنية المعلومات", "experience.card1.detail": "نادي مطوري Google – ENSIA",
+      "experience.ge.title": "GE HealthCare — متدربة في الذكاء الاصطناعي وMLOps", "experience.ge.detail": "تدريب في هندسة الذكاء الاصطناعي وMLOps — باريس (2026). وكيل RAG في الإنتاج؛ خط معالجة كامل مكتوب برمجيًا (skills معيارية) ثم بنية متعددة الوكلاء على Microsoft Copilot Studio لتحسين الجودة وزمن المعالجة.",
+      "experience.card1.title": "مسؤولة تقنية المعلومات", "experience.card1.detail": "نادي مطوري Google – ENSIA (2023–2024) — إدارة البنية التحتية، وتقديم ورش تقنية، ودعم الأعضاء في مشاريعهم.",
       "experience.card2.title": "مشاركة في AYLP", "experience.card2.detail": "المركز الدولي لشمال نيفادا",
-      "experience.card3.title": "منظِّمة فعاليات", "experience.card3.detail": "هاكاثونات، ذكاء اصطناعي",
+      "experience.card3.title": "منظِّمة فعاليات", "experience.card3.detail": "تنظيم هاكاثونات وورش في الذكاء الاصطناعي وتطوير الويب: اللوجستيك، والإرشاد، والتأطير التقني.",
       "experience.card4.title": "إنجازات أخرى",
       "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون", "experience.card4.item2": "مرشدة مبتدئة – GDSC", "experience.card4.item3": "مشروع مؤطر G‑JOBS",
 
