@@ -2609,3 +2609,11 @@ img, svg, video, canvas, table { max-width: 100%; }
   .btn { padding: 12px 18px; font-size: 0.9rem; }
   .info-card, .skill-card { padding: 22px 18px; }
 }
+
+/* Hero: secondary tagline line */
+.header-tagline {
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  font-weight: 600;
+  opacity: 0.92;
+  margin-top: 6px;
+}

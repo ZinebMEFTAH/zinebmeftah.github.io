@@ -129,7 +129,8 @@ const translations = {
       // ... (Keep previous translations the same) ...
       "page.title": "Portfolio - Meftah Zineb",
       "header.title": "MEFTAH Zineb",
-      "header.subtitle": "Double compétence : Ingénierie logicielle + IA · MLOps · Deep Learning",
+      "header.subtitle": "Je conçois des systèmes IA autonomes, déployés en production.",
+      "header.tagline": "Double compétence : ingénierie logicielle + IA · MLOps · Deep Learning",
       "hero.chip0": "Double profil : Ingénierie + IA", "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · 92/100",
       "hero.ctaCV": "⬇ Télécharger mon CV", "hero.ctaLetter": "⬇ Lettre de motivation", "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
       "stat.rank": "Major de promotion L2 & L3", "stat.avg": "Moyenne générale", "stat.english": "Anglais C2 · EF SET", "stat.prod": "Systèmes IA @ GE HealthCare",
@@ -255,7 +256,8 @@ const translations = {
     en: {
       "page.title": "Portfolio - Zineb Meftah",
       "header.title": "Zineb Meftah",
-      "header.subtitle": "Dual expertise: Software Engineering + AI · MLOps · Deep Learning",
+      "header.subtitle": "I build autonomous AI systems that run in production.",
+      "header.tagline": "Software engineering + AI · MLOps · Deep Learning",
       "hero.chip0": "Dual profile: Engineering + AI", "hero.chip1": "Valedictorian · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
       "hero.ctaCV": "⬇ Download my CV", "hero.ctaLetter": "⬇ Cover letter", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
       "stat.rank": "Valedictorian L2 & L3", "stat.avg": "Overall average", "stat.english": "English C2 · EF SET", "stat.prod": "AI systems @ GE HealthCare",
@@ -369,7 +371,8 @@ const translations = {
     ar: {
       "page.title": "المعرض - مفتاح زينب",
       "header.title": "مفتاح زينب",
-      "header.subtitle": "كفاءة مزدوجة: هندسة برمجيات + ذكاء اصطناعي · MLOps · تعلّم عميق",
+      "header.subtitle": "أُصمّم أنظمة ذكاء اصطناعي مستقلة، منشورة في الإنتاج.",
+      "header.tagline": "كفاءة مزدوجة: هندسة برمجيات + ذكاء اصطناعي · MLOps · تعلّم عميق",
       "hero.chip0": "ملف مزدوج: هندسة + ذكاء اصطناعي", "hero.chip1": "الأولى على الدفعة · 1/126", "hero.chip2": "ذكاء اصطناعي في الإنتاج @ GE HealthCare", "hero.chip3": "إنجليزية C2 · 92/100",
       "hero.ctaCV": "⬇ تحميل سيرتي الذاتية", "hero.ctaLetter": "⬇ رسالة الدافع", "hero.ctaProjects": "مشاريعي", "hero.ctaContact": "تواصل معي",
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
