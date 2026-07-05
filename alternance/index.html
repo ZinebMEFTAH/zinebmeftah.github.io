@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zineb Meftah — Alternance IA 2026</title>
+<meta name="description" content="Ingénieure IA, major de promotion (1re/126). Alternance M1 en Intelligence Artificielle à partir de septembre 2026 — systèmes IA autonomes déployés en production.">
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#121820; --panel-2:#171f2a; --text:#e8edf3; --muted:#94a3b8;
+    --line:#233042; --accent:#5eead4; --accent-2:#38bdf8; --tag:#0f766e; --shadow:0 1px 0 rgba(255,255,255,.03), 0 12px 32px rgba(0,0,0,.35);
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#f6f8fb; --panel:#ffffff; --panel-2:#f1f5f9; --text:#0f172a; --muted:#5b6b7f;
+      --line:#e3e9f0; --accent:#0d9488; --accent-2:#0284c7; --tag:#0d9488; --shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 30px rgba(16,24,40,.08); }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .en .fr{display:none} .fr .en{display:none}   /* language toggle */
+  .wrap{max-width:780px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header.bar{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .brand{font-weight:700;letter-spacing:.2px}
+  .brand .dot{color:var(--accent)}
+  .nav{display:flex;gap:8px;align-items:center}
+  .btn{border:1px solid var(--line);background:var(--panel);color:var(--text);
+    padding:7px 13px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
+  .btn:hover{border-color:var(--accent);text-decoration:none}
+  .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#03211d;border:0}
+  #lang{min-width:42px}
+
+  .hero{padding:64px 0 26px}
+  .kicker{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:clamp(28px,5.2vw,44px);line-height:1.12;margin:0 0 18px;letter-spacing:-.4px}
+  .lead{font-size:clamp(16px,2.3vw,19px);color:var(--muted);max-width:60ch;margin:0 0 26px}
+  .lead b{color:var(--text);font-weight:600}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .cta .btn{padding:11px 18px;font-size:15px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0 8px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 14px;box-shadow:var(--shadow)}
+  .stat .n{font-size:20px;font-weight:800;letter-spacing:-.3px}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  section.block{padding:38px 0 8px}
+  h2{font-size:13px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 18px}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;
+    padding:20px 20px;margin-bottom:14px;box-shadow:var(--shadow);transition:.15s;position:relative}
+  a.card:hover{border-color:var(--accent);transform:translateY(-1px);text-decoration:none}
+  .card h3{margin:0 0 7px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent);
+    border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:3px 9px;margin-bottom:10px}
+  .arrow{color:var(--accent);font-weight:700}
+  .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .quick a{border:1px solid var(--line);background:var(--panel-2);border-radius:9px;padding:9px 13px;font-size:14px;font-weight:600;color:var(--text)}
+  .quick a:hover{border-color:var(--accent);text-decoration:none}
+  .quick a span{color:var(--muted);font-weight:500}
+
+  .meta{margin:30px 0 6px;padding:18px 20px;border-radius:14px;border:1px dashed color-mix(in srgb,var(--accent) 45%,var(--line));
+    background:color-mix(in srgb,var(--accent) 7%,var(--panel));font-size:14.5px;color:var(--text)}
+  .meta b{color:var(--accent)}
+
+  footer{margin-top:46px;border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{margin-left:16px}
+  @media(max-width:520px){footer a{margin:0 16px 0 0}}
+</style>
+</head>
+<body class="fr">
+<header class="bar"><div class="wrap">
+  <div class="brand">Zineb Meftah<span class="dot">.</span></div>
+  <nav class="nav">
+    <button class="btn" id="lang" onclick="toggleLang()" aria-label="Switch language">EN</button>
+    <a class="btn" href="https://www.linkedin.com/in/zineb-meftah" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn primary" href="https://zinebmeftah.github.io/" target="_blank" rel="noopener">
+      <span class="fr">Portfolio</span><span class="en">Portfolio</span></a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="kicker"><span class="fr">Alternance M1 · IA · Septembre 2026</span><span class="en">Work-study · AI · September 2026</span></div>
+    <h1>
+      <span class="fr">Je conçois des systèmes IA autonomes, déployés en production.</span>
+      <span class="en">I build autonomous AI systems, deployed in production.</span>
+    </h1>
+    <p class="lead">
+      <span class="fr">Étudiante en Intelligence Artificielle, <b>major de promotion (1ʳᵉ/126)</b>. Je cherche une <b>alternance M1 en IA à partir de septembre 2026</b> (Paris / Île-de-France) — ouverte à un CDI ou un CDD selon votre besoin.</span>
+      <span class="en">AI student, <b>top of my class (1st of 126)</b>. I'm looking for a <b>work-study (alternance) M1 in AI from September 2026</b> (Paris area) — open to a permanent or fixed-term role.</span>
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="https://www.linkedin.com/in/zineb-meftah" target="_blank" rel="noopener">
+        <span class="fr">Me contacter</span><span class="en">Get in touch</span></a>
+      <a class="btn" href="https://zinebmeftah.github.io/" target="_blank" rel="noopener">
+        <span class="fr">Portfolio complet →</span><span class="en">Full portfolio →</span></a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">1ʳᵉ / 126</div><div class="l"><span class="fr">Major de promotion L2 & L3 IA</span><span class="en">Top of class, L2 & L3 AI</span></div></div>
+      <div class="stat"><div class="n">GE HealthCare</div><div class="l"><span class="fr">RAG en production (stage IA/MLOps)</span><span class="en">Production RAG (AI/MLOps intern)</span></div></div>
+      <div class="stat"><div class="n">C2 · 92/100</div><div class="l"><span class="fr">Anglais (EF SET) · ENSIA T. Bien</span><span class="en">English (EF SET) · ENSIA honors</span></div></div>
+      <div class="stat"><div class="n">Sept. 2026</div><div class="l"><span class="fr">Disponible · Master IA validé</span><span class="en">Available · AI Master admitted</span></div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="fr">Preuves en production</span><span class="en">Proof, in production</span></h2>
+
+    <div class="card">
+      <span class="tag"><span class="fr">Production · GE HealthCare</span><span class="en">Production · GE HealthCare</span></span>
+      <h3><span class="fr">Agent RAG sur documentation technique réglementée</span><span class="en">RAG agent over regulated technical docs</span></h3>
+      <p><span class="fr">Retrieval étagé (BM25 → reranker cross-encoder → LLM), prompt caching (~80 % de coûts d'inférence en moins), déduplication sémantique, décomposition de requêtes. Des heures de recherche documentaire expert remplacées par une requête en langage naturel, sources citées.</span>
+      <span class="en">Tiered retrieval (BM25 → cross-encoder reranker → LLM), prompt caching (~80% lower inference cost), semantic dedup, query decomposition. Hours of expert document lookup replaced by a natural-language query with cited sources.</span></p>
+    </div>
+
+    <a class="card" href="https://github.com/ZinebMEFTAH/stationf-outreach-agent" target="_blank" rel="noopener">
+      <span class="tag"><span class="fr">Live · code public</span><span class="en">Live · open source</span></span>
+      <h3><span class="fr">Agent d'outreach autonome — ce site vous a peut-être été envoyé par lui <span class="arrow">↗</span></span><span class="en">Autonomous outreach agent — it may have sent you here <span class="arrow">↗</span></span></h3>
+      <p><span class="fr">Scraping Playwright → qualification LLM des opportunités → personnalisation par entreprise → envoi SMTP + relances, orchestré en skills Claude Code et déployé en production sur un VM. L'email lui-même est le portfolio.</span>
+      <span class="en">Playwright scraping → LLM opportunity qualification → per-company personalization → SMTP sending + follow-ups, orchestrated as Claude Code skills and deployed on a VM. The email itself is the portfolio.</span></p>
+    </a>
+
+    <a class="card" href="https://huggingface.co/spaces/zino36/lerobot-pusht-trainer" target="_blank" rel="noopener">
+      <span class="tag"><span class="fr">Démo live · Hugging Face</span><span class="en">Live demo · Hugging Face</span></span>
+      <h3><span class="fr">LeRobot — pipeline MLOps de RL robotique (ACT) <span class="arrow">↗</span></span><span class="en">LeRobot — robotic RL MLOps pipeline (ACT) <span class="arrow">↗</span></span></h3>
+      <p><span class="fr">Entraînement d'une politique de manipulation (tâche PushT) avec Action Chunking Transformer : collecte de démos → preprocessing → entraînement → évaluation. Modèle et UI d'entraînement publiés — réentraînables sans GPU local.</span>
+      <span class="en">Training a manipulation policy (PushT task) with an Action Chunking Transformer: demo collection → preprocessing → training → evaluation. Model and training UI published — retrainable with no local GPU.</span></p>
+    </a>
+
+    <div class="quick">
+      <a href="https://zinebmeftah.github.io/robot-vision-sim/" target="_blank" rel="noopener"><span class="fr">🎮 Démo Computer Vision</span><span class="en">🎮 Computer-vision demo</span> <span>↗</span></a>
+      <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" rel="noopener"><span class="fr">📄 Article de recherche (HF)</span><span class="en">📄 Research write-up (HF)</span> <span>↗</span></a>
+      <a href="https://github.com/ZinebMEFTAH" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+      <a href="https://huggingface.co/zino36" target="_blank" rel="noopener">Hugging Face <span>↗</span></a>
+    </div>
+
+    <div class="meta">
+      <span class="fr"><b>Méta-preuve.</b> Ce site et l'email qui vous y a peut-être amené font partie d'un même système IA que j'ai conçu, testé et déployé en production. C'est exactement ce type d'ingénierie IA de bout en bout que je veux construire avec vous.</span>
+      <span class="en"><b>Meta-proof.</b> This page and the email that may have brought you here are part of one AI system I designed, tested and deployed in production. That end-to-end AI engineering is exactly what I want to build with you.</span>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div><span class="fr">Zineb Meftah — Ingénieure IA · Paris</span><span class="en">Zineb Meftah — AI Engineer · Paris</span></div>
+  <div>
+    <a href="https://www.linkedin.com/in/zineb-meftah" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/ZinebMEFTAH" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://zinebmeftah.github.io/" target="_blank" rel="noopener">Portfolio</a>
+  </div>
+</div></footer>
+
+<script>
+  function toggleLang(){
+    var b=document.body, to=b.classList.contains('fr')?'en':'fr';
+    b.classList.remove('fr','en'); b.classList.add(to);
+    document.documentElement.lang=to;
+    document.getElementById('lang').textContent = to==='fr' ? 'EN' : 'FR';
+    try{localStorage.setItem('lang',to)}catch(e){}
+  }
+  (function(){
+    var saved; try{saved=localStorage.getItem('lang')}catch(e){}
+    var nav=(navigator.language||'fr').slice(0,2);
+    var lang = saved || (nav==='en'?'en':'fr');
+    if(lang==='en'){document.body.classList.remove('fr');document.body.classList.add('en');
+      document.documentElement.lang='en';document.getElementById('lang').textContent='FR';}
+  })();
+</script>
+</body>
+</html>
