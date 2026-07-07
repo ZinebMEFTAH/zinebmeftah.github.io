@@ -157,7 +157,7 @@ const translations = {
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
       "profile.text1": "Major de promotion en L2 et L3 à l'Université d'Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d'élite de l'ENSIA (Alger). Actuellement en stage d'ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d'IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
-      "profile.text2": "J'ai notamment développé un agent RAG permettant d'interroger des documentations techniques complexes en langage naturel, ainsi qu'un système d'outreach IA entièrement autonome déployé en production. À la rentrée 2026, j'intègre en alternance le Master 1 MLSD (Machine Learning pour la Science des Données) à l'Université Paris Cité.",
+      "profile.text2": "J'ai notamment développé un agent RAG permettant d'interroger des documentations techniques complexes en langage naturel, un système d'outreach IA entièrement autonome déployé en production, ainsi qu'un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. À la rentrée 2026, j'intègre en alternance le Master 1 MLSD (Machine Learning pour la Science des Données) à l'Université Paris Cité.",
       "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d'ingénieure — code, backend, systèmes complexes — et la maîtrise de l'IA pour en faire des solutions qui tournent réellement, en production.",
 
       // FORMATION
@@ -169,6 +169,7 @@ const translations = {
       "formation.avignon.desc": "<strong>Licence Informatique — Parcours IA :</strong> Major de promotion L2 & L3 (1ʳᵉ sur 126), moyenne > 15/20.",
       "projects.stationf.title": "Agent d'Outreach IA · Production", "projects.stationf.short": "Système d'IA autonome déployé en production.", "projects.stationf.desc": "Pipeline d'IA entièrement autonome en production : qualification d'offres par LLM, génération d'emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Oracle Cloud VM.",
       "projects.gerag.title": "Agent RAG · GE HealthCare", "projects.gerag.short": "Recherche documentaire en langage naturel.", "projects.gerag.desc": "Agent RAG en production chez GE HealthCare permettant d'interroger des documentations techniques complexes en langage naturel, avec réponses sourcées — réduisant des recherches de plusieurs heures à quelques secondes. Stack : Python, LLM, retrieval multi-étapes, intégrations d'outils internes.",
+      "projects.content.title": "Moteur de Contenu Autonome · Multi-Plateformes", "projects.content.short": "Création & publication de contenu 100% automatisées.", "projects.content.desc": "Système autonome en boucle fermée qui crée et publie du contenu sur YouTube, TikTok, Instagram et Facebook. Volet musique : chansons publiées sur fond vidéo bouclé avec scripts, gestion de playlists, validation, séries d'images sur Instagram, journalisation de chaque publication dans Google Sheets ; des workflows récupèrent vues et likes, les stockent, et chaque semaine un workflow sélectionne le meilleur titre et le republie sur une chaîne « best-of » dédiée. Volet influence : un influenceur IA met en scène un produit et le publie avec un lien d'affiliation Amazon. Pilotage par simple email (plateforme, chaîne, langue, contenu) — le système fait le reste et répond avec le lien du post et le lien d'affiliation. Workflows orchestrés sur n8n, déployé sur AWS EC2.",
       "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (2026). Agent RAG en production ; pipeline complet codé de bout en bout (skills modulaires), puis architecture multi-agents sur Microsoft Copilot Studio pour optimiser la qualité et les temps de traitement.",
       "formation.bac.title": "Baccalauréat Scientifique",
       "formation.bac.desc": "<strong>Mention :</strong> Excellent — Moyenne 17,82",
@@ -258,9 +259,9 @@ const translations = {
       "header.title": "Zineb Meftah",
       "header.subtitle": "I build autonomous AI systems that run in production.",
       "header.tagline": "Software engineering + AI · MLOps · Deep Learning",
-      "hero.chip0": "Dual profile: Engineering + AI", "hero.chip1": "Valedictorian · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
+      "hero.chip0": "Dual profile: Engineering + AI", "hero.chip1": "Top of class · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · 92/100",
       "hero.ctaCV": "⬇ Download my CV", "hero.ctaLetter": "⬇ Cover letter", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
-      "stat.rank": "Valedictorian L2 & L3", "stat.avg": "Overall average", "stat.english": "English C2 · EF SET", "stat.prod": "AI systems @ GE HealthCare",
+      "stat.rank": "Top of class · L2 & L3", "stat.avg": "Overall average", "stat.english": "English C2 · EF SET", "stat.prod": "AI systems @ GE HealthCare",
       "badge.production": "Production",
       
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
@@ -272,8 +273,8 @@ const translations = {
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
-      "profile.text1": "Valedictorian in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Currently an AI & MLOps Engineering intern at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
-      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, and a fully autonomous AI outreach system deployed in production. In September 2026 I start the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité as a work-study student.",
+      "profile.text1": "Ranked 1st of my class in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Currently an AI & MLOps Engineering intern at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
+      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, a fully autonomous AI outreach system deployed in production, and a closed-loop content engine that creates and publishes across YouTube, TikTok, Instagram and Facebook. In September 2026 I start the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité as a work-study student.",
       "profile.highlight": "What sets me apart: combining genuine engineering rigor — code, backend, complex systems — with strong AI expertise to ship solutions that actually run in production.",
 
       // FORMATION
@@ -282,9 +283,10 @@ const translations = {
       "formation.ensia.title": "ENSIA, Algeria",
       "formation.ensia.desc": "<strong>Elite AI preparatory program</strong> — ultra-selective national school, taught entirely in English. 1st & 2nd years completed (120 ECTS, High Honors).",
       "formation.avignon.title": "Avignon University (CERI), France",
-      "formation.avignon.desc": "<strong>BSc Computer Science — AI track:</strong> Valedictorian in L2 & L3 (1st of 126), average > 15/20.",
+      "formation.avignon.desc": "<strong>BSc Computer Science — AI track:</strong> Ranked 1st in L2 & L3 (1st of 126), average > 15/20.",
       "projects.stationf.title": "AI Outreach Agent · Production", "projects.stationf.short": "Fully autonomous AI system in production.", "projects.stationf.desc": "Fully autonomous AI pipeline in production: LLM-based opportunity qualification, personalized email generation, SMTP delivery, IMAP follow-up and reply classification. 7 LLM skills orchestrated on cron. Stack: Python, Claude API, Playwright, Oracle Cloud VM.",
       "projects.gerag.title": "RAG Agent · GE HealthCare", "projects.gerag.short": "Natural-language document retrieval.", "projects.gerag.desc": "Production RAG agent at GE HealthCare letting teams query complex technical documentation in natural language with cited sources — turning hours of manual lookup into seconds. Stack: Python, LLM, multi-step retrieval, internal tool integrations.",
+      "projects.content.title": "Autonomous Content Engine · Multi-Platform", "projects.content.short": "Fully automated content creation & publishing.", "projects.content.desc": "A closed-loop autonomous system that creates and publishes content across YouTube, TikTok, Instagram and Facebook. Music track: songs published over looping video backgrounds with scripts, playlist management, validation, image sets on Instagram, and every publication logged to Google Sheets; companion workflows scrape views and likes, store the metrics, and each week a workflow picks the top performer and republishes it to a dedicated \"best-of\" channel. Influencer track: an AI influencer showcases a product and publishes it with an Amazon affiliate link. Driven by a simple email (platform, channel, language, content) — the system does the rest and replies with the post link and the affiliate link. Workflows orchestrated on n8n, deployed on AWS EC2.",
       "experience.ge.title": "GE HealthCare — AI & MLOps Intern", "experience.ge.detail": "AI & MLOps Engineering internship — Paris (2026). Production RAG agent; full pipeline coded end to end (modular skills), then a multi-agent architecture on Microsoft Copilot Studio to optimize answer quality and processing time.",
       "formation.bac.title": "Scientific Baccalaureate",
       "formation.bac.desc": "<strong>Honors:</strong> Excellent — Average 17.82",
@@ -385,7 +387,7 @@ const translations = {
 
       "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
       "profile.text1": "طالبة علوم الحاسوب، الأولى على دفعتها (السنتان الثانية والثالثة) بجامعة أفينيون (1 من 126، معدل > 15/20) وخريجة الطور التحضيري النخبوي لمدرسة ENSIA (الجزائر). حاليًا متدربة في هندسة الذكاء الاصطناعي وMLOps لدى GE HealthCare بباريس، أصمّم وأنشر أنظمة ذكاء اصطناعي في الإنتاج: وكلاء RAG، وخطوط معالجة LLM، وأنظمة مستقلة.",
-      "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج. في سبتمبر 2026 ألتحق بالتناوب بماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي.",
+      "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج، ومحرّك محتوى مستقل بحلقة مغلقة يُنشئ وينشر على يوتيوب وتيك توك وإنستغرام وفيسبوك. في سبتمبر 2026 ألتحق بالتناوب بماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي.",
       "profile.highlight": "ما يميّزني: الجمع بين صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — وإتقان الذكاء الاصطناعي لإنتاج حلول تعمل فعليًا في الإنتاج.",
 
       // FORMATION
@@ -463,6 +465,7 @@ const translations = {
       "projects.clustering.title": "تجزئة العملاء", "projects.clustering.short": "تحليل بيانات.", "projects.clustering.desc": "تحليل سلوك العملاء (K-Means).",
       "projects.p0.title": "مولد مواقع الويب", "projects.p0.short": "من نص إلى موقع.", "projects.p0.desc": "منصّة تحوّل طلبًا بسيطًا بلغة طبيعية إلى موقع ويب مخصّص كامل، موجّهة لمن لا خبرة تقنية لديهم. قيد التطوير. التقنيات: Next.js وTypeScript وLLM.",
       "projects.p2.title": "News Wave", "projects.p2.short": "رسائل أخبار مخصّصة بالذكاء الاصطناعي.", "projects.p2.desc": "خدمة بريد إخباري مخصّص: عناوين مُعاد صياغتها حسب اهتماماتك ومصادرك، وتتحسّن من نقراتك. قيد التطوير: تنبيهات فورية للأخبار العاجلة الخاصة بكل مستخدم.",
+      "projects.content.title": "محرّك محتوى مستقل · متعدّد المنصّات", "projects.content.short": "إنشاء ونشر المحتوى بشكل آلي بالكامل.", "projects.content.desc": "نظام مستقل بحلقة مغلقة يُنشئ وينشر المحتوى على يوتيوب وتيك توك وإنستغرام وفيسبوك. مسار الموسيقى: أغانٍ تُنشر على خلفية فيديو متكرّرة مع نصوص، وإدارة قوائم التشغيل، والتحقّق، ومجموعات صور على إنستغرام، وتسجيل كل عملية نشر في Google Sheets؛ وتقوم مسارات أخرى بجمع المشاهدات والإعجابات وتخزينها، وأسبوعيًا يختار مسارٌ الأفضل ويعيد نشره على قناة «الأفضل» مخصّصة. مسار التأثير: مؤثّر بالذكاء الاصطناعي يعرض منتجًا وينشره مع رابط عمولة أمازون. يُدار عبر بريد إلكتروني بسيط (المنصّة، القناة، اللغة، المحتوى) — والنظام يقوم بالباقي ويردّ برابط المنشور ورابط العمولة. المسارات مُدارة عبر n8n، ومنشورة على AWS EC2.",
       "projects.compiler.title": "مترجم Pascal", "projects.compiler.short": "هندسة مترجم.", "projects.compiler.desc": "تصميم مترجم لـ Mini-Pascal.",
       "projects.nova.title": "نوفا (NOVA)", "projects.nova.short": "مشاهدة متزامنة.", "projects.nova.desc": "منصة اجتماعية للمشاهدة.",
       "projects.cericar.title": "سيري-كار", "projects.cericar.short": "نقل تشاركي.", "projects.cericar.desc": "تطبيق ويب متكامل للنقل.",
