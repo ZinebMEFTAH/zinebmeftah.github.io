@@ -514,6 +514,12 @@ body.light-theme .header-overlay {
     gap: 32px;
     margin-top: 24px;
     animation: fadeIn 1s ease-out;
+    flex-wrap: wrap;
+}
+
+.profile-text {
+    flex: 1 1 340px;
+    min-width: 0;
 }
 
 .profile-image img {
@@ -2532,14 +2538,16 @@ body.light-theme #header {
 
 /* Stats band (About) */
 .stats-band {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 16px; margin-top: 34px;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 16px; margin-top: 0;
+  flex: 1 1 300px; min-width: 260px;
 }
 .stat {
   background: var(--card-bg); border: 1px solid var(--border-color);
   border-radius: 14px; padding: 22px 16px; text-align: center;
   box-shadow: 0 2px 8px var(--shadow-color);
   transition: transform .25s ease, border-color .25s ease;
+  min-width: 0; overflow-wrap: break-word;
 }
 .stat:hover { transform: translateY(-3px); border-color: rgba(var(--primary-rgb), 0.5); }
 .stat-num {
@@ -2601,6 +2609,9 @@ img, svg, video, canvas, table { max-width: 100%; }
   .hero-cta .btn { flex: 1 1 100%; justify-content: center; }
   .profile-highlight { font-size: 1rem; padding: 14px 16px; }
   .stats-band { gap: 12px; }
+  .stat { padding: 18px 10px; }
+  .stat-num { font-size: 1.4rem; overflow-wrap: break-word; }
+  .stat-label { font-size: 0.78rem; }
 }
 
 /* Small phones */

@@ -177,8 +177,9 @@ const translations = {
       "formation.bac.transcript": "Voir relevés de notes",
       "dates.paris": "Septembre 2026 (à venir)",
       "dates.ensia": "2022 - Juin 2024",
-      "dates.avignon": "Septembre 2024 - Aujourd'hui",
+      "dates.avignon": "Septembre 2024 - Juin 2026",
       "common.viewDiploma": "Voir diplôme",
+      "common.viewTranscript": "Relevé des résultats",
 
       // PUBLICATIONS
       "publication.date": "📅 20 décembre 2024",
@@ -294,8 +295,9 @@ const translations = {
       "formation.bac.transcript": "View grade transcripts",
       "dates.paris": "September 2026 (upcoming)",
       "dates.ensia": "2022 - June 2024",
-      "dates.avignon": "Sept 2024 - Present",
+      "dates.avignon": "Sept 2024 - June 2026",
       "common.viewDiploma": "View Diploma",
+      "common.viewTranscript": "Transcript of Records",
 
       // PUBLICATIONS
       "publication.date": "📅 December 20, 2024",
@@ -403,8 +405,9 @@ const translations = {
       "formation.bac.transcript": "عرض كشف النقاط",
       "dates.paris": "سبتمبر 2026 (قادم)",
       "dates.ensia": "2022 - يونيو 2024",
-      "dates.avignon": "سبتمبر 2024 - الحاضر",
+      "dates.avignon": "سبتمبر 2024 - يونيو 2026",
       "common.viewDiploma": "عرض الشهادة",
+      "common.viewTranscript": "كشف النقاط",
 
       // PUBLICATIONS
       "publication.date": "📅 20 ديسمبر 2024",
