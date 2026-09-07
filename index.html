@@ -35,7 +35,72 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/ld+json">
+{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Zineb Meftah",
+          "alternateName": "MEFTAH Zineb",
+          "url": "https://zinebmeftah.github.io/",
+          "image": "https://zinebmeftah.github.io/assets/images/og-card.png",
+          "jobTitle": "Ingénieure IA & MLOps",
+          "description": "Ingénieure IA et MLOps. Conception et déploiement de systèmes d'IA autonomes en production : agents RAG, pipelines LLM, deep learning.",
+          "email": "mailto:zineb.meftah36@gmail.com",
+          "telephone": "+33610790736",
+          "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Île-de-France",
+                "addressCountry": "FR"
+          },
+          "alumniOf": [
+                {
+                      "@type": "CollegeOrUniversity",
+                      "name": "Université d'Avignon (CERI)"
+                },
+                {
+                      "@type": "CollegeOrUniversity",
+                      "name": "ENSIA — École Nationale Supérieure d'Intelligence Artificielle, Alger"
+                }
+          ],
+          "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "Université Paris Cité"
+          },
+          "knowsLanguage": [
+                {
+                      "@type": "Language",
+                      "name": "Arabe",
+                      "alternateName": "ar"
+                },
+                {
+                      "@type": "Language",
+                      "name": "Français",
+                      "alternateName": "fr"
+                },
+                {
+                      "@type": "Language",
+                      "name": "Anglais",
+                      "alternateName": "en"
+                }
+          ],
+          "knowsAbout": [
+                "Intelligence artificielle",
+                "MLOps",
+                "Deep Learning",
+                "RAG",
+                "Large Language Models",
+                "Python",
+                "Computer Vision",
+                "NLP"
+          ],
+          "sameAs": [
+                "https://www.linkedin.com/in/zinebmeftah",
+                "https://github.com/ZinebMEFTAH",
+                "https://huggingface.co/zino36"
+          ]
+    }
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       /* Apply a previously chosen light theme before first paint, so the page never
@@ -226,7 +291,7 @@
             <div class="pub-footer">
               <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" class="publication-link" data-translate="publication.cta" rel="noopener noreferrer">Lire l'article complet</a>
             </div>
-            <h4 data-translate="publication.tableTitle">Exemple de base de données</h4>
+            <h3 class="pub-table-title" data-translate="publication.tableTitle">Exemple de base de données</h3>
             <div class="table-wrapper">
               <table class="sample-table">
                 <thead>
@@ -258,7 +323,7 @@
           <div class="projects-scroll">
 
             <!-- FLAGSHIP: StationF Outreach Agent -->
-            <div class="flip-card featured" tabindex="0" aria-pressed="false">
+            <div class="flip-card featured" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <span class="featured-badge" data-translate="badge.production">Production</span>
@@ -275,7 +340,7 @@
             </div>
 
             <!-- FLAGSHIP: GE HealthCare RAG Agent -->
-            <div class="flip-card featured" tabindex="0" aria-pressed="false">
+            <div class="flip-card featured" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <span class="featured-badge" data-translate="badge.production">Production</span>
@@ -289,7 +354,7 @@
             </div>
 
             <!-- FLAGSHIP: Autonomous Content Engine -->
-            <div class="flip-card featured" tabindex="0" aria-pressed="false">
+            <div class="flip-card featured" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <span class="featured-badge" data-translate="badge.production">Production</span>
@@ -302,7 +367,7 @@
               </div>
             </div>
 
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p9.title">LeRobot PushT Trainer</h3>
@@ -318,8 +383,24 @@
               </div>
             </div>
 
+            <!-- Reinforcement Learning (rl-qlearning-gymnasium) -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3 data-translate="projects.rl.title">Q-Learning · Gymnasium</h3>
+                  <p data-translate="projects.rl.short">Apprentissage par renforcement.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p data-translate="projects.rl.desc">Implémentation de Q-Learning from scratch, entraînée sur plusieurs environnements Gymnasium : Frozen Lake (4×4 et 8×8), Taxi-v3 et Cart Pole. Boucle complète — entraînement, sauvegarde des politiques apprises, puis rejeu de l'agent. Stratégie ε-greedy avec décroissance et discrétisation des états continus pour Cart Pole. Stack : Python, Gymnasium, NumPy.</p>
+                  <div class="card-links">
+                    <a href="https://github.com/ZinebMEFTAH/rl-qlearning-gymnasium" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Lung Cancer Detection (CNN) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.cancer.title">Détection du Cancer du Poumon</h3>
@@ -334,7 +415,7 @@
               </div>
             </div>
 
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p10.title">Robot Vision Simulator</h3>
@@ -352,7 +433,7 @@
 
 
 
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p0.title">Générateur IA de sites web</h3>
@@ -365,7 +446,7 @@
               </div>
             </div>
 
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p2.title">News Wave</h3>
@@ -378,40 +459,24 @@
               </div>
             </div>
 
-            <!-- Sentiment Analysis (NLP) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <!-- NLP Semantic Clustering (nlp-clustering-reviews) -->
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <h3 data-translate="projects.sentiment.title">Analyse de Sentiments (Avis)</h3>
-                  <p data-translate="projects.sentiment.short">NLP &amp; Classification de textes.</p>
+                  <h3 data-translate="projects.clustering.title">Clustering Sémantique d'Avis (NLP)</h3>
+                  <p data-translate="projects.clustering.short">Bag-of-Words vs embeddings neuronaux.</p>
                 </div>
                 <div class="flip-card-back">
-                  <p data-translate="projects.sentiment.desc">Implémentation de modèles NLP pour la classification automatisée de sentiments sur de larges jeux de données textuels.</p>
+                  <p data-translate="projects.clustering.desc">Projet NLP non supervisé sur des avis Amazon : à algorithme constant (K-Means), seule la représentation du texte change — Bag-of-Words contre embeddings de phrases (thenlper/gte-small) — pour isoler leur impact. Projection PCA en 2D et évaluation par score de pureté face aux étiquettes de sentiment réelles. Stack : Python, scikit-learn, Sentence-Transformers.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Customer Segmentation (K-Means) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <h3 data-translate="projects.clustering.title">Segmentation Client (Clustering)</h3>
-                  <p data-translate="projects.clustering.short">Analyse de données non supervisée.</p>
-                </div>
-                <div class="flip-card-back">
-                  <p data-translate="projects.clustering.desc">Application de l'algorithme K-Means pour la segmentation stratégique et l'analyse comportementale des clients.</p>
-                  <div class="card-links">
-                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/nlp-clustering-reviews" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Agricultural Optimization (search / CSP) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p3.title">Optimisation Agricole</h3>
@@ -420,14 +485,14 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p3.desc">Système d'aide à la décision (recherche par graphes, optimisation sous contraintes) pour maximiser la production.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Agricultural-Plan-Optimization" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/Agricultural-Plan-Optimization" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Search Engine (TF-IDF / BM25) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p5.title">Moteur de Recherche</h3>
@@ -436,14 +501,14 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p5.desc">Moteur de recherche haute performance en Java implémentant les modèles TF-IDF et BM25 pour l'indexation.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Search-Engine" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/Search-Engine" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Road Network Analysis (Dijkstra) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p8.title">Analyse Réseau Routier</h3>
@@ -452,14 +517,30 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p8.desc">Analyse structurelle du réseau routier via l'algorithme de Dijkstra et des mesures de connectivité complexes.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Map" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/Map" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AMS monitoring (Servers-Monitoring-System) -->
+            <div class="flip-card" tabindex="0">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <h3 data-translate="projects.ams.title">AMS · Supervision de Serveurs</h3>
+                  <p data-translate="projects.ams.short">Monitoring distribué et alertes.</p>
+                </div>
+                <div class="flip-card-back">
+                  <p data-translate="projects.ams.desc">Système de supervision distribué : collecte des métriques (CPU, RAM, disque, processus), historisation, graphiques SVG et interface web. Détection automatique des situations critiques selon des seuils, avec alerte email à l'administrateur. En mode distribué, un serveur récupère les logs d'un second via scp, fusionne les données et génère des vues combinées. Stack : Python, Flask, Pygal.</p>
+                  <div class="card-links">
+                    <a href="https://github.com/ZinebMEFTAH/Servers-Monitoring-System" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Pascal-like Compiler -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.compiler.title">Compilateur Pascal-like</h3>
@@ -468,14 +549,14 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.compiler.desc">Compilateur Mini-Pascal complet (analyse lexicale, syntaxique, sémantique) développé en C/Flex/Bison.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Mini-Pascal-Compiler" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/MonCompilateur" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- NOVA (Full-Stack) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.nova.title">NOVA</h3>
@@ -491,7 +572,7 @@
             </div>
 
             <!-- CERICar (Full-Stack) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.cericar.title">CERICar</h3>
@@ -507,7 +588,7 @@
             </div>
 
             <!-- G-Jobs (Full-Stack) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p4.title">G-Jobs</h3>
@@ -516,14 +597,14 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p4.desc">Solution de recrutement intelligente avec filtres avancés, messagerie et suivi des candidatures.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/G-JOB" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/G-JOB" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Restaurant Chain Management -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p6.title">Chaîne de Restaurants</h3>
@@ -532,14 +613,14 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p6.desc">Système centralisé de gestion multi-pays (stocks, personnel, rapports financiers) pour chaînes de restauration.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Restaurant-Chain" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/Restaurant-Chain" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Online Supermarket (CLI) -->
-            <div class="flip-card" tabindex="0" aria-pressed="false">
+            <div class="flip-card" tabindex="0">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <h3 data-translate="projects.p7.title">Mon Supermarché Numérique</h3>
@@ -548,7 +629,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p7.desc">Application CLI pour la digitalisation des inventaires et l'automatisation de la gestion des stocks en temps réel.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/SuperMarket" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/SuperMarket" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -571,7 +652,7 @@
           <p class="hover-text" data-translate="projects.hover">Survolez ou cliquez pour voir les détails</p>
           <div class="experience-grid">
             <!-- GE HealthCare — internship, May–July 2026 -->
-            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="experience-card" tabindex="0">
               <div class="experience-media">
                 <img src="assets/images/GE_HealthCare_logo.jpg" alt="GE HealthCare" class="experience-img experience-img-logo" width="480" height="270" loading="lazy" decoding="async" />
                 <div class="experience-details">
@@ -580,7 +661,7 @@
               </div>
               <h3 data-translate="experience.ge.title">GE HealthCare — Stagiaire IA &amp; MLOps</h3>
             </div>
-            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="experience-card" tabindex="0">
               <div class="experience-media">
                 <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🛠️</span><span class="experience-kicker">GDSC ENSIA · 2023 — 2024</span></div>
                 <div class="experience-details">
@@ -589,7 +670,7 @@
               </div>
               <h3 data-translate="experience.card1.title">Responsable informatique</h3>
             </div>
-            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="experience-card" tabindex="0">
               <div class="experience-media">
                 <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🎖️</span><span class="experience-kicker">NNIC · 2021</span></div>
                 <div class="experience-details">
@@ -599,7 +680,7 @@
               </div>
               <h3 data-translate="experience.card2.title">Participant AYLP</h3>
             </div>
-            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="experience-card" tabindex="0">
               <div class="experience-media">
                 <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🎤</span><span class="experience-kicker">Hackathons · 2023 — 2024</span></div>
                 <div class="experience-details">
@@ -608,12 +689,12 @@
               </div>
               <h3 data-translate="experience.card3.title">Organisation d'événements</h3>
             </div>
-            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
+            <div class="experience-card" tabindex="0">
               <div class="experience-media">
                 <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">⭐</span><span class="experience-kicker">2023 — 2024</span></div>
                 <div class="experience-details">
                   <ul class="xp-highlights">
-                    <li data-translate="experience.card4.item1">Hackathon IA Avignon (24h, 2024) — Tech Lead</li>
+                    <li data-translate="experience.card4.item1">Hackathon IA Avignon (24h, 2025) — Tech Lead</li>
                     <li data-translate="experience.card4.item2">Mentor junior – GDSC (2023)</li>
                     <li data-translate="experience.card4.item3">Projet tutoré G‑JOBS (2024) : tâches, Git, review</li>
                   </ul>

@@ -266,15 +266,16 @@ const translations = {
       "experience.card2.title": "Participant AYLP", "experience.card2.detail": "Northern Nevada International Center (2021) — Algerian Youth Leadership Program",
       "experience.card3.title": "Organisation d’événements", "experience.card3.detail": "Organisation de hackathons et d’ateliers en IA et développement web : logistique, mentorat et animation technique.",
       "experience.card4.title": "Autres Réalisations",
-      "experience.card4.item1": "Hackathon IA Avignon (24h, 2024) — Tech Lead", "experience.card4.item2": "Mentor junior – GDSC (2023)", "experience.card4.item3": "Projet tutoré G‑JOBS (2024) : tâches, Git, review",
+      "experience.card4.item1": "Hackathon IA Avignon (24h, 2025) — Tech Lead", "experience.card4.item2": "Mentor junior – GDSC (2023)", "experience.card4.item3": "Projet tutoré G‑JOBS (2024) : tâches, Git, review",
 
       // PROJECTS (UPDATED SECTION)
       "projects.hover": "Survolez ou cliquez pour voir les détails", "projects.link": "Voir le code", "projects.link.modelRepo": "Dépôt du modèle", "projects.link.demoSpace": "Espace de démo", "projects.link.viewCode": "Voir le code", "projects.link.githubRepo": "Dépôt GitHub", "projects.link.liveDemo": "Démo en ligne",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Entraînement de politiques robotiques.", "projects.p9.desc": "Pipeline MLOps complet utilisant des modèles de Diffusion pour l’entraînement de politiques de manipulation robotique. Intégration avec Hugging Face, accélération CUDA et visualisation via Gradio.",
       "projects.cancer.title": "Détection du Cancer du Poumon", "projects.cancer.short": "Diagnostic médical par Deep Learning.", "projects.cancer.desc": "Classification de 4 types de carcinomes pulmonaires via réseaux de neurones convolutifs (CNN) sur imagerie CT.",
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif de vision.", "projects.p10.desc": "Simulateur web intégrant COCO-SSD pour la détection d’objets en temps réel, l’algorithme A* pour la planification de trajectoire et le traitement de commandes en langage naturel.",
-      "projects.sentiment.title": "Analyse de Sentiments (Avis)", "projects.sentiment.short": "NLP & Classification de textes.", "projects.sentiment.desc": "Implémentation de modèles NLP pour la classification automatisée de sentiments sur de larges jeux de données textuels.",
-      "projects.clustering.title": "Segmentation Client (Clustering)", "projects.clustering.short": "Analyse de données non supervisée.", "projects.clustering.desc": "Application de l’algorithme K-Means pour la segmentation stratégique et l’analyse comportementale des clients.",
+      "projects.clustering.title": "Clustering Sémantique d’Avis (NLP)", "projects.clustering.short": "Bag-of-Words vs embeddings neuronaux.", "projects.clustering.desc": "Projet NLP non supervisé sur des avis Amazon : à algorithme constant (K-Means), seule la représentation du texte change — Bag-of-Words contre embeddings de phrases (thenlper/gte-small) — pour isoler leur impact. Projection PCA en 2D et évaluation par score de pureté face aux étiquettes de sentiment réelles. Stack : Python, scikit-learn, Sentence-Transformers.",
+      "projects.rl.title": "Q-Learning · Gymnasium", "projects.rl.short": "Apprentissage par renforcement.", "projects.rl.desc": "Implémentation de Q-Learning from scratch, entraînée sur plusieurs environnements Gymnasium : Frozen Lake (4×4 et 8×8), Taxi-v3 et Cart Pole. Boucle complète — entraînement, sauvegarde des politiques apprises, puis rejeu de l’agent. Stratégie ε-greedy avec décroissance et discrétisation des états continus pour Cart Pole. Stack : Python, Gymnasium, NumPy.",
+      "projects.ams.title": "AMS · Supervision de Serveurs", "projects.ams.short": "Monitoring distribué et alertes.", "projects.ams.desc": "Système de supervision distribué : collecte des métriques (CPU, RAM, disque, processus), historisation, graphiques SVG et interface web. Détection automatique des situations critiques selon des seuils, avec alerte email à l’administrateur. En mode distribué, un serveur récupère les logs d’un second via scp, fusionne les données et génère des vues combinées. Stack : Python, Flask, Pygal.",
       "projects.p0.title": "Générateur IA de sites web", "projects.p0.short": "Du texte au site web fonctionnel.", "projects.p0.desc": "Une plateforme qui transforme une simple demande en langage naturel en site web personnalisé complet, pensée pour des personnes sans compétences techniques. En développement. Stack : Next.js, TypeScript, LLM.",
       "projects.p2.title": "News Wave", "projects.p2.short": "Emails d’actualité personnalisés par IA.", "projects.p2.desc": "Service d’emails d’actualité personnalisés : titres reformulés selon vos centres d’intérêt et vos sources, qui s’affine à partir de vos clics. En cours : alertes temps réel pour les news urgentes propres à chaque utilisateur.",
       "projects.compiler.title": "Compilateur Pascal-like", "projects.compiler.short": "Architecture de compilateur complète.", "projects.compiler.desc": "Compilateur Mini-Pascal complet (analyse lexicale, syntaxique, sémantique) développé en C/Flex/Bison.",
@@ -380,15 +381,16 @@ const translations = {
       "experience.card2.title": "AYLP Participant", "experience.card2.detail": "Northern Nevada International Center (2021) — Algerian Youth Leadership Program",
       "experience.card3.title": "Event Organizer", "experience.card3.detail": "Organized AI and web-development hackathons and workshops: logistics, mentoring, and technical facilitation.",
       "experience.card4.title": "Other Achievements",
-      "experience.card4.item1": "AI Hackathon Avignon (24h, 2024) — Tech Lead", "experience.card4.item2": "Junior Mentor – GDSC (2023)", "experience.card4.item3": "Supervised project G‑JOBS (2024): tickets, Git, reviews",
+      "experience.card4.item1": "AI Hackathon Avignon (24h, 2025) — Tech Lead", "experience.card4.item2": "Junior Mentor – GDSC (2023)", "experience.card4.item3": "Supervised project G‑JOBS (2024): tickets, Git, reviews",
 
       // PROJECTS (UPDATED SECTION)
       "projects.hover": "Hover or click for details", "projects.link": "View Code", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "Full MLOps pipeline (Diffusion models, Hugging Face, Gradio) for training robotic manipulation policies (PushT).",
       "projects.cancer.title": "Lung Cancer Detection", "projects.cancer.short": "Medical Diagnosis via Deep Learning.", "projects.cancer.desc": "Classification of 4 types of lung carcinomas using Convolutional Neural Networks (CNNs) on CT scans.",
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Interactive Vision Simulator.", "projects.p10.desc": "Web-based robotics simulator integrating COCO-SSD (object detection), A* (pathfinding), and NLP commands.",
-      "projects.sentiment.title": "Sentiment Analysis (Reviews)", "projects.sentiment.short": "NLP & Text Classification.", "projects.sentiment.desc": "Implementation of NLP models for automated sentiment classification across large text datasets.",
-      "projects.clustering.title": "Customer Segmentation (Clustering)", "projects.clustering.short": "Unsupervised Data Analysis.", "projects.clustering.desc": "Application of the K-Means algorithm for strategic customer segmentation and behavioral analysis.",
+      "projects.clustering.title": "Semantic Review Clustering (NLP)", "projects.clustering.short": "Bag-of-Words vs neural embeddings.", "projects.clustering.desc": "An unsupervised NLP project on Amazon reviews: holding the algorithm fixed (K-Means) and swapping only the text representation — Bag-of-Words against sentence embeddings (thenlper/gte-small) — to isolate their impact. 2D PCA projection and purity scoring against ground-truth sentiment labels. Stack: Python, scikit-learn, Sentence-Transformers.",
+      "projects.rl.title": "Q-Learning · Gymnasium", "projects.rl.short": "Reinforcement learning.", "projects.rl.desc": "A from-scratch Q-Learning implementation trained on several Gymnasium environments: Frozen Lake (4×4 and 8×8), Taxi-v3 and Cart Pole. Full loop — training, persisting the learned policies, then replaying the agent. Epsilon-greedy exploration with decay, and state discretization for Cart Pole's continuous space. Stack: Python, Gymnasium, NumPy.",
+      "projects.ams.title": "AMS · Server Monitoring", "projects.ams.short": "Distributed monitoring and alerting.", "projects.ams.desc": "A distributed monitoring system: metric collection (CPU, RAM, disk, processes), history, SVG charts and a web interface. Automatic threshold-based detection of critical conditions with email alerts to the administrator. In distributed mode one server pulls a second server's logs over scp, merges the data and renders combined views. Stack: Python, Flask, Pygal.",
       "projects.p0.title": "AI Website Generator", "projects.p0.short": "Text to Functional Website.", "projects.p0.desc": "A platform that turns a plain natural-language request into a full personalized website, made for people with no technical background. In development. Stack: Next.js, TypeScript, LLM.",
       "projects.p2.title": "News Wave", "projects.p2.short": "AI-personalized news emails.", "projects.p2.desc": "A personalized news-email service: headlines rewritten to your interests and sources, refined from your clicks. In progress: real-time alerts for news urgent to each individual user.",
       "projects.compiler.title": "Pascal-like Compiler", "projects.compiler.short": "Full Compiler Architecture.", "projects.compiler.desc": "Comprehensive Mini-Pascal compiler (lexical, syntactic, and semantic analysis) built with C/Flex/Bison.",
@@ -490,7 +492,7 @@ const translations = {
       "experience.card2.title": "مشاركة في AYLP", "experience.card2.detail": "المركز الدولي لشمال نيفادا (2021) — برنامج القيادة للشباب الجزائري",
       "experience.card3.title": "منظِّمة فعاليات", "experience.card3.detail": "تنظيم هاكاثونات وورش في الذكاء الاصطناعي وتطوير الويب: اللوجستيك، والإرشاد، والتأطير التقني.",
       "experience.card4.title": "إنجازات أخرى",
-      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024) — قائدة تقنية", "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)", "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
+      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2025) — قائدة تقنية", "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)", "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
 
       // PROJECTS (UPDATED SECTION)
       "projects.stationf.title": "وكيل تواصل بالذكاء الاصطناعي · في الإنتاج",
@@ -504,8 +506,9 @@ const translations = {
       "projects.cancer.title": "كشف سرطان الرئة", "projects.cancer.short": "تشخيص الأورام (CT).", "projects.cancer.desc": "تصنيف 4 أنواع من سرطان الرئة باستخدام CNN على صور الأشعة المقطعية.",
 
       "projects.p10.title": "محاكي رؤية الروبوت", "projects.p10.short": "محاكي تفاعلي.", "projects.p10.desc": "محاكي روبوتات ويب.",
-      "projects.sentiment.title": "تحليل المشاعر", "projects.sentiment.short": "تصنيف النصوص.", "projects.sentiment.desc": "نموذج NLP لتحليل المراجعات.",
-      "projects.clustering.title": "تجزئة العملاء", "projects.clustering.short": "تحليل بيانات.", "projects.clustering.desc": "تحليل سلوك العملاء (K-Means).",
+      "projects.clustering.title": "التجميع الدلالي للمراجعات (NLP)", "projects.clustering.short": "Bag-of-Words مقابل التضمينات العصبية.", "projects.clustering.desc": "مشروع معالجة لغة طبيعية غير خاضع للإشراف على مراجعات أمازون: مع تثبيت الخوارزمية (K-Means)، يتغيّر تمثيل النص وحده — Bag-of-Words مقابل تضمينات الجُمل (thenlper/gte-small) — لعزل أثره. إسقاط PCA ثنائي الأبعاد وتقييم بدرجة النقاء مقابل تسميات المشاعر الحقيقية. التقنيات: Python وscikit-learn وSentence-Transformers.",
+      "projects.rl.title": "Q-Learning · Gymnasium", "projects.rl.short": "التعلّم المعزّز.", "projects.rl.desc": "تنفيذ خوارزمية Q-Learning من الصفر، مدرَّبة على عدة بيئات Gymnasium: Frozen Lake (4×4 و8×8) وTaxi-v3 وCart Pole. دورة كاملة — التدريب وحفظ السياسات المتعلَّمة ثم إعادة تشغيل الوكيل. استراتيجية ε-greedy متناقصة وتقطيع الحالات المستمرة في Cart Pole. التقنيات: Python وGymnasium وNumPy.",
+      "projects.ams.title": "AMS · مراقبة الخوادم", "projects.ams.short": "مراقبة موزّعة وتنبيهات.", "projects.ams.desc": "نظام مراقبة موزّع: جمع المقاييس (المعالج، الذاكرة، القرص، العمليات)، وحفظ السجل، ورسوم SVG، وواجهة ويب. كشف تلقائي للحالات الحرجة وفق عتبات، مع تنبيه بالبريد للمسؤول. في الوضع الموزّع يسحب خادم سجلات خادم آخر عبر scp ويدمج البيانات ويولّد عروضًا مجمّعة. التقنيات: Python وFlask وPygal.",
       "projects.p0.title": "مولد مواقع الويب", "projects.p0.short": "من نص إلى موقع.", "projects.p0.desc": "منصّة تحوّل طلبًا بسيطًا بلغة طبيعية إلى موقع ويب مخصّص كامل، موجّهة لمن لا خبرة تقنية لديهم. قيد التطوير. التقنيات: Next.js وTypeScript وLLM.",
       "projects.p2.title": "News Wave", "projects.p2.short": "رسائل أخبار مخصّصة بالذكاء الاصطناعي.", "projects.p2.desc": "خدمة بريد إخباري مخصّص: عناوين مُعاد صياغتها حسب اهتماماتك ومصادرك، وتتحسّن من نقراتك. قيد التطوير: تنبيهات فورية للأخبار العاجلة الخاصة بكل مستخدم.",
       "projects.content.title": "محرّك محتوى مستقل · متعدّد المنصّات", "projects.content.short": "إنشاء ونشر المحتوى بشكل آلي بالكامل.", "projects.content.desc": "نظام مستقل بحلقة مغلقة يُنشئ وينشر المحتوى على يوتيوب وتيك توك وإنستغرام وفيسبوك. مسار الموسيقى: أغانٍ تُنشر على خلفية فيديو متكرّرة مع نصوص، وإدارة قوائم التشغيل، والتحقّق، ومجموعات صور على إنستغرام، وتسجيل كل عملية نشر في Google Sheets؛ وتقوم مسارات أخرى بجمع المشاهدات والإعجابات وتخزينها، وأسبوعيًا يختار مسارٌ الأفضل ويعيد نشره على قناة «الأفضل» مخصّصة. مسار التأثير: مؤثّر بالذكاء الاصطناعي يعرض منتجًا وينشره مع رابط عمولة أمازون. يُدار عبر بريد إلكتروني بسيط (المنصّة، القناة، اللغة، المحتوى) — والنظام يقوم بالباقي ويردّ برابط المنشور ورابط العمولة. المسارات مُدارة عبر n8n، ومنشورة على AWS EC2.",
@@ -764,13 +767,12 @@ const translations = {
   // 13. Flip Card Interactions
   const flipCards = document.querySelectorAll('.flip-card');
   flipCards.forEach(card => {
+    // No role="button" here: these cards contain links, and a widget role
+    // wrapping focusable children breaks screen-reader navigation.
     card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-pressed', 'false');
 
     const toggle = () => {
-      const isFlipped = card.classList.toggle('flipped');
-      card.setAttribute('aria-pressed', String(isFlipped));
+      card.classList.toggle('flipped');
     };
 
     // The hint says "hover or click", so click has to work everywhere -
@@ -793,8 +795,7 @@ const translations = {
   // visitors could never read it.
   document.querySelectorAll('.experience-card').forEach(card => {
     const toggle = () => {
-      const revealed = card.classList.toggle('revealed');
-      card.setAttribute('aria-expanded', String(revealed));
+      card.classList.toggle('revealed');
     };
     card.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;

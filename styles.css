@@ -171,7 +171,7 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
 }
 
 body {
-    font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
     scroll-behavior: smooth;
@@ -2660,4 +2660,13 @@ img, svg, video, canvas, table { max-width: 100%; }
   font-weight: 600;
   opacity: 0.92;
   margin-top: 6px;
+}
+
+/* Was an <h4> under an <h2>, which skipped a heading level; promoted to <h3>
+   and pinned to its previous size so nothing shifts visually. */
+.publication-card .pub-table-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 18px 0 10px;
+  color: var(--text-color);
 }
