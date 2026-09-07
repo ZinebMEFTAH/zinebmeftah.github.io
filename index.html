@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portfolio de Zineb Meftah — Ingénieure IA & MLOps. Systèmes d'IA autonomes en production : agents RAG, pipelines LLM, deep learning. Ex-stagiaire IA &amp; MLOps chez GE HealthCare Paris." />
-    <meta name="keywords" content="Portfolio, Intelligence Artificielle, Développement, Projets, Publications, Formation" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-translate="page.title">Portfolio - Meftah Zineb</title>
+    <meta name="description" content="Portfolio de Zineb Meftah — Ingénieure IA &amp; MLOps. Systèmes d'IA autonomes en production : agents RAG, pipelines LLM, deep learning. Ex-stagiaire IA &amp; MLOps chez GE HealthCare Paris, étudiante en M1 MLSD à l'Université Paris Cité." />
+    <meta name="keywords" content="Zineb Meftah, Ingénieure IA, MLOps, RAG, LLM, Deep Learning, Portfolio, Alternance IA, Paris" />
+    <meta name="author" content="Zineb Meftah" />
+    <link rel="canonical" href="https://zinebmeftah.github.io/" />
+
+    <!-- Social sharing (LinkedIn, X, Slack, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zineb Meftah — Portfolio" />
+    <meta property="og:url" content="https://zinebmeftah.github.io/" />
+    <meta property="og:title" content="Zineb Meftah — Ingénieure IA · MLOps · Deep Learning" />
+    <meta property="og:description" content="Je conçois des systèmes d'IA autonomes, déployés en production : agents RAG, pipelines LLM, MLOps. Major de promotion 1ʳᵉ/126 · Ex-GE HealthCare." />
+    <meta property="og:image" content="https://zinebmeftah.github.io/assets/images/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Zineb Meftah — Ingénieure IA, MLOps, Deep Learning" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zineb Meftah — Ingénieure IA · MLOps · Deep Learning" />
+    <meta name="twitter:description" content="Je conçois des systèmes d'IA autonomes, déployés en production : agents RAG, pipelines LLM, MLOps." />
+    <meta name="twitter:image" content="https://zinebmeftah.github.io/assets/images/og-card.png" />
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/images/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b0f1a" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      /* Apply a previously chosen light theme before first paint, so the page never
+         flashes dark then repaints. Dark stays the default. */
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("pre-light");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="dark-mode">
+  <body>
     <a class="skip-link" href="#main" data-translate="nav.skip">Aller au contenu</a>
     <div class="nav-hover-zone"></div>
     <nav role="navigation" aria-label="Navigation principale">
@@ -39,8 +77,9 @@
           <div class="lang-switcher">
             <div class="lang-toggle" tabindex="0">🌍</div>
             <div class="lang-options">
-              <button data-lang="en">English</button>
-              <button data-lang="fr">Français</button>
+              <button type="button" data-lang="fr" lang="fr">Français</button>
+              <button type="button" data-lang="en" lang="en">English</button>
+              <button type="button" data-lang="ar" lang="ar">العربية</button>
             </div>
           </div>
         </div>
@@ -59,8 +98,8 @@
           <span class="hero-chip">🌐 <span data-translate="hero.chip3">Anglais C2 · LanguageCert</span></span>
         </div>
         <div class="hero-cta">
-          <a href="assets/CV_Zineb_Meftah.pdf" download class="btn btn-primary" data-translate="hero.ctaCV">⬇ Télécharger mon CV</a>
-          <a href="assets/Lettre_Motivation_Zineb_Meftah.pdf" download class="btn btn-primary" data-translate="hero.ctaLetter">⬇ Lettre de motivation</a>
+          <a href="assets/CV_Zineb_Meftah.pdf" download data-doc="cv" data-doc-fr="assets/CV_Zineb_Meftah.pdf" data-doc-en="assets/CV_Zineb_Meftah_EN.pdf" class="btn btn-primary" data-translate="hero.ctaCV">⬇ Télécharger mon CV</a>
+          <a href="assets/Lettre_Motivation_Zineb_Meftah.pdf" download data-doc="letter" data-doc-fr="assets/Lettre_Motivation_Zineb_Meftah.pdf" data-doc-en="assets/Lettre_Motivation_Zineb_Meftah_EN.pdf" class="btn btn-primary" data-translate="hero.ctaLetter">⬇ Lettre de motivation</a>
           <a href="#projects" class="btn btn-secondary" data-translate="hero.ctaProjects">Voir mes projets</a>
           <a href="#contact" class="btn btn-secondary" data-translate="hero.ctaContact">Me contacter</a>
         </div>
@@ -71,42 +110,6 @@
     </header>
 
     <main id="main">
-      <section id="contact" class="section" aria-labelledby="contact-heading">
-        <div class="container">
-          <h2 id="contact-heading" data-translate="contact.heading">Contact</h2>
-          <div class="info-cards">
-            <div class="info-card">
-              <h3 data-translate="info.telephone">☎ Téléphone</h3>
-              <p>+33 (0) 6 10 79 07 36</p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.location">📍 Localisation</h3>
-              <p>Île-de-France, France</p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.email">✉ Email</h3>
-              <p><a href="mailto:zineb.meftah36@gmail.com">zineb.meftah36@gmail.com</a></p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.linkedin">🔗 LinkedIn</h3>
-              <p><a href="https://www.linkedin.com/in/zinebmeftah" target="_blank">Meftah Zineb</a></p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.portfolio">🌐 Portfolio</h3>
-              <p><a href="https://zinebmeftah.github.io" target="_blank">zinebmeftah.github.io</a></p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.github">🐙 GitHub</h3>
-              <p><a href="https://github.com/ZinebMEFTAH" target="_blank">ZinebMEFTAH</a></p>
-            </div>
-            <div class="info-card">
-              <h3 data-translate="info.huggingface">🤖 Hugging Face</h3>
-              <p><a href="https://huggingface.co/zino36" target="_blank">zino36</a></p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="profil" class="section" aria-labelledby="profil-heading">
         <div class="container profile-section">
           <h2 id="profil-heading" data-translate="profile.heading">À Propos de Moi</h2>
@@ -114,7 +117,7 @@
             <div class="profile-text">
               <h3 data-translate="profile.greeting">Bonjour, je suis Meftah Zineb.</h3>
               <p data-translate="profile.text1">Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126 étudiants, moyenne &gt; 15/20) et issue du cycle préparatoire d’élite de l’ENSIA (Alger). Après un stage d’ingénierie IA &amp; MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d’IA en production : agents RAG, pipelines LLM et systèmes autonomes.</p>
-              <p data-translate="profile.text2">J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, ainsi qu’un système d’outreach IA entièrement autonome déployé en production. À la rentrée 2026, j’intègre en alternance le Master 1 MLSD à l’Université Paris Cité.</p>
+              <p data-translate="profile.text2">J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, ainsi qu’un système d’outreach IA entièrement autonome déployé en production. Je suis actuellement en Master 1 MLSD à l’Université Paris Cité, et je cherche l’entreprise où mettre tout cela en pratique — en CDI, CDD ou alternance.</p>
               <p class="profile-highlight" data-translate="profile.highlight">Ce qui me distingue : réunir une vraie rigueur d’ingénieure — code, backend, systèmes complexes — et la maîtrise de l’IA pour en faire des solutions qui tournent réellement, en production.</p>
             </div>
             <div class="stats-band">
@@ -129,14 +132,14 @@
 
 <section id="formation" class="section" aria-labelledby="formation-heading">
         <div class="container">
-          <h2 id="formation-heading" data-translate="formation.heading">Formation & Certifications</h2>
+          <h2 id="formation-heading" data-translate="formation.heading">Formation &amp; Certifications</h2>
           <ul class="formation-timeline">
             <li class="formation-item">
               <span class="formation-icon" aria-hidden="true">🎓</span>
               <div class="formation-content">
                 <h3 data-translate="formation.paris.title">Université Paris Cité, France</h3>
-                <p data-translate="formation.paris.desc" data-translate-html><strong>Master 1 MLSD</strong> — Machine Learning pour la Science des Données, en alternance. L'une des formations en IA les plus reconnues.</p>
-                <p data-translate="dates.paris">Septembre 2026 (à venir)</p>
+                <p data-translate="formation.paris.desc" data-translate-html><strong>Master 1 MLSD</strong> — Machine Learning pour la Science des Données, réalisable en alternance. L'une des formations en IA les plus reconnues.</p>
+                <p data-translate="dates.paris">Depuis septembre 2026 · en cours</p>
               </div>
             </li>
             <li class="formation-item">
@@ -144,8 +147,8 @@
               <div class="formation-content">
                 <h3 data-translate="formation.avignon.title">Université d'Avignon (CERI), France</h3>
                 <p data-translate="formation.avignon.desc" data-translate-html><strong>Licence Informatique — Parcours IA :</strong> Major de promotion L2 &amp; L3 (1ʳᵉ sur 126), moyenne &gt; 15/20.</p>
-                <p data-translate="dates.avignon">Septembre 2024 - Juin 2026</p>
-                <p><a href="assets/images/L3_Informatique_Avignon_Releve_Resultats.pdf" target="_blank" class="cert-link" data-translate="common.viewTranscript">Relevé des résultats</a></p>
+                <p data-translate="dates.avignon">Septembre 2024 — Juin 2026 · obtenue</p>
+                <p><a href="assets/images/L3_Informatique_Avignon_Releve_Resultats.pdf" target="_blank" class="cert-link" data-translate="common.viewTranscript" rel="noopener noreferrer">Relevé des résultats</a></p>
               </div>
             </li>
             <li class="formation-item">
@@ -154,7 +157,7 @@
                 <h3 data-translate="formation.ensia.title">ENSIA, Algérie</h3>
                 <p data-translate="formation.ensia.desc" data-translate-html><strong>Cycle préparatoire d'élite en IA</strong> — école nationale ultra-sélective, cursus entièrement en anglais. 1ʳᵉ et 2ᵉ années validées (120 ECTS, Mention Très Bien).</p>
                 <p data-translate="dates.ensia">2022 - Juin 2024</p>
-                <p><a href="assets/images/Certificat_ENSIA_3eme_année.pdf" target="_blank" class="cert-link" data-translate="common.viewDiploma">Voir diplôme</a></p>
+                <p><a href="assets/images/Certificat_ENSIA_3eme_année.pdf" target="_blank" class="cert-link" data-translate="common.viewDiploma" rel="noopener noreferrer">Voir diplôme</a></p>
               </div>
             </li>
             <li class="formation-item">
@@ -164,8 +167,8 @@
                 <p data-translate="formation.bac.desc" data-translate-html><strong>Mention :</strong> Excellent — Moyenne 17,82</p>
                 <p>2019 / 2022</p>
                 <p>
-                  <a href="assets/images/BAC_Certificat_Officiel.pdf" target="_blank" class="cert-link" data-translate="formation.bac.cert">Voir attestation BAC</a> &nbsp;•&nbsp;
-                  <a href="assets/images/BAC_Releves_Notes.pdf" target="_blank" class="cert-link" data-translate="formation.bac.transcript">Voir relevés de notes</a>
+                  <a href="assets/images/BAC_Certificat_Officiel.pdf" target="_blank" class="cert-link" data-translate="formation.bac.cert" rel="noopener noreferrer">Voir attestation BAC</a> &nbsp;•&nbsp;
+                  <a href="assets/images/BAC_Releves_Notes.pdf" target="_blank" class="cert-link" data-translate="formation.bac.transcript" rel="noopener noreferrer">Voir relevés de notes</a>
                 </p>
               </div>
             </li>
@@ -178,7 +181,7 @@
               <div class="formation-content">
                 <h3 data-translate="certs.aylp.title">Algerian Youth Leadership Program – NNIC</h3>
                 <p data-translate="certs.aylp.desc">Programme d’échanges axé sur le leadership.</p>
-                <p><a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a></p>
+                <p><a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a></p>
               </div>
             </li>
             <li class="formation-item">
@@ -186,7 +189,7 @@
               <div class="formation-content">
                 <h3 data-translate="certs.english.title">LanguageCert C2 — ESOL International (Ofqual)</h3>
                 <p data-translate="certs.english.desc">Certification d'anglais niveau C2, régulée par l'Ofqual (PeopleCert), obtenue en février 2026.</p>
-                <p><a href="assets/images/EF_SET_Certificate.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a></p>
+                <p><a href="assets/images/LanguageCert_C2_Certificate.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a></p>
               </div>
             </li>
             <li class="formation-item">
@@ -194,15 +197,15 @@
               <div class="formation-content">
                 <h3 data-translate="certs.pytorch.title">Introduction to Deep Learning with PyTorch</h3>
                 <p data-translate="certs.pytorch.desc">Formation en ligne sur les réseaux de neurones.</p>
-                <p><a href="assets/images/Deep_Learning_PyTorch.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a></p>
+                <p><a href="assets/images/Deep_Learning_PyTorch.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a></p>
               </div>
             </li>
             <li class="formation-item">
               <span class="formation-icon" aria-hidden="true">🎖️</span>
               <div class="formation-content">
                 <h3 data-translate="certs.fcc.title">Responsive Web Design</h3>
-                <p data-translate="certs.fcc.desc">Certification axée sur les fondamentaux du HTML, CSS.</p>
-                <p><a href="assets/images/responsive_web_design.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a></p>
+                <p data-translate="certs.fcc.desc">Certification axée sur les fondamentaux du HTML et du CSS.</p>
+                <p><a href="assets/images/responsive_web_design.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a></p>
               </div>
             </li>
           </ul>
@@ -218,10 +221,10 @@
               <div class="pub-location" data-translate="publication.location">📍 Hugging Face</div>
             </div>
             <div class="pub-body">
-              <p class="pub-description" data-translate="publication.description">Découvrez notre approche révolutionnaire...</p>
+              <p class="pub-description" data-translate="publication.description">Article technique publié sur Hugging Face : une méthode de génération d’un jeu de données appariant mots-clés et articles, par fine-tuning inversé, pensée pour entraîner des modèles de génération de tags. Il détaille la construction du corpus, le contrôle qualité et les limites de l’approche.</p>
             </div>
             <div class="pub-footer">
-              <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" class="publication-link" data-translate="publication.cta">Lire l'article complet</a>
+              <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" class="publication-link" data-translate="publication.cta" rel="noopener noreferrer">Lire l'article complet</a>
             </div>
             <h4 data-translate="publication.tableTitle">Exemple de base de données</h4>
             <div class="table-wrapper">
@@ -265,7 +268,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.stationf.desc">Pipeline d'IA entièrement autonome en production : qualification d'offres par LLM, génération d'emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Google Cloud VM.</p>
                   <div class="card-links">
-                    <a href="https://github.com/ZinebMEFTAH/stationf-outreach-agent" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Dépôt GitHub</a>
+                    <a href="https://github.com/ZinebMEFTAH/stationf-outreach-agent" target="_blank" class="github-link" data-translate="projects.link.githubRepo" rel="noopener noreferrer">Dépôt GitHub</a>
                   </div>
                 </div>
               </div>
@@ -308,8 +311,8 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p9.desc">Pipeline MLOps complet utilisant des modèles de Diffusion pour l'entraînement de politiques de manipulation robotique. Intégration avec Hugging Face, accélération CUDA et visualisation via Gradio.</p>
                   <div class="card-links">
-                    <a href="https://huggingface.co/zino36/lerobot-pusht-colab" target="_blank" class="github-link" data-translate="projects.link.modelRepo">Dépôt du modèle</a>
-                    <a href="https://huggingface.co/spaces/zino36/lerobot-pusht-trainer" target="_blank" class="github-link" data-translate="projects.link.demoSpace">Espace de démo</a>
+                    <a href="https://huggingface.co/zino36/lerobot-pusht-colab" target="_blank" class="github-link" data-translate="projects.link.modelRepo" rel="noopener noreferrer">Dépôt du modèle</a>
+                    <a href="https://huggingface.co/spaces/zino36/lerobot-pusht-trainer" target="_blank" class="github-link" data-translate="projects.link.demoSpace" rel="noopener noreferrer">Espace de démo</a>
                   </div>
                 </div>
               </div>
@@ -325,7 +328,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.cancer.desc">Classification de 4 types de carcinomes pulmonaires via réseaux de neurones convolutifs (CNN) sur imagerie CT.</p>
                   <div class="card-links">
-                    <a href="https://github.com/ZinebMEFTAH/medical-lung-cancer-classification" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/ZinebMEFTAH/medical-lung-cancer-classification" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -340,8 +343,8 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p10.desc">Simulateur web intégrant COCO-SSD pour la détection d'objets en temps réel, l'algorithme A* pour la planification de trajectoire et le traitement de commandes en langage naturel.</p>
                   <div class="card-links">
-                    <a href="https://github.com/ZinebMEFTAH/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Dépôt GitHub</a>
-                    <a href="https://zinebmeftah.github.io/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.liveDemo">Démo en ligne</a>
+                    <a href="https://github.com/ZinebMEFTAH/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.githubRepo" rel="noopener noreferrer">Dépôt GitHub</a>
+                    <a href="https://zinebmeftah.github.io/robot-vision-sim" target="_blank" class="github-link" data-translate="projects.link.liveDemo" rel="noopener noreferrer">Démo en ligne</a>
                   </div>
                 </div>
               </div>
@@ -357,7 +360,7 @@
                 </div>
                 <div class="flip-card-back">
                   <p data-translate="projects.p0.desc">Une plateforme qui transforme une simple demande en langage naturel en site web personnalisé complet, pensée pour des personnes sans compétences techniques. En développement. Stack : Next.js, TypeScript, LLM.</p>
-                  <a href="https://github.com/personalized-adventure-book/Personalized_Product" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Voir le code sur GitHub</a>
+                  <a href="https://github.com/personalized-adventure-book/Personalized_Product" target="_blank" class="github-link" data-translate="projects.link.githubRepo" rel="noopener noreferrer">Voir le code sur GitHub</a>
                 </div>
               </div>
             </div>
@@ -370,7 +373,7 @@
                 </div>
                 <div class="flip-card-back">
                   <p data-translate="projects.p2.desc">Service d'emails d'actualité personnalisés : titres reformulés selon vos centres d'intérêt et vos sources, qui s'affine à partir de vos clics. En cours : alertes temps réel pour les news urgentes propres à chaque utilisateur.</p>
-                  <a href="https://github.com/ZinebMEFTAH/NewsWave" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                  <a href="https://github.com/ZinebMEFTAH/NewsWave" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                 </div>
               </div>
             </div>
@@ -385,7 +388,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.sentiment.desc">Implémentation de modèles NLP pour la classification automatisée de sentiments sur de larges jeux de données textuels.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -401,7 +404,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.clustering.desc">Application de l'algorithme K-Means pour la segmentation stratégique et l'analyse comportementale des clients.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -417,7 +420,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p3.desc">Système d'aide à la décision (recherche par graphes, optimisation sous contraintes) pour maximiser la production.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Agricultural-Plan-Optimization" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/Agricultural-Plan-Optimization" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -433,7 +436,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p5.desc">Moteur de recherche haute performance en Java implémentant les modèles TF-IDF et BM25 pour l'indexation.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Search-Engine" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/Search-Engine" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -449,7 +452,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p8.desc">Analyse structurelle du réseau routier via l'algorithme de Dijkstra et des mesures de connectivité complexes.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Map" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/Map" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -465,7 +468,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.compiler.desc">Compilateur Mini-Pascal complet (analyse lexicale, syntaxique, sémantique) développé en C/Flex/Bison.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Mini-Pascal-Compiler" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/Mini-Pascal-Compiler" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -481,7 +484,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.nova.desc">Plateforme sociale Full-Stack permettant le visionnage synchronisé de vidéos en temps réel avec messagerie.</p>
                   <div class="card-links">
-                    <a href="https://github.com/NovaProjectIL/IL_PROJECT_NOVA" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Dépôt GitHub</a>
+                    <a href="https://github.com/NovaProjectIL/IL_PROJECT_NOVA" target="_blank" class="github-link" data-translate="projects.link.githubRepo" rel="noopener noreferrer">Dépôt GitHub</a>
                   </div>
                 </div>
               </div>
@@ -497,7 +500,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.cericar.desc">Application web complète de covoiturage gérant les trajets, les réservations et les profils utilisateurs.</p>
                   <div class="card-links">
-                    <a href="https://github.com/ZinebMEFTAH/car-web-app" target="_blank" class="github-link" data-translate="projects.link.githubRepo">Dépôt GitHub</a>
+                    <a href="https://github.com/ZinebMEFTAH/car-web-app" target="_blank" class="github-link" data-translate="projects.link.githubRepo" rel="noopener noreferrer">Dépôt GitHub</a>
                   </div>
                 </div>
               </div>
@@ -513,7 +516,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p4.desc">Solution de recrutement intelligente avec filtres avancés, messagerie et suivi des candidatures.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/G-JOB" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/G-JOB" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -529,7 +532,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p6.desc">Système centralisé de gestion multi-pays (stocks, personnel, rapports financiers) pour chaînes de restauration.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/Restaurant-Chain" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/Restaurant-Chain" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -545,7 +548,7 @@
                 <div class="flip-card-back">
                   <p data-translate="projects.p7.desc">Application CLI pour la digitalisation des inventaires et l'automatisation de la gestion des stocks en temps réel.</p>
                   <div class="card-links">
-                    <a href="https://github.com/zineb-hub/SuperMarket" target="_blank" class="github-link" data-translate="projects.link.viewCode">Voir le code</a>
+                    <a href="https://github.com/zineb-hub/SuperMarket" target="_blank" class="github-link" data-translate="projects.link.viewCode" rel="noopener noreferrer">Voir le code</a>
                   </div>
                 </div>
               </div>
@@ -564,55 +567,55 @@
       
       <section id="experience" class="section" aria-labelledby="experience-heading">
         <div class="container">
-          <h2 id="experience-heading" data-translate="experience.heading">Expérience & Leadership</h2>
+          <h2 id="experience-heading" data-translate="experience.heading">Expérience &amp; Leadership</h2>
           <p class="hover-text" data-translate="projects.hover">Survolez ou cliquez pour voir les détails</p>
           <div class="experience-grid">
             <!-- GE HealthCare — internship, May–July 2026 -->
-            <div class="experience-card">
+            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
               <div class="experience-media">
-                <img src="assets/images/GE_HealthCare_logo.jpg" alt="GE HealthCare" class="experience-img" loading="lazy" style="background:#fff;object-fit:contain;min-height:170px;padding:1rem;" />
+                <img src="assets/images/GE_HealthCare_logo.jpg" alt="GE HealthCare" class="experience-img experience-img-logo" width="480" height="270" loading="lazy" decoding="async" />
                 <div class="experience-details">
                   <p data-translate="experience.ge.detail">Stage Ingénierie IA &amp; MLOps — Paris (2026). Agent RAG en production : pipeline d'abord codé de bout en bout (skills modulaires), puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio (workflows et sous-agents) une fois le coût en tokens du pipeline linéaire devenu le facteur limitant — prétraitement maison conservé en amont, qualité et temps de traitement améliorés.</p>
                 </div>
               </div>
               <h3 data-translate="experience.ge.title">GE HealthCare — Stagiaire IA &amp; MLOps</h3>
             </div>
-            <div class="experience-card">
+            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
               <div class="experience-media">
-                <img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/gdsc-social-share.png" alt="Responsable informatique" class="experience-img" loading="lazy" />
+                <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🛠️</span><span class="experience-kicker">GDSC ENSIA · 2023 — 2024</span></div>
                 <div class="experience-details">
                   <p data-translate="experience.card1.detail">Google Developer Student Club ENSIA (2023–2024) — gestion de l'infrastructure, animation d'ateliers techniques et accompagnement des membres sur leurs projets.</p>
                 </div>
               </div>
               <h3 data-translate="experience.card1.title">Responsable informatique</h3>
             </div>
-            <div class="experience-card">
+            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
               <div class="experience-media">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFIRqUAh8HkjF-tRYnRxGldaMJSuhL54ypA&s" alt="Participant AYLP" class="experience-img" loading="lazy" />
+                <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🎖️</span><span class="experience-kicker">NNIC · 2021</span></div>
                 <div class="experience-details">
-                  <p data-translate="experience.card2.detail">Northern Nevada International Center (2021) Algerian Youth Leadership Program</p>
-                  <p><a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a></p>
+                  <p data-translate="experience.card2.detail">Northern Nevada International Center (2021) — Algerian Youth Leadership Program</p>
+                  <p><a href="assets/images/AYLP.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a></p>
                 </div>
               </div>
               <h3 data-translate="experience.card2.title">Participant AYLP</h3>
             </div>
-            <div class="experience-card">
+            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
               <div class="experience-media">
-                <img src="https://www.defense.gouv.fr/sites/default/files/styles/16_9_md/public/sga/DTPM_2024_02_hackathonIA_visuel.jpg?itok=vb4Tjojo" alt="Organisation d'événements" class="experience-img" loading="lazy" />
+                <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">🎤</span><span class="experience-kicker">Hackathons · 2023 — 2024</span></div>
                 <div class="experience-details">
                   <p data-translate="experience.card3.detail">Organisation de hackathons et d'ateliers en IA et développement web : logistique, mentorat et animation technique.</p>
                 </div>
               </div>
               <h3 data-translate="experience.card3.title">Organisation d'événements</h3>
             </div>
-            <div class="experience-card">
+            <div class="experience-card" tabindex="0" role="button" aria-expanded="false">
               <div class="experience-media">
-                <img src="https://ggba.swiss/app/uploads/2024/04/Idiap-AI-Challenge-2360x1622-1.jpeg" alt="Autres réalisations" class="experience-img" loading="lazy" />
+                <div class="experience-cover" aria-hidden="true"><span class="experience-emoji">⭐</span><span class="experience-kicker">2023 — 2024</span></div>
                 <div class="experience-details">
                   <ul class="xp-highlights">
-                    <li data-translate="experience.card4.item1">Hackathon IA Avignon (24h, 2024)</li>
+                    <li data-translate="experience.card4.item1">Hackathon IA Avignon (24h, 2024) — Tech Lead</li>
                     <li data-translate="experience.card4.item2">Mentor junior – GDSC (2023)</li>
-                    <li data-translate="experience.card4.item3">Projet tutoré G‑JOBS (2024): tâches, Git, review</li>
+                    <li data-translate="experience.card4.item3">Projet tutoré G‑JOBS (2024) : tâches, Git, review</li>
                   </ul>
                 </div>
               </div>
@@ -627,7 +630,7 @@
           <h2 id="competences-heading" data-translate="competences.heading">Compétences</h2>
           
           <div class="skills-category-container">
-            <h3 class="skills-category-title" data-translate="competences.aiDataSkills">IA & Data Science</h3>
+            <h3 class="skills-category-title" data-translate="competences.aiDataSkills">IA &amp; Data Science</h3>
             <div class="skills-grid">
               <div class="skill-card">
                 <div class="skill-card-header">
@@ -646,7 +649,7 @@
                     </ul>
                   </div>
                   <div class="skill-group">
-                    <h5 data-translate="competences.aiTools">Frameworks & Outils</h5>
+                    <h5 data-translate="competences.aiTools">Frameworks &amp; Outils</h5>
                     <ul class="tag-list">
                       <li class="tag">PyTorch</li>
                       <li class="tag">TensorFlow / Keras</li>
@@ -665,7 +668,7 @@
                 </div>
                 <div class="skill-content">
                   <div class="skill-group">
-                    <h5 data-translate="competences.dataAnalysis">Analyse & Visualisation</h5>
+                    <h5 data-translate="competences.dataAnalysis">Analyse &amp; Visualisation</h5>
                     <ul class="tag-list">
                       <li class="tag">Pandas</li>
                       <li class="tag">NumPy</li>
@@ -679,7 +682,7 @@
                     <ul class="feature-list">
                       <li data-translate="competences.project1">Génération de données synthétiques</li>
                       <li data-translate="competences.project4">Fine-tuning</li>
-                      <li data-translate="competences.project2">Clustering & Segmentation (K-Means)</li>
+                      <li data-translate="competences.project2">Clustering &amp; Segmentation (K-Means)</li>
                       <li data-translate="competences.project3">Algorithmes de Graphes (A*, Dijkstra)</li>
                     </ul>
                   </div>
@@ -694,7 +697,7 @@
               <div class="skill-card">
                 <div class="skill-card-header">
                   <span class="skill-icon">💻</span>
-                  <h4 data-translate="competences.programming">Programmation & Systèmes</h4>
+                  <h4 data-translate="competences.programming">Programmation &amp; Systèmes</h4>
                 </div>
                 <div class="skill-content">
                   <div class="skill-group">
@@ -712,7 +715,7 @@
                     </ul>
                   </div>
                   <div class="skill-group">
-                    <h5 data-translate="competences.tools">DevOps & Outils</h5>
+                    <h5 data-translate="competences.tools">DevOps &amp; Outils</h5>
                     <ul class="tag-list">
                       <li class="tag">Docker</li>
                       <li class="tag">Git / GitHub Actions</li>
@@ -769,7 +772,7 @@
               </div>
               <div class="soft-skill-card">
                 <div class="soft-skill-icon">👥</div>
-                <h4 data-translate="competences.teamwork">Leadership & Teamwork</h4>
+                <h4 data-translate="competences.teamwork">Leadership &amp; Teamwork</h4>
                 <p data-translate="competences.teamworkDesc">Expérience GDSC, mentorat, gestion de projets agiles.</p>
               </div>
               <div class="soft-skill-card">
@@ -813,7 +816,7 @@
               </div>
               <p>
                 <span data-translate="langues.englishlevel">Bilingue (C2)</span><br />
-                <a href="assets/images/EF_SET_Certificate.pdf" target="_blank" class="cert-link" data-translate="certs.cta">Voir certificat</a>
+                <a href="assets/images/LanguageCert_C2_Certificate.pdf" target="_blank" class="cert-link" data-translate="certs.cta" rel="noopener noreferrer">Voir certificat</a>
               </p>
             </div>
 
@@ -824,6 +827,45 @@
                 <div class="level-dots"><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span><span class="dot active"></span></div>
               </div>
               <p data-translate="langues.arabicLevel">Langue maternelle</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="container">
+          <h2 id="contact-heading" data-translate="contact.heading">Contact</h2>
+          <div class="info-cards">
+            <div class="info-card">
+              <h3 data-translate="info.telephone">☎ Téléphone</h3>
+              <p>+33 (0) 6 10 79 07 36</p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.location">📍 Localisation</h3>
+              <p>Île-de-France, France</p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.email">✉ Email</h3>
+              <p><a href="mailto:zineb.meftah36@gmail.com">zineb.meftah36@gmail.com</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.linkedin">🔗 LinkedIn</h3>
+              <p><a href="https://www.linkedin.com/in/zinebmeftah" target="_blank" rel="noopener noreferrer">Meftah Zineb</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.portfolio">🌐 Portfolio</h3>
+              <p><a href="https://zinebmeftah.github.io" target="_blank" rel="noopener noreferrer">zinebmeftah.github.io</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.alternance">🎯 Recruteurs</h3>
+              <p><a href="alternance/" data-translate="info.alternanceLink">Page dédiée : alternance / CDI / CDD</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.github">🐙 GitHub</h3>
+              <p><a href="https://github.com/ZinebMEFTAH" target="_blank" rel="noopener noreferrer">ZinebMEFTAH</a></p>
+            </div>
+            <div class="info-card">
+              <h3 data-translate="info.huggingface">🤖 Hugging Face</h3>
+              <p><a href="https://huggingface.co/zino36" target="_blank" rel="noopener noreferrer">zino36</a></p>
             </div>
           </div>
         </div>
@@ -842,8 +884,8 @@
       </div>
       <div id="chat-messages" class="chatbox-messages" aria-live="polite"></div>
       <form id="chat-form" class="chatbox-form">
-        <input id="chat-input" type="text" data-translate-placeholder="chat.placeholder" placeholder="Ask a question..." autocomplete="off" />
-        <button type="submit" data-translate="chat.send">Send</button>
+        <input id="chat-input" type="text" data-translate-placeholder="chat.placeholder" placeholder="Posez une question..." autocomplete="off" />
+        <button type="submit" data-translate="chat.send">Envoyer</button>
       </form>
     </div>
     <script src="script.js"></script>

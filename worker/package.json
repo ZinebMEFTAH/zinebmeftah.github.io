@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-chat-worker",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "test": "node test/worker.test.mjs"
+  },
+  "type": "module",
+  "devDependencies": {
+    "wrangler": "^4.129.0"
+  }
+}

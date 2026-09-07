@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 0. Shared state
+  const CHAT_ENDPOINT = "https://portfolio-chat.zinebmeftah.workers.dev";
+  const SUPPORTED_LANGS = ["fr", "en", "ar"];
+  const DEFAULT_LANG = "fr";
+  let currentLang = DEFAULT_LANG;
+
+  // Assigned by the chat widget below; no-ops when the widget is absent.
+  let greetOnce = () => {};
+  let refreshChatGreeting = () => {};
+
+  // Translation lookup. Safe once translatePage() has run.
+  function t(key) {
+    const dict = translations[currentLang] || translations[DEFAULT_LANG] || {};
+    return dict[key] != null ? dict[key] : (translations[DEFAULT_LANG] || {})[key] || "";
+  }
+
   // 1. Language Switcher Logic
   const langToggle = document.querySelector(".lang-toggle");
   const langSwitcher = document.querySelector(".lang-switcher");
@@ -57,6 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
       div.textContent = text;
       chatMessages.appendChild(div);
       chatMessages.scrollTop = chatMessages.scrollHeight;
+      return div;
+    };
+
+    // The greeting has to follow the language the visitor picked.
+    let greeting = null;
+    greetOnce = () => {
+      greeting = append(t("chat.greeting"), "bot");
+    };
+    refreshChatGreeting = () => {
+      if (greeting) greeting.textContent = t("chat.greeting");
+      chatInput.setAttribute("aria-label", t("chat.placeholder"));
     };
 
     const openChat = () => chatBox.classList.remove("hidden");
@@ -103,24 +130,38 @@ document.addEventListener("DOMContentLoaded", () => {
       chatInput.value = "";
       append(q, "user");
 
+      const pending = append(t("chat.thinking"), "bot pending");
+      const submitBtn = chatForm.querySelector("button[type=submit]");
+      if (submitBtn) submitBtn.disabled = true;
+
       try {
-        const res = await fetch("https://portfolio-chat.zinebmeftah.workers.dev", {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 30000);
+        const res = await fetch(CHAT_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             message: q,
+            lang: document.documentElement.getAttribute("lang") || "fr",
             context: buildContext()
-          })
+          }),
+          signal: controller.signal
         });
+        clearTimeout(timeout);
 
-        const data = await res.json();
-        append(data.answer || "No answer.", "bot");
+        // A provider outage must never leak its error text into the page.
+        const data = await res.json().catch(() => ({}));
+        const answer = res.ok && typeof data.answer === "string" ? data.answer.trim() : "";
+        pending.remove();
+        append(answer || t("chat.unavailable"), answer ? "bot" : "bot error");
       } catch (err) {
-        append("Server error. Try again later.", "bot");
+        pending.remove();
+        append(t("chat.unavailable"), "bot error");
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
       }
     });
 
-    append("Hi. Ask me anything about my projects.", "bot");
   }
 
   // 4. Translations Data
@@ -128,6 +169,7 @@ const translations = {
     fr: {
       // ... (Keep previous translations the same) ...
       "page.title": "Portfolio - Meftah Zineb",
+      "nav.title": "Meftah Zineb",
       "header.title": "MEFTAH Zineb",
       "header.subtitle": "Je conçois des systèmes IA autonomes, déployés en production.",
       "header.tagline": "Double compétence : ingénierie logicielle + IA · MLOps · Deep Learning",
@@ -143,6 +185,7 @@ const translations = {
 
       // Contact
       "info.telephone": "☎ Téléphone", "info.location": "📍 Localisation", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
+      "info.alternance": "🎯 Recruteurs", "info.alternanceLink": "Page dédiée : alternance / CDI / CDD",
 
       // Section Headers
       "formation.heading": "Formation & Certifications",
@@ -156,50 +199,50 @@ const translations = {
       // Profile
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Meftah Zineb.",
-      "profile.text1": "Major de promotion en L2 et L3 à l'Université d'Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d'élite de l'ENSIA (Alger). Après un stage d'ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d'IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
-      "profile.text2": "J'ai notamment développé un agent RAG permettant d'interroger des documentations techniques complexes en langage naturel, un système d'outreach IA entièrement autonome déployé en production, ainsi qu'un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. À la rentrée 2026, j'intègre en alternance le Master 1 MLSD (Machine Learning pour la Science des Données) à l'Université Paris Cité.",
-      "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d'ingénieure — code, backend, systèmes complexes — et la maîtrise de l'IA pour en faire des solutions qui tournent réellement, en production.",
+      "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d’élite de l’ENSIA (Alger). Après un stage d’ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d’IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
+      "profile.text2": "J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, un système d’outreach IA entièrement autonome déployé en production, ainsi qu’un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. Je suis actuellement en Master 1 MLSD (Machine Learning pour la Science des Données) à l’Université Paris Cité, et je cherche l’entreprise où mettre tout cela en pratique — en CDI, CDD ou alternance.",
+      "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d’ingénieure — code, backend, systèmes complexes — et la maîtrise de l’IA pour en faire des solutions qui tournent réellement, en production.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
-      "formation.paris.desc": "<strong>Master 1 MLSD</strong> — Machine Learning pour la Science des Données, en alternance. L'une des formations en IA les plus reconnues.",
+      "formation.paris.desc": "<strong>Master 1 MLSD</strong> — Machine Learning pour la Science des Données, réalisable en alternance. L’une des formations en IA les plus reconnues.",
       "formation.ensia.title": "ENSIA, Algérie",
-      "formation.ensia.desc": "<strong>Cycle préparatoire d'élite en IA</strong> — école nationale ultra-sélective, cursus entièrement en anglais. 1ʳᵉ et 2ᵉ années validées (120 ECTS, Mention Très Bien).",
-      "formation.avignon.title": "Université d'Avignon (CERI), France",
+      "formation.ensia.desc": "<strong>Cycle préparatoire d’élite en IA</strong> — école nationale ultra-sélective, cursus entièrement en anglais. 1ʳᵉ et 2ᵉ années validées (120 ECTS, Mention Très Bien).",
+      "formation.avignon.title": "Université d’Avignon (CERI), France",
       "formation.avignon.desc": "<strong>Licence Informatique — Parcours IA :</strong> Major de promotion L2 & L3 (1ʳᵉ sur 126), moyenne > 15/20.",
-      "projects.stationf.title": "Agent d'Outreach IA · Production", "projects.stationf.short": "Système d'IA autonome déployé en production.", "projects.stationf.desc": "Pipeline d'IA entièrement autonome en production : qualification d'offres par LLM, génération d'emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Google Cloud VM.",
-      "projects.gerag.title": "Agent RAG · GE HealthCare", "projects.gerag.short": "Recherche documentaire en langage naturel.", "projects.gerag.desc": "Agent RAG en production chez GE HealthCare permettant d'interroger des documentations techniques complexes en langage naturel, avec réponses sourcées — réduisant des recherches de plusieurs heures à quelques secondes. Codé de bout en bout (prétraitement métier, retrieval BM25 + reranker + LLM), puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio quand le coût en tokens du pipeline linéaire est devenu le facteur limitant. Stack : Python, LLM, retrieval multi-étapes, Copilot Studio, intégrations d'outils internes.",
-      "projects.content.title": "Moteur de Contenu Autonome · Multi-Plateformes", "projects.content.short": "Création & publication de contenu 100% automatisées.", "projects.content.desc": "Système autonome en boucle fermée qui crée et publie du contenu sur YouTube, TikTok, Instagram et Facebook. Volet musique : chansons publiées sur fond vidéo bouclé avec scripts, gestion de playlists, validation, séries d'images sur Instagram, journalisation de chaque publication dans Google Sheets ; des workflows récupèrent vues et likes, les stockent, et chaque semaine un workflow sélectionne le meilleur titre et le republie sur une chaîne « best-of » dédiée. Volet influence : un influenceur IA met en scène un produit et le publie avec un lien d'affiliation Amazon. Pilotage par simple email (plateforme, chaîne, langue, contenu) — le système fait le reste et répond avec le lien du post et le lien d'affiliation. Workflows orchestrés sur n8n, déployé sur AWS EC2.",
-      "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (2026). Agent RAG en production : pipeline d'abord codé de bout en bout (skills modulaires), puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio (workflows et sous-agents) une fois le coût en tokens du pipeline linéaire devenu le facteur limitant — prétraitement maison conservé en amont, qualité et temps de traitement améliorés.",
+      "projects.stationf.title": "Agent d’Outreach IA · Production", "projects.stationf.short": "Système d’IA autonome déployé en production.", "projects.stationf.desc": "Pipeline d’IA entièrement autonome en production : qualification d’offres par LLM, génération d’emails personnalisés, envoi SMTP, suivi IMAP et classification des réponses. 7 skills LLM orchestrées sur cron. Stack : Python, Claude API, Playwright, Google Cloud VM.",
+      "projects.gerag.title": "Agent RAG · GE HealthCare", "projects.gerag.short": "Recherche documentaire en langage naturel.", "projects.gerag.desc": "Agent RAG en production chez GE HealthCare permettant d’interroger des documentations techniques complexes en langage naturel, avec réponses sourcées — réduisant des recherches de plusieurs heures à quelques secondes. Codé de bout en bout (prétraitement métier, retrieval BM25 + reranker + LLM), puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio quand le coût en tokens du pipeline linéaire est devenu le facteur limitant. Stack : Python, LLM, retrieval multi-étapes, Copilot Studio, intégrations d’outils internes.",
+      "projects.content.title": "Moteur de Contenu Autonome · Multi-Plateformes", "projects.content.short": "Création & publication de contenu 100% automatisées.", "projects.content.desc": "Système autonome en boucle fermée qui crée et publie du contenu sur YouTube, TikTok, Instagram et Facebook. Volet musique : chansons publiées sur fond vidéo bouclé avec scripts, gestion de playlists, validation, séries d’images sur Instagram, journalisation de chaque publication dans Google Sheets ; des workflows récupèrent vues et likes, les stockent, et chaque semaine un workflow sélectionne le meilleur titre et le republie sur une chaîne « best-of » dédiée. Volet influence : un influenceur IA met en scène un produit et le publie avec un lien d’affiliation Amazon. Pilotage par simple email (plateforme, chaîne, langue, contenu) — le système fait le reste et répond avec le lien du post et le lien d’affiliation. Workflows orchestrés sur n8n, déployé sur AWS EC2.",
+      "experience.ge.title": "GE HealthCare — Stagiaire IA & MLOps", "experience.ge.detail": "Stage Ingénierie IA & MLOps — Paris (2026). Agent RAG en production : pipeline d’abord codé de bout en bout (skills modulaires), puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio (workflows et sous-agents) une fois le coût en tokens du pipeline linéaire devenu le facteur limitant — prétraitement maison conservé en amont, qualité et temps de traitement améliorés.",
       "formation.bac.title": "Baccalauréat Scientifique",
       "formation.bac.desc": "<strong>Mention :</strong> Excellent — Moyenne 17,82",
       "formation.bac.cert": "Voir attestation BAC",
       "formation.bac.transcript": "Voir relevés de notes",
-      "dates.paris": "Septembre 2026 (à venir)",
+      "dates.paris": "Depuis septembre 2026 · en cours",
       "dates.ensia": "2022 - Juin 2024",
-      "dates.avignon": "Septembre 2024 - Juin 2026",
+      "dates.avignon": "Septembre 2024 — Juin 2026 · obtenue",
       "common.viewDiploma": "Voir diplôme",
       "common.viewTranscript": "Relevé des résultats",
 
       // PUBLICATIONS
       "publication.date": "📅 20 décembre 2024",
       "publication.location": "📍 Hugging Face",
-      "publication.description": "Découvrez notre approche révolutionnaire qui utilise un fine-tuning inversé pour générer des données synthétiques.",
-      "publication.cta": "Lire l'article complet",
+      "publication.description": "Article technique publié sur Hugging Face : une méthode de génération d’un jeu de données appariant mots-clés et articles, par fine-tuning inversé, pensée pour entraîner des modèles de génération de tags. Il détaille la construction du corpus, le contrôle qualité et les limites de l’approche.",
+      "publication.cta": "Lire l’article complet",
       "publication.tableTitle": "Exemple de base de données",
       "pub.keywords": "Mots-clés",
       "pub.articles": "Articles",
 
       // SKILLS
-      "competences.aiDataSkills": "IA & Data Science", "competences.techSkills": "Compétences Techniques", "competences.softSkillsTitle": "Soft Skills",
-      "competences.artificialIntelligence": "Intelligence Artificielle", "competences.dataScience": "Data Science", "competences.programming": "Programmation", "competences.web": "Full-Stack Web",
-      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks", "competences.dataAnalysis": "Analyse", "competences.dataProjects": "Concepts Clés",
-      "competences.languages": "Langages", "competences.tools": "DevOps", "competences.backend": "Backend", "competences.frontend": "Frontend",
-      "competences.writing": "Rédaction Scientifique", "competences.writingDesc": "Publication d'articles techniques, documentation.",
-      "competences.teamwork": "Leadership", "competences.teamworkDesc": "Expérience GDSC, gestion de projets.",
-      "competences.problemSolving": "Résolution de problèmes", "competences.problemSolvingDesc": "Approche algorithmique, optimisation.",
-      "competences.continuousLearning": "Apprentissage continu", "competences.continuousLearningDesc": "Veille technologique active.",
-      "competences.project1": "Génération de données synthétiques", "competences.project2": "Clustering & Segmentation", "competences.project3": "Algorithmes de Graphes",
+      "competences.aiDataSkills": "IA & Data Science", "competences.techSkills": "Compétences Techniques", "competences.softSkillsTitle": "Compétences Personnelles",
+      "competences.artificialIntelligence": "Intelligence Artificielle", "competences.dataScience": "Data Science", "competences.programming": "Programmation & Systèmes", "competences.web": "Full-Stack Web",
+      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks & Outils", "competences.dataAnalysis": "Analyse & Visualisation", "competences.dataProjects": "Concepts Clés",
+      "competences.languages": "Langages", "competences.tools": "DevOps & Outils", "competences.backend": "Backend", "competences.frontend": "Frontend",
+      "competences.writing": "Rédaction Scientifique", "competences.writingDesc": "Publication d’articles techniques (Hugging Face), documentation structurée.",
+      "competences.teamwork": "Leadership & Teamwork", "competences.teamworkDesc": "Expérience GDSC, mentorat, gestion de projets agiles.",
+      "competences.problemSolving": "Résolution de problèmes", "competences.problemSolvingDesc": "Approche algorithmique, optimisation de performance.",
+      "competences.continuousLearning": "Apprentissage continu", "competences.continuousLearningDesc": "Veille technologique active (Papers with Code, arXiv).",
+      "competences.project1": "Génération de données synthétiques", "competences.project2": "Clustering & Segmentation (K-Means)", "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)", "competences.project4": "Fine-tuning",
 
       // LANGUAGES
       "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)", "langues.frenchDetail": "Année universitaire validée en France",
@@ -207,56 +250,52 @@ const translations = {
       "langues.arabic": "Arabe", "langues.arabicLevel": "Langue maternelle",
 
       // CERTIFICATES
-      "certs.heading": "Certificats",
+      "certs.heading": "Certifications",
       "certs.english.title": "LanguageCert C2 — ESOL International (Ofqual)",
-      "certs.english.desc": "Certification d'anglais niveau C2, régulée par l'Ofqual (PeopleCert), obtenue en février 2026.",
+      "certs.english.desc": "Certification d’anglais niveau C2, régulée par l’Ofqual (PeopleCert), obtenue en février 2026.",
       "certs.aylp.title": "Algerian Youth Leadership Program – NNIC",
       "certs.aylp.desc": "Programme d’échanges axé sur le leadership.",
       "certs.pytorch.title": "Introduction to Deep Learning with PyTorch",
       "certs.pytorch.desc": "Formation en ligne sur les réseaux de neurones.",
       "certs.fcc.title": "Responsive Web Design",
-      "certs.fcc.desc": "Certification axée sur les fondamentaux du HTML/CSS.",
+      "certs.fcc.desc": "Certification axée sur les fondamentaux du HTML et du CSS.",
       "certs.cta": "Voir certificat",
 
       // EXPERIENCE
-      "experience.card1.title": "Responsable informatique", "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024) — gestion de l'infrastructure, animation d'ateliers techniques et accompagnement des membres sur leurs projets.",
-      "experience.card2.title": "Participant AYLP", "experience.card2.detail": "Northern Nevada International Center",
-      "experience.card3.title": "Organisation d'événements", "experience.card3.detail": "Organisation de hackathons et d'ateliers en IA et développement web : logistique, mentorat et animation technique.",
+      "experience.card1.title": "Responsable informatique", "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024) — gestion de l’infrastructure, animation d’ateliers techniques et accompagnement des membres sur leurs projets.",
+      "experience.card2.title": "Participant AYLP", "experience.card2.detail": "Northern Nevada International Center (2021) — Algerian Youth Leadership Program",
+      "experience.card3.title": "Organisation d’événements", "experience.card3.detail": "Organisation de hackathons et d’ateliers en IA et développement web : logistique, mentorat et animation technique.",
       "experience.card4.title": "Autres Réalisations",
-      "experience.card4.item1": "Hackathon IA Avignon (24h)", "experience.card4.item2": "Mentor junior – GDSC", "experience.card4.item3": "Projet tutoré G‑JOBS",
+      "experience.card4.item1": "Hackathon IA Avignon (24h, 2024) — Tech Lead", "experience.card4.item2": "Mentor junior – GDSC (2023)", "experience.card4.item3": "Projet tutoré G‑JOBS (2024) : tâches, Git, review",
 
       // PROJECTS (UPDATED SECTION)
-      "projects.hover": "Survolez pour les détails", "projects.link": "Voir code", "projects.link.modelRepo": "Dépôt modèle", "projects.link.demoSpace": "Démo", "projects.link.viewCode": "Voir code", "projects.link.githubRepo": "GitHub", "projects.link.liveDemo": "Démo Live",
-      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Politiques robotiques.", "projects.p9.desc": "Entraînement et évaluation de politiques PushT avec Hugging Face.",
-      
-      // --- FIXED: LUNG CANCER ---
-      "projects.cancer.title": "Détection du Cancer du Poumon", 
-      "projects.cancer.short": "Diagnostic Carcinomes (CT).", 
-      "projects.cancer.desc": "Classification de 4 types de cancer du poumon via CNN sur scanners CT.",
-      // --------------------------
-
-"projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Entraînement de politiques robotiques.", "projects.p9.desc": "Pipeline MLOps complet (Diffusion, Hugging Face, Gradio) pour l'entraînement de politiques de manipulation robotique (PushT).",
+      "projects.hover": "Survolez ou cliquez pour voir les détails", "projects.link": "Voir le code", "projects.link.modelRepo": "Dépôt du modèle", "projects.link.demoSpace": "Espace de démo", "projects.link.viewCode": "Voir le code", "projects.link.githubRepo": "Dépôt GitHub", "projects.link.liveDemo": "Démo en ligne",
+      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Entraînement de politiques robotiques.", "projects.p9.desc": "Pipeline MLOps complet utilisant des modèles de Diffusion pour l’entraînement de politiques de manipulation robotique. Intégration avec Hugging Face, accélération CUDA et visualisation via Gradio.",
       "projects.cancer.title": "Détection du Cancer du Poumon", "projects.cancer.short": "Diagnostic médical par Deep Learning.", "projects.cancer.desc": "Classification de 4 types de carcinomes pulmonaires via réseaux de neurones convolutifs (CNN) sur imagerie CT.",
-      "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif de vision.", "projects.p10.desc": "Simulateur web de robotique intégrant COCO-SSD (détection d'objets) et A* (pathfinding) avec commandes NLP.",
+      "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif de vision.", "projects.p10.desc": "Simulateur web intégrant COCO-SSD pour la détection d’objets en temps réel, l’algorithme A* pour la planification de trajectoire et le traitement de commandes en langage naturel.",
       "projects.sentiment.title": "Analyse de Sentiments (Avis)", "projects.sentiment.short": "NLP & Classification de textes.", "projects.sentiment.desc": "Implémentation de modèles NLP pour la classification automatisée de sentiments sur de larges jeux de données textuels.",
-      "projects.clustering.title": "Segmentation Client (Clustering)", "projects.clustering.short": "Analyse de données non supervisée.", "projects.clustering.desc": "Application de l'algorithme K-Means pour la segmentation stratégique et l'analyse comportementale des clients.",
+      "projects.clustering.title": "Segmentation Client (Clustering)", "projects.clustering.short": "Analyse de données non supervisée.", "projects.clustering.desc": "Application de l’algorithme K-Means pour la segmentation stratégique et l’analyse comportementale des clients.",
       "projects.p0.title": "Générateur IA de sites web", "projects.p0.short": "Du texte au site web fonctionnel.", "projects.p0.desc": "Une plateforme qui transforme une simple demande en langage naturel en site web personnalisé complet, pensée pour des personnes sans compétences techniques. En développement. Stack : Next.js, TypeScript, LLM.",
-      "projects.p2.title": "News Wave", "projects.p2.short": "Emails d'actualité personnalisés par IA.", "projects.p2.desc": "Service d'emails d'actualité personnalisés : titres reformulés selon vos centres d'intérêt et vos sources, qui s'affine à partir de vos clics. En cours : alertes temps réel pour les news urgentes propres à chaque utilisateur.",
+      "projects.p2.title": "News Wave", "projects.p2.short": "Emails d’actualité personnalisés par IA.", "projects.p2.desc": "Service d’emails d’actualité personnalisés : titres reformulés selon vos centres d’intérêt et vos sources, qui s’affine à partir de vos clics. En cours : alertes temps réel pour les news urgentes propres à chaque utilisateur.",
       "projects.compiler.title": "Compilateur Pascal-like", "projects.compiler.short": "Architecture de compilateur complète.", "projects.compiler.desc": "Compilateur Mini-Pascal complet (analyse lexicale, syntaxique, sémantique) développé en C/Flex/Bison.",
       "projects.nova.title": "NOVA", "projects.nova.short": "Co-watching vidéo temps réel.", "projects.nova.desc": "Plateforme sociale Full-Stack permettant le visionnage synchronisé de vidéos en temps réel avec messagerie.",
       "projects.cericar.title": "CERICar", "projects.cericar.short": "Covoiturage Full-Stack.", "projects.cericar.desc": "Application web complète de covoiturage gérant les trajets, les réservations et les profils utilisateurs.",
-      "projects.p3.title": "Optimisation Agricole", "projects.p3.short": "IA pour l'agriculture durable.", "projects.p3.desc": "Système d'aide à la décision (recherche par graphes, optimisation sous contraintes) pour maximiser la production.",
-      "projects.p4.title": "G-Jobs", "projects.p4.short": "Plateforme d'emploi intelligente.", "projects.p4.desc": "Solution de recrutement intelligente avec filtres avancés, messagerie et suivi des candidatures.",
-      "projects.p5.title": "Moteur de Recherche", "projects.p5.short": "Indexation et recherche textuelle.", "projects.p5.desc": "Moteur de recherche haute performance en Java implémentant les modèles TF-IDF et BM25 pour l'indexation.",
+      "projects.p3.title": "Optimisation Agricole", "projects.p3.short": "IA pour l’agriculture durable.", "projects.p3.desc": "Système d’aide à la décision (recherche par graphes, optimisation sous contraintes) pour maximiser la production.",
+      "projects.p4.title": "G-Jobs", "projects.p4.short": "Plateforme d’emploi intelligente.", "projects.p4.desc": "Solution de recrutement intelligente avec filtres avancés, messagerie et suivi des candidatures.",
+      "projects.p5.title": "Moteur de Recherche", "projects.p5.short": "Indexation et recherche textuelle.", "projects.p5.desc": "Moteur de recherche haute performance en Java implémentant les modèles TF-IDF et BM25 pour l’indexation.",
       "projects.p6.title": "Chaîne de Restaurants", "projects.p6.short": "Gestion multisites.", "projects.p6.desc": "Système centralisé de gestion multi-pays (stocks, personnel, rapports financiers) pour chaînes de restauration.",
-      "projects.p7.title": "Mon Supermarché Numérique", "projects.p7.short": "Gestion stock CLI.", "projects.p7.desc": "Application CLI pour la digitalisation des inventaires et l'automatisation de la gestion des stocks en temps réel.",
-      "projects.p8.title": "Analyse Réseau Routier", "projects.p8.short": "Algorithmes de graphes avancés.", "projects.p8.desc": "Analyse structurelle du réseau routier via l'algorithme de Dijkstra et des mesures de connectivité complexes.",
+      "projects.p7.title": "Mon Supermarché Numérique", "projects.p7.short": "Gestion stock CLI.", "projects.p7.desc": "Application CLI pour la digitalisation des inventaires et l’automatisation de la gestion des stocks en temps réel.",
+      "projects.p8.title": "Analyse Réseau Routier", "projects.p8.short": "Algorithmes de graphes avancés.", "projects.p8.desc": "Analyse structurelle du réseau routier via l’algorithme de Dijkstra et des mesures de connectivité complexes.",
       
       "chat.title": "Assistant Portfolio", "chat.placeholder": "Posez une question...", "chat.send": "Envoyer",
+      "chat.greeting": "Bonjour ! Posez-moi vos questions sur mon parcours, mes projets ou mes compétences.",
+      "chat.thinking": "…",
+      "chat.unavailable": "L’assistant est momentanément indisponible. Écrivez-moi à zineb.meftah36@gmail.com — je réponds vite.",
       "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
     },
     en: {
       "page.title": "Portfolio - Zineb Meftah",
+      "nav.title": "Zineb Meftah",
       "header.title": "Zineb Meftah",
       "header.subtitle": "I build autonomous AI systems that run in production.",
       "header.tagline": "Software engineering + AI · MLOps · Deep Learning",
@@ -270,17 +309,18 @@ const translations = {
       "nav.langues": "Languages", "nav.experience": "Experience", "nav.skip": "Skip to content",
 
       "info.telephone": "☎ Phone", "info.location": "📍 Location", "info.email": "✉ Email", "info.linkedin": "🔗 LinkedIn", "info.portfolio": "🌐 Portfolio", "info.github": "🐙 GitHub", "info.huggingface": "🤖 Hugging Face",
+      "info.alternance": "🎯 For recruiters", "info.alternanceLink": "Dedicated page: work-study / permanent / fixed-term",
 
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
       "profile.text1": "Ranked 1st of my class in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Fresh from an AI & MLOps Engineering internship at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
-      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, a fully autonomous AI outreach system deployed in production, and a closed-loop content engine that creates and publishes across YouTube, TikTok, Instagram and Facebook. In September 2026 I start the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité as a work-study student.",
+      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, a fully autonomous AI outreach system deployed in production, and a closed-loop content engine that creates and publishes across YouTube, TikTok, Instagram and Facebook. I am currently in the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité, looking for the company where I can put all of this into practice — on a permanent, fixed-term or work-study contract.",
       "profile.highlight": "What sets me apart: combining genuine engineering rigor — code, backend, complex systems — with strong AI expertise to ship solutions that actually run in production.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
-      "formation.paris.desc": "<strong>Master 1 MLSD</strong> — Machine Learning for Data Science, work-study. One of the most recognized AI programs.",
+      "formation.paris.desc": "<strong>Master 1 MLSD</strong> — Machine Learning for Data Science, available as a work-study track. One of the most recognized AI programs.",
       "formation.ensia.title": "ENSIA, Algeria",
       "formation.ensia.desc": "<strong>Elite AI preparatory program</strong> — ultra-selective national school, taught entirely in English. 1st & 2nd years completed (120 ECTS, High Honors).",
       "formation.avignon.title": "Avignon University (CERI), France",
@@ -293,16 +333,16 @@ const translations = {
       "formation.bac.desc": "<strong>Honors:</strong> Excellent — Average 17.82",
       "formation.bac.cert": "View BAC certificate",
       "formation.bac.transcript": "View grade transcripts",
-      "dates.paris": "September 2026 (upcoming)",
+      "dates.paris": "Since September 2026 · in progress",
       "dates.ensia": "2022 - June 2024",
-      "dates.avignon": "Sept 2024 - June 2026",
+      "dates.avignon": "Sept 2024 — June 2026 · completed",
       "common.viewDiploma": "View Diploma",
       "common.viewTranscript": "Transcript of Records",
 
       // PUBLICATIONS
       "publication.date": "📅 December 20, 2024",
       "publication.location": "📍 Hugging Face",
-      "publication.description": "Discover our revolutionary approach using reverse fine-tuning to generate synthetic data.",
+      "publication.description": "A technical article published on Hugging Face: a method for generating a keyword-to-article dataset through reverse fine-tuning, designed to train tag-generation models. It covers how the corpus was built, how quality was checked, and where the approach falls short.",
       "publication.cta": "Read Full Article",
       "publication.tableTitle": "Sample Database",
       "pub.keywords": "Keywords", "pub.articles": "Articles",
@@ -310,13 +350,13 @@ const translations = {
       // SKILLS
       "competences.aiDataSkills": "AI & Data Science", "competences.techSkills": "Technical Skills", "competences.softSkillsTitle": "Personal Skills",
       "competences.artificialIntelligence": "Artificial Intelligence", "competences.dataScience": "Data Science", "competences.programming": "Programming & Systems", "competences.web": "Full-Stack Web",
-      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks", "competences.dataAnalysis": "Analysis", "competences.dataProjects": "Key Concepts",
-      "competences.languages": "Languages", "competences.tools": "DevOps", "competences.backend": "Backend", "competences.frontend": "Frontend",
+      "competences.aiModels": "Techniques", "competences.aiTools": "Frameworks & Tools", "competences.dataAnalysis": "Analysis & Visualization", "competences.dataProjects": "Key Concepts",
+      "competences.languages": "Languages", "competences.tools": "DevOps & Tools", "competences.backend": "Backend", "competences.frontend": "Frontend",
       "competences.writing": "Scientific Writing", "competences.writingDesc": "Technical blog publishing, structured documentation.",
-      "competences.teamwork": "Leadership", "competences.teamworkDesc": "GDSC experience, mentoring, agile management.",
-      "competences.problemSolving": "Problem Solving", "competences.problemSolvingDesc": "Algorithmic thinking, optimization.",
-      "competences.continuousLearning": "Continuous Learning", "competences.continuousLearningDesc": "Active tech watch (Papers with Code).",
-      "competences.project1": "Synthetic Data Generation", "competences.project2": "Clustering & Segmentation", "competences.project3": "Graph Algorithms",
+      "competences.teamwork": "Leadership & Teamwork", "competences.teamworkDesc": "GDSC experience, mentoring, agile project management.",
+      "competences.problemSolving": "Problem Solving", "competences.problemSolvingDesc": "Algorithmic thinking, performance optimization.",
+      "competences.continuousLearning": "Continuous Learning", "competences.continuousLearningDesc": "Active tech watch (Papers with Code, arXiv).",
+      "competences.project1": "Synthetic Data Generation", "competences.project2": "Clustering & Segmentation (K-Means)", "competences.project3": "Graph Algorithms (A*, Dijkstra)", "competences.project4": "Fine-tuning",
 
       // LANGUAGES
       "langues.french": "French", "langues.frenchlevel": "Advanced (C1)", "langues.frenchDetail": "Validated year in French university",
@@ -337,22 +377,14 @@ const translations = {
 
       // EXPERIENCE
       "experience.card1.title": "IT Manager", "experience.card1.detail": "Google Developer Student Club ENSIA (2023–2024) — managed infrastructure, ran technical workshops, and supported members on their projects.",
-      "experience.card2.title": "AYLP Participant", "experience.card2.detail": "Northern Nevada International Center",
+      "experience.card2.title": "AYLP Participant", "experience.card2.detail": "Northern Nevada International Center (2021) — Algerian Youth Leadership Program",
       "experience.card3.title": "Event Organizer", "experience.card3.detail": "Organized AI and web-development hackathons and workshops: logistics, mentoring, and technical facilitation.",
       "experience.card4.title": "Other Achievements",
-      "experience.card4.item1": "AI Hackathon Avignon (24h)", "experience.card4.item2": "Junior Mentor – GDSC", "experience.card4.item3": "Supervised Project G‑JOBS",
+      "experience.card4.item1": "AI Hackathon Avignon (24h, 2024) — Tech Lead", "experience.card4.item2": "Junior Mentor – GDSC (2023)", "experience.card4.item3": "Supervised project G‑JOBS (2024): tickets, Git, reviews",
 
       // PROJECTS (UPDATED SECTION)
       "projects.hover": "Hover or click for details", "projects.link": "View Code", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
-      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "End-to-end pipeline for training PushT policies.",
-      
-      // --- FIXED: LUNG CANCER ---
-      "projects.cancer.title": "Lung Cancer Detection", 
-      "projects.cancer.short": "Carcinoma Diagnosis (CT).", 
-      "projects.cancer.desc": "Classification of 4 lung cancer types using CNNs on CT scans.",
-      // --------------------------
-
-"projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "Full MLOps pipeline (Diffusion models, Hugging Face, Gradio) for training robotic manipulation policies (PushT).",
+      "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "Full MLOps pipeline (Diffusion models, Hugging Face, Gradio) for training robotic manipulation policies (PushT).",
       "projects.cancer.title": "Lung Cancer Detection", "projects.cancer.short": "Medical Diagnosis via Deep Learning.", "projects.cancer.desc": "Classification of 4 types of lung carcinomas using Convolutional Neural Networks (CNNs) on CT scans.",
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Interactive Vision Simulator.", "projects.p10.desc": "Web-based robotics simulator integrating COCO-SSD (object detection), A* (pathfinding), and NLP commands.",
       "projects.sentiment.title": "Sentiment Analysis (Reviews)", "projects.sentiment.short": "NLP & Text Classification.", "projects.sentiment.desc": "Implementation of NLP models for automated sentiment classification across large text datasets.",
@@ -370,31 +402,38 @@ const translations = {
       "projects.p8.title": "Road Network Analysis", "projects.p8.short": "Advanced Graph Algorithms.", "projects.p8.desc": "Structural analysis of Avignon's road network using Dijkstra's algorithm and complex connectivity metrics.",
       
       "chat.title": "Portfolio Assistant", "chat.placeholder": "Ask a question...", "chat.send": "Send",
+      "chat.greeting": "Hi! Ask me anything about my background, my projects or my skills.",
+      "chat.thinking": "…",
+      "chat.unavailable": "The assistant is temporarily unavailable. Email me at zineb.meftah36@gmail.com — I reply quickly.",
       "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
     },
     ar: {
       "page.title": "المعرض - مفتاح زينب",
+      "nav.title": "مفتاح زينب",
       "header.title": "مفتاح زينب",
       "header.subtitle": "أُصمّم أنظمة ذكاء اصطناعي مستقلة، منشورة في الإنتاج.",
       "header.tagline": "كفاءة مزدوجة: هندسة برمجيات + ذكاء اصطناعي · MLOps · تعلّم عميق",
       "hero.chip0": "ملف مزدوج: هندسة + ذكاء اصطناعي", "hero.chip1": "الأولى على الدفعة · 1/126", "hero.chip2": "ذكاء اصطناعي في الإنتاج @ GE HealthCare", "hero.chip3": "إنجليزية C2 · LanguageCert",
       "hero.ctaCV": "⬇ تحميل سيرتي الذاتية", "hero.ctaLetter": "⬇ رسالة الدافع", "hero.ctaProjects": "مشاريعي", "hero.ctaContact": "تواصل معي",
+      "stat.rank": "الأولى على الدفعة · L2 و L3", "stat.avg": "المعدّل العام", "stat.english": "الإنجليزية · LanguageCert (Ofqual)", "stat.prod": "أنظمة ذكاء اصطناعي @ GE HealthCare",
+      "badge.production": "الإنتاج",
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة", "nav.skip": "تخطي إلى المحتوى",
 
       "info.telephone": "☎ الهاتف", "info.location": "📍 الموقع", "info.email": "✉ البريد", "info.linkedin": "🔗 لينكد إن", "info.portfolio": "🌐 المعرض", "info.github": "🐙 جيتهاب", "info.huggingface": "🤖 هاجينغ فايس",
+      "info.alternance": "🎯 للمشغّلين", "info.alternanceLink": "صفحة مخصّصة: بالتناوب / عقد دائم / عقد محدّد",
 
       "formation.heading": "التعليم والشهادات", "publications.heading": "المنشورات", "projects.heading": "المشاريع والخبرة", "experience.heading": "الخبرة والقيادة", "competences.heading": "المهارات", "langues.heading": "اللغات", "contact.heading": "اتصل",
 
       "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
       "profile.text1": "طالبة علوم الحاسوب، الأولى على دفعتها (السنتان الثانية والثالثة) بجامعة أفينيون (1 من 126، معدل > 15/20) وخريجة الطور التحضيري النخبوي لمدرسة ENSIA (الجزائر). بعد تدريب في هندسة الذكاء الاصطناعي وMLOps لدى GE HealthCare بباريس، أصمّم وأنشر أنظمة ذكاء اصطناعي في الإنتاج: وكلاء RAG، وخطوط معالجة LLM، وأنظمة مستقلة.",
-      "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج، ومحرّك محتوى مستقل بحلقة مغلقة يُنشئ وينشر على يوتيوب وتيك توك وإنستغرام وفيسبوك. في سبتمبر 2026 ألتحق بالتناوب بماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي.",
+      "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج، ومحرّك محتوى مستقل بحلقة مغلقة يُنشئ وينشر على يوتيوب وتيك توك وإنستغرام وفيسبوك. أنا حاليًا في ماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي، وأبحث عن الشركة التي أطبّق فيها كل هذا — بعقد دائم أو محدّد المدة أو بالتناوب.",
       "profile.highlight": "ما يميّزني: الجمع بين صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — وإتقان الذكاء الاصطناعي لإنتاج حلول تعمل فعليًا في الإنتاج.",
 
       // FORMATION
       "formation.paris.title": "جامعة باريس سيتي، فرنسا",
-      "formation.paris.desc": "<strong>ماجستير M1 MLSD</strong> — تعلّم الآلة لعلوم البيانات، بالتناوب. من أبرز برامج الذكاء الاصطناعي.",
+      "formation.paris.desc": "<strong>ماجستير M1 MLSD</strong> — تعلّم الآلة لعلوم البيانات، يمكن متابعته بالتناوب. من أبرز برامج الذكاء الاصطناعي.",
       "formation.ensia.title": "ENSIA، الجزائر",
       "formation.ensia.desc": "<strong>الطور التحضيري النخبوي في الذكاء الاصطناعي</strong> — مدرسة وطنية انتقائية للغاية، دراسة كاملة بالإنجليزية. أُنجزت السنتان الأولى والثانية (120 ECTS، تقدير مشرّف جدًا).",
       "formation.avignon.title": "جامعة أفينيون (CERI)، فرنسا",
@@ -403,16 +442,16 @@ const translations = {
       "formation.bac.desc": "<strong>التقدير:</strong> ممتاز — معدل 17.82",
       "formation.bac.cert": "عرض شهادة البكالوريا",
       "formation.bac.transcript": "عرض كشف النقاط",
-      "dates.paris": "سبتمبر 2026 (قادم)",
+      "dates.paris": "منذ سبتمبر 2026 · جارٍ",
       "dates.ensia": "2022 - يونيو 2024",
-      "dates.avignon": "سبتمبر 2024 - يونيو 2026",
+      "dates.avignon": "سبتمبر 2024 — يونيو 2026 · مُنجزة",
       "common.viewDiploma": "عرض الشهادة",
       "common.viewTranscript": "كشف النقاط",
 
       // PUBLICATIONS
       "publication.date": "📅 20 ديسمبر 2024",
       "publication.location": "📍 Hugging Face",
-      "publication.description": "اكتشف نهجنا الثوري الذي يستخدم الضبط العكسي لتوليد بيانات تركيبية.",
+      "publication.description": "مقال تقني منشور على Hugging Face: طريقة لتوليد مجموعة بيانات تربط الكلمات المفتاحية بالمقالات عبر الضبط العكسي، لتدريب نماذج توليد الوسوم. يشرح بناء المتن وضبط الجودة وحدود الطريقة.",
       "publication.cta": "اقرأ المقال الكامل",
       "publication.tableTitle": "عينة قاعدة البيانات",
       "pub.keywords": "الكلمات المفتاحية", "pub.articles": "المقالات",
@@ -421,12 +460,12 @@ const translations = {
       "competences.aiDataSkills": "الذكاء الاصطناعي وعلوم البيانات", "competences.techSkills": "المهارات التقنية", "competences.softSkillsTitle": "المهارات الشخصية",
       "competences.artificialIntelligence": "الذكاء الاصطناعي", "competences.dataScience": "علوم البيانات", "competences.programming": "البرمجة والأنظمة", "competences.web": "تطوير الويب",
       "competences.aiModels": "التقنيات", "competences.aiTools": "الأطر والأدوات", "competences.dataAnalysis": "التحليل", "competences.dataProjects": "المفاهيم",
-      "competences.languages": "اللغات", "competences.tools": "الأدوات", "competences.backend": "الخلفية", "competences.frontend": "الواجهة الأمامية",
-      "competences.writing": "الكتابة العلمية", "competences.writingDesc": "نشر المقالات التقنية والتوثيق.",
-      "competences.teamwork": "القيادة والعمل الجماعي", "competences.teamworkDesc": "خبرة GDSC، الإرشاد.",
-      "competences.problemSolving": "حل المشكلات", "competences.problemSolvingDesc": "التفكير الخوارزمي.",
-      "competences.continuousLearning": "التعلم المستمر", "competences.continuousLearningDesc": "متابعة تقنية نشطة.",
-      "competences.project1": "توليد البيانات الاصطناعية", "competences.project2": "التجميع والتجزئة", "competences.project3": "خوارزميات الرسوم البيانية",
+      "competences.languages": "اللغات", "competences.tools": "DevOps والأدوات", "competences.backend": "الخلفية", "competences.frontend": "الواجهة الأمامية",
+      "competences.writing": "الكتابة العلمية", "competences.writingDesc": "نشر مقالات تقنية (Hugging Face)، وتوثيق منظّم.",
+      "competences.teamwork": "القيادة والعمل الجماعي", "competences.teamworkDesc": "خبرة GDSC، الإرشاد، وإدارة مشاريع رشيقة.",
+      "competences.problemSolving": "حل المشكلات", "competences.problemSolvingDesc": "تفكير خوارزمي وتحسين الأداء.",
+      "competences.continuousLearning": "التعلم المستمر", "competences.continuousLearningDesc": "متابعة تقنية نشطة (Papers with Code، arXiv).",
+      "competences.project1": "توليد البيانات الاصطناعية", "competences.project2": "التجميع والتجزئة (K-Means)", "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)", "competences.project4": "الضبط الدقيق (Fine-tuning)",
 
       // LANGUAGES
       "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)", "langues.frenchDetail": "سنة جامعية مصادق عليها في فرنسا",
@@ -448,20 +487,21 @@ const translations = {
       // EXPERIENCE
       "experience.ge.title": "GE HealthCare — متدربة في الذكاء الاصطناعي وMLOps", "experience.ge.detail": "تدريب في هندسة الذكاء الاصطناعي وMLOps — باريس (2026). وكيل RAG في الإنتاج: خط معالجة كامل مكتوب برمجيًا أولًا (skills معيارية)، ثم أُعيدت هندسته كنظام متعدد الوكلاء على Microsoft Copilot Studio (workflows ووكلاء فرعيون) بعدما أصبحت تكلفة الـ tokens في الخط الخطّي هي العائق — مع الإبقاء على طبقة المعالجة المسبقة المكتوبة يدويًا، وتحسّن الجودة وزمن المعالجة.",
       "experience.card1.title": "مسؤولة تقنية المعلومات", "experience.card1.detail": "نادي مطوري Google – ENSIA (2023–2024) — إدارة البنية التحتية، وتقديم ورش تقنية، ودعم الأعضاء في مشاريعهم.",
-      "experience.card2.title": "مشاركة في AYLP", "experience.card2.detail": "المركز الدولي لشمال نيفادا",
+      "experience.card2.title": "مشاركة في AYLP", "experience.card2.detail": "المركز الدولي لشمال نيفادا (2021) — برنامج القيادة للشباب الجزائري",
       "experience.card3.title": "منظِّمة فعاليات", "experience.card3.detail": "تنظيم هاكاثونات وورش في الذكاء الاصطناعي وتطوير الويب: اللوجستيك، والإرشاد، والتأطير التقني.",
       "experience.card4.title": "إنجازات أخرى",
-      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون", "experience.card4.item2": "مرشدة مبتدئة – GDSC", "experience.card4.item3": "مشروع مؤطر G‑JOBS",
+      "experience.card4.item1": "هاكاثون الذكاء الاصطناعي أفينيون (24 ساعة، 2024) — قائدة تقنية", "experience.card4.item2": "مرشدة مبتدئة – GDSC (2023)", "experience.card4.item3": "مشروع مؤطر G‑JOBS (2024): المهام، Git، المراجعة",
 
       // PROJECTS (UPDATED SECTION)
+      "projects.stationf.title": "وكيل تواصل بالذكاء الاصطناعي · في الإنتاج",
+      "projects.stationf.short": "نظام ذكاء اصطناعي مستقل منشور في الإنتاج.",
+      "projects.stationf.desc": "منظومة ذكاء اصطناعي مستقلة بالكامل في الإنتاج: تصفية العروض بنموذج لغوي، وصياغة رسائل مخصّصة، والإرسال عبر SMTP، والمتابعة عبر IMAP وتصنيف الردود. سبع مهارات LLM منسّقة عبر cron. التقنيات: Python وClaude API وPlaywright وGoogle Cloud VM.",
+      "projects.gerag.title": "وكيل RAG · GE HealthCare",
+      "projects.gerag.short": "بحث في الوثائق بلغة طبيعية.",
+      "projects.gerag.desc": "وكيل RAG في الإنتاج لدى GE HealthCare يتيح استجواب وثائق تقنية معقّدة بلغة طبيعية مع إجابات موثّقة المصدر — يختصر بحثًا يستغرق ساعات إلى ثوانٍ. كُتب من البداية إلى النهاية (معالجة مسبقة خاصة بالمجال، استرجاع BM25 ثم إعادة ترتيب ثم نموذج لغوي)، ثم أُعيدت هندسته كنظام متعدّد الوكلاء على Microsoft Copilot Studio عندما صارت كلفة الرموز هي العامل المُقيِّد.",
       "projects.hover": "مرّر أو انقر لعرض التفاصيل", "projects.link": "عرض الكود", "projects.link.modelRepo": "مستودع النموذج", "projects.link.demoSpace": "مساحة العرض", "projects.link.viewCode": "عرض الكود", "projects.link.githubRepo": "مستودع GitHub", "projects.link.liveDemo": "عرض مباشر",
       "projects.p9.title": "مدرب LeRobot PushT", "projects.p9.short": "تدريب السياسات.", "projects.p9.desc": "نظام كامل لتدريب وتقييم سياسات PushT.",
-      
-      // --- FIXED: LUNG CANCER ---
-      "projects.cancer.title": "كشف سرطان الرئة", 
-      "projects.cancer.short": "تشخيص الأورام (CT).", 
-      "projects.cancer.desc": "تصنيف 4 أنواع من سرطان الرئة باستخدام CNN على صور الأشعة المقطعية.",
-      // --------------------------
+      "projects.cancer.title": "كشف سرطان الرئة", "projects.cancer.short": "تشخيص الأورام (CT).", "projects.cancer.desc": "تصنيف 4 أنواع من سرطان الرئة باستخدام CNN على صور الأشعة المقطعية.",
 
       "projects.p10.title": "محاكي رؤية الروبوت", "projects.p10.short": "محاكي تفاعلي.", "projects.p10.desc": "محاكي روبوتات ويب.",
       "projects.sentiment.title": "تحليل المشاعر", "projects.sentiment.short": "تصنيف النصوص.", "projects.sentiment.desc": "نموذج NLP لتحليل المراجعات.",
@@ -480,49 +520,17 @@ const translations = {
       "projects.p8.title": "تحليل الطرق", "projects.p8.short": "خوارزميات.", "projects.p8.desc": "تحليل شبكة الطرق (أفينيون).",
 
       "chat.title": "مساعد المعرض", "chat.placeholder": "اطرح سؤالاً...", "chat.send": "إرسال",
+      "chat.greeting": "مرحبًا! اسألني عن مساري أو مشاريعي أو مهاراتي.",
+      "chat.thinking": "…",
+      "chat.unavailable": "المساعد غير متاح مؤقتًا. راسلني على zineb.meftah36@gmail.com — أردّ بسرعة.",
       "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
     }
   };
   
-  // 5. Mobile Language Dropdown
-  const mobileLangButton = document.querySelector('.mobile-lang-button');
-  const mobileLangOptions = document.querySelector('.mobile-lang-options');
-  const mobileLangButtons = document.querySelectorAll('.mobile-lang-options button');
-  
-  if (mobileLangButton && mobileLangOptions) {
-    mobileLangButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      mobileLangOptions.classList.toggle('active');
-    });
-    
-    document.addEventListener('click', (e) => {
-      if (!mobileLangButton.contains(e.target) && !mobileLangOptions.contains(e.target)) {
-        mobileLangOptions.classList.remove('active');
-      }
-    });
-  }
-  
-  mobileLangButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const selectedLang = btn.getAttribute('data-lang');
-      translatePage(selectedLang);
-      
-      const langNames = { fr: 'Français', en: 'English', ar: 'العربية' };
-      if (mobileLangButton) {
-        const currentLangSpan = mobileLangButton.querySelector('.current-lang');
-        if (currentLangSpan) {
-          currentLangSpan.textContent = langNames[selectedLang] || selectedLang.toUpperCase();
-        }
-      }
-      
-      if (mobileLangOptions) {
-        mobileLangOptions.classList.remove('active');
-      }
-    });
-  });
-
   // 6. Translation Function
   function translatePage(lang) {
+    if (!SUPPORTED_LANGS.includes(lang)) lang = DEFAULT_LANG;
+    currentLang = lang;
     const html = document.documentElement;
     
     // --- SAFARI FIX START ---
@@ -610,10 +618,22 @@ const translations = {
     // Update <title>
     if (dict["page.title"]) document.title = dict["page.title"];
 
-    // Update buttons state
-    document.querySelectorAll('.lang-switcher button[data-lang], .mobile-lang-options button[data-lang]').forEach(b => {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
+    // Serve the CV and the cover letter in the language being read.
+    // Arabic readers get the English documents — there is no Arabic version.
+    const docLang = lang === "fr" ? "fr" : "en";
+    document.querySelectorAll("a[data-doc]").forEach((a) => {
+      const href = a.getAttribute("data-doc-" + docLang);
+      if (href) a.setAttribute("href", href);
     });
+
+    // Update buttons state
+    document.querySelectorAll('.lang-switcher button[data-lang]').forEach(b => {
+      const active = b.getAttribute('data-lang') === lang;
+      b.setAttribute('aria-pressed', String(active));
+      b.classList.toggle('is-active', active);
+    });
+
+    refreshChatGreeting();
 
     // Persist
     try { localStorage.setItem('lang', lang); } catch {}
@@ -623,7 +643,8 @@ const translations = {
   const savedLang = (() => {
     try { return localStorage.getItem('lang'); } catch { return null; }
   })();
-  translatePage(savedLang || "fr");
+  translatePage(savedLang || DEFAULT_LANG);
+  greetOnce();
 
   const langButtons = document.querySelectorAll(".lang-switcher button");
   langButtons.forEach(btn => {
@@ -663,12 +684,39 @@ const translations = {
 
   // 10. Theme Toggle
   const themeToggle = document.getElementById("themeToggle");
+  const rootEl = document.documentElement;
+
+  // The inline <head> script sets .pre-light before first paint; mirror it onto <body>,
+  // which is what the stylesheet keys off once the page is interactive.
+  const applyTheme = (theme) => {
+    const light = theme === "light";
+    document.body.classList.toggle("light-theme", light);
+    rootEl.classList.toggle("pre-light", light);
+    if (themeToggle) {
+      // The icon shows what clicking will do, not the current state.
+      themeToggle.textContent = light ? "🌙" : "☀️";
+      themeToggle.setAttribute(
+        "aria-label",
+        light ? "Activer le thème sombre / Switch to dark theme" : "Activer le thème clair / Switch to light theme"
+      );
+      themeToggle.setAttribute("aria-pressed", String(light));
+    }
+  };
+
+  const storedTheme = (() => {
+    try { return localStorage.getItem("theme"); } catch { return null; }
+  })();
+  applyTheme(storedTheme === "light" ? "light" : "dark");
+
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("light-theme");
-      themeToggle.textContent = document.body.classList.contains("light-theme") ? "☀️" : "🌙";
+      const next = document.body.classList.contains("light-theme") ? "dark" : "light";
+      applyTheme(next);
+      try { localStorage.setItem("theme", next); } catch {}
     });
   }
+
+
 
   // 11. Skill & Language Animations
   const skillCards = document.querySelectorAll('.skill-card');
@@ -720,24 +768,43 @@ const translations = {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-pressed', 'false');
 
-    const shouldUseClick =
-      window.matchMedia('(hover: none)').matches ||
-      window.matchMedia('(pointer: coarse)').matches;
+    const toggle = () => {
+      const isFlipped = card.classList.toggle('flipped');
+      card.setAttribute('aria-pressed', String(isFlipped));
+    };
 
-    if (shouldUseClick) {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return;
-        const isFlipped = card.classList.toggle('flipped');
-        card.setAttribute('aria-pressed', String(isFlipped));
-      });
-    }
+    // The hint says "hover or click", so click has to work everywhere -
+    // not only on coarse-pointer devices.
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      toggle();
+    });
 
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const isFlipped = card.classList.toggle('flipped');
-        card.setAttribute('aria-pressed', String(isFlipped));
+        toggle();
       }
     });
-  });  
+  });
+
+  // 14. Experience Card Interactions
+  // Same reasoning: the detail overlay was hover-only, so touch and keyboard
+  // visitors could never read it.
+  document.querySelectorAll('.experience-card').forEach(card => {
+    const toggle = () => {
+      const revealed = card.classList.toggle('revealed');
+      card.setAttribute('aria-expanded', String(revealed));
+    };
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      toggle();
+    });
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
 });

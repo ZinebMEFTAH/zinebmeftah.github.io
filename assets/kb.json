@@ -1,14 +1,9 @@
 {
   "docs": [
     {
-      "id": "identity",
-      "title": "Identity & Core Mission",
-      "content": "Name: Meftah Zineb. A high-achieving Computer Science and AI student specializing in Deep Learning, Robotics, and MLOps. AI & MLOps Engineering Intern at GE HealthCare Paris (May–July 2026), where she shipped a production RAG agent and re-architected it as a multi-agent system on Microsoft Copilot Studio. Portfolio: zinebmeftah.github.io. Known for bridging the gap between theoretical AI research and production-ready software engineering."
-    },
-    {
       "id": "academic_excellence",
       "title": "Academic Excellence & Honors",
-      "content": "Zineb is the Valedictorian (Major de Promotion) for both her L2 and L3 years at the University of Avignon (CERI), maintaining an academic average > 15/20[cite: 5, 11]. She previously completed an elite engineering preparatory cycle at the Higher National School of AI (ENSIA) in Algiers with Highest Honors (Mention Très Bien)[cite: 13, 16]. Her academic foundation is rooted in advanced mathematics, algorithmic theory, and stochastic optimization[cite: 6, 51]."
+      "content": "Zineb is the Valedictorian (Major de Promotion) for both her L2 and L3 years at the University of Avignon (CERI), maintaining an academic average > 15/20. She previously completed an elite engineering preparatory cycle at the Higher National School of AI (ENSIA) in Algiers with Highest Honors (Mention Très Bien). Her academic foundation is rooted in advanced mathematics, algorithmic theory, and stochastic optimization."
     },
     {
       "id": "ge_healthcare_internship",
@@ -16,29 +11,24 @@
       "content": "AI & MLOps Engineering Intern (May 2026 – July 2026) at GE HealthCare, Paris. Main project: a production RAG agent letting engineers query complex regulated technical documentation in natural language with cited sources, turning hours of expert lookup into seconds. Built in two phases: first coded end to end in Python (domain-aware preprocessing and chunking, metadata extraction, semantic deduplication, tiered retrieval BM25 → cross-encoder reranker → LLM, prompt caching, query decomposition, MCP integrations to internal requirements-management and wiki systems, orchestrated as modular skills); then re-architected into a multi-agent system on Microsoft Copilot Studio (workflows and specialized subagents) once the linear pipeline's token cost became the bottleneck — the custom preprocessing layer was kept upstream, while retrieval, orchestration and generation moved onto the platform, improving answer quality and processing time at controlled cost. Also shipped autonomous SDLC agents for code review, documentation generation and test automation."
     },
     {
-      "id": "robotics_mlops_specialization",
-      "title": "Specialization: Robotics & MLOps",
-      "content": "Expertise in full MLOps training pipelines for autonomous robotic agents. Notable project: 'LeRobot - Reinforcement Learning & Robotics,' which utilizes Diffusion models and policy training for robotic manipulation (PushT)[cite: 33, 35]. Tools: Python, PyTorch, Hugging Face LeRobot[cite: 37]."
+      "id": "identity",
+      "title": "Identity & Core Mission",
+      "content": "Name: Meftah Zineb. AI and MLOps engineer specializing in Deep Learning, Robotics and production LLM systems. She holds a B.Sc. in Computer Science (AI track) from the University of Avignon and is currently in the Master 1 MLSD (Machine Learning for Data Science) at Université Paris Cité, for the 2026-2027 year. She was an AI & MLOps Engineering Intern at GE HealthCare Paris (May-July 2026), where she shipped a production RAG agent and re-architected it as a multi-agent system on Microsoft Copilot Studio. Portfolio: zinebmeftah.github.io. Known for bridging the gap between theoretical AI research and production-ready software engineering."
     },
     {
-      "id": "publications_research",
-      "title": "Scientific Writing & Research",
-      "content": "Published a technical article on Hugging Face: 'Tags Generation Dataset,' detailing a methodology for high-quality synthetic dataset generation through LLM reverse fine-tuning[cite: 46, 48, 49]. Skills include technical reporting, scientific article drafting, and rigorous model evaluation[cite: 53]."
+      "id": "languages_certification",
+      "title": "Languages & Certifications",
+      "content": "English: C2 (LanguageCert Level 3 Certificate in ESOL International, PeopleCert, Ofqual-regulated, February 2026). French: Bilingual/C1 level. Arabic: Native. Certified in Deep Learning with PyTorch (DataCamp) and Responsive Web Design (freeCodeCamp)."
     },
     {
-      "id": "technical_stack_ai",
-      "title": "Technical Stack: AI & Data Science",
-      "content": "Advanced proficiency in PyTorch, TensorFlow, Scikit-learn, and Hugging Face Hub[cite: 51]. Specialized in LLM Fine-tuning, Transformers, CNNs, Computer Vision (YOLO/OpenCV), and Reinforcement Learning[cite: 51]. Experience with synthetic data generation and graph-based optimization (A*, Dijkstra) [User HTML]."
-    },
-    {
-      "id": "technical_stack_engineering",
-      "title": "Technical Stack: Software Engineering",
-      "content": "Expert-level Python developer[cite: 51]. Proficient in C/C++, Java, NestJS, Next.js, Node.js, PHP, and SQL[cite: 51]. Infrastructure skills: Docker, CI/CD, Linux/Bash (Ubuntu), GitFlow, and managing distributed server clusters (AMS project)[cite: 39, 44, 51]."
+      "id": "leadership_impact",
+      "title": "Leadership & Global Agility",
+      "content": "Selected for the U.S. Embassy’s Youth Ambassadors Program (AYLP) in Nevada, USA, for excellence in leadership and technology. Former IT Lead for the Google Developer Student Club (GDSC), responsible for technical workshops and community growth. Technical Lead for the Avignon AI Hackathon 2025, architecting an end-to-end Computer Vision pipeline."
     },
     {
       "id": "project_genai_agents",
       "title": "Project – GenAI Agents: Autonomous Web Generator",
-      "content": "Orchestrated autonomous LLM agents to transform natural language instructions into production-ready web architectures[cite: 28, 30]. Stack: Node.js, Python, OpenAI API, Selenium[cite: 31]."
+      "content": "Orchestrated autonomous LLM agents to transform natural language instructions into production-ready web architectures. Stack: Node.js, Python, OpenAI API, Selenium."
     },
     {
       "id": "project_robot_vision",
@@ -46,19 +36,29 @@
       "content": "Browser-based interactive simulator featuring navigation, pick-and-place functionality, and natural-language command processing. Implements COCO-SSD for object detection and A* for pathfinding [User HTML]."
     },
     {
-      "id": "languages_certification",
-      "title": "Languages & Certifications",
-      "content": "English: C2 (LanguageCert Level 3 Certificate in ESOL International, PeopleCert, Ofqual-regulated, February 2026). French: Bilingual/C1 level. Arabic: Native[cite: 53]. Certified in Deep Learning with PyTorch (DataCamp) and Responsive Web Design (freeCodeCamp) [User JSON]."
-    },
-    {
-      "id": "leadership_impact",
-      "title": "Leadership & Global Agility",
-      "content": "Selected for the U.S. Embassy’s Youth Ambassadors Program (AYLP) in Nevada, USA, for excellence in leadership and technology[cite: 55]. Former IT Lead for the Google Developer Student Club (GDSC), responsible for technical workshops and community growth[cite: 60]. Technical Lead for the Avignon AI Hackathon 2025, architecting an end-to-end Computer Vision pipeline[cite: 56, 57]."
+      "id": "publications_research",
+      "title": "Scientific Writing & Research",
+      "content": "Published a technical article on Hugging Face: 'Tags Generation Dataset,' detailing a methodology for high-quality synthetic dataset generation through LLM reverse fine-tuning. Skills include technical reporting, scientific article drafting, and rigorous model evaluation."
     },
     {
       "id": "recruiter_guidance",
       "title": "Information for Recruiters",
-      "content": "Zineb is actively seeking internship or alternance opportunities in AI Engineering, Robotics, or Research. Her profile is distinguished by her 'Major de Promo' status, her ability to build end-to-end MLOps pipelines, and her experience at GE HealthCare building a production RAG agent and re-architecting it as a multi-agent system when token cost became the bottleneck. For inquiries, prioritize discussing her work in Robotics/RL (LeRobot) and autonomous LLM agents."
+      "content": "Zineb is actively seeking a role in AI / MLOps engineering - permanent (CDI), fixed-term (CDD) or work-study (alternance) - available from September 2026, in the Paris region or fully remote. Her profile is distinguished by her 'Major de Promo' status, her ability to build end-to-end MLOps pipelines, and her experience at GE HealthCare building a production RAG agent and re-architecting it as a multi-agent system when token cost became the bottleneck. For inquiries, prioritize discussing her work in Robotics/RL (LeRobot) and autonomous LLM agents."
+    },
+    {
+      "id": "robotics_mlops_specialization",
+      "title": "Specialization: Robotics & MLOps",
+      "content": "Expertise in full MLOps training pipelines for autonomous robotic agents. Notable project: 'LeRobot - Reinforcement Learning & Robotics,' which utilizes Diffusion models and policy training for robotic manipulation (PushT). Tools: Python, PyTorch, Hugging Face LeRobot."
+    },
+    {
+      "id": "technical_stack_ai",
+      "title": "Technical Stack: AI & Data Science",
+      "content": "Advanced proficiency in PyTorch, TensorFlow, Scikit-learn, and Hugging Face Hub. Specialized in LLM Fine-tuning, Transformers, CNNs, Computer Vision (YOLO/OpenCV), and Reinforcement Learning. Experience with synthetic data generation and graph-based optimization (A*, Dijkstra) [User HTML]."
+    },
+    {
+      "id": "technical_stack_engineering",
+      "title": "Technical Stack: Software Engineering",
+      "content": "Expert-level Python developer. Proficient in C/C++, Java, NestJS, Next.js, Node.js, PHP, and SQL. Infrastructure skills: Docker, CI/CD, Linux/Bash (Ubuntu), GitFlow, and managing distributed server clusters (AMS project)."
     }
   ]
 }

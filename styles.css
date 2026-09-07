@@ -18,7 +18,8 @@
     --anchor-offset: 88px;
 }
 
-body.light-theme {
+body.light-theme,
+html.pre-light body {
     --bg-color: #ffffff;
     --section-bg: #f6f8fa;
     --card-bg: #ffffff; 
@@ -57,10 +58,17 @@ section[id]:target::before {
   :root { --anchor-offset: 64px; }
 }
 
+/* Hidden until focused. Never park it at left:-9999px - in RTL that off-screen
+   space becomes scrollable overflow and drags the whole page out of view. */
 .skip-link {
   position: absolute;
-  left: -9999px;
   top: 0;
+  inset-inline-start: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
   background: var(--primary-color);
   color: #fff;
   padding: 10px 14px;
@@ -68,8 +76,12 @@ section[id]:target::before {
   z-index: 3000;
 }
 .skip-link:focus {
-  left: 16px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
   top: 16px;
+  inset-inline-start: 16px;
 }
 
 h1, .header-content h1 { font-size: clamp(2rem, 6vw, 4rem); }
@@ -191,7 +203,8 @@ nav {
     transform: translateZ(0); 
 }
 
-body.light-theme nav {
+body.light-theme nav,
+html.pre-light body nav {
     background: rgba(255, 255, 255, 0.95);
 }
 
@@ -337,8 +350,13 @@ header {
     position: relative;
     height: 100vh;
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15)),
-                url('https://source.unsplash.com/1600x900/?technology,circuit') no-repeat center center/cover;
+    /* source.unsplash.com was retired and now 503s on every load; the hero is
+       painted entirely in CSS instead. */
+    background:
+        radial-gradient(90% 70% at 15% 0%, rgba(var(--primary-rgb), 0.22), transparent 60%),
+        radial-gradient(80% 70% at 85% 100%, rgba(var(--accent-rgb), 0.20), transparent 60%),
+        linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.12)),
+        var(--bg-color);
     background-attachment: fixed;
     display: flex;
     align-items: center;
@@ -355,7 +373,8 @@ header {
     background: rgba(15, 20, 25, 0.75);
 }
 
-body.light-theme .header-overlay {
+body.light-theme .header-overlay,
+html.pre-light body .header-overlay {
     background: rgba(255, 255, 255, 0.85);
 }
 
@@ -963,6 +982,62 @@ body.light-theme .header-overlay {
     opacity: 1;
 }
 
+/* Self-contained cover art for experience cards (replaces hot-linked stock photos). */
+.experience-cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background:
+      radial-gradient(120% 120% at 20% 0%, rgba(var(--primary-rgb), 0.22), transparent 60%),
+      radial-gradient(120% 120% at 90% 100%, rgba(var(--accent-rgb), 0.22), transparent 60%),
+      var(--section-bg);
+    border-bottom: 1px solid var(--border-color);
+    transition: opacity 0.5s ease;
+}
+.experience-emoji {
+    font-size: 2.6rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 10px var(--shadow-color));
+}
+.experience-kicker {
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+.experience-img-logo {
+    background: #fff;
+    object-fit: contain;
+    padding: 1rem;
+}
+.experience-card:hover .experience-cover {
+    opacity: 0;
+}
+
+/* Touch and keyboard users get the same detail overlay as hover. */
+.experience-card.revealed .experience-img,
+.experience-card.revealed .experience-cover {
+    opacity: 0;
+}
+.experience-card.revealed .experience-details,
+.experience-card:focus-visible .experience-details {
+    opacity: 1;
+}
+.experience-card:focus-visible .experience-img,
+.experience-card:focus-visible .experience-cover {
+    opacity: 0;
+}
+.experience-card:focus-visible,
+.flip-card:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
 .experience-details a {
     color: white;
     text-decoration: underline;
@@ -1293,76 +1368,6 @@ footer {
     background: rgba(99, 102, 241, 0.1);
     color: var(--primary-color);
     border-color: var(--primary-color);
-}
-
-.mobile-lang-dropdown {
-    margin: 20px;
-    position: relative;
-}
-
-.mobile-lang-button {
-    width: 100%;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    padding: 15px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.mobile-lang-button:hover {
-    border-color: var(--primary-color);
-    background: rgba(99, 102, 241, 0.1);
-}
-
-.mobile-lang-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    box-shadow: 0 4px 12px var(--shadow-color);
-    z-index: 100;
-}
-
-.mobile-lang-options.active {
-    display: block;
-}
-
-.mobile-lang-options button {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 15px 20px;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 1.1em;
-    text-align: left;
-    transition: background 0.2s ease;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.mobile-lang-options button:last-child {
-    border-bottom: none;
-}
-
-.mobile-lang-options button:hover {
-    background: rgba(99, 102, 241, 0.1);
-}
-
-.mobile-lang-options button[aria-pressed="true"] {
-    background: var(--primary-color);
-    color: white;
 }
 
 .lang-switcher {
@@ -1952,6 +1957,31 @@ html[dir="ltr"] .hover-text {
   cursor: pointer;
   font-size: 0.9rem;
 }
+.lang-options button {
+  color: var(--text-color);
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.lang-options button:hover,
+.lang-options button:focus-visible {
+  background-color: rgba(var(--primary-rgb), 0.14);
+  color: var(--primary-color);
+}
+.lang-options button.is-active {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.lang-options button.is-active::after {
+  content: " ✓";
+}
+[dir="rtl"] .lang-options {
+  right: auto;
+  left: 0;
+}
+[dir="rtl"] .lang-options button {
+  text-align: right;
+}
 
 @media screen and (max-width: 1175px) {
   .burger {
@@ -2384,6 +2414,8 @@ html[lang="ar"] .projects-scroll > * {
 }
 .chat-bubble.user { align-self: flex-end; background: rgba(var(--primary-rgb), 0.12); }
 .chat-bubble.bot  { align-self: flex-start; background: rgba(var(--accent-rgb), 0.10); }
+.chat-bubble.pending { opacity: 0.6; font-style: italic; }
+.chat-bubble.error { background: rgba(220, 80, 80, 0.12); }
 
 #chat-toggle {
   display: block !important;
@@ -2494,7 +2526,8 @@ html[lang="ar"] .projects-scroll > * {
     var(--bg-color) !important;
   background-attachment: scroll !important;
 }
-body.light-theme #header {
+body.light-theme #header,
+html.pre-light body #header {
   background:
     radial-gradient(55% 45% at 18% 22%, rgba(var(--primary-rgb),0.10), transparent 60%),
     radial-gradient(50% 42% at 82% 28%, rgba(var(--accent-rgb),0.09), transparent 60%),

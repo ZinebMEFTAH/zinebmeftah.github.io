@@ -1,0 +1,11 @@
+name = "portfolio-chat"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Override the primary model without touching the code; the worker falls back
+# through its own list if this one is retired.
+GROQ_MODEL = "openai/gpt-oss-120b"
+
+# GROQ_API_KEY is a secret, never a var:
+#   npx wrangler secret put GROQ_API_KEY

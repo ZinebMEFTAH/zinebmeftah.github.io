@@ -1,7 +1,10 @@
-# Backend / worker
-worker/
-node_modules/
+# Secrets - never commit
 .env
+.dev.vars
+
+# Dependencies
+node_modules/
+worker/node_modules/
 
 # Build / logs
 dist/

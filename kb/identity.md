@@ -1,0 +1,3 @@
+# Identity & Core Mission
+
+Name: Meftah Zineb. AI and MLOps engineer specializing in Deep Learning, Robotics and production LLM systems. She holds a B.Sc. in Computer Science (AI track) from the University of Avignon and is currently in the Master 1 MLSD (Machine Learning for Data Science) at Université Paris Cité, for the 2026-2027 year. She was an AI & MLOps Engineering Intern at GE HealthCare Paris (May-July 2026), where she shipped a production RAG agent and re-architected it as a multi-agent system on Microsoft Copilot Studio. Portfolio: zinebmeftah.github.io. Known for bridging the gap between theoretical AI research and production-ready software engineering.

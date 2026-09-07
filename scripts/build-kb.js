@@ -11,11 +11,16 @@ const files = fs.readdirSync(kbDir).filter(f => f.endsWith(".md"));
 
 const docs = files.map((file) => {
   const fullPath = path.join(kbDir, file);
-  const content = fs.readFileSync(fullPath, "utf8");
+  const raw = fs.readFileSync(fullPath, "utf8").trim();
+
+  // First line may be an "# H1" title; everything after it is the body.
+  const match = raw.match(/^#\s+(.+?)\s*\n+([\s\S]*)$/);
+  const id = file.replace(/\.md$/, "");
+
   return {
-    id: file.replace(/\.md$/, ""),
-    title: file.replace(/\.md$/, ""),
-    content
+    id,
+    title: match ? match[1] : id,
+    content: (match ? match[2] : raw).trim()
   };
 });
 
