@@ -115,12 +115,11 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
 @media (max-width: 1175px) {
   header { min-height: 85vh; background-attachment: scroll; }
   .header-content { padding: 0 12px; }
-  .projects-scroll { gap: 16px; padding: 12px 0; }
+  .projects-scroll { gap: 16px; padding: 12px 0; grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
   .section { margin: 40px auto; padding: 28px 18px; }
-  .projects-scroll .flip-card { width: 86vw; height: 260px; }
   .flip-card-front h3, .flip-card-back h3 { font-size: 1.0rem; }
   .flip-card-front p, .flip-card-back p { font-size: 0.5rem; }
   .experience-media { height: 150px; }
@@ -156,12 +155,10 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
 }
 
 @media (max-width: 480px) {
-  .projects-scroll .flip-card { width: 90vw; height: 240px; }
   .section { padding: 22px 14px; }
 }
 
 @media (max-width: 360px) {
-  .projects-scroll .flip-card { width: 92vw; height: 220px; }
 }
 
 * {
@@ -761,35 +758,28 @@ html.pre-light body .header-overlay {
     color: var(--text-secondary);
 }
 
+/* A grid, not a sideways scroller: every project is reachable by scrolling
+   down, instead of 15 of 20 hiding behind a horizontal gesture. */
 .projects-scroll {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
-    overflow-x: auto;
     padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) var(--card-bg);
 }
 
-.projects-scroll::-webkit-scrollbar {
-    height: 8px;
-}
-
-.projects-scroll::-webkit-scrollbar-track {
-    background: var(--card-bg);
-    border-radius: 4px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
+/* Tall enough for the longest description, so no card back needs to scroll.
+   This must stay after the responsive blocks above, which is why the height
+   overrides live here rather than in the earlier media queries. */
 .projects-scroll .flip-card {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    width: clamp(260px, 42vw, 300px);
-    height: clamp(240px, 34vw, 320px);
+    width: 100%;
+    height: 360px;
+}
+
+@media (max-width: 768px) {
+    .projects-scroll .flip-card { height: 380px; }
+}
+@media (max-width: 480px) {
+    .projects-scroll .flip-card { height: 400px; }
 }
 
 .flip-card {
@@ -1758,9 +1748,7 @@ nav:hover {
   transform: translateY(0) !important; 
 }
 
-[dir="rtl"] .projects-scroll {
-  direction: ltr; 
-}
+
 
 [dir="rtl"] .flip-card-front,
 [dir="rtl"] .flip-card-back {
@@ -2135,21 +2123,12 @@ html[dir="rtl"] .hover-text {
   direction: rtl;        
 }
 
-.projects-scroll {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
+/* Arabic inherits dir="rtl" from <html>, so the grid flows right-to-left on
+   its own; the old direction overrides existed only for the scroller. */
 
-html[lang="ar"] .projects-scroll {
-  direction: rtl;       
-  text-align: right;
-}
 
-html[lang="ar"] .projects-scroll > * {
-  direction: ltr;       
-}
+
+
 
 #chat-toggle{
   position: fixed;
