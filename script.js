@@ -168,9 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
     fr: {
       // ... (Keep previous translations the same) ...
-      "page.title": "Portfolio - Meftah Zineb",
-      "nav.title": "Meftah Zineb",
-      "header.title": "MEFTAH Zineb",
+      "page.title": "Portfolio - Zineb Meftah",
+      "nav.title": "Zineb Meftah",
+      "header.title": "Zineb Meftah",
       "header.subtitle": "Je conçois des systèmes IA autonomes, déployés en production.",
       "header.tagline": "Double compétence : ingénierie logicielle + IA · MLOps · Deep Learning",
       "hero.chip0": "Double profil : Ingénierie + IA", "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · LanguageCert",
@@ -198,7 +198,7 @@ const translations = {
 
       // Profile
       "profile.heading": "À Propos de Moi",
-      "profile.greeting": "Bonjour, je suis Meftah Zineb.",
+      "profile.greeting": "Bonjour, je suis Zineb Meftah.",
       "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d’élite de l’ENSIA (Alger). Après un stage d’ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d’IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
       "profile.text2": "J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, un système d’outreach IA entièrement autonome déployé en production, ainsi qu’un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. Je suis actuellement en Master 1 MLSD (Machine Learning pour la Science des Données) à l’Université Paris Cité, et je cherche l’entreprise où mettre tout cela en pratique — en CDI, CDD ou alternance.",
       "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d’ingénieure — code, backend, systèmes complexes — et la maîtrise de l’IA pour en faire des solutions qui tournent réellement, en production.",
@@ -219,6 +219,7 @@ const translations = {
       "formation.bac.cert": "Voir attestation BAC",
       "formation.bac.transcript": "Voir relevés de notes",
       "dates.paris": "Depuis septembre 2026 · en cours",
+      "formation.paris.cert": "Certificat de scolarité 2026/2027", "formation.avignon.cert": "Certificat d’obtention du diplôme", "experience.ge.cert": "Attestation de stage",
       "dates.ensia": "2022 - Juin 2024",
       "dates.avignon": "Septembre 2024 — Juin 2026 · obtenue",
       "common.viewDiploma": "Voir diplôme",
@@ -230,6 +231,7 @@ const translations = {
       "publication.description": "Article technique publié sur Hugging Face : une méthode de génération d’un jeu de données appariant mots-clés et articles, par fine-tuning inversé, pensée pour entraîner des modèles de génération de tags. Il détaille la construction du corpus, le contrôle qualité et les limites de l’approche.",
       "publication.cta": "Lire l’article complet",
       "publication.tableTitle": "Exemple de base de données",
+      "publication.tableHint": "14 exemples du jeu de données — cliquez sur une ligne pour lire l’article complet.", "publication.modalTitle": "Article complet",
       "pub.keywords": "Mots-clés",
       "pub.articles": "Articles",
 
@@ -245,7 +247,7 @@ const translations = {
       "competences.project1": "Génération de données synthétiques", "competences.project2": "Clustering & Segmentation (K-Means)", "competences.project3": "Algorithmes de Graphes (A*, Dijkstra)", "competences.project4": "Fine-tuning",
 
       // LANGUAGES
-      "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)", "langues.frenchDetail": "Année universitaire validée en France",
+      "langues.french": "Français", "langues.frenchlevel": "Avancé (C1)", "langues.frenchDetail": "Années universitaires validées en France",
       "langues.english": "Anglais", "langues.englishlevel": "Bilingue (C2)",
       "langues.arabic": "Arabe", "langues.arabicLevel": "Langue maternelle",
 
@@ -292,7 +294,7 @@ const translations = {
       "chat.greeting": "Bonjour ! Posez-moi vos questions sur mon parcours, mes projets ou mes compétences.",
       "chat.thinking": "…",
       "chat.unavailable": "L’assistant est momentanément indisponible. Écrivez-moi à zineb.meftah36@gmail.com — je réponds vite.",
-      "footer.copy": "© 2026 Meftah Zineb. Tous droits réservés."
+      "footer.copy": "© 2025–2026 Zineb Meftah. Tous droits réservés."
     },
     en: {
       "page.title": "Portfolio - Zineb Meftah",
@@ -335,6 +337,7 @@ const translations = {
       "formation.bac.cert": "View BAC certificate",
       "formation.bac.transcript": "View grade transcripts",
       "dates.paris": "Since September 2026 · in progress",
+      "formation.paris.cert": "Enrolment certificate 2026/2027", "formation.avignon.cert": "Degree certificate", "experience.ge.cert": "Internship certificate",
       "dates.ensia": "2022 - June 2024",
       "dates.avignon": "Sept 2024 — June 2026 · completed",
       "common.viewDiploma": "View Diploma",
@@ -346,6 +349,7 @@ const translations = {
       "publication.description": "A technical article published on Hugging Face: a method for generating a keyword-to-article dataset through reverse fine-tuning, designed to train tag-generation models. It covers how the corpus was built, how quality was checked, and where the approach falls short.",
       "publication.cta": "Read Full Article",
       "publication.tableTitle": "Sample Database",
+      "publication.tableHint": "14 samples from the dataset — click a row to read the full article.", "publication.modalTitle": "Full article",
       "pub.keywords": "Keywords", "pub.articles": "Articles",
 
       // SKILLS
@@ -360,7 +364,7 @@ const translations = {
       "competences.project1": "Synthetic Data Generation", "competences.project2": "Clustering & Segmentation (K-Means)", "competences.project3": "Graph Algorithms (A*, Dijkstra)", "competences.project4": "Fine-tuning",
 
       // LANGUAGES
-      "langues.french": "French", "langues.frenchlevel": "Advanced (C1)", "langues.frenchDetail": "Validated year in French university",
+      "langues.french": "French", "langues.frenchlevel": "Advanced (C1)", "langues.frenchDetail": "Academic years completed in France",
       "langues.english": "English", "langues.englishlevel": "Bilingual (C2)",
       "langues.arabic": "Arabic", "langues.arabicLevel": "Native",
 
@@ -407,12 +411,12 @@ const translations = {
       "chat.greeting": "Hi! Ask me anything about my background, my projects or my skills.",
       "chat.thinking": "…",
       "chat.unavailable": "The assistant is temporarily unavailable. Email me at zineb.meftah36@gmail.com — I reply quickly.",
-      "footer.copy": "© 2026 Zineb Meftah. All rights reserved."
+      "footer.copy": "© 2025–2026 Zineb Meftah. All rights reserved."
     },
     ar: {
-      "page.title": "المعرض - مفتاح زينب",
-      "nav.title": "مفتاح زينب",
-      "header.title": "مفتاح زينب",
+      "page.title": "المعرض - زينب مفتاح",
+      "nav.title": "زينب مفتاح",
+      "header.title": "زينب مفتاح",
       "header.subtitle": "أُصمّم أنظمة ذكاء اصطناعي مستقلة، منشورة في الإنتاج.",
       "header.tagline": "كفاءة مزدوجة: هندسة برمجيات + ذكاء اصطناعي · MLOps · تعلّم عميق",
       "hero.chip0": "ملف مزدوج: هندسة + ذكاء اصطناعي", "hero.chip1": "الأولى على الدفعة · 1/126", "hero.chip2": "ذكاء اصطناعي في الإنتاج @ GE HealthCare", "hero.chip3": "إنجليزية C2 · LanguageCert",
@@ -428,7 +432,7 @@ const translations = {
 
       "formation.heading": "التعليم والشهادات", "publications.heading": "المنشورات", "projects.heading": "المشاريع والخبرة", "experience.heading": "الخبرة والقيادة", "competences.heading": "المهارات", "langues.heading": "اللغات", "contact.heading": "اتصل",
 
-      "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا مفتاح زينب.",
+      "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا زينب مفتاح.",
       "profile.text1": "طالبة علوم الحاسوب، الأولى على دفعتها (السنتان الثانية والثالثة) بجامعة أفينيون (1 من 126، معدل > 15/20) وخريجة الطور التحضيري النخبوي لمدرسة ENSIA (الجزائر). بعد تدريب في هندسة الذكاء الاصطناعي وMLOps لدى GE HealthCare بباريس، أصمّم وأنشر أنظمة ذكاء اصطناعي في الإنتاج: وكلاء RAG، وخطوط معالجة LLM، وأنظمة مستقلة.",
       "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج، ومحرّك محتوى مستقل بحلقة مغلقة يُنشئ وينشر على يوتيوب وتيك توك وإنستغرام وفيسبوك. أنا حاليًا في ماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي، وأبحث عن الشركة التي أطبّق فيها كل هذا — بعقد دائم أو محدّد المدة أو بالتناوب.",
       "profile.highlight": "ما يميّزني: الجمع بين صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — وإتقان الذكاء الاصطناعي لإنتاج حلول تعمل فعليًا في الإنتاج.",
@@ -445,6 +449,7 @@ const translations = {
       "formation.bac.cert": "عرض شهادة البكالوريا",
       "formation.bac.transcript": "عرض كشف النقاط",
       "dates.paris": "منذ سبتمبر 2026 · جارٍ",
+      "formation.paris.cert": "شهادة تسجيل 2026/2027", "formation.avignon.cert": "شهادة الحصول على الدبلوم", "experience.ge.cert": "شهادة تربّص",
       "dates.ensia": "2022 - يونيو 2024",
       "dates.avignon": "سبتمبر 2024 — يونيو 2026 · مُنجزة",
       "common.viewDiploma": "عرض الشهادة",
@@ -456,6 +461,7 @@ const translations = {
       "publication.description": "مقال تقني منشور على Hugging Face: طريقة لتوليد مجموعة بيانات تربط الكلمات المفتاحية بالمقالات عبر الضبط العكسي، لتدريب نماذج توليد الوسوم. يشرح بناء المتن وضبط الجودة وحدود الطريقة.",
       "publication.cta": "اقرأ المقال الكامل",
       "publication.tableTitle": "عينة قاعدة البيانات",
+      "publication.tableHint": "14 عيّنة من مجموعة البيانات — انقر على سطر لقراءة المقال كاملًا.", "publication.modalTitle": "المقال كاملًا",
       "pub.keywords": "الكلمات المفتاحية", "pub.articles": "المقالات",
 
       // SKILLS
@@ -470,7 +476,7 @@ const translations = {
       "competences.project1": "توليد البيانات الاصطناعية", "competences.project2": "التجميع والتجزئة (K-Means)", "competences.project3": "خوارزميات الرسوم البيانية (A*, Dijkstra)", "competences.project4": "الضبط الدقيق (Fine-tuning)",
 
       // LANGUAGES
-      "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)", "langues.frenchDetail": "سنة جامعية مصادق عليها في فرنسا",
+      "langues.french": "الفرنسية", "langues.frenchlevel": "متقدم (C1)", "langues.frenchDetail": "سنوات جامعية مصادق عليها في فرنسا",
       "langues.english": "الإنجليزية", "langues.englishlevel": "ثنائي اللغة (C2)",
       "langues.arabic": "العربية", "langues.arabicLevel": "اللغة الأم",
 
@@ -526,7 +532,7 @@ const translations = {
       "chat.greeting": "مرحبًا! اسألني عن مساري أو مشاريعي أو مهاراتي.",
       "chat.thinking": "…",
       "chat.unavailable": "المساعد غير متاح مؤقتًا. راسلني على zineb.meftah36@gmail.com — أردّ بسرعة.",
-      "footer.copy": "© 2026 مفتاح زينب. جميع الحقوق محفوظة."
+      "footer.copy": "© 2025–2026 زينب مفتاح. جميع الحقوق محفوظة."
     }
   };
   
@@ -778,9 +784,71 @@ const translations = {
     });
   });
 
-  // 14. Experience Card Interactions
+  // 14. Publication Samples — full article in a reading dialog
+  const pubModal = document.getElementById("pub-modal");
+  const pubTbody = document.getElementById("pub-tbody");
+  if (pubModal && pubTbody) {
+    const pubBody = document.getElementById("pub-modal-body");
+    const pubKw = document.getElementById("pub-modal-kw");
+    const pubClose = document.getElementById("pub-modal-close");
+    let samples = [];
+    let lastFocused = null;
+
+    fetch("assets/publication-samples.json")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data) => { samples = Array.isArray(data) ? data : []; })
+      .catch(() => { samples = []; });
+
+    const closePub = () => {
+      pubModal.classList.add("hidden");
+      if (lastFocused) lastFocused.focus();
+    };
+
+    const openPub = (index, trigger) => {
+      const row = samples[index];
+      if (!row) return;
+      lastFocused = trigger || null;
+      pubKw.textContent = row.k;
+      pubBody.textContent = row.a;
+      pubBody.scrollTop = 0;
+      pubModal.classList.remove("hidden");
+      pubBody.focus();
+    };
+
+    pubTbody.addEventListener("click", (e) => {
+      const tr = e.target.closest(".pub-row");
+      if (tr) openPub(Number(tr.dataset.index), tr);
+    });
+    pubTbody.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const tr = e.target.closest(".pub-row");
+      if (!tr) return;
+      e.preventDefault();
+      openPub(Number(tr.dataset.index), tr);
+    });
+
+    pubClose.addEventListener("click", closePub);
+    pubModal.addEventListener("click", (e) => { if (e.target === pubModal) closePub(); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !pubModal.classList.contains("hidden")) closePub();
+    });
+  }
+
+  // 15. Experience Card Interactions
   // Same reasoning: the detail overlay was hover-only, so touch and keyboard
   // visitors could never read it.
+  // A card back that overflows is a scrollable region, so it needs its own
+  // focus stop for keyboard users.
+  const markScrollableBacks = () => {
+    document.querySelectorAll('.flip-card-back').forEach((back) => {
+      const scrolls = back.scrollHeight - back.clientHeight > 2;
+      if (scrolls) back.setAttribute('tabindex', '0');
+      else back.removeAttribute('tabindex');
+    });
+  };
+  markScrollableBacks();
+  window.addEventListener('resize', markScrollableBacks);
+
   document.querySelectorAll('.experience-card').forEach(card => {
     const toggle = () => {
       card.classList.toggle('revealed');

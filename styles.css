@@ -115,7 +115,7 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
 @media (max-width: 1175px) {
   header { min-height: 85vh; background-attachment: scroll; }
   .header-content { padding: 0 12px; }
-  .projects-scroll { gap: 16px; padding: 12px 0; grid-template-columns: 1fr; }
+  .projects-scroll { gap: 16px; padding: 12px 2px 24px; }
 }
 
 @media (max-width: 768px) {
@@ -758,28 +758,47 @@ html.pre-light body .header-overlay {
     color: var(--text-secondary);
 }
 
-/* A grid, not a sideways scroller: every project is reachable by scrolling
-   down, instead of 15 of 20 hiding behind a horizontal gesture. */
+/* Horizontal scroller. The scrollbar is deliberately visible so the row reads
+   as scrollable, and scroll-snap keeps cards aligned while swiping. */
 .projects-scroll {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
     gap: 24px;
-    padding: 20px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 20px 4px 28px;
+    scroll-snap-type: x proximity;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--card-bg);
+    overscroll-behavior-x: contain;
 }
 
-/* Tall enough for the longest description, so no card back needs to scroll.
-   This must stay after the responsive blocks above, which is why the height
-   overrides live here rather than in the earlier media queries. */
+.projects-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+.projects-scroll::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 5px;
+}
+.projects-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 5px;
+}
+
+/* These must stay after the responsive blocks earlier in the file, which is
+   why the overrides live here rather than up there. */
 .projects-scroll .flip-card {
-    width: 100%;
-    height: 360px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: clamp(260px, 42vw, 300px);
+    height: 340px;
 }
 
 @media (max-width: 768px) {
-    .projects-scroll .flip-card { height: 380px; }
+    .projects-scroll .flip-card { width: 82vw; height: 360px; }
 }
 @media (max-width: 480px) {
-    .projects-scroll .flip-card { height: 400px; }
+    .projects-scroll .flip-card { width: 86vw; height: 380px; }
 }
 
 .flip-card {
@@ -859,6 +878,9 @@ html.pre-light body .header-overlay {
     background: var(--card-bg);
     color: var(--text-color);
     transform: rotateY(180deg);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    justify-content: flex-start;
 }
 
 .flip-card-back h3 {
@@ -2648,4 +2670,120 @@ img, svg, video, canvas, table { max-width: 100%; }
   font-weight: 600;
   margin: 18px 0 10px;
   color: var(--text-color);
+}
+
+/* ---- Publication sample table: scrollable, rows open the full article ---- */
+.pub-table-hint {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0 0 10px;
+}
+.pub-table-scroll {
+  max-height: 340px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+.pub-table-scroll .sample-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--section-bg);
+}
+.pub-row {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.pub-row:hover,
+.pub-row:focus-visible {
+  background: rgba(var(--primary-rgb), 0.12);
+  outline: none;
+}
+.pub-row:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--primary-color);
+}
+.pub-row .pub-kw {
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: normal;
+  min-width: 190px;
+}
+
+/* Reading dialog */
+.pub-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+.pub-modal.hidden { display: none; }
+.pub-modal-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px var(--shadow-color);
+  width: min(760px, 100%);
+  max-height: min(80vh, 720px);
+  display: flex;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+}
+.pub-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+.pub-modal-head h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.15rem;
+}
+#pub-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 6px;
+  border-radius: 8px;
+}
+#pub-modal-close:hover,
+#pub-modal-close:focus-visible {
+  color: var(--text-color);
+  background: rgba(var(--primary-rgb), 0.14);
+}
+.pub-modal-kw {
+  margin: 0 0 14px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  line-height: 1.5;
+}
+.pub-modal-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  padding-right: 6px;
+}
+.pub-modal-body:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
+}
+[dir="rtl"] .pub-modal-body,
+[dir="rtl"] .pub-modal-kw { text-align: right; }
+
+@media (max-width: 600px) {
+  .pub-table-scroll { max-height: 300px; }
+  .pub-modal-box { padding: 18px 16px 20px; max-height: 86vh; }
 }
