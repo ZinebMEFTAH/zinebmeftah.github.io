@@ -1,7 +1,7 @@
 /**
  * Portfolio chat worker.
  *
- * Answers questions about Zineb Meftah using the page content the browser sends
+ * Answers questions about Zineb MEFTAH using the page content the browser sends
  * as `context`, so the assistant can only speak from what the portfolio says.
  *
  * Deploy:
@@ -27,7 +27,7 @@ const FALLBACK_MODELS = [
 const MAX_MESSAGE_CHARS = 1000;
 const MAX_CONTEXT_CHARS = 14000;
 
-const SYSTEM_PROMPT = `Tu es l'assistant du portfolio de Zineb Meftah (ingénieure IA, MLOps, deep learning).
+const SYSTEM_PROMPT = `Tu es l'assistant du portfolio de Zineb MEFTAH (ingénieure IA, MLOps, deep learning).
 
 Règles:
 - Réponds UNIQUEMENT à partir du CONTEXTE fourni. Si l'information n'y est pas, dis-le simplement et invite à écrire à zineb.meftah36@gmail.com.

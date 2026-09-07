@@ -167,11 +167,22 @@ p, li, .info-card p, .flip-card-back p, .flip-card-front p {
     box-sizing: border-box;
 }
 
+html {
+    /* The scrolling element is <html>, not <body>: declared on body this had
+       no effect and anchor links jumped instead of gliding. */
+    scroll-behavior: smooth;
+    /* Anchors land below the fixed navbar instead of underneath it. */
+    scroll-padding-top: var(--anchor-offset);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    scroll-behavior: smooth;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -345,8 +356,12 @@ nav ul li a:hover {
 
 header {
     position: relative;
-    height: 100vh;
     min-height: 100vh;
+    height: auto;
+    /* Clears the fixed navbar and lets the hero grow on short screens rather
+       than centring content that no longer fits and clipping the title. */
+    padding: calc(var(--anchor-offset) + 24px) 0 48px;
+    box-sizing: border-box;
     /* source.unsplash.com was retired and now 503s on every load; the hero is
        painted entirely in CSS instead. */
     background:
@@ -2767,3 +2782,39 @@ img, svg, video, canvas, table { max-width: 100%; }
   .pub-table-scroll { max-height: 300px; }
   .pub-modal-box { padding: 18px 16px 20px; max-height: 86vh; }
 }
+
+/* ---- Small-screen navbar ----
+   The name must stay on one line without running into the burger, so the logo
+   is allowed to shrink and the burger is pinned at its intrinsic size. */
+.logo {
+  min-width: 0;
+  flex: 0 1 auto;
+  overflow: hidden;
+}
+.logo a {
+  white-space: nowrap;
+}
+.burger {
+  flex: 0 0 auto;
+}
+.controls {
+  flex: 0 0 auto;
+}
+@media (max-width: 480px) {
+  .nav-container { width: 94%; gap: 10px; }
+  .logo a { font-size: 1rem; }
+  /* The floating chat button used to sit on top of the hero buttons. */
+  .hero-cta { padding-bottom: 72px; }
+}
+@media (max-width: 380px) {
+  .logo a { font-size: 0.9rem; }
+  .nav-container { gap: 8px; }
+  #chat-toggle { width: 48px; height: 48px; right: 14px; bottom: 14px; }
+}
+@media (max-width: 340px) {
+  .logo a { font-size: 0.82rem; }
+  .nav-container { width: 96%; gap: 6px; }
+}
+
+/* 10px uppercase was below comfortable reading size. */
+.featured-badge { font-size: 0.68rem; }

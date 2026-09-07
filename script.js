@@ -168,9 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
     fr: {
       // ... (Keep previous translations the same) ...
-      "page.title": "Portfolio - Zineb Meftah",
-      "nav.title": "Zineb Meftah",
-      "header.title": "Zineb Meftah",
+      "page.title": "Portfolio - Zineb MEFTAH",
+      "nav.title": "Zineb MEFTAH",
+      "header.title": "Zineb MEFTAH",
       "header.subtitle": "Je conçois des systèmes IA autonomes, déployés en production.",
       "header.tagline": "Double compétence : ingénierie logicielle + IA · MLOps · Deep Learning",
       "hero.chip0": "Double profil : Ingénierie + IA", "hero.chip1": "Major de promotion · 1ʳᵉ/126", "hero.chip2": "IA en production @ GE HealthCare", "hero.chip3": "Anglais C2 · LanguageCert",
@@ -198,7 +198,7 @@ const translations = {
 
       // Profile
       "profile.heading": "À Propos de Moi",
-      "profile.greeting": "Bonjour, je suis Zineb Meftah.",
+      "profile.greeting": "Bonjour, je suis Zineb MEFTAH.",
       "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d’élite de l’ENSIA (Alger). Après un stage d’ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d’IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
       "profile.text2": "J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, un système d’outreach IA entièrement autonome déployé en production, ainsi qu’un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. Je suis actuellement en Master 1 MLSD (Machine Learning pour la Science des Données) à l’Université Paris Cité, et je cherche l’entreprise où mettre tout cela en pratique — en CDI, CDD ou alternance.",
       "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d’ingénieure — code, backend, systèmes complexes — et la maîtrise de l’IA pour en faire des solutions qui tournent réellement, en production.",
@@ -294,12 +294,12 @@ const translations = {
       "chat.greeting": "Bonjour ! Posez-moi vos questions sur mon parcours, mes projets ou mes compétences.",
       "chat.thinking": "…",
       "chat.unavailable": "L’assistant est momentanément indisponible. Écrivez-moi à zineb.meftah36@gmail.com — je réponds vite.",
-      "footer.copy": "© 2025–2026 Zineb Meftah. Tous droits réservés."
+      "footer.copy": "© 2025–2026 Zineb MEFTAH. Tous droits réservés."
     },
     en: {
-      "page.title": "Portfolio - Zineb Meftah",
-      "nav.title": "Zineb Meftah",
-      "header.title": "Zineb Meftah",
+      "page.title": "Portfolio - Zineb MEFTAH",
+      "nav.title": "Zineb MEFTAH",
+      "header.title": "Zineb MEFTAH",
       "header.subtitle": "I build autonomous AI systems that run in production.",
       "header.tagline": "Software engineering + AI · MLOps · Deep Learning",
       "hero.chip0": "Dual profile: Engineering + AI", "hero.chip1": "Top of class · 1st/126", "hero.chip2": "Production AI @ GE HealthCare", "hero.chip3": "English C2 · LanguageCert",
@@ -316,7 +316,7 @@ const translations = {
 
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
-      "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb Meftah.",
+      "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb MEFTAH.",
       "profile.text1": "Ranked 1st of my class in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Fresh from an AI & MLOps Engineering internship at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
       "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, a fully autonomous AI outreach system deployed in production, and a closed-loop content engine that creates and publishes across YouTube, TikTok, Instagram and Facebook. I am currently in the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité, looking for the company where I can put all of this into practice — on a permanent, fixed-term or work-study contract.",
       "profile.highlight": "What sets me apart: combining genuine engineering rigor — code, backend, complex systems — with strong AI expertise to ship solutions that actually run in production.",
@@ -411,7 +411,7 @@ const translations = {
       "chat.greeting": "Hi! Ask me anything about my background, my projects or my skills.",
       "chat.thinking": "…",
       "chat.unavailable": "The assistant is temporarily unavailable. Email me at zineb.meftah36@gmail.com — I reply quickly.",
-      "footer.copy": "© 2025–2026 Zineb Meftah. All rights reserved."
+      "footer.copy": "© 2025–2026 Zineb MEFTAH. All rights reserved."
     },
     ar: {
       "page.title": "المعرض - زينب مفتاح",
@@ -674,7 +674,7 @@ const translations = {
     scrollIndicator.addEventListener("click", () => {
       const firstSection = document.querySelector("main section");
       if (firstSection) {
-        window.scrollTo({ top: firstSection.offsetTop - 60, behavior: "smooth" });
+        firstSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   }

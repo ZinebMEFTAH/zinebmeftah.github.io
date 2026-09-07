@@ -1,4 +1,4 @@
-# Zineb Meftah — Portfolio
+# Zineb MEFTAH — Portfolio
 
 Live site: **https://zinebmeftah.github.io**
 
