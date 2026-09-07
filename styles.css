@@ -994,54 +994,26 @@ html.pre-light body .header-overlay {
     opacity: 1;
 }
 
-/* Self-contained cover art for experience cards (replaces hot-linked stock photos). */
-.experience-cover {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background:
-      radial-gradient(120% 120% at 20% 0%, rgba(var(--primary-rgb), 0.22), transparent 60%),
-      radial-gradient(120% 120% at 90% 100%, rgba(var(--accent-rgb), 0.22), transparent 60%),
-      var(--section-bg);
-    border-bottom: 1px solid var(--border-color);
-    transition: opacity 0.5s ease;
-}
-.experience-emoji {
-    font-size: 2.6rem;
-    line-height: 1;
-    filter: drop-shadow(0 4px 10px var(--shadow-color));
-}
-.experience-kicker {
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-secondary);
-}
 .experience-img-logo {
     background: #fff;
     object-fit: contain;
-    padding: 1rem;
+    padding: 1.35rem;
 }
-.experience-card:hover .experience-cover {
-    opacity: 0;
+
+/* Avignon publishes a white-on-transparent mark, so it needs a dark plate. */
+.experience-img-dark {
+    background: var(--section-bg);
 }
 
 /* Touch and keyboard users get the same detail overlay as hover. */
-.experience-card.revealed .experience-img,
-.experience-card.revealed .experience-cover {
+.experience-card.revealed .experience-img {
     opacity: 0;
 }
 .experience-card.revealed .experience-details,
 .experience-card:focus-visible .experience-details {
     opacity: 1;
 }
-.experience-card:focus-visible .experience-img,
-.experience-card:focus-visible .experience-cover {
+.experience-card:focus-visible .experience-img {
     opacity: 0;
 }
 .experience-card:focus-visible,
