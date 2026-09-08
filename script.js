@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const translations = {
     fr: {
       // ... (Keep previous translations the same) ...
-      "page.title": "Portfolio - Zineb MEFTAH",
+      "page.title": "Zineb MEFTAH — Ingénieure IA, MLOps & Deep Learning",
       "nav.title": "Zineb MEFTAH",
       "header.title": "Zineb MEFTAH",
       "header.subtitle": "Je conçois des systèmes IA autonomes, déployés en production.",
@@ -297,7 +297,7 @@ const translations = {
       "footer.copy": "© 2025–2026 Zineb MEFTAH. Tous droits réservés."
     },
     en: {
-      "page.title": "Portfolio - Zineb MEFTAH",
+      "page.title": "Zineb MEFTAH — AI & MLOps Engineer",
       "nav.title": "Zineb MEFTAH",
       "header.title": "Zineb MEFTAH",
       "header.subtitle": "I build autonomous AI systems that run in production.",
@@ -414,7 +414,7 @@ const translations = {
       "footer.copy": "© 2025–2026 Zineb MEFTAH. All rights reserved."
     },
     ar: {
-      "page.title": "المعرض - زينب مفتاح",
+      "page.title": "زينب مفتاح — مهندسة ذكاء اصطناعي وMLOps",
       "nav.title": "زينب مفتاح",
       "header.title": "زينب مفتاح",
       "header.subtitle": "أُصمّم أنظمة ذكاء اصطناعي مستقلة، منشورة في الإنتاج.",
