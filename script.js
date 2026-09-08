@@ -177,6 +177,7 @@ const translations = {
       "hero.ctaCV": "⬇ Télécharger mon CV", "hero.ctaLetter": "⬇ Lettre de motivation", "hero.ctaProjects": "Voir mes projets", "hero.ctaContact": "Me contacter",
       "stat.rank": "Major de promotion L2 & L3", "stat.avg": "Moyenne générale", "stat.english": "Anglais · LanguageCert (Ofqual)", "stat.prod": "Systèmes IA @ GE HealthCare",
       "badge.production": "Production",
+      "projects.kind.university": "Projet universitaire", "projects.kind.personal": "Projet personnel",
       
       // Nav
       "nav.contact": "Contact", "nav.profil": "Profil", "nav.formation": "Formation",
@@ -201,6 +202,7 @@ const translations = {
       "profile.greeting": "Bonjour, je suis Zineb MEFTAH.",
       "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126, moyenne > 15/20), issue du cycle préparatoire d’élite de l’ENSIA à Alger. Ingénieure IA et MLOps, je conçois des agents RAG, des pipelines LLM et des systèmes autonomes, et je les emmène jusqu’à la production.",
       "profile.text2": "Chez GE HealthCare, j’ai livré un agent RAG qui répond en quelques secondes à des questions qui demandaient des heures de recherche documentaire. Je l’avais codé de bout en bout ; quand le coût en tokens est devenu le facteur limitant, je l’ai ré-architecturé en système multi-agents. C’est ce passage du prototype qui marche au système qui tient que je veux continuer à faire. Actuellement en Master 1 MLSD à l’Université Paris Cité, disponible en CDI, CDD ou alternance.",
+      "profile.refs": "Références académiques et professionnelles disponibles sur demande.",
       "profile.highlight": "Ce qui me distingue : une vraie rigueur d’ingénieure — code, backend, systèmes complexes — mise au service de l’IA, pour livrer des solutions qui tiennent une fois déployées.",
 
       // FORMATION
@@ -271,7 +273,7 @@ const translations = {
       "experience.card4.item1": "Hackathon IA Avignon (24h, 2025) — Tech Lead", "experience.card4.item2": "Mentor junior – GDSC (2023)", "experience.card4.item3": "Projet tutoré G‑JOBS (2024) : tâches, Git, review",
 
       // PROJECTS (UPDATED SECTION)
-      "projects.hover": "Survolez ou cliquez pour voir les détails", "projects.link": "Voir le code", "projects.link.modelRepo": "Dépôt du modèle", "projects.link.demoSpace": "Espace de démo", "projects.link.viewCode": "Voir le code", "projects.link.githubRepo": "Dépôt GitHub", "projects.link.liveDemo": "Démo en ligne",
+      "projects.hover": "Survolez ou cliquez pour voir les détails", "projects.link.modelRepo": "Dépôt du modèle", "projects.link.demoSpace": "Espace de démo", "projects.link.viewCode": "Voir le code", "projects.link.githubRepo": "Dépôt GitHub", "projects.link.liveDemo": "Démo en ligne",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Entraînement de politiques robotiques.", "projects.p9.desc": "Pipeline MLOps complet pour l’entraînement de politiques de manipulation robotique (PushT) à partir de modèles de Diffusion. Intégration avec Hugging Face, accélération CUDA et visualisation via Gradio. Le dépôt du modèle et l’espace de démonstration sont publics.",
       "projects.cancer.title": "Détection du Cancer du Poumon", "projects.cancer.short": "Diagnostic médical par Deep Learning.", "projects.cancer.desc": "Classification de quatre types de carcinomes pulmonaires à partir d’imagerie CT. Un réseau de neurones convolutif et un perceptron multicouche sont implémentés puis comparés, afin d’étudier comment chacun traite les caractéristiques des images médicales. Stack : Python, PyTorch, Torchvision, scikit-learn.",
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Simulateur interactif de vision.", "projects.p10.desc": "Simulateur web de robotique combinant trois briques : détection d’objets en temps réel avec COCO-SSD, planification de trajectoire par l’algorithme A*, et traitement de commandes en langage naturel. Les objets s’ajoutent depuis une palette ou une image importée. Démo en ligne disponible.",
@@ -306,6 +308,7 @@ const translations = {
       "hero.ctaCV": "⬇ Download my CV", "hero.ctaLetter": "⬇ Cover letter", "hero.ctaProjects": "View my projects", "hero.ctaContact": "Get in touch",
       "stat.rank": "Top of class · L2 & L3", "stat.avg": "Overall average", "stat.english": "English · LanguageCert (Ofqual)", "stat.prod": "AI systems @ GE HealthCare",
       "badge.production": "Production",
+      "projects.kind.university": "University project", "projects.kind.personal": "Personal project",
       
       "nav.contact": "Contact", "nav.profil": "About", "nav.formation": "Education",
       "nav.publications": "Publications", "nav.projects": "Projects", "nav.competences": "Skills",
@@ -319,6 +322,7 @@ const translations = {
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb MEFTAH.",
       "profile.text1": "Top of my class in both L2 and L3 at the University of Avignon (1st of 126, average above 15/20), after an elite preparatory programme at ENSIA in Algiers. As an AI and MLOps engineer I build RAG agents, LLM pipelines and autonomous systems, and I take them all the way to production.",
       "profile.text2": "At GE HealthCare I shipped a RAG agent that answers in seconds questions that used to take hours of document searching. I had coded it end to end; when token cost became the limiting factor, I re-architected it as a multi-agent system. That step — from a prototype that works to a system that holds — is what I want to keep doing. Currently in the Master 1 MLSD at Université Paris Cité, available on a permanent, fixed-term or work-study contract.",
+      "profile.refs": "Academic and professional references available on request.",
       "profile.highlight": "What sets me apart: genuine engineering rigour — code, backend, complex systems — put to work for AI, to deliver solutions that hold up once deployed.",
 
       // FORMATION
@@ -388,7 +392,7 @@ const translations = {
       "experience.card4.item1": "AI Hackathon Avignon (24h, 2025) — Tech Lead", "experience.card4.item2": "Junior Mentor – GDSC (2023)", "experience.card4.item3": "Supervised project G‑JOBS (2024): tickets, Git, reviews",
 
       // PROJECTS (UPDATED SECTION)
-      "projects.hover": "Hover or click for details", "projects.link": "View Code", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
+      "projects.hover": "Hover or click for details", "projects.link.modelRepo": "Model Repo", "projects.link.demoSpace": "Demo Space", "projects.link.viewCode": "View Code", "projects.link.githubRepo": "GitHub Repo", "projects.link.liveDemo": "Live Demo",
       "projects.p9.title": "LeRobot PushT Trainer", "projects.p9.short": "Robotic Policy Training.", "projects.p9.desc": "A full MLOps pipeline for training robotic manipulation policies (PushT) from Diffusion models. Hugging Face integration, CUDA acceleration and Gradio visualisation. Both the model repository and the demo space are public.",
       "projects.cancer.title": "Lung Cancer Detection", "projects.cancer.short": "Medical Diagnosis via Deep Learning.", "projects.cancer.desc": "Classification of four lung carcinoma types from CT-scan imagery. A convolutional neural network and a multi-layer perceptron are implemented and compared, to study how each handles medical image features. Stack: Python, PyTorch, Torchvision, scikit-learn.",
       "projects.p10.title": "Robot Vision Simulator", "projects.p10.short": "Interactive Vision Simulator.", "projects.p10.desc": "A web robotics simulator combining three parts: real-time object detection with COCO-SSD, path planning through the A* algorithm, and natural-language command processing. Objects are added from a palette or an uploaded image. A live demo is available.",
@@ -423,6 +427,7 @@ const translations = {
       "hero.ctaCV": "⬇ تحميل سيرتي الذاتية", "hero.ctaLetter": "⬇ رسالة الدافع", "hero.ctaProjects": "مشاريعي", "hero.ctaContact": "تواصل معي",
       "stat.rank": "الأولى على الدفعة · L2 و L3", "stat.avg": "المعدّل العام", "stat.english": "الإنجليزية · LanguageCert (Ofqual)", "stat.prod": "أنظمة ذكاء اصطناعي @ GE HealthCare",
       "badge.production": "الإنتاج",
+      "projects.kind.university": "مشروع جامعي", "projects.kind.personal": "مشروع شخصي",
       "nav.contact": "اتصل", "nav.profil": "نبذة", "nav.formation": "التعليم",
       "nav.publications": "المنشورات", "nav.projects": "المشاريع", "nav.competences": "المهارات",
       "nav.langues": "اللغات", "nav.experience": "الخبرة", "nav.skip": "تخطي إلى المحتوى",
@@ -435,6 +440,7 @@ const translations = {
       "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا زينب مفتاح.",
       "profile.text1": "الأولى على دفعتها في السنتين الثانية والثالثة بجامعة أفينيون (1 من 126، بمعدّل يفوق 15/20)، بعد طور تحضيري نخبوي بمدرسة ENSIA في الجزائر. مهندسة ذكاء اصطناعي وMLOps، أُصمّم وكلاء RAG وخطوط معالجة LLM وأنظمة مستقلة، وأرافقها حتى الإنتاج.",
       "profile.text2": "لدى GE HealthCare أنجزت وكيل RAG يجيب في ثوانٍ عن أسئلة كانت تتطلّب ساعات من البحث في الوثائق. كتبته أولًا من البداية إلى النهاية، ولمّا صارت كلفة الرموز هي العامل المُقيِّد أعدت هندسته كنظام متعدّد الوكلاء. هذا الانتقال من نموذج يعمل إلى نظام يصمد هو ما أريد الاستمرار فيه. حاليًا في ماجستير M1 MLSD بجامعة باريس سيتي، ومتاحة بعقد دائم أو محدّد المدة أو بالتناوب.",
+      "profile.refs": "مراجع أكاديمية ومهنية متاحة عند الطلب.",
       "profile.highlight": "ما يميّزني: صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — موضوعة في خدمة الذكاء الاصطناعي، لتقديم حلول تصمد بعد النشر.",
 
       // FORMATION
@@ -507,7 +513,7 @@ const translations = {
       "projects.gerag.title": "وكيل RAG · GE HealthCare",
       "projects.gerag.short": "بحث في الوثائق بلغة طبيعية.",
       "projects.gerag.desc": "وكيل RAG في الإنتاج لدى GE HealthCare: استجواب وثائق تقنية معقّدة بلغة طبيعية مع إجابات موثّقة المصدر، يختصر بحثًا يستغرق ساعات إلى ثوانٍ. كُتب من البداية إلى النهاية ثم أُعيدت هندسته كنظام متعدّد الوكلاء على Copilot Studio.",
-      "projects.hover": "مرّر أو انقر لعرض التفاصيل", "projects.link": "عرض الكود", "projects.link.modelRepo": "مستودع النموذج", "projects.link.demoSpace": "مساحة العرض", "projects.link.viewCode": "عرض الكود", "projects.link.githubRepo": "مستودع GitHub", "projects.link.liveDemo": "عرض مباشر",
+      "projects.hover": "مرّر أو انقر لعرض التفاصيل", "projects.link.modelRepo": "مستودع النموذج", "projects.link.demoSpace": "مساحة العرض", "projects.link.viewCode": "عرض الكود", "projects.link.githubRepo": "مستودع GitHub", "projects.link.liveDemo": "عرض مباشر",
       "projects.p9.title": "مدرب LeRobot PushT", "projects.p9.short": "تدريب السياسات.", "projects.p9.desc": "منظومة MLOps كاملة لتدريب سياسات المناولة الروبوتية (PushT) انطلاقًا من نماذج الانتشار. تكامل مع Hugging Face وتسريع CUDA وعرض عبر Gradio. مستودع النموذج ومساحة العرض متاحان للعموم.",
       "projects.cancer.title": "كشف سرطان الرئة", "projects.cancer.short": "تشخيص الأورام (CT).", "projects.cancer.desc": "تصنيف أربعة أنواع من سرطانات الرئة انطلاقًا من صور الأشعة المقطعية. تُنفَّذ شبكة عصبية التفافية ومدرك متعدّد الطبقات ثم تُقارَنان لدراسة تعامل كلٍّ منهما مع سمات الصور الطبية. التقنيات: Python وPyTorch وTorchvision.",
 
