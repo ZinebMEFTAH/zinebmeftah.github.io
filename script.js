@@ -199,9 +199,9 @@ const translations = {
       // Profile
       "profile.heading": "À Propos de Moi",
       "profile.greeting": "Bonjour, je suis Zineb MEFTAH.",
-      "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126 étudiants, moyenne > 15/20) et issue du cycle préparatoire d’élite de l’ENSIA (Alger). Après un stage d’ingénierie IA & MLOps chez GE HealthCare à Paris, je conçois et déploie des systèmes d’IA en production : agents RAG, pipelines LLM et systèmes autonomes.",
-      "profile.text2": "J’ai notamment développé un agent RAG permettant d’interroger des documentations techniques complexes en langage naturel, un système d’outreach IA entièrement autonome déployé en production, ainsi qu’un moteur de contenu autonome en boucle fermée qui crée et publie sur YouTube, TikTok, Instagram et Facebook. Je suis actuellement en Master 1 MLSD (Machine Learning pour la Science des Données) à l’Université Paris Cité, et je cherche l’entreprise où mettre tout cela en pratique — en CDI, CDD ou alternance.",
-      "profile.highlight": "Ce qui me distingue : réunir une vraie rigueur d’ingénieure — code, backend, systèmes complexes — et la maîtrise de l’IA pour en faire des solutions qui tournent réellement, en production.",
+      "profile.text1": "Major de promotion en L2 et L3 à l’Université d’Avignon (1ʳᵉ sur 126, moyenne > 15/20), issue du cycle préparatoire d’élite de l’ENSIA à Alger. Ingénieure IA et MLOps, je conçois des agents RAG, des pipelines LLM et des systèmes autonomes, et je les emmène jusqu’à la production.",
+      "profile.text2": "Chez GE HealthCare, j’ai livré un agent RAG qui répond en quelques secondes à des questions qui demandaient des heures de recherche documentaire. Je l’avais codé de bout en bout ; quand le coût en tokens est devenu le facteur limitant, je l’ai ré-architecturé en système multi-agents. C’est ce passage du prototype qui marche au système qui tient que je veux continuer à faire. Actuellement en Master 1 MLSD à l’Université Paris Cité, disponible en CDI, CDD ou alternance.",
+      "profile.highlight": "Ce qui me distingue : une vraie rigueur d’ingénieure — code, backend, systèmes complexes — mise au service de l’IA, pour livrer des solutions qui tiennent une fois déployées.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
@@ -317,9 +317,9 @@ const translations = {
       "formation.heading": "Education & Certificates", "publications.heading": "Publications", "projects.heading": "Projects & Experience", "experience.heading": "Experience & Leadership", "competences.heading": "Skills", "langues.heading": "Languages", "contact.heading": "Contact",
 
       "profile.heading": "About Me", "profile.greeting": "Hi, I’m Zineb MEFTAH.",
-      "profile.text1": "Ranked 1st of my class in L2 and L3 at the University of Avignon (1st of 126 students, average > 15/20), from ENSIA's elite AI preparatory program (Algiers). Fresh from an AI & MLOps Engineering internship at GE HealthCare in Paris, I design and deploy production AI systems: RAG agents, LLM pipelines and autonomous systems.",
-      "profile.text2": "Notably, I built a production RAG agent that lets teams query complex technical documentation in natural language, a fully autonomous AI outreach system deployed in production, and a closed-loop content engine that creates and publishes across YouTube, TikTok, Instagram and Facebook. I am currently in the M1 MLSD (Machine Learning for Data Science) at Université Paris Cité, looking for the company where I can put all of this into practice — on a permanent, fixed-term or work-study contract.",
-      "profile.highlight": "What sets me apart: combining genuine engineering rigor — code, backend, complex systems — with strong AI expertise to ship solutions that actually run in production.",
+      "profile.text1": "Top of my class in both L2 and L3 at the University of Avignon (1st of 126, average above 15/20), after an elite preparatory programme at ENSIA in Algiers. As an AI and MLOps engineer I build RAG agents, LLM pipelines and autonomous systems, and I take them all the way to production.",
+      "profile.text2": "At GE HealthCare I shipped a RAG agent that answers in seconds questions that used to take hours of document searching. I had coded it end to end; when token cost became the limiting factor, I re-architected it as a multi-agent system. That step — from a prototype that works to a system that holds — is what I want to keep doing. Currently in the Master 1 MLSD at Université Paris Cité, available on a permanent, fixed-term or work-study contract.",
+      "profile.highlight": "What sets me apart: genuine engineering rigour — code, backend, complex systems — put to work for AI, to deliver solutions that hold up once deployed.",
 
       // FORMATION
       "formation.paris.title": "Université Paris Cité, France",
@@ -433,9 +433,9 @@ const translations = {
       "formation.heading": "التعليم والشهادات", "publications.heading": "المنشورات", "projects.heading": "المشاريع والخبرة", "experience.heading": "الخبرة والقيادة", "competences.heading": "المهارات", "langues.heading": "اللغات", "contact.heading": "اتصل",
 
       "profile.heading": "نبذة عني", "profile.greeting": "مرحبًا، أنا زينب مفتاح.",
-      "profile.text1": "طالبة علوم الحاسوب، الأولى على دفعتها (السنتان الثانية والثالثة) بجامعة أفينيون (1 من 126، معدل > 15/20) وخريجة الطور التحضيري النخبوي لمدرسة ENSIA (الجزائر). بعد تدريب في هندسة الذكاء الاصطناعي وMLOps لدى GE HealthCare بباريس، أصمّم وأنشر أنظمة ذكاء اصطناعي في الإنتاج: وكلاء RAG، وخطوط معالجة LLM، وأنظمة مستقلة.",
-      "profile.text2": "طوّرت وكيل RAG يتيح الاستعلام عن وثائق تقنية معقّدة بلغة طبيعية، ونظام تواصل ذكاء اصطناعي مستقل بالكامل في الإنتاج، ومحرّك محتوى مستقل بحلقة مغلقة يُنشئ وينشر على يوتيوب وتيك توك وإنستغرام وفيسبوك. أنا حاليًا في ماجستير M1 MLSD (تعلّم الآلة لعلوم البيانات) بجامعة باريس سيتي، وأبحث عن الشركة التي أطبّق فيها كل هذا — بعقد دائم أو محدّد المدة أو بالتناوب.",
-      "profile.highlight": "ما يميّزني: الجمع بين صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — وإتقان الذكاء الاصطناعي لإنتاج حلول تعمل فعليًا في الإنتاج.",
+      "profile.text1": "الأولى على دفعتها في السنتين الثانية والثالثة بجامعة أفينيون (1 من 126، بمعدّل يفوق 15/20)، بعد طور تحضيري نخبوي بمدرسة ENSIA في الجزائر. مهندسة ذكاء اصطناعي وMLOps، أُصمّم وكلاء RAG وخطوط معالجة LLM وأنظمة مستقلة، وأرافقها حتى الإنتاج.",
+      "profile.text2": "لدى GE HealthCare أنجزت وكيل RAG يجيب في ثوانٍ عن أسئلة كانت تتطلّب ساعات من البحث في الوثائق. كتبته أولًا من البداية إلى النهاية، ولمّا صارت كلفة الرموز هي العامل المُقيِّد أعدت هندسته كنظام متعدّد الوكلاء. هذا الانتقال من نموذج يعمل إلى نظام يصمد هو ما أريد الاستمرار فيه. حاليًا في ماجستير M1 MLSD بجامعة باريس سيتي، ومتاحة بعقد دائم أو محدّد المدة أو بالتناوب.",
+      "profile.highlight": "ما يميّزني: صرامة هندسية حقيقية — البرمجة، الواجهة الخلفية، الأنظمة المعقّدة — موضوعة في خدمة الذكاء الاصطناعي، لتقديم حلول تصمد بعد النشر.",
 
       // FORMATION
       "formation.paris.title": "جامعة باريس سيتي، فرنسا",
