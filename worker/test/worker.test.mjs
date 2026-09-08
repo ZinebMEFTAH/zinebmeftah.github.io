@@ -66,6 +66,37 @@ console.log("\nProvider errors never leak to the browser");
   check("no provider text, no key", !raw.includes("Invalid API Key") && !raw.includes("SECRET") && !raw.includes("llama"), raw);
 }
 
+console.log("\nAbuse protection");
+{
+  globalThis.fetch = async () => groqOk("ok");
+  const env = { GROQ_API_KEY: "k" };
+  const call = (ip, extra = {}) => worker.fetch(new Request("https://w.dev", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Origin: ORIGIN, "CF-Connecting-IP": ip, ...extra },
+    body: JSON.stringify({ message: "hi" }),
+  }), env, {});
+
+  const noOrigin = await worker.fetch(new Request("https://w.dev", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: "hi" }),
+  }), env, {});
+  check("no Origin -> 403", noOrigin.status === 403, String(noOrigin.status));
+
+  const foreign = await post({ message: "hi" }, env, "https://evil.example");
+  check("foreign Origin -> 403", foreign.status === 403, String(foreign.status));
+
+  const burst = [];
+  for (let i = 0; i < 20; i++) burst.push((await call("203.0.113.9")).status);
+  const allowed = burst.filter((s) => s === 200).length;
+  const blocked = burst.filter((s) => s === 429).length;
+  check("burst throttled after 15", allowed === 15 && blocked === 5, `${allowed} allowed / ${blocked} blocked`);
+
+  check("a different IP is unaffected", (await call("198.51.100.4")).status === 200);
+  check("oversized body -> 413",
+    (await call("192.0.2.7", { "Content-Length": String(64 * 1024) })).status === 413);
+}
+
+
 console.log("\nAll models down");
 {
   globalThis.fetch = async () => groqRetired();

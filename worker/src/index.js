@@ -27,6 +27,32 @@ const FALLBACK_MODELS = [
 const MAX_MESSAGE_CHARS = 1000;
 const MAX_CONTEXT_CHARS = 14000;
 
+// Abuse limits. CORS headers only instruct browsers - curl and scripts ignore
+// them entirely - so the endpoint needs its own guard or the Groq quota is
+// free for anyone who finds the URL.
+const RATE_LIMIT_MAX = 15;              // requests per IP
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const MAX_BODY_BYTES = 32 * 1024;
+
+// Per-isolate sliding window. Not global state, but it caps what any single
+// client can pull through one isolate, which is what casual abuse looks like.
+const hits = new Map();
+
+function rateLimited(ip) {
+  const now = Date.now();
+  const seen = (hits.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
+  seen.push(now);
+  hits.set(ip, seen);
+
+  // Keep the map from growing without bound across a long-lived isolate.
+  if (hits.size > 5000) {
+    for (const [key, times] of hits) {
+      if (!times.length || now - times[times.length - 1] > RATE_LIMIT_WINDOW_MS) hits.delete(key);
+    }
+  }
+  return seen.length > RATE_LIMIT_MAX;
+}
+
 const SYSTEM_PROMPT = `Tu es l'assistant du portfolio de Zineb MEFTAH (ingénieure IA, MLOps, deep learning).
 
 Règles:
@@ -93,6 +119,25 @@ export default {
     }
     if (request.method !== "POST") {
       return json({ error: "method_not_allowed" }, 405, origin);
+    }
+
+    // The page is served from a different origin than the worker, so a genuine
+    // browser request always carries one of these.
+    if (!ALLOWED_ORIGINS.includes(origin)) {
+      return json({ error: "forbidden" }, 403, origin);
+    }
+
+    const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+    if (rateLimited(ip)) {
+      return new Response(JSON.stringify({ error: "rate_limited" }), {
+        status: 429,
+        headers: { "Content-Type": "application/json", "Retry-After": "600", ...corsHeaders(origin) },
+      });
+    }
+
+    const declared = Number(request.headers.get("Content-Length") || 0);
+    if (declared > MAX_BODY_BYTES) {
+      return json({ error: "payload_too_large" }, 413, origin);
     }
     if (!env.GROQ_API_KEY) {
       console.error("GROQ_API_KEY is not configured");
