@@ -222,7 +222,7 @@ const translations = {
       "formation.paris.cert": "Certificat de scolarité 2026/2027", "formation.avignon.cert": "Certificat d’obtention du diplôme", "experience.ge.cert": "Attestation de stage",
       "dates.ensia": "2022 - Juin 2024",
       "dates.avignon": "Septembre 2024 — Juin 2026 · obtenue",
-      "common.viewDiploma": "Certificat de scolarité ENSIA",
+      "common.viewDiploma": "Certificat de scolarité ENSIA", "common.onRequest": "· relevés de notes sur demande",
       "common.viewTranscript": "Relevé des résultats",
 
       // PUBLICATIONS
@@ -340,7 +340,7 @@ const translations = {
       "formation.paris.cert": "Enrolment certificate 2026/2027", "formation.avignon.cert": "Degree certificate", "experience.ge.cert": "Internship certificate",
       "dates.ensia": "2022 - June 2024",
       "dates.avignon": "Sept 2024 — June 2026 · completed",
-      "common.viewDiploma": "ENSIA enrolment certificate",
+      "common.viewDiploma": "ENSIA enrolment certificate", "common.onRequest": "· transcripts available on request",
       "common.viewTranscript": "Transcript of Records",
 
       // PUBLICATIONS
@@ -452,7 +452,7 @@ const translations = {
       "formation.paris.cert": "شهادة تسجيل 2026/2027", "formation.avignon.cert": "شهادة الحصول على الدبلوم", "experience.ge.cert": "شهادة تربّص",
       "dates.ensia": "2022 - يونيو 2024",
       "dates.avignon": "سبتمبر 2024 — يونيو 2026 · مُنجزة",
-      "common.viewDiploma": "شهادة مدرسية — ENSIA",
+      "common.viewDiploma": "شهادة مدرسية — ENSIA", "common.onRequest": "· كشوف النقاط عند الطلب",
       "common.viewTranscript": "كشف النقاط",
 
       // PUBLICATIONS

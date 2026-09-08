@@ -2818,3 +2818,9 @@ img, svg, video, canvas, table { max-width: 100%; }
 
 /* 10px uppercase was below comfortable reading size. */
 .featured-badge { font-size: 0.68rem; }
+
+/* Grades stay private; this signals the evidence exists without publishing it. */
+.cert-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}

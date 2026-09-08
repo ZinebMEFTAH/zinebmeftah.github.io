@@ -31,11 +31,11 @@
 <style>
   :root{
     --bg:#0b0f14; --panel:#121820; --panel-2:#171f2a; --text:#e8edf3; --muted:#94a3b8;
-    --line:#233042; --accent:#5eead4; --accent-2:#38bdf8; --tag:#0f766e; --shadow:0 1px 0 rgba(255,255,255,.03), 0 12px 32px rgba(0,0,0,.35);
+    --line:#233042; --accent:#5eead4; --accent-text:#5eead4; --accent-2:#38bdf8; --tag:#0f766e; --shadow:0 1px 0 rgba(255,255,255,.03), 0 12px 32px rgba(0,0,0,.35);
   }
   @media (prefers-color-scheme: light){
-    :root{ --bg:#f6f8fb; --panel:#ffffff; --panel-2:#f1f5f9; --text:#0f172a; --muted:#5b6b7f;
-      --line:#e3e9f0; --accent:#0d9488; --accent-2:#0284c7; --tag:#0d9488; --shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 30px rgba(16,24,40,.08); }
+    :root{ --bg:#f6f8fb; --panel:#ffffff; --panel-2:#f1f5f9; --text:#0f172a; --muted:#4b5768;
+      --line:#e3e9f0; --accent:#0d9488; --accent-text:#0a5750; --accent-2:#075e96; --tag:#0d9488; --shadow:0 1px 2px rgba(16,24,40,.06), 0 12px 30px rgba(16,24,40,.08); }
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -44,7 +44,9 @@
     font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;
   }
-  .en .fr{display:none} .fr .en{display:none}   /* language toggle */
+  .fr .en,.fr .ar{display:none} .en .fr,.en .ar{display:none} .ar .fr,.ar .en{display:none}
+  [dir="rtl"] .nav{flex-direction:row-reverse}
+  [dir="rtl"] .lead,[dir="rtl"] .card p,[dir="rtl"] h1{text-align:right}
   .wrap{max-width:780px;margin:0 auto;padding:0 22px}
   a{color:var(--accent-2);text-decoration:none}
   a:hover{text-decoration:underline}
@@ -62,7 +64,7 @@
   #lang{min-width:42px}
 
   .hero{padding:64px 0 26px}
-  .kicker{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
+  .kicker{color:var(--accent-text);font-weight:700;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
   h1{font-size:clamp(28px,5.2vw,44px);line-height:1.12;margin:0 0 18px;letter-spacing:-.4px}
   .lead{font-size:clamp(16px,2.3vw,19px);color:var(--muted);max-width:60ch;margin:0 0 26px}
   .lead b{color:var(--text);font-weight:600}
@@ -82,8 +84,8 @@
   a.card:hover{border-color:var(--accent);transform:translateY(-1px);text-decoration:none}
   .card h3{margin:0 0 7px;font-size:17px}
   .card p{margin:0;color:var(--muted);font-size:14.5px}
-  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
-    color:var(--accent);background:color-mix(in srgb,var(--accent) 15%,transparent);
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;
+    color:var(--accent-text);background:color-mix(in srgb,var(--accent) 12%,transparent);
     border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:3px 9px;margin-bottom:10px}
   .arrow{color:var(--accent);font-weight:700}
   .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
@@ -93,7 +95,7 @@
 
   .meta{margin:30px 0 6px;padding:18px 20px;border-radius:14px;border:1px dashed color-mix(in srgb,var(--accent) 45%,var(--line));
     background:color-mix(in srgb,var(--accent) 7%,var(--panel));font-size:14.5px;color:var(--text)}
-  .meta b{color:var(--accent)}
+  .meta b{color:var(--accent-text)}
 
   footer{margin-top:46px;border-top:1px solid var(--line);padding:26px 0 60px;color:var(--muted);font-size:14px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
@@ -108,76 +110,76 @@
     <button class="btn" id="lang" onclick="toggleLang()" aria-label="Switch language">EN</button>
     <a class="btn" href="https://www.linkedin.com/in/zinebmeftah" target="_blank" rel="noopener">LinkedIn</a>
     <a class="btn primary" href="https://zinebmeftah.github.io/" target="_blank" rel="noopener">
-      <span class="fr">Portfolio</span><span class="en">Portfolio</span></a>
+      <span class="fr">Portfolio</span><span class="ar">المعرض</span><span class="en">Portfolio</span></a>
   </nav>
 </div></header>
 
 <main class="wrap">
   <section class="hero">
-    <div class="kicker"><span class="fr">IA · MLOps · Alternance, CDI ou CDD</span><span class="en">AI · MLOps · Work-study, permanent or fixed-term</span></div>
+    <div class="kicker"><span class="fr">IA · MLOps · Alternance, CDI ou CDD</span><span class="ar">ذكاء اصطناعي · MLOps · بالتناوب أو عقد دائم أو محدّد المدة</span><span class="en">AI · MLOps · Work-study, permanent or fixed-term</span></div>
     <h1>
-      <span class="fr">Je conçois des systèmes IA autonomes, déployés en production.</span>
+      <span class="fr">Je conçois des systèmes IA autonomes, déployés en production.</span><span class="ar">أُصمّم أنظمة ذكاء اصطناعي مستقلة، منشورة في الإنتاج.</span>
       <span class="en">I build autonomous AI systems, deployed in production.</span>
     </h1>
     <p class="lead">
-      <span class="fr">Ingénieure IA, <b>major de promotion (1ʳᵉ/126)</b>. Je suis en <b>Master 1 MLSD à l'Université Paris Cité</b> et je cherche l'entreprise où mettre tout cela en pratique — en <b>alternance, CDI ou CDD</b> (Île-de-France ou télétravail).</span>
+      <span class="fr">Ingénieure IA, <b>major de promotion (1ʳᵉ/126)</b>. Je suis en <b>Master 1 MLSD à l'Université Paris Cité</b> et je cherche l'entreprise où mettre tout cela en pratique — en <b>alternance, CDI ou CDD</b> (Île-de-France ou télétravail).</span><span class="ar">مهندسة ذكاء اصطناعي، الأولى على دفعتها (1 من 126). أنا في ماجستير M1 MLSD بجامعة باريس سيتي وأبحث عن الشركة التي أطبّق فيها كل هذا — بالتناوب أو بعقد دائم أو محدّد المدة (إيل دو فرانس أو عن بُعد).</span>
       <span class="en">AI engineer, <b>top of my class (1st of 126)</b>. I am in the <b>Master 1 MLSD at Université Paris Cité</b>, looking for the company where I can put all of this into practice — <b>work-study, permanent or fixed-term</b> (Paris region or remote).</span>
     </p>
     <div class="cta">
       <a class="btn primary" href="https://www.linkedin.com/in/zinebmeftah" target="_blank" rel="noopener">
-        <span class="fr">Me contacter</span><span class="en">Get in touch</span></a>
+        <span class="fr">Me contacter</span><span class="ar">تواصل معي</span><span class="en">Get in touch</span></a>
       <a class="btn" href="https://zinebmeftah.github.io/" target="_blank" rel="noopener">
-        <span class="fr">Portfolio complet →</span><span class="en">Full portfolio →</span></a>
+        <span class="fr">Portfolio complet →</span><span class="ar">المعرض الكامل →</span><span class="en">Full portfolio →</span></a>
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="n">1ʳᵉ / 126</div><div class="l"><span class="fr">Major de promotion L2 & L3 IA</span><span class="en">Top of class, L2 & L3 AI</span></div></div>
-      <div class="stat"><div class="n">GE HealthCare</div><div class="l"><span class="fr">RAG en production (stage IA/MLOps)</span><span class="en">Production RAG (AI/MLOps intern)</span></div></div>
-      <div class="stat"><div class="n">C2</div><div class="l"><span class="fr">Anglais LanguageCert (Ofqual) · ENSIA T. Bien</span><span class="en">English LanguageCert (Ofqual) · ENSIA honors</span></div></div>
-      <div class="stat"><div class="n">Paris Cité</div><div class="l"><span class="fr">Master 1 MLSD · en cours</span><span class="en">Master 1 MLSD · in progress</span></div></div>
+      <div class="stat"><div class="n">1ʳᵉ / 126</div><div class="l"><span class="fr">Major de promotion L2 & L3 IA</span><span class="ar">الأولى على الدفعة في L2 وL3</span><span class="en">Top of class, L2 & L3 AI</span></div></div>
+      <div class="stat"><div class="n">GE HealthCare</div><div class="l"><span class="fr">RAG en production (stage IA/MLOps)</span><span class="ar">RAG في الإنتاج (تربّص ذكاء اصطناعي/MLOps)</span><span class="en">Production RAG (AI/MLOps intern)</span></div></div>
+      <div class="stat"><div class="n">C2</div><div class="l"><span class="fr">Anglais LanguageCert (Ofqual) · ENSIA T. Bien</span><span class="ar">إنجليزية LanguageCert (Ofqual) · ENSIA بتقدير جيد جدًا</span><span class="en">English LanguageCert (Ofqual) · ENSIA honors</span></div></div>
+      <div class="stat"><div class="n">Paris Cité</div><div class="l"><span class="fr">Master 1 MLSD · en cours</span><span class="ar">ماجستير M1 MLSD · جارٍ</span><span class="en">Master 1 MLSD · in progress</span></div></div>
     </div>
   </section>
 
   <section class="block">
-    <h2><span class="fr">Preuves en production</span><span class="en">Proof, in production</span></h2>
+    <h2><span class="fr">Preuves en production</span><span class="ar">أدلّة من الإنتاج</span><span class="en">Proof, in production</span></h2>
 
     <div class="card">
-      <span class="tag"><span class="fr">Production · GE HealthCare</span><span class="en">Production · GE HealthCare</span></span>
-      <h3><span class="fr">Agent RAG sur documentation technique réglementée</span><span class="en">RAG agent over regulated technical docs</span></h3>
-      <p><span class="fr">Codé de bout en bout : retrieval étagé (BM25 → reranker cross-encoder → LLM), prompt caching, déduplication sémantique, décomposition de requêtes. Puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio quand le coût en tokens du pipeline linéaire est devenu le facteur limitant — prétraitement maison conservé en amont. Des heures de recherche documentaire expert remplacées par une requête en langage naturel, chaque réponse tracée jusqu'à la section exacte du document source.</span>
+      <span class="tag"><span class="fr">Production · GE HealthCare</span><span class="ar">الإنتاج · GE HealthCare</span><span class="en">Production · GE HealthCare</span></span>
+      <h3><span class="fr">Agent RAG sur documentation technique réglementée</span><span class="ar">وكيل RAG على وثائق تقنية خاضعة للتنظيم</span><span class="en">RAG agent over regulated technical docs</span></h3>
+      <p><span class="fr">Codé de bout en bout : retrieval étagé (BM25 → reranker cross-encoder → LLM), prompt caching, déduplication sémantique, décomposition de requêtes. Puis ré-architecturé en système multi-agents sur Microsoft Copilot Studio quand le coût en tokens du pipeline linéaire est devenu le facteur limitant — prétraitement maison conservé en amont. Des heures de recherche documentaire expert remplacées par une requête en langage naturel, chaque réponse tracée jusqu'à la section exacte du document source.</span><span class="ar">مكتوب من البداية إلى النهاية: استرجاع متدرّج (BM25 ← إعادة ترتيب cross-encoder ← نموذج لغوي)، وتخزين مؤقّت للمطالبات، وإزالة التكرار الدلالي، وتفكيك الاستعلامات. ثم أُعيدت هندسته كنظام متعدّد الوكلاء على Microsoft Copilot Studio عندما صارت كلفة الرموز هي العامل المُقيِّد. ساعات من البحث في الوثائق استُبدلت باستعلام بلغة طبيعية، وكل إجابة متتبَّعة حتى القسم الدقيق في المصدر.</span>
       <span class="en">Coded end to end: tiered retrieval (BM25 → cross-encoder reranker → LLM), prompt caching, semantic dedup, query decomposition. Then re-architected into a multi-agent system on Microsoft Copilot Studio once the linear pipeline's token cost became the ceiling — custom preprocessing kept upstream. Hours of expert document lookup replaced by a natural-language query, every answer traced to the exact source section.</span></p>
     </div>
 
     <a class="card" href="https://github.com/ZinebMEFTAH/stationf-outreach-agent" target="_blank" rel="noopener">
-      <span class="tag"><span class="fr">Live · code public</span><span class="en">Live · open source</span></span>
-      <h3><span class="fr">Agent d'outreach autonome — ce site vous a peut-être été envoyé par lui <span class="arrow">↗</span></span><span class="en">Autonomous outreach agent — it may have sent you here <span class="arrow">↗</span></span></h3>
-      <p><span class="fr">Scraping Playwright → qualification LLM des opportunités → personnalisation par entreprise → envoi SMTP + relances, orchestré en skills Claude Code et déployé en production sur un VM. L'email lui-même est le portfolio.</span>
+      <span class="tag"><span class="fr">Live · code public</span><span class="ar">مباشر · شيفرة مفتوحة</span><span class="en">Live · open source</span></span>
+      <h3><span class="fr">Agent d'outreach autonome — ce site vous a peut-être été envoyé par lui <span class="arrow">↗</span></span><span class="ar">وكيل تواصل مستقل — ربما هو من أرسل إليك هذا الموقع <span class="arrow">↗</span></span><span class="en">Autonomous outreach agent — it may have sent you here <span class="arrow">↗</span></span></h3>
+      <p><span class="fr">Scraping Playwright → qualification LLM des opportunités → personnalisation par entreprise → envoi SMTP + relances, orchestré en skills Claude Code et déployé en production sur un VM. L'email lui-même est le portfolio.</span><span class="ar">جمع البيانات بـPlaywright ← تصفية الفرص بنموذج لغوي ← تخصيص حسب الشركة ← إرسال SMTP ومتابعة، منسّق في مهارات Claude Code وينفَّذ عبر cron على آلة افتراضية في Google Cloud.</span>
       <span class="en">Playwright scraping → LLM opportunity qualification → per-company personalization → SMTP sending + follow-ups, orchestrated as Claude Code skills and deployed on a VM. The email itself is the portfolio.</span></p>
     </a>
 
     <a class="card" href="https://huggingface.co/spaces/zino36/lerobot-pusht-trainer" target="_blank" rel="noopener">
-      <span class="tag"><span class="fr">Démo live · Hugging Face</span><span class="en">Live demo · Hugging Face</span></span>
-      <h3><span class="fr">LeRobot — pipeline MLOps de RL robotique (ACT) <span class="arrow">↗</span></span><span class="en">LeRobot — robotic RL MLOps pipeline (ACT) <span class="arrow">↗</span></span></h3>
-      <p><span class="fr">Entraînement d'une politique de manipulation (tâche PushT) avec Action Chunking Transformer : collecte de démos → preprocessing → entraînement → évaluation. Modèle et UI d'entraînement publiés — réentraînables sans GPU local.</span>
-      <span class="en">Training a manipulation policy (PushT task) with an Action Chunking Transformer: demo collection → preprocessing → training → evaluation. Model and training UI published — retrainable with no local GPU.</span></p>
+      <span class="tag"><span class="fr">Démo live · Hugging Face</span><span class="ar">عرض مباشر · Hugging Face</span><span class="en">Live demo · Hugging Face</span></span>
+      <h3><span class="fr">LeRobot — pipeline MLOps de politique robotique (Diffusion) <span class="arrow">↗</span></span><span class="ar">LeRobot — منظومة MLOps لسياسة روبوتية (Diffusion) <span class="arrow">↗</span></span><span class="en">LeRobot — robotic policy MLOps pipeline (Diffusion) <span class="arrow">↗</span></span></h3>
+      <p><span class="fr">Entraînement d'une politique de manipulation (tâche PushT) avec un modèle de Diffusion : collecte de démos → preprocessing → entraînement → évaluation. Modèle et UI d'entraînement publiés — réentraînables sans GPU local.</span><span class="ar">تدريب سياسة مناولة (مهمة PushT) بنموذج انتشار: جمع العروض ← معالجة مسبقة ← تدريب ← تقييم. النموذج وواجهة التدريب منشوران، وقابلان لإعادة التدريب دون بطاقة رسومية محلية.</span>
+      <span class="en">Training a manipulation policy (PushT task) with a Diffusion model: demo collection → preprocessing → training → evaluation. Model and training UI published — retrainable with no local GPU.</span></p>
     </a>
 
     <div class="quick">
-      <a href="https://zinebmeftah.github.io/robot-vision-sim/" target="_blank" rel="noopener"><span class="fr">🎮 Démo Computer Vision</span><span class="en">🎮 Computer-vision demo</span> <span>↗</span></a>
-      <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" rel="noopener"><span class="fr">📄 Article de recherche (HF)</span><span class="en">📄 Research write-up (HF)</span> <span>↗</span></a>
+      <a href="https://zinebmeftah.github.io/robot-vision-sim/" target="_blank" rel="noopener"><span class="fr">🎮 Démo Computer Vision</span><span class="ar">🎮 عرض الرؤية الحاسوبية</span><span class="en">🎮 Computer-vision demo</span> <span>↗</span></a>
+      <a href="https://huggingface.co/blog/zino36/tags-generation-dataset-article" target="_blank" rel="noopener"><span class="fr">📄 Article de recherche (HF)</span><span class="ar">📄 مقال بحثي (HF)</span><span class="en">📄 Research write-up (HF)</span> <span>↗</span></a>
       <a href="https://github.com/ZinebMEFTAH" target="_blank" rel="noopener">GitHub <span>↗</span></a>
       <a href="https://huggingface.co/zino36" target="_blank" rel="noopener">Hugging Face <span>↗</span></a>
     </div>
 
     <div class="meta">
-      <span class="fr"><b>Méta-preuve.</b> Ce site et l'email qui vous y a peut-être amené font partie d'un même système IA que j'ai conçu, testé et déployé en production. C'est exactement ce type d'ingénierie IA de bout en bout que je veux construire avec vous.</span>
+      <span class="fr"><b>Méta-preuve.</b> Ce site et l'email qui vous y a peut-être amené font partie d'un même système IA que j'ai conçu, testé et déployé en production. C'est exactement ce type d'ingénierie IA de bout en bout que je veux construire avec vous.</span><span class="ar">دليل على الدليل. هذا الموقع والرسالة التي ربما قادتك إليه جزء من نظام ذكاء اصطناعي واحد صمّمته واختبرته ونشرته في الإنتاج. هذا بالضبط ما يمكنني بناؤه لديكم.</span>
       <span class="en"><b>Meta-proof.</b> This page and the email that may have brought you here are part of one AI system I designed, tested and deployed in production. That end-to-end AI engineering is exactly what I want to build with you.</span>
     </div>
   </section>
 </main>
 
 <footer><div class="wrap">
-  <div><span class="fr">Zineb MEFTAH — Ingénieure IA · Paris</span><span class="en">Zineb MEFTAH — AI Engineer · Paris</span></div>
+  <div><span class="fr">Zineb MEFTAH — Ingénieure IA · Paris</span><span class="ar">زينب مفتاح — مهندسة ذكاء اصطناعي · باريس</span><span class="en">Zineb MEFTAH — AI Engineer · Paris</span></div>
   <div>
     <a href="https://www.linkedin.com/in/zinebmeftah" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/ZinebMEFTAH" target="_blank" rel="noopener">GitHub</a>
@@ -186,19 +188,32 @@
 </div></footer>
 
 <script>
-  function toggleLang(){
-    var b=document.body, to=b.classList.contains('fr')?'en':'fr';
-    b.classList.remove('fr','en'); b.classList.add(to);
-    document.documentElement.lang=to;
-    document.getElementById('lang').textContent = to==='fr' ? 'EN' : 'FR';
-    try{localStorage.setItem('lang',to)}catch(e){}
+  // Same three languages as the main portfolio, sharing the same localStorage
+  // key, so a visitor who chose Arabic there is not silently shown French here.
+  var LANGS = ['fr', 'en', 'ar'];
+  var NEXT_LABEL = { fr: 'EN', en: 'ع', ar: 'FR' };
+
+  function applyLang(lang) {
+    if (LANGS.indexOf(lang) === -1) lang = 'fr';
+    var b = document.body;
+    b.classList.remove('fr', 'en', 'ar');
+    b.classList.add(lang);
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.getElementById('lang').textContent = NEXT_LABEL[lang];
   }
-  (function(){
-    var saved; try{saved=localStorage.getItem('lang')}catch(e){}
-    var nav=(navigator.language||'fr').slice(0,2);
-    var lang = saved || (nav==='en'?'en':'fr');
-    if(lang==='en'){document.body.classList.remove('fr');document.body.classList.add('en');
-      document.documentElement.lang='en';document.getElementById('lang').textContent='FR';}
+
+  function toggleLang() {
+    var current = LANGS.filter(function (l) { return document.body.classList.contains(l); })[0] || 'fr';
+    var next = LANGS[(LANGS.indexOf(current) + 1) % LANGS.length];
+    applyLang(next);
+    try { localStorage.setItem('lang', next); } catch (e) {}
+  }
+
+  (function () {
+    var saved;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    applyLang(saved || 'fr');
   })();
 </script>
 </body>
