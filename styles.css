@@ -2773,7 +2773,11 @@ img, svg, video, canvas, table { max-width: 100%; }
 }
 .pub-modal-body:focus-visible {
   outline: 2px solid var(--primary-color);
-  outline-offset: 3px;
+  outline-offset: -2px;
+}
+#pub-modal-close:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
 [dir="rtl"] .pub-modal-body,
 [dir="rtl"] .pub-modal-kw { text-align: right; }
@@ -2823,4 +2827,29 @@ img, svg, video, canvas, table { max-width: 100%; }
 .cert-note {
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+/* On a phone the two-column sample table needed sideways scrolling to read.
+   The preview column is redundant there — tapping a row opens the full
+   article anyway — so below 620px only the keywords show, with a read cue. */
+@media (max-width: 620px) {
+  /* A hard min-width of 520px was forcing the sideways scroll. */
+  .pub-table-scroll .sample-table {
+    min-width: 0;
+  }
+  .pub-table-scroll .sample-table th:nth-child(2),
+  .pub-table-scroll .sample-table td.preview {
+    display: none;
+  }
+  .pub-table-scroll .sample-table th:first-child,
+  .pub-row .pub-kw {
+    width: 100%;
+    min-width: 0;
+  }
+  .pub-row .pub-kw::after {
+    content: " ↗";
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  .pub-table-scroll { max-height: 320px; }
 }

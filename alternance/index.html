@@ -53,10 +53,15 @@
 
   header.bar{position:sticky;top:0;z-index:10;backdrop-filter:blur(8px);
     background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
-  .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;padding-top:6px;padding-bottom:6px}
   .brand{font-weight:700;letter-spacing:.2px}
+  @media (max-width:360px){
+    .brand{font-size:14px}
+    .btn{padding:6px 10px;font-size:13px}
+    .nav{gap:6px}
+  }
   .brand .dot{color:var(--accent)}
-  .nav{display:flex;gap:8px;align-items:center}
+  .nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end;min-width:0}
   .btn{border:1px solid var(--line);background:var(--panel);color:var(--text);
     padding:7px 13px;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
   .btn:hover{border-color:var(--accent);text-decoration:none}

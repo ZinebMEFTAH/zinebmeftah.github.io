@@ -812,7 +812,9 @@ const translations = {
       pubBody.textContent = row.a;
       pubBody.scrollTop = 0;
       pubModal.classList.remove("hidden");
-      pubBody.focus();
+      // Focus the close button, the conventional landing spot for a dialog.
+      // Focusing the article text drew a heavy ring around the whole passage.
+      pubClose.focus();
     };
 
     pubTbody.addEventListener("click", (e) => {
